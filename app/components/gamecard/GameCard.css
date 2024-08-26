@@ -1,0 +1,827 @@
+/* Font Families */
+
+@font-face {
+    font-family: 'Overwatch';
+    src: url('/gamecard/fonts/Overwatch.otf');
+}
+
+@font-face {
+    font-family: 'SSB';
+    src: url('/gamecard/fonts/SSB.ttf');
+}
+
+@font-face {
+    font-family: 'Pokémon';
+    src: url('/gamecard/fonts/Pokémon.ttf');
+}
+
+@font-face {
+    font-family: 'Valorant';
+    src: url('/gamecard/fonts/Valorant.ttf');
+}
+
+@font-face {
+    font-family: 'R6';
+    src: url('/gamecard/fonts/R6.otf');
+}
+
+@font-face {
+    font-family: 'Minecraft';
+    src: url('/gamecard/fonts/Minecraft.ttf');
+}
+
+@font-face {
+    font-family: 'Clash Royale';
+    src: url('/gamecard/fonts/ClashRoyale.ttf');
+}
+
+@font-face {
+    font-family: 'PVZ';
+    src: url('/gamecard/fonts/PVZ.ttf');
+}
+
+/* Global Game Card Styling */
+
+.game-card, .game-logo, .game-title {
+    will-change: transform, filter;
+}
+
+.game-card {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    cursor: pointer;
+    animation: gameCardAnimation 1s ease none;
+    transition: transform 0.2s ease;
+}
+
+.game-logo {
+    width: 100%;
+    height: auto;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.game-title-container {
+    width: 100%;
+    text-align: center;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+.game-card:hover .game-logo {
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+.game-card:hover .game-title {
+    filter: none;
+}
+
+/* Game Card Animations */
+
+@keyframes gameCardAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Overwatch Game Card Styling */
+
+#overwatch {
+    background: #ccdcf5;
+}
+
+#overwatch .game-title {
+    font-family: 'Overwatch';
+    color: #303132;
+    background: #eff3fa;
+}
+
+#overwatch:hover .game-title {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+/* Super Smash Bros. Game Card Styling */
+
+#ssb {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(70deg, #000000 30%, #ff4444);
+}
+
+#ssb::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+        -45deg,
+        rgba(123, 123, 123, 0.5) 7px,
+        rgba(123, 123, 123, 0.5) 7px,
+        transparent 13px
+    );
+    transition: left 0.1s ease;
+    pointer-events: none;
+    will-change: left;
+}
+
+#ssb:hover::before {
+    left: 0;
+}
+
+#ssb .game-title {
+    font-family: 'SSB';
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
+    background-color: #000000;
+    background-image: repeating-linear-gradient(
+        -45deg,
+        rgb(55, 55, 55) 7px,
+        rgb(55, 55, 55) 7px,
+        transparent 13px
+    );
+}
+
+/* Pokémon Game Card Styling */
+
+#pokemon .game-title, #identifier, #dragon, #fire {
+    font-family: 'Pokémon';
+}
+
+#pokemon {
+    background-color: #f2f2f2;
+}
+
+#pokemon .game-title {
+    color: #313131;
+}
+
+#types {
+    display: flex;
+    align-self: flex-start;
+    text-align: center;
+}
+
+#pokemon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+#identifier {
+    align-self: flex-start;
+    color: #919191;
+}
+
+#dragon, #fire {
+    color: #ffffff;
+}
+
+#dragon {
+    background: linear-gradient(to bottom, #54A4CF 50%, #F06D57 50%);
+}
+
+#fire {
+    background-color: #FD7D25;
+}
+
+/* Valorant Game Card Styling */
+
+#valorant, #valorant .game-title, .text-wrapper {
+    position: relative;
+}
+
+#valorant, #valorant .game-title {
+    overflow: hidden;
+}
+
+#valorant {
+    background-color: #101827;
+}
+
+#valorant .game-title {
+    font-family: 'Valorant';
+    background-color: #2a2a2a;
+    color: #ff4655;
+    transition: color 0.3s ease;
+}
+
+#valorant:hover .game-title {
+    color: #ffffff;
+}
+
+.text-wrapper {
+    z-index: 3;
+}
+
+#valorant .game-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 110%;
+    height: 100%;
+    background-color: #ff4655;
+    transform-origin: top left;
+    transform: skewX(-10deg);
+    transition: left 0.2s ease;
+    pointer-events: none;
+    will-change: left;
+    z-index: 2;
+}
+
+#valorant:hover .game-title::before {
+    left: 0;
+}
+
+/* R6 Game Card Styling */
+
+#r6, #r6 .game-title {
+    position: relative;
+}
+
+#r6 {
+    background-color: hsla(0, 0%, 100%, .15);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#r6:hover {
+    background-color: #2499ff;
+}
+
+
+#r6 .game-title {
+    font-family: 'R6';
+    color: #24262a;
+    background-color: #c3c3c3;
+    transition: background-color 0.3s ease;
+    z-index: 3
+}
+
+#r6:hover .game-title {
+    background-color: #00ffe5;
+}
+
+#r6::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #00ffe5, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+    will-change: opacity;
+}
+
+#r6:hover::after {
+    opacity: 1;
+}
+
+/* Minecraft Game Card Styling */
+
+#minecraft {
+    background-image: url('../../../public/gamecard/minecraft/game-card-background.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+#minecraft .game-title {
+    font-family: 'Minecraft';
+    color: #ABA09D;
+    background: linear-gradient(to bottom, #262423 3px, #000000 3px);
+    transition: background 0.3s ease, color 0.3s ease;
+    will-change: background, color;
+}
+
+#minecraft:hover .game-title {
+    color: #ffffff;
+    background: linear-gradient(to bottom, #3d3938 3px, #171615 3px);
+}
+
+/* Clash Royale Game Card Styling */
+
+#clashroyale {
+    background: linear-gradient(to top, #ffbb00 90%, #f8da57);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+#clashroyale .game-title {
+    font-family: 'Clash Royale';
+    background: linear-gradient(to top, #00B0FF 90%, #8CE5F5); 
+    color: #ffffff;
+    text-shadow:
+    -1px -1px 0 #000,
+     0   -1px 0 #000,
+     1px -1px 0 #000,
+     1px  0   0 #000,
+     1px  1px 0 #000,
+     0    1px 0 #000,
+    -1px  1px 0 #000,
+    -1px  0   0 #000;
+}
+
+/* Plants Vs. Zombies 2 Game Card Styling */
+
+#pvz {
+    background-image: url('../../../public/gamecard/pvz/game-card-background.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#pvz .game-title {
+    font-family: 'PVZ';
+    color: #5a5120;
+    background-color: #eee5c6;
+}
+
+@media (min-width: 320px) {
+    .game-card {
+        width: 40vw;
+        margin: 0px 4px 8px;
+    }
+
+    #overwatch {
+        border: 3px solid #eff3fa;
+    }
+
+    #overwatch .game-title {
+        font-size: 0.75em;
+        padding: 10.5px;
+    }
+
+    #ssb {
+        border: 3px solid #000000;
+    }
+
+    #ssb .game-title {
+        font-size: 0.75em;
+        padding: 11px;
+    }
+
+    #pokemon {
+        border-radius: 5px;
+        border: 3px solid #ffffff;
+    }
+
+    #pokemon .game-title {
+        font-size: 0.75em;
+    }
+
+    #identifier {
+        font-size: 0.5em;
+    }
+
+    #types {
+        font-size: 0.4em;
+        gap: 4px;
+    }
+
+    #dragon, #fire {
+        padding: 2px 4px;
+        border-radius: 3px;
+    }
+
+    #valorant {
+        border: 3px solid #ff4655;
+    }
+
+    #valorant .game-title {
+        font-size: 1em;
+        padding: 8.5px;
+    }
+
+    #r6 .game-title {
+        font-size: 1em;
+        padding: 8.5px;
+    }
+
+    #minecraft {
+        border: 3px solid #000000;
+    }
+
+    #minecraft .game-title{
+        font-size: 0.9em;
+        padding: 11px;
+    }
+
+    #clashroyale {
+        border-radius: 5px;
+        border: 3px solid #c6a45d;
+    }
+
+    #clashroyale .game-title {
+        font-size: 0.7em;
+        padding: 9px;
+    }
+
+    #pvz {
+        border-radius: 5px;
+        border: 3px solid #d5a151;
+    }
+
+    #pvz .game-title {
+        padding: 9px;
+    }
+}
+
+@media (min-width: 425px) {
+    .game-card {
+        width: 39vw;
+    }
+
+    #overwatch .game-title {
+        font-size: 1em;
+        padding: 13.5px;
+    }
+
+    #ssb .game-title {
+        font-size: 1em;
+        padding: 14px;
+    }
+
+    #pokemon .game-title {
+        font-size: 1em;
+    }
+
+    #identifier {
+        font-size: 0.75em;
+    }
+
+    #types {
+        font-size: 0.5em;
+    }
+
+    #valorant .game-title {
+        font-size: 1.2em;
+        padding: 12px;
+    }
+
+    #r6 .game-title {
+        font-size: 1.4em;
+        padding: 10px;
+    }
+
+    #minecraft .game-title {
+        font-size: 1.2em;
+        padding: 14px;
+    }
+
+    #clashroyale .game-title {
+        font-size: 0.85em;
+        text-shadow:
+        -1.5px -1.5px 0 #000,
+         0   -1.5px 0 #000,
+         1.5px -1.5px 0 #000,
+         1.5px  0   0 #000,
+         1.5px  1.5px 0 #000,
+         0    1.5px 0 #000,
+        -1.5px  1.5px 0 #000,
+        -1.5px  0   0 #000;
+        padding: 13.5px;
+    }
+
+    #pvz .game-title {
+        font-size: 1.1em;
+        padding: 13.5px;
+    }
+}
+
+@media (min-width: 768px) {
+    .game-card {
+        width: 30vw;
+        margin: 0px 8px 16px;  
+    }
+
+    #overwatch .game-title {
+        font-size: 1.2em;
+        padding: 17.5px;
+    }
+
+    #ssb .game-title {
+        font-size: 1.1em;
+        padding: 19px;
+    }
+
+    #pokemon .game-title {
+        font-size: 1.2em;
+    }
+
+    #identifier {
+        font-size: 0.85em;
+    }
+
+    #types {
+        gap: 8px;
+        font-size: 0.6em;
+    }
+
+    #dragon, #fire {
+        padding: 4px 8px;
+    }
+
+    #valorant .game-title {
+        font-size: 1.5em;
+        padding: 15px;
+    }
+
+    #r6 .game-title {
+        font-size: 1.6em;
+        padding: 14px;
+    }
+
+    #minecraft .game-title {
+        padding: 17px;
+        font-size: 1.3em;
+    }
+
+    #clashroyale .game-title {
+        font-size: 1em;
+        padding: 17.5px;
+        text-shadow:
+        -2px -2px 0 #000,
+         0   -2px 0 #000,
+         2px -2px 0 #000,
+         2px  0   0 #000,
+         2px  2px 0 #000,
+         0    2px 0 #000,
+        -2px  2px 0 #000,
+        -2px  0   0 #000;
+    }
+
+    #pvz .game-title {
+        font-size: 1.5em;
+        padding: 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #overwatch .game-title {
+        font-size: 1.5em;
+        padding: 20px;
+    }
+
+    #ssb .game-title {
+        font-size: 1.5em;
+        padding: 20px;
+    }
+
+    #pokemon .game-title {
+        font-size: 1.4em;
+    }
+
+    #identifier {
+        font-size: 1em;
+    }
+
+    #types {
+        font-size: 0.8em;
+    }
+
+    #valorant .game-title {
+        font-size: 1.8em;
+        padding: 17px;
+    }
+
+    #r6 .game-title {
+        font-size: 1.8em;
+        padding: 17px;
+    }
+
+    #minecraft .game-title {
+        font-size: 1.5em;
+        padding: 21.5px;
+    }
+
+    #clashroyale .game-title {
+        font-size: 1.2em;
+        padding: 20.5px;
+        text-shadow:
+        -2.5px -2.5px 0 #000,
+         0    -2.5px 0 #000,
+         2.5px -2.5px 0 #000,
+         2.5px  0    0 #000,
+         2.5px  2.5px 0 #000,
+         0     2.5px 0 #000,
+        -2.5px  2.5px 0 #000,
+        -2.5px  0    0 #000;
+    }
+
+    #pvz .game-title {
+        font-size: 1.85em;
+        padding: 18px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .game-card {
+        width: 17.5vw;
+        margin: 0px 8px 16px;
+    }
+
+    #clashroyale .game-title {
+        text-shadow:
+        -3px -3px 0 #000,
+         0   -3px 0 #000,
+         3px -3px 0 #000,
+         3px  0   0 #000,
+         3px  3px 0 #000,
+         0    3px 0 #000,
+        -3px  3px 0 #000,
+        -3px  0   0 #000;
+    }
+}
+
+@media (min-width: 2560px) {
+    .game-card {
+        margin: 0px 18px 32px;
+    }
+
+    #overwatch {
+        border: 8px solid #eff3fa;
+        border-radius: 5px;
+    }
+
+    #overwatch .game-title {
+        font-size: 2em;
+        padding: 36px;
+    }
+
+    #ssb {
+        border: 8px solid #000000;
+    }
+
+    #ssb .game-title {
+        font-size: 2em;
+        padding: 36.5px
+    }
+
+    #pokemon {
+        border-radius: 10px;
+        border: 8px solid #ffffff;
+    }
+
+    #pokemon .game-title {
+        font-size: 2em;
+    }
+
+    #identifier {
+        font-size: 1.5em;
+    }
+
+    #types {
+        font-size: 1.2em;
+    }
+
+    #dragon, #fire {
+        padding: 6px 10px;
+        border-radius: 10px;
+    }
+
+    #valorant {
+        border: 8px solid #ff4655;
+    }
+
+    #valorant .game-title {
+        font-size: 3em;
+        padding: 26.5px;
+    }
+
+    #r6 .game-title {
+        font-size: 3em;
+        padding: 26.5px;
+    }
+
+    #minecraft {
+        border: 8px solid #000000;
+    }
+
+    #minecraft .game-title {
+        font-size: 2.5em;
+        padding: 33px;
+    }
+
+    #clashroyale {
+        border-radius: 10px;
+        box-shadow: inset 0 8px 10px rgba(0, 0, 0, 0.25);
+        border: 8px solid #c6a45d;
+    }
+
+    #clashroyale .game-title {
+        font-size: 2em;
+        padding: 32px;
+        text-shadow:
+        -3px -3px 0 #000,
+         0   -3px 0 #000,
+         3px -3px 0 #000,
+         3px  0   0 #000,
+         3px  3px 0 #000,
+         0    3px 0 #000,
+        -3px  3px 0 #000,
+        -3px  0   0 #000;
+    }
+
+    #pvz {
+        border-radius: 10px;
+        border: 8px solid #d5a151;
+    }
+
+    #pvz .game-title {
+        font-size: 3em;
+        padding: 28.5px;
+    }
+}
+
+@media (min-width: 3840px) {
+    .game-card {
+        width: 17.5vw;
+        margin: 18px 24px;
+    }
+
+    #overwatch .game-title {
+        padding: 51px;
+        font-size: 3em;
+    }
+
+    #ssb .game-title {
+        font-size: 3em;
+        padding: 51px;
+        background-image: repeating-linear-gradient(
+            -45deg,
+            rgb(55, 55, 55) 7px,
+            rgb(55, 55, 55) 7px,
+            transparent 18px
+        );
+    }
+
+    #pokemon .game-title {
+        font-size: 3em;
+    }
+
+    #identifier {
+        font-size: 2.5em;
+    }
+
+    #types {
+        gap: 16px;
+    }
+
+    #dragon, #fire {
+        padding: 8px 16px;
+        font-size: 1.7em;
+        border-radius: 15px;
+    }
+
+    #valorant .game-title {
+        font-size: 4em;
+        padding: 42px;
+    }
+
+    #r6 .game-title {
+        font-size: 4em;
+        padding: 42px;
+    }
+
+    #minecraft .game-title {
+        font-size: 4em;
+        padding: 46px;
+    }
+
+    #clashroyale .game-title {
+        font-size: 3em;
+        padding: 44px;
+        text-shadow:
+        -5px -5px 0 #000,
+         0   -5px 0 #000,
+         5px -5px 0 #000,
+         5px  0   0 #000,
+         5px  5px 0 #000,
+         0    5px 0 #000,
+        -5px  5px 0 #000,
+        -5px  0   0 #000;
+    }
+
+    #pvz .game-title {
+        font-size: 4.75em;
+        padding: 37px;
+    }
+}

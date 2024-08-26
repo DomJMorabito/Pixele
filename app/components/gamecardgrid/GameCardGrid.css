@@ -1,0 +1,42 @@
+/* Game Card Grid */
+
+#game-card-grid {
+    display: flex;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    width: 80vw;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 320px) {
+    #game-card-grid {
+        width: 95vw;
+    }
+}
+
+@media (min-width: 425px) {
+    #game-card-grid {
+        width: 85vw;
+    }
+}
+
+@media (min-width: 768px) {
+    #game-card-grid {
+        width: 75vw;
+    }
+}
+
+@media (min-width: 1440px) {
+    #game-card-grid {
+        width: 70vw;
+    }
+}
+
+@media (min-width: 3840px) {
+    #game-card-grid {
+        width: 65vw;
+    }
+}

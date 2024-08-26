@@ -1,0 +1,265 @@
+/* Font Families */
+
+@font-face {
+    font-family: 'Credits';
+    src: url('/footer/fonts/HTP.ttf');
+}
+
+@font-face {
+    font-family: 'Social';
+    src: url('/footer/fonts/Social.ttf');
+}
+
+/* Footer */
+
+footer {
+    width: 100%;
+    text-align: center;
+    background-image: url('/footer/footer-image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#footer-content {
+    position: relative;
+}
+
+#credits {
+    font-family: 'Credits';
+    color: #000000;
+    position: relative;
+    display: inline-block;
+}
+
+#credits::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 2px;
+    background-color: #000000;
+    transition: width 0.25s ease-out;
+}
+
+#credits:hover::after {
+    width: 100%;
+}
+
+#social-container {
+    background: #ffffff;
+    display: inline-block;
+    text-align: center;
+    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.75));
+}
+
+#social-links {
+    display: flex;
+    justify-content: center;
+}
+
+#ko-fi-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ko-fi-button {
+    color: #000000;
+    font-family: 'Social';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.1s ease;
+}
+
+#ko-fi-button:hover {
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+    transform: scale(1.05);
+}
+
+#ko-fi-button img, .social-icon img {
+    width: auto;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: transform 0.1s ease, filter 0.3s ease;
+}
+
+.social-icon:hover {
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+    transform: scale(1.1);
+}
+
+@media (min-width: 320px) {
+    #social-container {
+        margin-bottom: 5%;
+        border-radius: 0 0 10px 10px;
+        padding: 2.5% 5% 0 5%;
+        width: 60%;
+    }
+
+    #credits {
+        font-size: 0.75em;
+        border-radius: 5px;
+    }
+
+    #ko-fi-button {
+        border: 2px solid #000000;
+        border-radius: 5px;
+        padding: 2.5%;
+        font-size: 1em;
+        width: 75%;
+    }
+
+    #ko-fi-button img {
+        height: 25px;
+        margin-right: 1%;
+    }
+    
+    #social-links {
+        padding-top: 5%;
+    }
+
+    .social-icon {
+        margin-left: 2.5px;
+        margin-right: 2.5px;
+        padding: 0 5% 0 5%;
+    }
+
+    .social-icon img {
+        height: 28px;
+    }
+}
+
+@media (min-width: 375px) {
+    #social-container {
+        width: 50%;
+    }
+
+    .social-icon {
+        padding: 0 3% 0 3%;
+    }
+}
+
+@media (min-width: 425px) {
+    .social-icon {
+        padding: 0 5% 0 5%;
+    }
+}
+
+@media (min-width: 768px) {
+    #social-container {
+        width: 37.5%;
+    }
+
+    #ko-fi-button {
+        font-size: 1.5em;
+        border: 3px solid #000000;
+    }
+
+    #ko-fi-button img {
+        height: 40px;
+    }
+
+    #social-links {
+        padding-top: 2%;
+    }
+
+    .social-icon {
+        margin-top: 3%;
+    }
+
+    .social-icon img {
+        height: 40px;
+    }
+
+    #credits {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 1024px) {
+    #ko-fi-button {
+        font-size: 1.75em;
+    }
+
+    #ko-fi-button img {
+        height: 48px;
+    }
+
+    #social-icon {
+        padding-top: 1.5%;
+    }
+
+    .social-icon img {
+        height: 48px;
+    }
+}
+
+@media (min-width: 1440px) {
+    #social-container {
+        width: 20%;
+        padding: 1% 2.5% 0 2.5%;
+        margin-bottom: 2.5%;
+    }
+
+    .social-icon {
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+}
+
+@media (min-width: 2560px) {
+    #social-container {
+        width: 17.5%;
+        border-radius: 0 0 10px 10px;
+    }
+
+    #ko-fi-button {
+        border: 5px solid #000000;
+        border-radius: 10px;
+        font-size: 1.75em;
+    }
+
+    #ko-fi-button img {
+        height: 58px;
+    }
+
+    .social-icon img {
+        height: 58px;
+    }
+
+    #credits {
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 3840px) {
+    #social-container {
+        width: 17.5%;
+        border-radius: 0 0 15px 15px;
+    }
+
+    #ko-fi-button {
+        border: 7px solid #000000;
+        font-size: 2.75em;
+    }
+
+    #ko-fi-button img {
+        height: 96px;
+    }
+
+    .social-icon img {
+        height: 96px;
+    }
+
+    #credits {
+        font-size: 2.5em;
+    }
+}
