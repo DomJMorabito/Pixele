@@ -7,11 +7,11 @@ import './layout.css';
 
 export default function Layout({ children }) {
   return (
-      <html lang="en">
+      <html lang = "en">
         <head>
-          <meta charSet="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-          <link rel="icon" type="image/png" sizes="32x32" href="/header/favicon.png" />
+          <meta charSet = "UTF-8" />
+          <meta name = "viewport" content = "width=device-width, initial-scale=1.0, user-scalable=no" />
+          <link rel = "icon" type = "image/png" sizes = "32x32" href = "/header/favicon.png" />
         </head>
         <body>
           <NavBar />
