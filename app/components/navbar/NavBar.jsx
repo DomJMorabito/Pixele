@@ -8,7 +8,7 @@ function NavBar() {
                 <div id = "pixele-logo-container">
                     <Image
                         id = "pixele-logo"
-                        src = "/assets/navbar/pixele-logo.png"
+                        src = "/navbar/pixele-logo.png"
                         alt = "Pixele Logo"
                         width = {100}
                         height = {100}
