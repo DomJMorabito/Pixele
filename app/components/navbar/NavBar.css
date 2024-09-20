@@ -175,6 +175,7 @@ nav #settings:hover {
 #pixele-logo {
     height: 70%;
     width: auto;
+    cursor: pointer;
 }
 
 /* Nav Bar Animations */

@@ -1,9 +1,23 @@
+"use client"
+
+// Next.js Imports:
+
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+
+// CSS Imports:
+
 import './GameCard.css';
 
-function GameCard({ id, bgImage, logoSrc, altText, children }) {
+function GameCard({ id, bgImage, logoSrc, altText, gameLink, children }) {
+
+    const router = useRouter();
+    const handleClick = () => {
+        router.push(gameLink);
+    }
+
     return (
-        <div className = "game-card" id = {id} data-bg = {bgImage}>
+        <div className = "game-card" id = {id} data-bg = {bgImage} onClick = {handleClick}>
             <Image 
                 src = {logoSrc} 
                 alt = {altText}

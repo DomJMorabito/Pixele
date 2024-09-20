@@ -1,4 +1,9 @@
+// Component Imports:
+
 import GameCard from '../gamecard/GameCard';
+
+// CSS Imports:
+
 import './GameCardGrid.css';
 
 function GameCardGrid() {
@@ -8,6 +13,7 @@ function GameCardGrid() {
             bgImage: '/gamecard/overwatch/background.png',
             logoSrc: '/gamecard/overwatch/logo.png',
             altText: 'Overwatch',
+            gameLink: '/games/overwatch',
             extraContent: (
                 <div className="game-title">Overwatch</div>
             ),
@@ -88,11 +94,12 @@ function GameCardGrid() {
         <div id="game-card-grid">
             {games.map((game) => (
                 <GameCard
-                    key={game.id}
-                    id={game.id}
-                    bgImage={game.bgImage}
-                    logoSrc={game.logoSrc}
-                    altText={game.altText}
+                    key = {game.id}
+                    id = {game.id}
+                    bgImage = {game.bgImage}
+                    logoSrc = {game.logoSrc}
+                    altText = {game.altText}
+                    gameLink = {game.gameLink}
                 >
                     {game.extraContent}
                 </GameCard>

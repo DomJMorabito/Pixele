@@ -25,10 +25,11 @@ footer {
 }
 
 #credits {
-    font-family: 'Credits';
+    font-family: 'Credits', sans-serif;
     color: #000000;
     position: relative;
     display: inline-block;
+    cursor: pointer;
 }
 
 #credits::after {
@@ -66,7 +67,7 @@ footer {
 
 #ko-fi-button {
     color: #000000;
-    font-family: 'Social';
+    font-family: 'Social', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -102,7 +102,7 @@
 }
 
 #overwatch .game-title {
-    font-family: 'Overwatch';
+    font-family: 'Overwatch', sans-serif;
     color: #303132;
     background: #eff3fa;
 }
@@ -143,7 +143,7 @@
 }
 
 #ssb .game-title {
-    font-family: 'SSB';
+    font-family: 'SSB', sans-serif;
     color: #ffffff;
     position: relative;
     z-index: 1;
@@ -159,7 +159,7 @@
 /* Pokémon Game Card Styling */
 
 #pokemon .game-title, #identifier, #dragon, #fire {
-    font-family: 'Pokémon';
+    font-family: 'Pokémon', sans-serif;
 }
 
 #pokemon {
@@ -216,7 +216,7 @@
 }
 
 #valorant .game-title {
-    font-family: 'Valorant';
+    font-family: 'Valorant', sans-serif;
     background-color: #2a2a2a;
     color: #ff4655;
     transition: color 0.3s ease;
@@ -267,7 +267,7 @@
 
 
 #r6 .game-title {
-    font-family: 'R6';
+    font-family: 'R6', sans-serif;
     color: #24262a;
     background-color: #c3c3c3;
     transition: background-color 0.3s ease;
@@ -306,10 +306,10 @@
 }
 
 #minecraft .game-title {
-    font-family: 'Minecraft';
+    font-family: 'Minecraft', sans-serif;
     color: #ABA09D;
     background: linear-gradient(to bottom, #262423 3px, #000000 3px);
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: color 0.3s ease;
     will-change: background, color;
 }
 
@@ -326,7 +326,7 @@
 }
 
 #clashroyale .game-title {
-    font-family: 'Clash Royale';
+    font-family: 'Clash Royale', sans-serif;
     background: linear-gradient(to top, #00B0FF 90%, #8CE5F5); 
     color: #ffffff;
     text-shadow:
@@ -349,7 +349,7 @@
 }
 
 #pvz .game-title {
-    font-family: 'PVZ';
+    font-family: 'PVZ', sans-serif;
     color: #5a5120;
     background-color: #eee5c6;
 }
@@ -357,7 +357,7 @@
 @media (min-width: 320px) {
     .game-card {
         width: 40vw;
-        margin: 0px 4px 8px;
+        margin: 0 4px 8px;
     }
 
     #overwatch {
@@ -509,7 +509,7 @@
 @media (min-width: 768px) {
     .game-card {
         width: 30vw;
-        margin: 0px 8px 16px;  
+        margin: 0 8px 16px;
     }
 
     #overwatch .game-title {
@@ -635,7 +635,7 @@
 @media (min-width: 1440px) {
     .game-card {
         width: 17.5vw;
-        margin: 0px 8px 16px;
+        margin: 0 8px 16px;
     }
 
     #clashroyale .game-title {
@@ -653,7 +653,7 @@
 
 @media (min-width: 2560px) {
     .game-card {
-        margin: 0px 18px 32px;
+        margin: 0 18px 32px;
     }
 
     #overwatch {
