@@ -15,6 +15,31 @@ body {
     padding: 0;
     background-image: url('/homescreen/background.png');
     background-attachment: fixed;
+    background-size: cover;
     transition: background-image 0.5s ease-in-out;
     will-change: background-image;
+}
+
+@media (min-width: 320px) {
+    main {
+        margin-top: calc(7.5vh + 16px);
+    }
+}
+
+@media (min-width: 768px) {
+    main {
+        margin-top: calc(7.5vh + 32px);
+    }
+}
+
+@media (min-width: 2560px) {
+    main {
+        margin-top: calc(7.5vh + 56px);
+    }
+}
+
+@media (min-width: 3840px) {
+    main {
+        margin-top: calc(7.5vh + 64px);
+    }
 }
