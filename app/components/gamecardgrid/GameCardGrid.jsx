@@ -1,6 +1,16 @@
+"use client";
+
+// React Imports:
+
+import { useMemo } from 'react';
+
 // Component Imports:
 
 import GameCard from '../gamecard/GameCard';
+
+//Utils Imports:
+
+import { debounce } from '../../utils/debounce';
 
 // CSS Imports:
 
@@ -90,6 +100,14 @@ function GameCardGrid() {
         },
     ];
 
+    const handleHover = useMemo(() => debounce((bgImage) => {
+        document.body.style.backgroundImage = `url(${bgImage})`;
+    }, 200), []);
+
+    const handleLeave = useMemo(() => debounce(() => {
+        document.body.style.backgroundImage = `url('/homescreen/background.png')`;
+    }, 200), []);
+
     return (
         <div id="game-card-grid">
             {games.map((game) => (
@@ -100,6 +118,8 @@ function GameCardGrid() {
                     logoSrc = {game.logoSrc}
                     altText = {game.altText}
                     gameLink = {game.gameLink}
+                    onHover = {() => handleHover(game.bgImage)}
+                    onLeave = {handleLeave}
                 >
                     {game.extraContent}
                 </GameCard>
