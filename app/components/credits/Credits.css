@@ -1,0 +1,226 @@
+/* Font Families */
+
+@font-face {
+    font-family: 'Credits';
+    src: url('/footer/fonts/HTP.ttf');
+}
+
+/* Credits Modal */
+
+#credits-modal {
+    font-family: 'Credits', serif;
+    position: fixed;
+    opacity: 0;
+    bottom: 0;
+    z-index: 100;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+    transform: translateY(100%);
+    transition: opacity 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: opacity, transform;
+}
+
+#credits-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+#close-button {
+    align-self: flex-end;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#close-button:hover {
+    color: #6794D5;
+}
+
+#credits-modal.show {
+    animation: popUp 0.5s ease forwards;
+}
+
+#credits-modal.hide {
+    animation: popDown 0.5s ease forwards;
+}
+
+/* Animations */
+
+@keyframes popUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes popDown {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+@media (min-width: 320px) {
+    #credits-modal {
+        top: 10%;
+        width: 75%;
+    }
+
+    #credits-content {
+        border-radius: 10px;
+        padding: 5%;
+        border: 3px solid #000000;
+    }
+
+    #close-button {
+        margin-top: -7.5%;
+        font-size: 1.75em;
+    }
+
+    #header {
+        font-size: 1.25em;
+        margin-top: -5%;
+    }
+
+    #top-line {
+        margin-top: -5%;
+    }
+
+    #line {
+        font-size: 0.75em;
+    }
+}
+
+@media (min-width: 375px) {
+    #header {
+        font-size: 1.5em;
+    }
+
+    #top-line {
+        font-size: 1em;
+    }
+
+    #line {
+        font-size: 0.85em;
+    }
+}
+
+@media (min-width: 425px) {
+    #credits-close-button {
+        font-size: 2.5em;
+    }
+
+    #header {
+        font-size: 1.75em;
+    }
+
+    #top-line {
+        font-size: 1.25em;
+    }
+
+    #line {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 768px) {
+    #credits-modal {
+        top: 11%;
+        width: 50%;
+    }
+
+    #close-button {
+        font-size: 3em;
+    }
+
+    #header {
+        font-size: 2em;
+    }
+
+    #top-line {
+        font-size: 1.5em;
+    }
+
+    #line {
+        font-size: 1.1em;
+    }
+}
+
+@media (min-width: 1024px) {
+    #close-button {
+        font-size: 3.75em;
+    }
+
+    #header {
+        font-size: 2.5em;
+    }
+
+    #top-line {
+        font-size: 1.75em;
+    }
+
+    #line {
+        font-size: 1.25em;
+    }
+}
+
+@media (min-width: 1440px) {
+    #credits-modal {
+        width: 25%;
+    }
+}
+
+@media (min-width: 2560px) {
+    #credits-modal {
+        width: 22.5%
+    }
+
+    #close-button {
+        font-size: 4.5em;
+    }
+
+    #header {
+        font-size: 3em;
+    }
+
+    #top-line {
+        font-size: 2.25em;
+    }
+
+    #line {
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 3840px) {
+    #credits-content {
+        border: 5px solid #000000;
+    }
+
+    #close-button {
+        font-size: 6em;
+    }
+
+    #header {
+        font-size: 4em;
+    }
+
+    #top-line {
+        font-size: 3em;
+    }
+
+    #line {
+        font-size: 2em;
+    }
+}
