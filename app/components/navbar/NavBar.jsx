@@ -1,7 +1,21 @@
+"use client";
+
+// Next.js Imports:
+
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+
+// CSS Imports:
+
 import './NavBar.css';
 
 function NavBar() {
+
+    const router = useRouter();
+    const handleClick = () => {
+        router.push('/');
+    }
+
     return (
         <nav>
             <div id = "logo-container">
@@ -12,6 +26,7 @@ function NavBar() {
                         alt = "Pixele Logo"
                         width = {100}
                         height = {100}
+                        onClick = {handleClick}
                     />
                 </div>
             </div>

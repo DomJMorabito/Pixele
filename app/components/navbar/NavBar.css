@@ -176,6 +176,8 @@ nav #settings:hover {
     height: 70%;
     width: auto;
     cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
 }
 
 /* Nav Bar Animations */

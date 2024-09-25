@@ -33,6 +33,7 @@ function GameCardGrid() {
             bgImage: '/gamecard/ssb/background.png',
             logoSrc: '/gamecard/ssb/logo.png',
             altText: 'Super Smash Bros. Logo',
+            gameLink: '/games/ssb',
             extraContent: (
                 <div className="game-title">Super Smash Bros.</div>
             ),
@@ -42,6 +43,7 @@ function GameCardGrid() {
             bgImage: '/gamecard/pokemon/background.png',
             logoSrc: '/gamecard/pokemon/logo.png',
             altText: 'Pokémon Logo',
+            gameLink: '/games/pokemon',
             extraContent: (
                 <div id="pokemon-container">
                     <div id="identifier">#0643</div>
@@ -58,6 +60,7 @@ function GameCardGrid() {
             bgImage: '/gamecard/valorant/background.png',
             logoSrc: '/gamecard/valorant/logo.png',
             altText: 'Valorant Logo',
+            gameLink: '/games/valorant',
             extraContent: (
                 <div className="game-title"><div className = "text-wrapper">Valorant</div></div>
             ),
@@ -67,6 +70,7 @@ function GameCardGrid() {
             bgImage: '/gamecard/r6/background.png',
             logoSrc: '/gamecard/r6/logo.png',
             altText: 'Rainbow Six Siege',
+            gameLink: '/games/r6',
             extraContent: (
                 <div className="game-title">Rainbow Six Siege</div>
             ),
@@ -76,6 +80,7 @@ function GameCardGrid() {
             bgImage: '/gamecard/minecraft/background.png',
             logoSrc: '/gamecard/minecraft/logo.png',
             altText: 'Minecraft Logo',
+            gameLink: '/games/minecraft',
             extraContent: (
                 <div className="game-title">Minecraft</div>
             ),
@@ -85,6 +90,7 @@ function GameCardGrid() {
             bgImage: '/gamecard/clashroyale/background.png',
             logoSrc: '/gamecard/clashroyale/logo.png',
             altText: 'Clash Royale Logo',
+            gameLink: '/games/clashroyale',
             extraContent: (
                 <div className="game-title">Clash Royale</div>
             ),
@@ -94,6 +100,7 @@ function GameCardGrid() {
             bgImage: '/gamecard/pvz/background.png',
             logoSrc: '/gamecard/pvz/logo.png',
             altText: 'Plants Vs. Zombies 2 Logo',
+            gameLink: '/games/pvz',
             extraContent: (
                 <div className="game-title">Plants Vs. Zombies 2</div>
             ),

@@ -19,9 +19,11 @@ import './Footer.css';
 export default function Footer() {
 
     const [isVisible, setVisible] = useState(false);
+    const [hasInteracted, setInteracted] = useState(false);
 
     const show = () => {
         setVisible(true);
+        setInteracted(true);
     }
 
     const hide = () => {
@@ -77,7 +79,7 @@ export default function Footer() {
                     </div>
                 </div>
             </footer>
-            <Credits isVisible = {isVisible} onClose = {hide} />
+            <Credits isVisible = {isVisible} onClose = {hide} hasInteracted = {hasInteracted}/>
         </>
     );
 }

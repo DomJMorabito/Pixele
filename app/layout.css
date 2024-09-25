@@ -8,6 +8,7 @@ html {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    scrollbar-width: none; /* Hides scrollbar on Firefox */
 }
 
 body {
@@ -18,6 +19,11 @@ body {
     background-size: cover;
     transition: background-image 0.5s ease-in-out;
     will-change: background-image;
+    -ms-overflow-style: none; /* Hides scrollbar on Internet Explorer */
+}
+
+::-webkit-scrollbar {
+    display: none; /* Hides scrollbar on Chrome, Safari, Edge, & all other webkit browsers (Opera, Brave, etc.) */
 }
 
 @media (min-width: 320px) {

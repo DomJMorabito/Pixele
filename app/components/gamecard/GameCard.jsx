@@ -14,28 +14,28 @@ function GameCard({ id, bgImage, logoSrc, altText, gameLink, children, onHover, 
     const router = useRouter();
     const handleClick = () => {
         router.push(gameLink);
-    }
+    };
 
     return (
-        <div
-            className = "game-card"
-            id = {id}
-            data-bg = {bgImage}
-            onClick = {handleClick}
-            onMouseEnter = {onHover}
-            onMouseLeave = {onLeave}
-        >
-            <Image 
-                src = {logoSrc} 
-                alt = {altText}
-                className = "game-logo"
-                width={500}
-                height={500}
-            />
-            <div className = "game-title-container">
-                {children}
+            <div
+                className="game-card"
+                id={id}
+                data-bg={bgImage}
+                onClick={handleClick}
+                onMouseEnter={onHover}
+                onMouseLeave={onLeave}
+            >
+                <Image
+                    src={logoSrc}
+                    alt={altText}
+                    className="game-logo"
+                    width={500}
+                    height={500}
+                />
+                <div className="game-title-container">
+                    {children}
+                </div>
             </div>
-        </div>
     );
 }
 
