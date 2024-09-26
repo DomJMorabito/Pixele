@@ -77,7 +77,7 @@ nav #settings:hover {
     cursor: pointer;
 }
 
-.modal {
+#account-modal {
     position: absolute;
     top: calc(100%);
     transform-origin: top center;
@@ -95,9 +95,10 @@ nav #settings:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    cursor: auto;
 }
 
-.modal::before {
+#account-modal::before {
     content: '';
     position: absolute;
     top: -7.5px;
@@ -109,7 +110,7 @@ nav #settings:hover {
     z-index: 100;
 }
 
-.modal.show {
+#account-modal.show {
     opacity: 1;
     transform: scaleY(1);
     pointer-events: auto;
@@ -249,7 +250,7 @@ nav #settings:hover {
         font-size: 0.9em;
     }
 
-    .modal {
+    #account-modal {
         padding: 4%;
     }
 
@@ -279,7 +280,7 @@ nav #settings:hover {
         border-radius: 10px;
     }
 
-    .modal {
+    #account-modal {
         width: 20%;
         padding: 3%;
     }
@@ -321,7 +322,7 @@ nav #settings:hover {
         margin-right: 5%;
     }
 
-    .modal {
+    #account-modal {
         width: 12.5%;
         padding: 1.5%;
     }
@@ -345,7 +346,7 @@ nav #settings:hover {
         font-size: 1.75em;
     }
 
-    .modal {
+    #account-modal {
         width: 10%;
         padding: 0.75%;
         border-radius: 10px;

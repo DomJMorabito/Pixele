@@ -7,10 +7,17 @@
  */
 export function debounce(func, delay) {
     let timer;
-    return (...args) => {
+
+    const debouncedFunction = (...args) => {
         if (timer) clearTimeout(timer);
         timer = setTimeout(() => {
             func(...args);
         }, delay);
     };
+
+    debouncedFunction.cancel = () => {
+        if (timer) clearTimeout(timer);
+    };
+
+    return debouncedFunction;
 }

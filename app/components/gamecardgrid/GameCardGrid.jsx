@@ -109,11 +109,11 @@ function GameCardGrid() {
 
     const handleHover = useMemo(() => debounce((bgImage) => {
         document.body.style.backgroundImage = `url(${bgImage})`;
-    }, 200), []);
+    }, 225), []);
 
     const handleLeave = useMemo(() => debounce(() => {
         document.body.style.backgroundImage = `url('/homescreen/background.png')`;
-    }, 200), []);
+    }, 225), []);
 
     return (
         <div id="game-card-grid">
