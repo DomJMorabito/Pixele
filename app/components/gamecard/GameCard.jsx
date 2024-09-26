@@ -12,6 +12,8 @@ import './GameCard.css';
 function GameCard({ id, bgImage, logoSrc, altText, gameLink, children, onHover, onLeave }) {
 
     const router = useRouter();
+
+    //Handles redirecting the user to the game displayed on the GameCard.
     const handleClick = () => {
         router.push(gameLink);
     };

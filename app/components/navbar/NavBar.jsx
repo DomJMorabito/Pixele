@@ -4,6 +4,9 @@
 
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+
+// React Imports:
+
 import { useState, useMemo } from 'react';
 
 //Utils Imports:
@@ -18,24 +21,31 @@ function NavBar() {
 
     const router = useRouter();
     const [isVisible, setVisible] = useState(false);
+
+    // Handles redirecting the user back to the homescreen when the Pixele logo is pressed.
     const handleClick = () => {
         router.push('/');
     }
 
+    // Handles showing the account modal when hovering over the account section.
     const show = () => {
         setVisible(true);
     }
 
+    // Handles hiding the account modal when hovering over the account section stops. Debounces the function to prevent flickering.
     const hide = useMemo(() => debounce(() => setVisible(false), 500), []);
 
+    // Handles redirecting the user to the login page when the login button is pressed.
     const loginRouter = () => {
         router.push('/login');
     }
 
+    // Handles redirecting the user to the registration page when the sign-up button is pressed.
     const registerRouter = () => {
         router.push('/register');
     }
 
+    // Resets the debounce timer when hovering over the account section starts and stops rapidly to prevent flickering.
     const clearHide = () => {
         hide.cancel && hide.cancel();
         setVisible(true);

@@ -26,6 +26,10 @@ body {
     display: none; /* Hides scrollbar on Chrome, Safari, Edge, & all other webkit browsers (Opera, Brave, etc.) */
 }
 
+.overwatch-background {
+    background-image: url('/guessgrid/overwatch/game-background.png') !important;
+}
+
 @media (min-width: 320px) {
     main {
         margin-top: calc(7.5vh + 16px);

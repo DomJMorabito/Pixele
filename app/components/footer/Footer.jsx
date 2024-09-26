@@ -21,11 +21,13 @@ export default function Footer() {
     const [isVisible, setVisible] = useState(false);
     const [hasInteracted, setInteracted] = useState(false);
 
+    // Handles clicking on "Credits & Attributions" to show the credits modal.
     const show = () => {
         setVisible(true);
         setInteracted(true);
     }
 
+    // Handles clicking the close button on the credits modal to hide the modal.
     const hide = () => {
         setVisible(false)
     }

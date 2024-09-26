@@ -2,7 +2,7 @@
 
 // React Imports:
 
-import { useMemo } from 'react';
+import { useMemo, useEffect } from 'react';
 
 // Component Imports:
 
@@ -107,10 +107,17 @@ function GameCardGrid() {
         },
     ];
 
+    // Makes sure that the background image is always set to the default whenever the page is loaded.
+    useEffect(() => {
+        document.body.style.backgroundImage = `url('/homescreen/background.png')`;
+    })
+
+    // Handles hovering over the GameCard to change the background image to the game specific image.
     const handleHover = useMemo(() => debounce((bgImage) => {
         document.body.style.backgroundImage = `url(${bgImage})`;
     }, 225), []);
 
+    //Handles chaning the background image back to the default when hovering over the GameCard stops.
     const handleLeave = useMemo(() => debounce(() => {
         document.body.style.backgroundImage = `url('/homescreen/background.png')`;
     }, 225), []);
