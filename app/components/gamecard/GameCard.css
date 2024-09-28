@@ -2,42 +2,42 @@
 
 @font-face {
     font-family: 'Overwatch';
-    src: url('/gamecard/fonts/Overwatch.otf');
+    src: url('/fonts/Overwatch.otf');
 }
 
 @font-face {
     font-family: 'SSB';
-    src: url('/gamecard/fonts/SSB.ttf');
+    src: url('/fonts/SSB.ttf');
 }
 
 @font-face {
     font-family: 'Pokémon';
-    src: url('/gamecard/fonts/Pokémon.ttf');
+    src: url('/fonts/Pokémon.ttf');
 }
 
 @font-face {
     font-family: 'Valorant';
-    src: url('/gamecard/fonts/Valorant.ttf');
+    src: url('/fonts/Valorant.ttf');
 }
 
 @font-face {
     font-family: 'R6';
-    src: url('/gamecard/fonts/R6.otf');
+    src: url('/fonts/R6.otf');
 }
 
 @font-face {
     font-family: 'Minecraft';
-    src: url('/gamecard/fonts/Minecraft.ttf');
+    src: url('/fonts/Minecraft.ttf');
 }
 
 @font-face {
     font-family: 'Clash Royale';
-    src: url('/gamecard/fonts/ClashRoyale.ttf');
+    src: url('/fonts/ClashRoyale.ttf');
 }
 
 @font-face {
     font-family: 'PVZ';
-    src: url('/gamecard/fonts/PVZ.ttf');
+    src: url('/fonts/PVZ.ttf');
 }
 
 /* Global Game Card Styling */
@@ -299,7 +299,7 @@
 /* Minecraft Game Card Styling */
 
 #minecraft {
-    background-image: url('../../../public/gamecard/minecraft/game-card-background.png');
+    background-image: url('/minecraft/gamecard/game-card-background.png');
     background-size: contain;
     background-repeat: no-repeat;
     box-sizing: border-box;
@@ -343,7 +343,7 @@
 /* Plants Vs. Zombies 2 Game Card Styling */
 
 #pvz {
-    background-image: url('../../../public/gamecard/pvz/game-card-background.png');
+    background-image: url('/pvz/gamecard/game-card-background.png');
     background-size: contain;
     background-repeat: no-repeat;
 }

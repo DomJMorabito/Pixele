@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation';
 
 import './GameCard.css';
 
-function GameCard({ id, bgImage, logoSrc, altText, gameLink, children, onHover, onLeave }) {
+function GameCard({ id, logoSrc, altText, gameLink, children, onHover, onLeave }) {
 
     const router = useRouter();
 
@@ -22,7 +22,6 @@ function GameCard({ id, bgImage, logoSrc, altText, gameLink, children, onHover, 
             <div
                 className="game-card"
                 id={id}
-                data-bg={bgImage}
                 onClick={handleClick}
                 onMouseEnter={onHover}
                 onMouseLeave={onLeave}

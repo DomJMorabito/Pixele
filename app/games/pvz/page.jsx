@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 // Component Imports:
 
-export default function OverwatchPage() {
+export default function PVZPage() {
 
     // Makes sure that the background image is always set to the default whenever the page is loaded.
     useEffect(() => {
@@ -17,10 +17,10 @@ export default function OverwatchPage() {
             }
         });
 
-        document.body.classList.add('overwatch-game-background');
+        document.body.classList.add('pvz-game-background');
 
         return () => {
-            document.body.classList.remove('overwatch-game-background');
+            document.body.classList.remove('pvz-game-background');
         }
     });
 

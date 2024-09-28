@@ -37,12 +37,12 @@ function NavBar() {
 
     // Handles redirecting the user to the login page when the login button is pressed.
     const loginRouter = () => {
-        router.push('/login');
+        router.push('/pages/login');
     }
 
     // Handles redirecting the user to the registration page when the sign-up button is pressed.
     const registerRouter = () => {
-        router.push('/register');
+        router.push('/pages/register');
     }
 
     // Resets the debounce timer when hovering over the account section starts and stops rapidly to prevent flickering.

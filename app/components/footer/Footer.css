@@ -2,12 +2,12 @@
 
 @font-face {
     font-family: 'Credits';
-    src: url('/footer/fonts/HTP.ttf');
+    src: url('/fonts/HTP.ttf');
 }
 
 @font-face {
     font-family: 'Social';
-    src: url('/footer/fonts/Social.ttf');
+    src: url('/fonts/Social.ttf');
 }
 
 /* Footer */
