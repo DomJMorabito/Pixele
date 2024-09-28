@@ -14,7 +14,6 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-image: url('/homescreen/background.png');
     background-attachment: fixed;
     background-size: cover;
     transition: background-image 0.5s ease-in-out;
@@ -26,8 +25,80 @@ body {
     display: none; /* Hides scrollbar on Chrome, Safari, Edge, & all other webkit browsers (Opera, Brave, etc.) */
 }
 
-.overwatch-background {
+.homescreen-background {
+    background-image: url('/homescreen/background.png') !important;
+}
+
+.login-background {
+
+}
+
+.register-background {
+
+}
+
+.overwatch-homescreen-background {
+    background-image: url('/gamecard/overwatch/background.png') !important;
+}
+
+.overwatch-game-background {
     background-image: url('/guessgrid/overwatch/game-background.png') !important;
+}
+
+.ssb-homescreen-background {
+    background-image: url('/gamecard/ssb/background.png') !important;
+}
+
+.ssb-game-background {
+    background-image: url('/guessgrid/ssb/game-background.png') !important;
+}
+
+.pokemon-homescreen-background {
+    background-image: url('/gamecard/pokemon/background.png') !important;
+}
+
+.pokemon-game-background {
+    background-image: url('/guessgrid/pokemon/game-background.png') !important;
+}
+
+.valorant-homescreen-background {
+    background-image: url('/gamecard/valorant/background.png') !important;
+}
+
+.valorant-game-background {
+    background-image: url('/guessgrid/valorant/game-background.png') !important;
+}
+
+.r6-homescreen-background {
+    background-image: url('/gamecard/r6/background.png') !important;
+}
+
+.r6-game-background {
+    background-image: url('/guessgrid/r6/game-background.png') !important;
+}
+
+.minecraft-homescreen-background {
+    background-image: url('/gamecard/minecraft/background.png') !important;
+}
+
+.minecraft-game-background {
+    background-image: url('/guessgrid/minecraft/game-background.png') !important;
+}
+
+.clashroyale-homescreen-background {
+    background-image: url('/gamecard/clashroyale/background.png') !important;
+}
+
+.clashroyale-game-background {
+    background-image: url('/guessgrid/clashroyale/game-background.png') !important;
+}
+
+.pvz-homescreen-background {
+    background-image: url('/gamecard/pvz/background.png') !important;
+}
+
+.pvz-game-background {
+    background-image: url('/guessgrid/pvz/game-background.png') !important;
 }
 
 @media (min-width: 320px) {

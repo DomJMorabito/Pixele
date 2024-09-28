@@ -2,18 +2,11 @@
 
 // React Imports:
 
-import { useEffect } from 'react';
+// import { useEffect } from 'react'; Will be used.
 
 // Component Imports:
 
 export default function OverwatchPage() {
-    useEffect(() => {
-        document.body.classList.add('overwatch-background');
-        return () => {
-            document.body.classList.remove('overwatch-background');
-        }
-    }, []);
-
     return (
         <>
             <main>

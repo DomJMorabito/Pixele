@@ -109,17 +109,32 @@ function GameCardGrid() {
 
     // Makes sure that the background image is always set to the default whenever the page is loaded.
     useEffect(() => {
-        document.body.style.backgroundImage = `url('/homescreen/background.png')`;
-    })
+        document.body.classList.forEach(cls => {
+            if (cls.endsWith('-background')) {
+                document.body.classList.remove(cls);
+            }
+        });
+        document.body.classList.add('homescreen-background');
+    }, []);
 
     // Handles hovering over the GameCard to change the background image to the game specific image.
-    const handleHover = useMemo(() => debounce((bgImage) => {
-        document.body.style.backgroundImage = `url(${bgImage})`;
+    const handleHover = useMemo(() => debounce((bgClass) => {
+        document.body.classList.forEach(cls => {
+            if (cls.endsWith('-background')) {
+                document.body.classList.remove(cls);
+            }
+        });
+        document.body.classList.add(bgClass);
     }, 225), []);
 
-    //Handles chaning the background image back to the default when hovering over the GameCard stops.
+    //Handles changing the background image back to the default when hovering over the GameCard stops.
     const handleLeave = useMemo(() => debounce(() => {
-        document.body.style.backgroundImage = `url('/homescreen/background.png')`;
+        document.body.classList.forEach(cls => {
+            if (cls.endsWith('-background')) {
+                document.body.classList.remove(cls);
+            }
+        });
+        document.body.classList.add('homescreen-background');
     }, 225), []);
 
     return (
@@ -132,7 +147,7 @@ function GameCardGrid() {
                     logoSrc = {game.logoSrc}
                     altText = {game.altText}
                     gameLink = {game.gameLink}
-                    onHover = {() => handleHover(game.bgImage)}
+                    onHover = {() => handleHover(`${game.id}-homescreen-background`)}
                     onLeave = {handleLeave}
                 >
                     {game.extraContent}
