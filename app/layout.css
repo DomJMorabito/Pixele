@@ -38,67 +38,67 @@ body {
 }
 
 .overwatch-homescreen-background {
-    background-image: url('/overwatch/gamecard/background.png') !important;
+    background-image: url('/overwatch/game-card/background.png') !important;
 }
 
 .overwatch-game-background {
-    background-image: url('/overwatch/guessgrid/game-background.png') !important;
+    background-image: url('/overwatch/guess-grid/game-background.png') !important;
 }
 
 .ssb-homescreen-background {
-    background-image: url('/ssb/gamecard/background.png') !important;
+    background-image: url('/ssb/game-card/background.png') !important;
 }
 
 .ssb-game-background {
-    background-image: url('/ssb/guessgrid/game-background.png') !important;
+    background-image: url('/ssb/guess-grid/game-background.png') !important;
 }
 
 .pokemon-homescreen-background {
-    background-image: url('/pokemon/gamecard/background.png') !important;
+    background-image: url('/pokemon/game-card/background.png') !important;
 }
 
 .pokemon-game-background {
-    background-image: url('/pokemon/guessgrid/game-background.png') !important;
+    background-image: url('/pokemon/guess-grid/game-background.png') !important;
 }
 
 .valorant-homescreen-background {
-    background-image: url('/valorant/gamecard/background.png') !important;
+    background-image: url('/valorant/game-card/background.png') !important;
 }
 
 .valorant-game-background {
-    background-image: url('/valorant/guessgrid/game-background.png') !important;
+    background-image: url('/valorant/guess-grid/game-background.png') !important;
 }
 
 .r6-homescreen-background {
-    background-image: url('/r6/gamecard/background.png') !important;
+    background-image: url('/r6/game-card/background.png') !important;
 }
 
 .r6-game-background {
-    background-image: url('/r6/guessgrid/game-background.png') !important;
+    background-image: url('/r6/guess-grid/game-background.png') !important;
 }
 
 .minecraft-homescreen-background {
-    background-image: url('/minecraft/gamecard/background.png') !important;
+    background-image: url('/minecraft/game-card/background.png') !important;
 }
 
 .minecraft-game-background {
-    background-image: url('/minecraft/guessgrid/game-background.png') !important;
+    background-image: url('/minecraft/guess-grid/game-background.png') !important;
 }
 
 .clashroyale-homescreen-background {
-    background-image: url('/clashroyale/gamecard/background.png') !important;
+    background-image: url('/clashroyale/game-card/background.png') !important;
 }
 
 .clashroyale-game-background {
-    background-image: url('/clashroyale/guessgrid/game-background.png') !important;
+    background-image: url('/clashroyale/guess-grid/game-background.png') !important;
 }
 
 .pvz-homescreen-background {
-    background-image: url('/pvz/gamecard/background.png') !important;
+    background-image: url('/pvz/game-card/background.png') !important;
 }
 
 .pvz-game-background {
-    background-image: url('/pvz/guessgrid/game-background.png') !important;
+    background-image: url('/pvz/guess-grid/game-background.png') !important;
 }
 
 @media (min-width: 320px) {

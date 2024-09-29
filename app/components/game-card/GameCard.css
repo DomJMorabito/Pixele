@@ -299,7 +299,7 @@
 /* Minecraft Game Card Styling */
 
 #minecraft {
-    background-image: url('/minecraft/gamecard/game-card-background.png');
+    background-image: url('/minecraft/game-card/game-card-background.png');
     background-size: contain;
     background-repeat: no-repeat;
     box-sizing: border-box;
@@ -343,7 +343,7 @@
 /* Plants Vs. Zombies 2 Game Card Styling */
 
 #pvz {
-    background-image: url('/pvz/gamecard/game-card-background.png');
+    background-image: url('/pvz/game-card/game-card-background.png');
     background-size: contain;
     background-repeat: no-repeat;
 }

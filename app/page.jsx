@@ -1,6 +1,6 @@
 // Component Imports:
 
-import GameCardGrid from "./components/gamecardgrid/GameCardGrid";
+import GameCardGrid from "@/app/components/game-card-grid/GameCardGrid";
 import Footer from "./components/footer/Footer";
 
 export default function HomeScreen() {

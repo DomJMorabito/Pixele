@@ -6,6 +6,8 @@ import { useEffect } from 'react';
 
 // Component Imports:
 
+import RegisterModal from '../../components/register/RegisterModal';
+
 export default function RegisterPage() {
 
     // Makes sure that the background image is always set to the default whenever the page is loaded.
@@ -27,6 +29,7 @@ export default function RegisterPage() {
     return (
         <>
             <main>
+                <RegisterModal />
             </main>
         </>
     );

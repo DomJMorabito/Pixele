@@ -6,7 +6,7 @@ import { useMemo, useEffect } from 'react';
 
 // Component Imports:
 
-import GameCard from '../gamecard/GameCard';
+import GameCard from '@/app/components/game-card/GameCard';
 
 //Utils Imports:
 
@@ -20,7 +20,7 @@ function GameCardGrid() {
     const games = [
         {
             id: 'overwatch',
-            logoSrc: '/overwatch/gamecard/logo.png',
+            logoSrc: '/overwatch/game-card/logo.png',
             altText: 'Overwatch',
             gameLink: '/games/overwatch',
             extraContent: (
@@ -29,7 +29,7 @@ function GameCardGrid() {
         },
         {
             id: 'ssb',
-            logoSrc: '/ssb/gamecard/logo.png',
+            logoSrc: '/ssb/game-card/logo.png',
             altText: 'Super Smash Bros. Logo',
             gameLink: '/games/ssb',
             extraContent: (
@@ -38,7 +38,7 @@ function GameCardGrid() {
         },
         {
             id: 'pokemon',
-            logoSrc: '/pokemon/gamecard/logo.png',
+            logoSrc: '/pokemon/game-card/logo.png',
             altText: 'Pokémon Logo',
             gameLink: '/games/pokemon',
             extraContent: (
@@ -54,7 +54,7 @@ function GameCardGrid() {
         },
         {
             id: 'valorant',
-            logoSrc: '/valorant/gamecard/logo.png',
+            logoSrc: '/valorant/game-card/logo.png',
             altText: 'Valorant Logo',
             gameLink: '/games/valorant',
             extraContent: (
@@ -63,7 +63,7 @@ function GameCardGrid() {
         },
         {
             id: 'r6',
-            logoSrc: '/r6/gamecard/logo.png',
+            logoSrc: '/r6/game-card/logo.png',
             altText: 'Rainbow Six Siege',
             gameLink: '/games/r6',
             extraContent: (
@@ -72,7 +72,7 @@ function GameCardGrid() {
         },
         {
             id: 'minecraft',
-            logoSrc: '/minecraft/gamecard/logo.png',
+            logoSrc: '/minecraft/game-card/logo.png',
             altText: 'Minecraft Logo',
             gameLink: '/games/minecraft',
             extraContent: (
@@ -81,7 +81,7 @@ function GameCardGrid() {
         },
         {
             id: 'clashroyale',
-            logoSrc: '/clashroyale/gamecard/logo.png',
+            logoSrc: '/clashroyale/game-card/logo.png',
             altText: 'Clash Royale Logo',
             gameLink: '/games/clashroyale',
             extraContent: (
@@ -90,7 +90,7 @@ function GameCardGrid() {
         },
         {
             id: 'pvz',
-            logoSrc: '/pvz/gamecard/logo.png',
+            logoSrc: '/pvz/game-card/logo.png',
             altText: 'Plants Vs. Zombies 2 Logo',
             gameLink: '/games/pvz',
             extraContent: (

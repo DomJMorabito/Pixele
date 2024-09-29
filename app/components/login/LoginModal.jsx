@@ -7,7 +7,6 @@ import "./LoginModal.css";
 export default function LoginModal() {
     return (
         <>
-            <div id = "error-indicator"></div>
             <div id = "login-container">
                 <div id = "login-box">
                     <p id = "welcome-back">Get Back In There!</p>
