@@ -1,0 +1,106 @@
+/* Font Families */
+
+@font-face {
+    font-family: 'Indicator';
+    src: url('/fonts/Header.ttf');
+}
+
+/* Alert Indicator */
+
+#alert-indicator {
+    font-family: 'Indicator', sans-serif;
+    display: none;
+    position: fixed;
+    text-align: center;
+    top: -2.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    color: #ffffff;
+    z-index: 101;
+    transition: opacity 1s;
+    will-change: opacity, transform;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+/* Alert Indicator Classes */
+
+#alert-indicator.show {
+    display: block;
+    animation: showAlert 0.5s forwards;
+}
+
+#alert-indicator.hide {
+    animation: hideAlert 0.5s forwards;
+}
+
+#alert-indicator.good {
+    background-color: #00CC66;
+}
+
+#alert-indicator.bad {
+    background-color: #CA2D2D;
+}
+
+/* Alert Indicator Animations */
+
+@keyframes showAlert {
+    0% {
+        top: -2.5%;
+        opacity: 0;
+    }
+    100% {
+        top: 2.5%;
+        opacity: 1;
+    }
+}
+
+@keyframes hideAlert {
+    0% {
+        top: 2.5%;
+        opacity: 1;
+    }
+    100% {
+        top: -2.5%;
+        opacity: 0;
+    }
+}
+
+@media (min-width: 320px) {
+    #alert-indicator {
+        padding: 2% 3%;
+        font-size: 1em;
+        border-radius: 5px;
+    }
+}
+
+@media (min-width: 768px) {
+    #alert-indicator {
+        font-size: 1.25em;
+        padding: 1% 2%;
+        border-radius: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #alert-indicator {
+        font-size: 1.5em;
+    }
+}
+@media (min-width: 1440px) {
+    #alert-indicator {
+        padding: 0.5% 1%;
+    }
+}
+
+@media (min-width: 2560px) {
+    #alert-indicator {
+        font-size: 2em;
+    }
+}
+
+@media (min-width: 3840px) {
+    font-size: 2.25em;
+    padding: 0.75% 1.5%;
+    border-radius: 15px;
+}

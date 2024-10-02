@@ -10,13 +10,9 @@ nav {
     top: 0;
     left: 0;
     right: 0;
-    margin: 0 auto;
     transform: translateX(-50%);
-    width: 85vw;
-    height: 7.5vh;
     background-color: rgba(229, 235, 244, 0.8);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
     z-index: 100;
 
     display: flex;
@@ -80,12 +76,10 @@ nav #settings:hover {
     transform: scaleY(0.9);
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 1%;
     z-index: 101;
     opacity: 0;
     transition: opacity 0.25s ease, transform 0.25s ease;
     will-change: opacity, transform;
-    border-radius: 5px;
     pointer-events: none;
     display: flex;
     flex-direction: column;
@@ -193,7 +187,10 @@ nav #settings:hover {
 
 @media (min-width: 320px) {
     nav {
-        margin-top: 8px;
+        margin: 8px auto 0 auto;
+        border-radius: 5px;
+        width: 85vw;
+        height: 7.5vh;
     }
 
     #options-container {
@@ -212,9 +209,10 @@ nav #settings:hover {
         font-size: 0.85em;
     }
 
-    .popup {
+    #account-modal {
         width: 35%;
         padding: 3%;
+        border-radius: 5px;
     }
 
     #sign-up-section {

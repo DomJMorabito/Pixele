@@ -2,7 +2,11 @@
 
 // React Imports:
 
-import { useEffect } from "react";
+import {useEffect} from "react";
+
+// Component Imports:
+
+import AlertIndicator from "../../components/alert-indicator/AlertIndicator";
 
 // CSS Imports:
 
@@ -19,7 +23,7 @@ export default function RegisterModal() {
         const confirmButton = document.getElementById("submit");
         const emailInput = document.getElementById('email');
         const usernameInput = document.getElementById('username');
-        //const alertIndicator = document.getElementById('alert-indicator');
+        const alertIndicator = document.getElementById('alert-indicator');
 
         const handlePasswordInput = () => {
             const password = passwordInput.value.trim();
@@ -74,12 +78,22 @@ export default function RegisterModal() {
             const password = passwordInput.value.trim();
 
             if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { // Check to see if a valid email address was entered.
-                alert('Enter valid email.');
+                showIndicator('Enter a valid email.');
+                emailInput.classList.add('error');
+                console.log('test');
+                setTimeout(() => {
+                    emailInput.classList.remove('error');
+                }, 300);
                 return;
             }
 
-            if (username.length < 5) { // Check to see if the entered username is 5 characters or longer.
-                alert('Username must be > 5');
+            if (username.length < 5 || username.length > 15) { // Check to see if the entered username is between 5-15 characters long.
+                showIndicator('Username must be between 5-15 characters.');
+                usernameInput.classList.add('error');
+                console.log('hey u');
+                setTimeout(() => {
+                    usernameInput.classList.remove('error');
+                }, 300);
                 return;
             }
 
@@ -124,7 +138,7 @@ export default function RegisterModal() {
                             emailInput.classList.remove('error');
                         }, 300);
                     } else { // Other errors.
-                        //throw new Error(data.message || 'Unknown Error.');
+                        showIndicator('An unknown error has occurred, please try again later.');
                     }
                     return;
                 }
@@ -141,7 +155,25 @@ export default function RegisterModal() {
             }
         };
 
-        //function showIndicator
+        const showIndicator = (alert, type = 'bad') => {
+            alertIndicator.textContent = alert;
+            alertIndicator.classList.remove('good', 'bad');
+            alertIndicator.classList.add(type);
+            alertIndicator.style.display = 'block';
+            alertIndicator.classList.remove('hide');
+            alertIndicator.classList.add('show');
+
+            setTimeout(() => {
+                alertIndicator.classList.remove('show');
+                alertIndicator.classList.add('hide');
+                setTimeout(() => {
+                    alertIndicator.style.display = 'none';
+                    alertIndicator.classList.remove('hide');
+                    alertIndicator.classList.remove(type);
+                    alertIndicator.textContent = '';
+                }, 500);
+            }, 1500);
+        };
 
         passwordInput.addEventListener('input', handlePasswordInput);
         form.addEventListener('submit', handleFormSubmission);
@@ -154,6 +186,7 @@ export default function RegisterModal() {
 
     return (
         <>
+            <AlertIndicator />
             <div id = "register-container">
                 <div id = "register-box">
                     <p id = "welcome">Join the Fight!</p>

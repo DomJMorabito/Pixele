@@ -47,6 +47,7 @@ form p {
     border: none;
     color: #ffffff;
     background-color: #0074E0;
+    cursor: pointer;
     transition: background-color 0.5s ease, transform, 0.25s ease;
 }
 
@@ -74,13 +75,16 @@ form p {
     transition: color 0.25s ease-in-out;
 }
 
-input.error {
+/* Input Field Classes */
+
+.error {
     color: #CA2D2D;
+    border: 2px solid #CA2D2D;
     animation: shake 0.3s;
     animation-iteration-count: 1;
 }
 
-/* Animations */
+/* Input Field Animations */
 
 @keyframes shake {
     0% { transform: translateX(0); }
@@ -109,10 +113,6 @@ input.error {
 
     form input {
         margin-top: -2%;
-    }
-
-    input.error {
-        border: 3px solid #CA2D2D;
     }
 
     #submit {
