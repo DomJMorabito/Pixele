@@ -11,7 +11,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     height: 100%;
 }
 
@@ -107,7 +106,7 @@ form p {
         margin-bottom: 2vh;
     }
 
-    #register-box form {
+    form {
         width: 85%
     }
 
@@ -161,7 +160,7 @@ form p {
         width: 60%;
     }
 
-    #register-box form {
+    form {
         width: 80%;
     }
 
@@ -175,7 +174,7 @@ form p {
         width: 50%;
     }
 
-    #register-box form {
+    form {
         width: 77.5%;
     }
 

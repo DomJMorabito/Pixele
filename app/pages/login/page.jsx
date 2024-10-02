@@ -6,6 +6,8 @@ import { useEffect } from 'react';
 
 // Component Imports:
 
+import LoginModal from "../../components/login/LoginModal";
+
 export default function LoginPage() {
 
     // Makes sure that the background image is always set to the default whenever the page is loaded.
@@ -27,6 +29,7 @@ export default function LoginPage() {
     return (
         <>
             <main>
+                <LoginModal />
             </main>
         </>
     );

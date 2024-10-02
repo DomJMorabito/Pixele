@@ -8,6 +8,14 @@ import {useEffect} from "react";
 
 import AlertIndicator from "../../components/alert-indicator/AlertIndicator";
 
+// Utils Imports:
+
+import { showIndicator } from "@/app/utils/show-indicator";
+import { validateEmail } from "@/app/utils/validate-email";
+import { validateUsername } from "@/app/utils/validate-username";
+import { validatePassword } from "@/app/utils/validate-password";
+import { sendRegisterRequest } from "@/app/utils/send-register-request";
+
 // CSS Imports:
 
 import "./RegisterModal.css";
@@ -27,48 +35,7 @@ export default function RegisterModal() {
 
         const handlePasswordInput = () => {
             const password = passwordInput.value.trim();
-            let lengthMet = false;
-            let numbersMet = false;
-            let specialMet = false;
-
-            if (password === '') { // Handle case where password input box is empty or the user has not typed anything in yet.
-                lengthRequirement.classList.remove('requirement-met', 'requirement-not-met');
-                numberRequirement.classList.remove('requirement-met', 'requirement-not-met');
-                specialRequirement.classList.remove('requirement-met', 'requirement-not-met');
-                confirmButton.disabled = true;
-                return;
-            }
-
-            if (password.length >= 8) { // Check if password is 8 characters or longer.
-                lengthRequirement.classList.add('requirement-met');
-                lengthRequirement.classList.remove('requirement-not-met');
-                lengthMet = true;
-            } else {
-                lengthRequirement.classList.add('requirement-not-met');
-                lengthRequirement.classList.remove('requirement-met');
-            }
-
-            if (/\d/.test(password)) { // Check to see if password contains a number.
-                numberRequirement.classList.add('requirement-met');
-                numberRequirement.classList.remove('requirement-not-met');
-                numbersMet = true;
-            } else {
-                numberRequirement.classList.add('requirement-not-met');
-                numberRequirement.classList.remove('requirement-met');
-            }
-
-            if (/[^A-Za-z0-9]/.test(password)) { // Check to see if password contains a special character (!, ?, @, etc.).
-                specialRequirement.classList.add('requirement-met');
-                specialRequirement.classList.remove('requirement-not-met');
-                specialMet = true;
-            } else {
-                specialRequirement.classList.add('requirement-not-met');
-                specialRequirement.classList.remove('requirement-met');
-            }
-
-            // Check to see if all 3 requirements are met. If they are, activate the submit button.
-
-            confirmButton.disabled = !(lengthMet && numbersMet && specialMet);
+            validatePassword(password, lengthRequirement, numberRequirement, specialRequirement, confirmButton);
         };
 
         const handleFormSubmission = async (event) => {
@@ -77,20 +44,18 @@ export default function RegisterModal() {
             const username = usernameInput.value.trim();
             const password = passwordInput.value.trim();
 
-            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { // Check to see if a valid email address was entered.
-                showIndicator('Enter a valid email.');
+            if (!validateEmail(email)) { // Check to see if a valid email address was entered.
+                showIndicator('Enter a valid email.', 'bad', alertIndicator);
                 emailInput.classList.add('error');
-                console.log('test');
                 setTimeout(() => {
                     emailInput.classList.remove('error');
                 }, 300);
                 return;
             }
 
-            if (username.length < 5 || username.length > 15) { // Check to see if the entered username is between 5-15 characters long.
-                showIndicator('Username must be between 5-15 characters.');
+            if (!validateUsername(username)) { // Check to see if the entered username is between 5-15 characters long.
+                showIndicator('Username must be between 5-15 characters.', 'bad', alertIndicator);
                 usernameInput.classList.add('error');
-                console.log('hey u');
                 setTimeout(() => {
                     usernameInput.classList.remove('error');
                 }, 300);
@@ -98,81 +63,37 @@ export default function RegisterModal() {
             }
 
             try {
-                const requestBody = {
-                    username: username,
-                    email: email,
-                    password: password,
-                };
-
-                console.log('Sending request to API endpoint with body:', requestBody);
-
-                const response = await fetch('https://api.pixele.gg/register', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(requestBody),
-                });
-
-                const data = await response.json();
-
-                if (!response.ok) {
-                    if (data.message === 'Both Email and Username are already in use') { // Check to see if both email and username are already present in database (crazy edge case...).
-                        //showAlert('Both Email and Username are already in use!');
-                        emailInput.classList.add('error');
-                        usernameInput.classList.add('error');
-                        setTimeout(() => {
-                            emailInput.classList.remove('error');
-                            usernameInput.classList.remove('error');
-                        }, 300);
-                    } else if (data.message === 'Email already in use') { // Check to see if email is already present in database.
-                        //showAlert('Email already in use!');
-                        emailInput.classList.add('error');
-                        setTimeout(() => {
-                            emailInput.classList.remove('error');
-                        }, 300);
-                    } else if (data.message === 'Username already in use') { // Check to see if username is already present in database.
-                        //showAlert('Username already taken!');
-                        usernameInput.classList.add('error');
-                        setTimeout(() => {
-                            emailInput.classList.remove('error');
-                        }, 300);
-                    } else { // Other errors.
-                        showIndicator('An unknown error has occurred, please try again later.');
-                    }
-                    return;
-                }
-
-                alert('Registration Successful!');
+                const data = await sendRegisterRequest(username, email, password);
+                showIndicator('Registration Successful!', 'good', alertIndicator);
                 form.reset();
                 confirmButton.disabled = true;
                 lengthRequirement.classList.remove('requirement-met', 'requirement-not-met');
                 numberRequirement.classList.remove('requirement-met', 'requirement-not-met');
                 specialRequirement.classList.remove('requirement-met', 'requirement-not-met');
             } catch (error) {
-                console.log('Error:', error);
-                alert('An error occurred: ' + error.message);
+                if (error.message === 'Both Email and Username are already in use') { // Check to see if both email and username are already present in database (crazy edge case...).
+                    showIndicator('Both Email and Username are already in use', 'bad', alertIndicator);
+                    emailInput.classList.add('error');
+                    usernameInput.classList.add('error');
+                    setTimeout(() => {
+                        emailInput.classList.remove('error');
+                        usernameInput.classList.remove('error');
+                    }, 300);
+                } else if (error.message === 'Email already in use') { // Check to see if email is already present in database.
+                    showIndicator('Email already in use', 'bad', alertIndicator);
+                    setTimeout(() => {
+                        emailInput.classList.remove('error');
+                    }, 300);
+                } else if (error.message === 'Username already in use') { // Check to see if username is already present in database.
+                    showIndicator('Username already taken', 'bad', alertIndicator);
+                    usernameInput.classList.add('error');
+                    setTimeout(() => {
+                        usernameInput.classList.remove('error');
+                    }, 300);
+                } else {
+                    showIndicator('An unknown error has occurred, please try again later.', 'bad', alertIndicator);
+                }
             }
-        };
-
-        const showIndicator = (alert, type = 'bad') => {
-            alertIndicator.textContent = alert;
-            alertIndicator.classList.remove('good', 'bad');
-            alertIndicator.classList.add(type);
-            alertIndicator.style.display = 'block';
-            alertIndicator.classList.remove('hide');
-            alertIndicator.classList.add('show');
-
-            setTimeout(() => {
-                alertIndicator.classList.remove('show');
-                alertIndicator.classList.add('hide');
-                setTimeout(() => {
-                    alertIndicator.style.display = 'none';
-                    alertIndicator.classList.remove('hide');
-                    alertIndicator.classList.remove(type);
-                    alertIndicator.textContent = '';
-                }, 500);
-            }, 1500);
         };
 
         passwordInput.addEventListener('input', handlePasswordInput);

@@ -1,0 +1,209 @@
+/* Font Families */
+
+@font-face {
+    font-family: 'Header';
+    src: url('/fonts/Header.ttf');
+}
+
+/* Login Modal */
+
+#login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#login-box {
+    background-color: #ffffff;
+    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.75));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#welcome-back, form input, form p, #submit {
+    font-family: 'Header', sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form p {
+    align-items: flex-start;
+}
+
+#submit {
+    align-self: center;
+    border: none;
+    color: #ffffff;
+    background-color: #0074E0;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform, 0.25s ease;
+}
+
+#submit:hover {
+    background-color: #148EFF;
+    transform: scale(1.05);
+}
+
+#submit:disabled {
+    background-color: #5D6166;
+    cursor: not-allowed;
+}
+
+/* Input Field Classes */
+
+.error {
+    color: #CA2D2D;
+    border: 2px solid #CA2D2D;
+    animation: shake 0.3s;
+    animation-iteration-count: 1;
+}
+
+/* Input Field Animations */
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+@media (min-width: 320px) {
+    #login-box {
+        border-radius: 5px;
+        width: 80%;
+        padding: 3%;
+        border: 3px solid #000000;
+    }
+
+    #welcome-back {
+        font-size: 1.5em;
+        margin-bottom: 2vh;
+    }
+
+    form {
+        width: 85%;
+    }
+
+    form input {
+        margin-top: -2vh;
+    }
+
+    #submit {
+        margin-top: 10%;
+        border-radius: 5px;
+        padding: 2.5% 7.5% 2.5% 7.5%;
+        font-size: 1.25em;
+    }
+}
+
+@media (min-width: 375px) {
+    #login-box {
+        width: 75%;
+    }
+}
+
+@media (min-width: 425px) {
+    #welcome-back {
+        font-size: 2em;
+    }
+
+    form input, form p {
+        font-size: 1.25em;
+    }
+
+    form input {
+        margin-top: -1.5vh;
+    }
+
+    #submit {
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 768px) {
+    #login-box {
+        width: 60%;
+    }
+
+    form {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1024px) {
+    #login-box {
+        width: 50%;
+    }
+
+    #welcome-back {
+        font-size: 2.25em;
+    }
+
+    form {
+        width: 77.5%;
+    }
+
+    form input, form p {
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 1440px) {
+    #login-box {
+        width: 30%;
+        padding: 1.5%;
+    }
+
+    #welcome-back {
+        margin-top: 1vh;
+        font-size: 2em;
+    }
+
+    #submit {
+        font-size: 1.75em;
+    }
+}
+
+@media (min-width: 2560px) {
+    #login-box {
+        border: 5px solid #000000;
+        border-radius: 10px;
+    }
+
+    #welcome-back {
+        font-size: 2.75em;
+    }
+
+    form input, form p {
+        font-size: 2em;
+    }
+
+    #submit {
+        font-size: 2.5em;
+    }
+}
+
+@media (min-width: 3840px) {
+    #login-box {
+        border: 7px solid #000000;
+    }
+
+    #welcome-back {
+        font-size: 3.5em;
+    }
+
+    form input, form p {
+        font-size: 2.5em;
+    }
+
+    #submit {
+        font-size: 3em;
+    }
+}
