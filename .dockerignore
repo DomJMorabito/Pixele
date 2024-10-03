@@ -1,0 +1,43 @@
+# Ignore node_modules - no need to copy them as Docker will install them
+node_modules
+.pnp
+.pnp.js
+.yarn
+.yarn/install-state.gz
+
+# Testing output (not needed in the container)
+coverage
+
+# Ignore Next.js build outputs
+.next
+out
+build
+
+# Miscellaneous files that shouldn't be copied into the Docker image
+.DS_Store
+*.pem
+.idea
+
+# Debug files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore local environment files - you should pass env vars to Docker via other methods
+.env
+.env.local
+.env.*.local
+.env.production
+.env.test
+.env.development
+
+# Ignore Vercel deployment files
+.vercel
+
+# Ignore TypeScript build information
+*.tsbuildinfo
+next-env.d.ts
+
+# Git-related files
+.git
+.gitignore
