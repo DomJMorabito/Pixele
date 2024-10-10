@@ -11,6 +11,7 @@ export const sendLoginRequest = async (identifier, password) => {
         identifier,
         password
     };
+
     const response = await fetch("https://api.pixele.gg/login", {
         method: "POST",
         headers: {
