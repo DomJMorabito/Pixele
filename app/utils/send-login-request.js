@@ -12,7 +12,7 @@ export const sendLoginRequest = async (identifier, password) => {
         password
     };
 
-    const response = await fetch("https://api.pixele.gg/login", {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/login`, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
