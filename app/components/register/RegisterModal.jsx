@@ -4,6 +4,10 @@
 
 import {useEffect} from "react";
 
+// Node.js Imports:
+
+import Filter from 'bad-words';
+
 // Component Imports:
 
 import AlertIndicator from "../../components/alert-indicator/AlertIndicator";
@@ -15,6 +19,8 @@ import { validateEmail } from "@/app/utils/validate-email";
 import { validateUsername } from "@/app/utils/validate-username";
 import { validatePassword } from "@/app/utils/validate-password";
 import { sendRegisterRequest } from "@/app/utils/send-register-request";
+import { sendVerificationEmail } from "@/app/utils/send-verification-email";
+import { generateVerificationToken } from "@/app/utils/generate-verification-token";
 
 // CSS Imports:
 
@@ -43,6 +49,7 @@ export default function RegisterModal() {
             const email = emailInput.value.trim();
             const username = usernameInput.value.trim();
             const password = passwordInput.value.trim();
+            const filter = new Filter();
 
             if (!validateEmail(email)) { // Check to see if a valid email address was entered.
                 showIndicator('Enter a valid email.', 'bad', alertIndicator);
@@ -53,8 +60,17 @@ export default function RegisterModal() {
                 return;
             }
 
-            if (!validateUsername(username)) { // Check to see if the entered username is between 5-15 characters long.
-                showIndicator('Username must be between 5-15 characters.', 'bad', alertIndicator);
+            if (!validateUsername(username)) { // Check to see if the entered username is between 5-18 characters long.
+                showIndicator('Username must be between 5-18 characters.', 'bad', alertIndicator);
+                usernameInput.classList.add('error');
+                setTimeout(() => {
+                    usernameInput.classList.remove('error');
+                }, 300);
+                return;
+            }
+
+            if (filter.isProfane(username)) { // Check to see if the entered username contains any profane words.
+                showIndicator('Really.', 'bad', alertIndicator);
                 usernameInput.classList.add('error');
                 setTimeout(() => {
                     usernameInput.classList.remove('error');
@@ -64,6 +80,8 @@ export default function RegisterModal() {
 
             try {
                 const data = await sendRegisterRequest(username, email, password);
+                const token = generateVerificationToken();
+                await sendVerificationEmail(email, username, token);
                 showIndicator('Registration Successful!', 'good', alertIndicator);
                 form.reset();
                 confirmButton.disabled = true;
