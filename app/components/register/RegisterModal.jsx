@@ -6,7 +6,7 @@ import {useEffect} from "react";
 
 // Node.js Imports:
 
-import Filter from 'bad-words';
+import { Filter } from 'bad-words';
 
 // Component Imports:
 
@@ -61,7 +61,7 @@ export default function RegisterModal() {
             }
 
             if (!validateUsername(username)) { // Check to see if the entered username is between 5-18 characters long.
-                showIndicator('Username must be between 5-18 characters.', 'bad', alertIndicator);
+                showIndicator('Username must be 5-18 characters.', 'bad', alertIndicator);
                 usernameInput.classList.add('error');
                 setTimeout(() => {
                     usernameInput.classList.remove('error');
