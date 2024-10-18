@@ -16,7 +16,8 @@ import AlertIndicator from "../../components/alert-indicator/AlertIndicator";
 
 import { showIndicator } from "@/app/utils/show-indicator";
 import { validateEmail } from "@/app/utils/validate-email";
-import { validateUsername } from "@/app/utils/validate-username";
+import { validateUsernameLength } from "@/app/utils/validate-username-length";
+import { validateUsernameSpecialCharacters } from "@/app/utils/validate-username-special-characters"
 import { validatePassword } from "@/app/utils/validate-password";
 import { sendRegisterRequest } from "@/app/utils/send-register-request";
 import { sendVerificationEmail } from "@/app/utils/send-verification-email";
@@ -34,14 +35,14 @@ export default function RegisterModal() {
         const lengthRequirement = document.getElementById("length");
         const numberRequirement = document.getElementById("numbers");
         const specialRequirement = document.getElementById("special");
-        const confirmButton = document.getElementById("submit");
+        const submitButton = document.getElementById("submit");
         const emailInput = document.getElementById('email');
         const usernameInput = document.getElementById('username');
         const alertIndicator = document.getElementById('alert-indicator');
 
         const handlePasswordInput = () => {
             const password = passwordInput.value.trim();
-            validatePassword(password, lengthRequirement, numberRequirement, specialRequirement, confirmButton);
+            validatePassword(password, lengthRequirement, numberRequirement, specialRequirement, submitButton);
         };
 
         const handleFormSubmission = async (event) => {
@@ -56,16 +57,25 @@ export default function RegisterModal() {
                 emailInput.classList.add('error');
                 setTimeout(() => {
                     emailInput.classList.remove('error');
-                }, 300);
+                }, 500);
                 return;
             }
 
-            if (!validateUsername(username)) { // Check to see if the entered username is between 5-18 characters long.
+            if (!validateUsernameLength(username)) { // Check to see if the entered username is between 5-18 characters long.
                 showIndicator('Username must be 5-18 characters.', 'bad', alertIndicator);
                 usernameInput.classList.add('error');
                 setTimeout(() => {
                     usernameInput.classList.remove('error');
-                }, 300);
+                }, 500);
+                return;
+            }
+
+            if (!validateUsernameSpecialCharacters(username)) { // Check to see if the entered username contains any special characters (!, @, ?, etc.)
+                showIndicator('Username cannot contain any special characters.', 'bad', alertIndicator);
+                usernameInput.classList.add('error');
+                setTimeout(() => {
+                    usernameInput.classList.remove('error');
+                }, 500);
                 return;
             }
 
@@ -74,41 +84,67 @@ export default function RegisterModal() {
                 usernameInput.classList.add('error');
                 setTimeout(() => {
                     usernameInput.classList.remove('error');
-                }, 300);
+                }, 500);
+                submitButton.disabled = false;
                 return;
             }
 
             try {
                 const data = await sendRegisterRequest(username, email, password);
                 const token = generateVerificationToken();
-                await sendVerificationEmail(email, username, token);
-                showIndicator('Registration Successful!', 'good', alertIndicator);
-                form.reset();
-                confirmButton.disabled = true;
-                lengthRequirement.classList.remove('requirement-met', 'requirement-not-met');
-                numberRequirement.classList.remove('requirement-met', 'requirement-not-met');
-                specialRequirement.classList.remove('requirement-met', 'requirement-not-met');
+                showIndicator('Check your email for verification!', 'good', alertIndicator);
+                //await sendVerificationEmail(email, username, token);
+                //form.reset();
+                //submitButton.disabled = true;
+                //lengthRequirement.classList.remove('requirement-met', 'requirement-not-met');
+                //numberRequirement.classList.remove('requirement-met', 'requirement-not-met');
+                //specialRequirement.classList.remove('requirement-met', 'requirement-not-met');
             } catch (error) {
                 if (error.message === 'Both Email and Username are already in use') { // Check to see if both email and username are already present in database (crazy edge case...).
-                    showIndicator('Both Email and Username are already in use', 'bad', alertIndicator);
+                    showIndicator('Both Email and Username are already in use.', 'bad', alertIndicator);
                     emailInput.classList.add('error');
                     usernameInput.classList.add('error');
                     setTimeout(() => {
                         emailInput.classList.remove('error');
                         usernameInput.classList.remove('error');
-                    }, 300);
-                } else if (error.message === 'Email already in use') { // Check to see if email is already present in database.
+                    }, 500);
+                } else if (error.message === 'Email already in use.') { // Check to see if email is already present in database.
                     showIndicator('Email already in use', 'bad', alertIndicator);
+                    emailInput.classList.add('error');
                     setTimeout(() => {
                         emailInput.classList.remove('error');
-                    }, 300);
-                } else if (error.message === 'Username already in use') { // Check to see if username is already present in database.
+                    }, 500);
+                } else if (error.message === 'Username already in use.') { // Check to see if username is already present in database.
                     showIndicator('Username already taken', 'bad', alertIndicator);
                     usernameInput.classList.add('error');
                     setTimeout(() => {
                         usernameInput.classList.remove('error');
-                    }, 300);
-                } else {
+                    }, 500);
+                } else if (error.message === 'Enter a valid email.') { // Check to see if a valid email address was entered.
+                    showIndicator('Enter a valid email.', 'bad', alertIndicator);
+                    emailInput.classList.add('error');
+                    setTimeout(() => {
+                        emailInput.classList.remove('error');
+                    }, 500);
+                } else if (error.message === 'Username must be 5-18 characters.') { // Check to see if the entered username is between 5-18 characters long.
+                    showIndicator('Username must be 5-18 characters.', 'bad', alertIndicator);
+                    usernameInput.classList.add('error');
+                    setTimeout(() => {
+                        usernameInput.classList.remove('error');
+                    }, 500);
+                } else if (error.message === 'Username cannot contain any special characters.') { // Check to see if the entered username contains any special characters (!, @, ?, etc.)
+                    showIndicator('Username cannot contain any special characters.', 'bad', alertIndicator);
+                    usernameInput.classList.add('error');
+                    setTimeout(() => {
+                        usernameInput.classList.remove('error');
+                    }, 500);
+                } else if (error.message === 'Seriously?') { // Check to see if the entered username contains any profane words.
+                    showIndicator('Seriously?', 'bad', alertIndicator);
+                    usernameInput.classList.add('error');
+                    setTimeout(() => {
+                        usernameInput.classList.remove('error');
+                    }, 500);
+                } else { // All other unknown errors.
                     showIndicator('An unknown error has occurred, please try again later.', 'bad', alertIndicator);
                 }
             }

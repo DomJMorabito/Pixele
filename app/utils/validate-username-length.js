@@ -6,6 +6,6 @@
  * @param {number} maxLength - Maximum length for the username.
  * @returns {boolean} - Returns true if the username is valid, false otherwise.
  */
-export const validateUsername = (username, minLength = 5, maxLength = 18) => {
+export const validateUsernameLength = (username, minLength = 5, maxLength = 18) => {
     return username.length >= minLength && username.length <= maxLength;
 }

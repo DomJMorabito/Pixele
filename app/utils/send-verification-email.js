@@ -15,7 +15,7 @@ const ses = new AWS.SES({ apiVersion: '2010-12-01' });
  * @param {string} token - The verification token
  */
 export const sendVerificationEmail = async (email, username, token) => {
-    const verificationUrl = `https://pixele.gg/verify-email?token=${token}`;
+    const verificationUrl = `https://pixele.gg/verify?token=${token}`;
     const params = {
         Destination: {
             ToAddresses: [email],
@@ -25,7 +25,7 @@ export const sendVerificationEmail = async (email, username, token) => {
                 Html: {
                     Charset: "UTF-8",
                     Data: `<p>Hi ${username},</p>
-                        <p>Thank you for registering. Please verify your email by clicking the link below:</p>
+                        <p>Welcome to the fight! Please verify your email by clicking the link below:</p>
                         <p><a href="${verificationUrl}">Verify Email</a></p>
                         <p>If you didn't create an account, you can ignore this email.</p>`,
                 },
@@ -36,7 +36,7 @@ export const sendVerificationEmail = async (email, username, token) => {
             },
             Subject: {
                 Charset: 'UTF-8',
-                Data: 'Verify your email address',
+                Data: 'Verify Your Email',
             },
         },
         Source: 'no-reply@pixele.gg',
