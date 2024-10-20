@@ -14,10 +14,8 @@ nav {
     background-color: rgba(229, 235, 244, 0.8);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 100;
-
     display: flex;
     align-items: center;
-
     opacity: 0;
     animation: dropDown 1.0s ease forwards;
     will-change: opacity, transform;
@@ -37,15 +35,6 @@ nav {
     cursor: pointer;
     font-family: 'Header', sans-serif;
     transition: background-color 0.25s ease;
-    padding: 5%;
-}
-
-#account {
-    margin-right: 5%;
-}
-
-#chevron-down {
-    margin-left: 5%;
 }
 
 #account-section:hover {
@@ -53,14 +42,9 @@ nav {
 }
 
 nav .material-symbols-outlined {
-    font-size: 3.75vh;
     transition: transform 0.15s ease, filter 0.5s ease;
     will-change: transform, filter;
     color: #5D6166;
-}
-
-#settings {
-    margin-right: 7.5%;
 }
 
 nav #settings:hover {
@@ -111,10 +95,7 @@ nav #settings:hover {
     background-color: #0074e0;
     color: white;
     border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
     cursor: pointer;
-    font-size: 1em;
     width: 100%;
     transition: background-color 0.25s ease, transform 0.25s ease;
 }
@@ -151,8 +132,6 @@ nav #settings:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 5%;
-    border-radius: 5px 0 0 5px;
 }
 
 #pixele-logo-container {
@@ -199,14 +178,24 @@ nav #settings:hover {
 
     #account-section {
         border-radius: 5px;
+        padding: 5%;
     }
 
     #account-name {
         font-size: 0.75em;
     }
 
+    #account {
+        margin-right: 5%;
+    }
+
     #chevron-down {
         font-size: 0.85em;
+        margin-left: 5%;
+    }
+
+    nav .material-symbols-outlined {
+        font-size: 3.75vh;
     }
 
     #account-modal {
@@ -220,12 +209,27 @@ nav #settings:hover {
         border-radius: 5px;
     }
 
+    #settings {
+        margin-right: 7.5%;
+    }
+
     #sign-up-text {
         font-size: 0.75em;
     }
 
     #sign-up {
         margin-right: 5%;
+    }
+
+    #login-logout-button {
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 1em;
+    }
+
+    #logo-container {
+        padding: 0 5%;
+        border-radius: 5px 0 0 5px;
     }
 }
 

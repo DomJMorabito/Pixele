@@ -32,7 +32,7 @@ WORKDIR /app
 
 # 9. Copy the built files from the builder stage:
 
-COPY --from=builder /app /app
+COPY --from=builder /app ./
 
 # 10. Expose the port Next.js uses (3000 by default):
 
@@ -40,4 +40,4 @@ EXPOSE 3000
 
 # 11. Start the Next.js app:
 
-CMD ["npm", "run", "start"]
+CMD ["npm", "start"]

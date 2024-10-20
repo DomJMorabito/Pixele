@@ -27,11 +27,12 @@ export const sendVerificationEmail = async (email, username, token) => {
                     Data: `<p>Hi ${username},</p>
                         <p>Welcome to the fight! Please verify your email by clicking the link below:</p>
                         <p><a href="${verificationUrl}">Verify Email</a></p>
+                        <p>If you do not verify your email within 7 days, your account will be deleted.</p>
                         <p>If you didn't create an account, you can ignore this email.</p>`,
                 },
                 Text: {
                     Charset: "UTF-8",
-                    Data: `Hi ${username},\n\nThank you for registering. Please verify your email by clicking the link below:\n${verificationUrl}\n\nIf you didn't create an account, you can ignore this email.`,
+                    Data: `Hi ${username},\n\nThank you for registering. Please verify your email by clicking the link below:\n${verificationUrl}\nIf you do not verify your email within 7 days, your account will be deleted.\n\nIf you didn't create an account, you can ignore this email.`,
                 },
             },
             Subject: {

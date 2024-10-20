@@ -90,10 +90,10 @@ export default function RegisterModal() {
             }
 
             try {
-                const data = await sendRegisterRequest(username, email, password);
                 const token = generateVerificationToken();
+                await sendVerificationEmail(email, username, token);
                 showIndicator('Check your email for verification!', 'good', alertIndicator);
-                //await sendVerificationEmail(email, username, token);
+                const data = await sendRegisterRequest(username, email, password);
                 //form.reset();
                 //submitButton.disabled = true;
                 //lengthRequirement.classList.remove('requirement-met', 'requirement-not-met');

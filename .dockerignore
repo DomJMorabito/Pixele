@@ -41,3 +41,7 @@ next-env.d.ts
 # Git-related files
 .git
 .gitignore
+
+# Docker-related files
+Dockerfile
+.dockerignore

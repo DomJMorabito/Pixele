@@ -22,7 +22,7 @@ function NavBar() {
     const router = useRouter();
     const [isVisible, setVisible] = useState(false);
 
-    // Handles redirecting the user back to the homescreen when the Pixele logo is pressed.
+    // Handles redirecting the user back to the home screen when the Pixele logo is pressed.
     const handleClick = () => {
         router.push('/');
     }
