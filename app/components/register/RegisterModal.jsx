@@ -1,8 +1,12 @@
 "use client";
 
+// Next.js Imports:
+
+import { useRouter } from "next/navigation";
+
 // React Imports:
 
-import {useEffect} from "react";
+import { useEffect } from "react";
 
 // Node.js Imports:
 
@@ -20,14 +24,13 @@ import { validateUsernameLength } from "@/app/utils/validate-username-length";
 import { validateUsernameSpecialCharacters } from "@/app/utils/validate-username-special-characters"
 import { validatePassword } from "@/app/utils/validate-password";
 import { sendRegisterRequest } from "@/app/utils/send-register-request";
-import { sendVerificationEmail } from "@/app/utils/send-verification-email";
-import { generateVerificationToken } from "@/app/utils/generate-verification-token";
 
 // CSS Imports:
 
 import "./RegisterModal.css";
 
 export default function RegisterModal() {
+    const router = useRouter();
 
     useEffect(() => {
         const form = document.getElementById("registration-form");
@@ -85,22 +88,15 @@ export default function RegisterModal() {
                 setTimeout(() => {
                     usernameInput.classList.remove('error');
                 }, 500);
-                submitButton.disabled = false;
                 return;
             }
 
             try {
-                const token = generateVerificationToken();
-                await sendVerificationEmail(email, username, token);
-                showIndicator('Check your email for verification!', 'good', alertIndicator);
                 const data = await sendRegisterRequest(username, email, password);
-                //form.reset();
-                //submitButton.disabled = true;
-                //lengthRequirement.classList.remove('requirement-met', 'requirement-not-met');
-                //numberRequirement.classList.remove('requirement-met', 'requirement-not-met');
-                //specialRequirement.classList.remove('requirement-met', 'requirement-not-met');
+                showIndicator('Check your email for verification!', 'good', alertIndicator);
+                router.push(`/verify?email=${encodeURIComponent(email)}&username=${encodeURIComponent(username)}`);
             } catch (error) {
-                if (error.message === 'Both Email and Username are already in use') { // Check to see if both email and username are already present in database (crazy edge case...).
+                if (error.message === 'Both Email and Username are already in use.') { // Check to see if both email and username are already present in database (crazy edge case...).
                     showIndicator('Both Email and Username are already in use.', 'bad', alertIndicator);
                     emailInput.classList.add('error');
                     usernameInput.classList.add('error');
@@ -145,7 +141,16 @@ export default function RegisterModal() {
                         usernameInput.classList.remove('error');
                     }, 500);
                 } else { // All other unknown errors.
+                    console.error('Error signing up:', error);
                     showIndicator('An unknown error has occurred, please try again later.', 'bad', alertIndicator);
+                    emailInput.classList.add('error');
+                    usernameInput.classList.add('error');
+                    passwordInput.classList.add('error');
+                    setTimeout(() => {
+                        emailInput.classList.remove('error');
+                        usernameInput.classList.remove('error');
+                        passwordInput.classList.remove('error');
+                    }, 500);
                 }
             }
         };
@@ -157,7 +162,7 @@ export default function RegisterModal() {
             passwordInput.removeEventListener('input', handlePasswordInput);
             form.removeEventListener('submit', handleFormSubmission);
         }
-    }, []);
+    }, [router]);
 
     return (
         <>

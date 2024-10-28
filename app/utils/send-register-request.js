@@ -14,7 +14,7 @@ export const sendRegisterRequest = async (username, email, password) => {
         password,
     };
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/pending`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/register`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

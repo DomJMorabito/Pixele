@@ -2,13 +2,13 @@
 
 // React Imports:
 
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 // Component Imports:
 
-import RegisterModal from '../../components/register/RegisterModal';
+import VerifyModal from "@/app/components/verify/VerifyModal";
 
-export default function RegisterPage() {
+export default function VerifyPage() {
 
     // Makes sure that the background image is always set to the default whenever the page is loaded.
     useEffect(() => {
@@ -25,12 +25,11 @@ export default function RegisterPage() {
             document.body.classList.remove('register-background');
         }
     });
-
     return (
         <>
             <main>
-                <RegisterModal />
+                <VerifyModal />
             </main>
         </>
-    );
+    )
 }

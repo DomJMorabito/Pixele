@@ -6,9 +6,9 @@ import { useEffect } from 'react';
 
 // Component Imports:
 
-import LoginModal from "../../components/login/LoginModal";
+import RegisterModal from '../components/register/RegisterModal';
 
-export default function LoginPage() {
+export default function RegisterPage() {
 
     // Makes sure that the background image is always set to the default whenever the page is loaded.
     useEffect(() => {
@@ -19,17 +19,17 @@ export default function LoginPage() {
             }
         });
 
-        document.body.classList.add('login-background');
+        document.body.classList.add('register-background');
 
         return () => {
-            document.body.classList.remove('login-background');
+            document.body.classList.remove('register-background');
         }
     });
 
     return (
         <>
             <main>
-                <LoginModal />
+                <RegisterModal />
             </main>
         </>
     );
