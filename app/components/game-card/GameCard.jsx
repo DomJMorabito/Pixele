@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 // Next.js Imports:
 
@@ -20,7 +20,7 @@ function GameCard({ id, logoSrc, altText, gameLink, children, onHover, onLeave }
 
     return (
             <div
-                className="game-card"
+                className='game-card'
                 id={id}
                 onClick={handleClick}
                 onMouseEnter={onHover}
@@ -29,11 +29,11 @@ function GameCard({ id, logoSrc, altText, gameLink, children, onHover, onLeave }
                 <Image
                     src={logoSrc}
                     alt={altText}
-                    className="game-logo"
+                    className='game-logo'
                     width={500}
                     height={500}
                 />
-                <div className="game-title-container">
+                <div className='game-title-container'>
                     {children}
                 </div>
             </div>

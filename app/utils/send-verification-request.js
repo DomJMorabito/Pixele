@@ -1,3 +1,6 @@
+import { createErrorFromResponse } from '@/app/utils/error-handler';
+import { VerificationError } from '@/app/utils/errors/VerificationError';
+
 /**
  * Confirms the sign-up verification code for the user with AWS Cognito.
  *
@@ -7,23 +10,34 @@
  * @throws {Error} - Throws an error if the confirmation request fails.
  */
 export const sendVerificationRequest = async (username, verificationCode) => {
-    const requestBody = {
-        username,
-        verificationCode,
-    };
+    try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/verify`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                username,
+                verificationCode
+            }),
+        });
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/verify`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(requestBody),
-    });
+        const data = await response.json();
 
-    const data = await response.json();
+        if (!response.ok) {
+            throw createErrorFromResponse(response.status, data, 'verification');
+        }
 
-    if (!response.ok) {
-        throw new Error(data.message || "Unknown Error");
+        return data;
+    } catch (error) {
+        if (error instanceof VerificationError) {
+            throw error;
+        }
+
+        throw createErrorFromResponse(500, {
+            message: 'An unknown error occurred',
+            code: 'UNKNOWN_ERROR',
+        }, 'verification');
     }
-    return data;
-}
+};

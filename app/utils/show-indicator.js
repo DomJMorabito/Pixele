@@ -12,24 +12,24 @@ let timeoutId;
 export const showIndicator =(message, type = 'bad', alertIndicator) => {
     if (isShowing || isHiding) {
         clearTimeout(timeoutId);
-        alertIndicator.classList.remove("show", "hide");
+        alertIndicator.classList.remove('show', 'hide');
         void alertIndicator.offsetWidth;
         isHiding = false;
     }
 
     alertIndicator.textContent = message;
-    alertIndicator.classList.remove("good", "bad");
+    alertIndicator.classList.remove('good', 'bad');
     alertIndicator.classList.add(type);
-    alertIndicator.classList.add("show");
+    alertIndicator.classList.add('show');
     isShowing = true;
 
     timeoutId = setTimeout(() => {
         isShowing = false;
         isHiding = true;
-        alertIndicator.classList.remove("show");
-        alertIndicator.classList.add("hide");
+        alertIndicator.classList.remove('show');
+        alertIndicator.classList.add('hide');
         setTimeout(() => {
-            alertIndicator.classList.remove("hide");
+            alertIndicator.classList.remove('hide');
             alertIndicator.classList.remove(type);
             alertIndicator.textContent = '';
             isHiding = false;

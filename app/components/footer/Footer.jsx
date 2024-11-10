@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 // Next.js Imports:
 
@@ -21,7 +21,7 @@ export default function Footer() {
     const [isVisible, setVisible] = useState(false);
     const [hasInteracted, setInteracted] = useState(false);
 
-    // Handles clicking on "Credits & Attributions" to show the credits modal.
+    // Handles clicking on 'Credits & Attributions' to show the credits modal.
     const show = () => {
         setVisible(true);
         setInteracted(true);
@@ -34,50 +34,50 @@ export default function Footer() {
     return (
         <>
             <footer>
-                <div id="footer-content">
-                    <div id="social-container">
-                        <div id="ko-fi-container">
-                            <a href="https://ko-fi.com/pixele" id="ko-fi-button" target="_blank"
-                               rel="noopener noreferrer">
+                <div id='footer-content'>
+                    <div id='social-container'>
+                        <div id='ko-fi-container'>
+                            <a href='https://ko-fi.com/pixele' id='ko-fi-button' target='_blank'
+                               rel='noopener noreferrer'>
                                 <Image
-                                    src="/footer/ko-fi.png"
-                                    alt="Ko-fi"
+                                    src='/footer/ko-fi.png'
+                                    alt='Ko-fi'
                                     width={100}
                                     height={100}
                                 />
                                 Support me!
                             </a>
                         </div>
-                        <div id="social-links">
-                            <a href="https://twitter.com/blockspinner44" className="social-icon" target="_blank"
-                               rel="noopener noreferrer">
+                        <div id='social-links'>
+                            <a href='https://twitter.com/blockspinner44' className='social-icon' target='_blank'
+                               rel='noopener noreferrer'>
                                 <Image
-                                    src="/footer/twitter.png"
-                                    alt="Twitter"
+                                    src='/footer/twitter.png'
+                                    alt='Twitter'
                                     width={100}
                                     height={100}
                                 />
                             </a>
-                            <a href="https://www.reddit.com/r/Pixelegg/" className="social-icon" target="_blank"
-                               rel="noopener noreferrer">
+                            <a href='https://www.reddit.com/r/Pixelegg/' className='social-icon' target='_blank'
+                               rel='noopener noreferrer'>
                                 <Image
-                                    src="/footer/reddit.png"
-                                    alt="Reddit"
+                                    src='/footer/reddit.png'
+                                    alt='Reddit'
                                     width={100}
                                     height={100}
                                 />
                             </a>
-                            <a href="https://discord.gg/WG6ySKvZJP" className="social-icon" target="_blank"
-                               rel="noopener noreferrer">
+                            <a href='https://discord.gg/WG6ySKvZJP' className='social-icon' target='_blank'
+                               rel='noopener noreferrer'>
                                 <Image
-                                    src="/footer/discord.png"
-                                    alt="Discord"
+                                    src='/footer/discord.png'
+                                    alt='Discord'
                                     width={100}
                                     height={100}
                                 />
                             </a>
                         </div>
-                        <p id="credits" onClick = {show}>Credits & Attributions</p>
+                        <p id='credits' onClick = {show}>Credits & Attributions</p>
                     </div>
                 </div>
             </footer>

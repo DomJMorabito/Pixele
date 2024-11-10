@@ -13,9 +13,10 @@ export const sendLoginRequest = async (identifier, password) => {
     };
 
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/login`, {
-        method: "POST",
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            'Accept': 'application/json'
         },
         credentials: 'include',
         body: JSON.stringify(requestBody),
@@ -23,7 +24,7 @@ export const sendLoginRequest = async (identifier, password) => {
 
     const data = await response.json();
     if (!response.ok) {
-        throw new Error(data.message || "Unknown Error");
+        throw new Error(data.message || 'Unknown Error');
     }
     return data;
 }

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 // React Imports:
 
@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 // Component Imports:
 
-import LoginModal from "../components/login/LoginModal";
+import LoginModal from '../components/login/LoginModal';
 
 export default function LoginPage() {
 

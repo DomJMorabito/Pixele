@@ -1,3 +1,6 @@
+import { createErrorFromResponse } from '@/app/utils/error-handler';
+import { RegistrationError } from '@/app/utils/errors/RegistrationError';
+
 /**
  * Sends a registration request to the server with the provided username, email, and password.
  *
@@ -8,24 +11,45 @@
  * @throws {Error} - Throws an error if the response is not OK, with a message from the server or a default error message.
  */
 export const sendRegisterRequest = async (username, email, password) => {
-    const requestBody = {
-        username,
-        email,
-        password,
-    };
+    try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/register`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                username,
+                email,
+                password
+            })
+        });
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/register`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(requestBody),
-    });
+        const data = await response.json();
 
-    const data = await response.json();
+        if (!response.ok) {
+            throw createErrorFromResponse(response.status, data, 'registration');
+        }
 
-    if (!response.ok) {
-        throw new Error(data.message || "Unknown Error");
+        return data;
+    } catch (error) {
+        if (error instanceof RegistrationError) { // If it's already a RegistrationError (from createErrorFromResponse), rethrow it.
+            throw error;
+        }
+
+        if (!navigator.online || error.message === 'Failed to fetch') { // Handle network errors or other unexpected errors.
+            throw createErrorFromResponse(500, {
+                message: 'Unable to connect to the server. Please check your internet connection.',
+                code: 'NETWORK_ERROR'
+            }, 'registration');
+        }
+
+        throw createErrorFromResponse(500, { // Handle any other unknown errors.
+            message: 'An unknown error occurred.',
+            code: 'UNKNOWN_ERROR',
+            details: {
+                originalError: error.message
+            }
+        }, 'registration');
     }
-    return data;
 }

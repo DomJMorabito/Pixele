@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 // React Imports:
 
@@ -24,7 +24,7 @@ function GameCardGrid() {
             altText: 'Overwatch',
             gameLink: '/games/overwatch',
             extraContent: (
-                <div className="game-title">Overwatch</div>
+                <div className='game-title'>Overwatch</div>
             ),
         },
         {
@@ -33,7 +33,7 @@ function GameCardGrid() {
             altText: 'Super Smash Bros. Logo',
             gameLink: '/games/ssb',
             extraContent: (
-                <div className="game-title">Super Smash Bros.</div>
+                <div className='game-title'>Super Smash Bros.</div>
             ),
         },
         {
@@ -42,12 +42,12 @@ function GameCardGrid() {
             altText: 'Pokémon Logo',
             gameLink: '/games/pokemon',
             extraContent: (
-                <div id="pokemon-container">
-                    <div id="identifier">#0643</div>
-                    <div className="game-title">Pokémon</div>
-                    <div id="types">
-                        <span id="dragon">Dragon</span>
-                        <span id="fire">Fire</span>
+                <div id='pokemon-container'>
+                    <div id='identifier'>#0643</div>
+                    <div className='game-title'>Pokémon</div>
+                    <div id='types'>
+                        <span id='dragon'>Dragon</span>
+                        <span id='fire'>Fire</span>
                     </div>
                 </div>
             ),
@@ -58,7 +58,7 @@ function GameCardGrid() {
             altText: 'Valorant Logo',
             gameLink: '/games/valorant',
             extraContent: (
-                <div className="game-title"><div className = "text-wrapper">Valorant</div></div>
+                <div className='game-title'><div className = 'text-wrapper'>Valorant</div></div>
             ),
         },
         {
@@ -67,7 +67,7 @@ function GameCardGrid() {
             altText: 'Rainbow Six Siege',
             gameLink: '/games/r6',
             extraContent: (
-                <div className="game-title">Rainbow Six Siege</div>
+                <div className='game-title'>Rainbow Six Siege</div>
             ),
         },
         {
@@ -76,7 +76,7 @@ function GameCardGrid() {
             altText: 'Minecraft Logo',
             gameLink: '/games/minecraft',
             extraContent: (
-                <div className="game-title">Minecraft</div>
+                <div className='game-title'>Minecraft</div>
             ),
         },
         {
@@ -85,7 +85,7 @@ function GameCardGrid() {
             altText: 'Clash Royale Logo',
             gameLink: '/games/clashroyale',
             extraContent: (
-                <div className="game-title">Clash Royale</div>
+                <div className='game-title'>Clash Royale</div>
             ),
         },
         {
@@ -94,7 +94,7 @@ function GameCardGrid() {
             altText: 'Plants Vs. Zombies 2 Logo',
             gameLink: '/games/pvz',
             extraContent: (
-                <div className="game-title">Plants Vs. Zombies 2</div>
+                <div className='game-title'>Plants Vs. Zombies 2</div>
             ),
         },
     ];
@@ -130,7 +130,7 @@ function GameCardGrid() {
     }, 225), []);
 
     return (
-        <div id="game-card-grid">
+        <div id='game-card-grid'>
             {games.map((game) => (
                 <GameCard
                     key = {game.id}

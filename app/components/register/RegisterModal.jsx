@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
 // Next.js Imports:
 
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation';
 
 // React Imports:
 
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 // Node.js Imports:
 
@@ -14,31 +14,33 @@ import { Filter } from 'bad-words';
 
 // Component Imports:
 
-import AlertIndicator from "../../components/alert-indicator/AlertIndicator";
+import AlertIndicator from '../../components/alert-indicator/AlertIndicator';
 
 // Utils Imports:
 
-import { showIndicator } from "@/app/utils/show-indicator";
-import { validateEmail } from "@/app/utils/validate-email";
-import { validateUsernameLength } from "@/app/utils/validate-username-length";
-import { validateUsernameSpecialCharacters } from "@/app/utils/validate-username-special-characters"
-import { validatePassword } from "@/app/utils/validate-password";
-import { sendRegisterRequest } from "@/app/utils/send-register-request";
+import { showIndicator } from '@/app/utils/show-indicator';
+import { validateEmail } from '@/app/utils/validate-email';
+import { validateUsernameLength } from '@/app/utils/validate-username-length';
+import { validateUsernameSpecialCharacters } from '@/app/utils/validate-username-special-characters'
+import { validatePassword } from '@/app/utils/validate-password';
+import { sendRegisterRequest } from '@/app/utils/send-register-request';
+import { showFieldError } from '@/app/utils/showFieldError';
+import { RegistrationErrorCode } from '@/app/utils/errors/RegistrationError';
 
 // CSS Imports:
 
-import "./RegisterModal.css";
+import './RegisterModal.css';
 
 export default function RegisterModal() {
     const router = useRouter();
 
     useEffect(() => {
-        const form = document.getElementById("registration-form");
-        const passwordInput = document.getElementById("password");
-        const lengthRequirement = document.getElementById("length");
-        const numberRequirement = document.getElementById("numbers");
-        const specialRequirement = document.getElementById("special");
-        const submitButton = document.getElementById("submit");
+        const form = document.getElementById('registration-form');
+        const passwordInput = document.getElementById('password');
+        const lengthRequirement = document.getElementById('length');
+        const numberRequirement = document.getElementById('numbers');
+        const specialRequirement = document.getElementById('special');
+        const submitButton = document.getElementById('submit');
         const emailInput = document.getElementById('email');
         const usernameInput = document.getElementById('username');
         const alertIndicator = document.getElementById('alert-indicator');
@@ -57,37 +59,25 @@ export default function RegisterModal() {
 
             if (!validateEmail(email)) { // Check to see if a valid email address was entered.
                 showIndicator('Enter a valid email.', 'bad', alertIndicator);
-                emailInput.classList.add('error');
-                setTimeout(() => {
-                    emailInput.classList.remove('error');
-                }, 500);
+                showFieldError(emailInput);
                 return;
             }
 
             if (!validateUsernameLength(username)) { // Check to see if the entered username is between 5-18 characters long.
                 showIndicator('Username must be 5-18 characters.', 'bad', alertIndicator);
-                usernameInput.classList.add('error');
-                setTimeout(() => {
-                    usernameInput.classList.remove('error');
-                }, 500);
+                showFieldError(usernameInput);
                 return;
             }
 
             if (!validateUsernameSpecialCharacters(username)) { // Check to see if the entered username contains any special characters (!, @, ?, etc.)
                 showIndicator('Username cannot contain any special characters.', 'bad', alertIndicator);
-                usernameInput.classList.add('error');
-                setTimeout(() => {
-                    usernameInput.classList.remove('error');
-                }, 500);
+                showFieldError(usernameInput);
                 return;
             }
 
             if (filter.isProfane(username)) { // Check to see if the entered username contains any profane words.
                 showIndicator('Really.', 'bad', alertIndicator);
-                usernameInput.classList.add('error');
-                setTimeout(() => {
-                    usernameInput.classList.remove('error');
-                }, 500);
+                showFieldError(usernameInput);
                 return;
             }
 
@@ -96,61 +86,53 @@ export default function RegisterModal() {
                 showIndicator('Check your email for verification!', 'good', alertIndicator);
                 router.push(`/verify?email=${encodeURIComponent(email)}&username=${encodeURIComponent(username)}`);
             } catch (error) {
-                if (error.message === 'Both Email and Username are already in use.') { // Check to see if both email and username are already present in database (crazy edge case...).
-                    showIndicator('Both Email and Username are already in use.', 'bad', alertIndicator);
-                    emailInput.classList.add('error');
-                    usernameInput.classList.add('error');
-                    setTimeout(() => {
-                        emailInput.classList.remove('error');
-                        usernameInput.classList.remove('error');
-                    }, 500);
-                } else if (error.message === 'Email already in use.') { // Check to see if email is already present in database.
-                    showIndicator('Email already in use', 'bad', alertIndicator);
-                    emailInput.classList.add('error');
-                    setTimeout(() => {
-                        emailInput.classList.remove('error');
-                    }, 500);
-                } else if (error.message === 'Username already in use.') { // Check to see if username is already present in database.
-                    showIndicator('Username already taken', 'bad', alertIndicator);
-                    usernameInput.classList.add('error');
-                    setTimeout(() => {
-                        usernameInput.classList.remove('error');
-                    }, 500);
-                } else if (error.message === 'Enter a valid email.') { // Check to see if a valid email address was entered.
-                    showIndicator('Enter a valid email.', 'bad', alertIndicator);
-                    emailInput.classList.add('error');
-                    setTimeout(() => {
-                        emailInput.classList.remove('error');
-                    }, 500);
-                } else if (error.message === 'Username must be 5-18 characters.') { // Check to see if the entered username is between 5-18 characters long.
-                    showIndicator('Username must be 5-18 characters.', 'bad', alertIndicator);
-                    usernameInput.classList.add('error');
-                    setTimeout(() => {
-                        usernameInput.classList.remove('error');
-                    }, 500);
-                } else if (error.message === 'Username cannot contain any special characters.') { // Check to see if the entered username contains any special characters (!, @, ?, etc.)
-                    showIndicator('Username cannot contain any special characters.', 'bad', alertIndicator);
-                    usernameInput.classList.add('error');
-                    setTimeout(() => {
-                        usernameInput.classList.remove('error');
-                    }, 500);
-                } else if (error.message === 'Seriously?') { // Check to see if the entered username contains any profane words.
-                    showIndicator('Seriously?', 'bad', alertIndicator);
-                    usernameInput.classList.add('error');
-                    setTimeout(() => {
-                        usernameInput.classList.remove('error');
-                    }, 500);
-                } else { // All other unknown errors.
-                    console.error('Error signing up:', error);
-                    showIndicator('An unknown error has occurred, please try again later.', 'bad', alertIndicator);
-                    emailInput.classList.add('error');
-                    usernameInput.classList.add('error');
-                    passwordInput.classList.add('error');
-                    setTimeout(() => {
-                        emailInput.classList.remove('error');
-                        usernameInput.classList.remove('error');
-                        passwordInput.classList.remove('error');
-                    }, 500);
+                switch (error.code) {
+                    case RegistrationErrorCode.MISSING_FIELDS:
+                        showIndicator('Please fill out all fields.', 'bad', alertIndicator);
+                        error.details.missingFields.forEach(field => {
+                            const input = document.getElementById(field);
+                            if (input) {
+                                showFieldError(input);
+                            }
+                        });
+                        break;
+                    case RegistrationErrorCode.DUPLICATE_CREDENTIALS:
+                        showIndicator('Both Email and Username are already in use.', 'bad', alertIndicator);
+                        showFieldError(emailInput);
+                        showFieldError(usernameInput);
+                        break;
+                    case RegistrationErrorCode.EMAIL_EXISTS:
+                        showIndicator('Email already in use', 'bad', alertIndicator);
+                        showFieldError(emailInput);
+                        break;
+                    case RegistrationErrorCode.USERNAME_EXISTS:
+                        showIndicator('Username already taken', 'bad', alertIndicator);
+                        showFieldError(usernameInput);
+                        break;
+                    case RegistrationErrorCode.INVALID_EMAIL:
+                        showIndicator('Enter a valid email.', 'bad', alertIndicator);
+                        showFieldError(emailInput);
+                        break;
+                    case RegistrationErrorCode.INVALID_USERNAME:
+                        showFieldError(usernameInput);
+                        if (error.details?.requirements?.minLength) {
+                            showIndicator('Username must be 5-18 characters.', 'bad', alertIndicator);
+                        } else if (error.details?.requirements?.allowedCharacters) {
+                            showIndicator('Username cannot contain any special characters.', 'bad', alertIndicator);
+                        } else {
+                            showIndicator('Invalid username format.', 'bad', alertIndicator);
+                        }
+                        break;
+                    case RegistrationErrorCode.INAPPROPRIATE_CONTENT:
+                        showIndicator('Seriously?', 'bad', alertIndicator);
+                        showFieldError(usernameInput);
+                        break;
+                    default:
+                        console.error('Error signing up:', error);
+                        showIndicator('An unknown error has occurred, please try again later.', 'bad', alertIndicator);
+                        [emailInput, usernameInput, passwordInput].forEach(input => {
+                            showFieldError(input);
+                        });
                 }
             }
         };
@@ -167,22 +149,22 @@ export default function RegisterModal() {
     return (
         <>
             <AlertIndicator />
-            <div id = "register-container">
-                <div id = "register-box">
-                    <p id = "welcome">Join the Fight!</p>
-                    <form id = "registration-form">
-                        <p id = "email-text">Email</p>
-                        <input type = "text" id = "email" name = "email" placeholder = "Email"/>
-                        <p id = "username-text">Username</p>
-                        <input type = "text" id = "username" name = "username" placeholder = "Username"/>
-                        <p id = "password-text">Password</p>
-                        <input type = "password" id = "password" name = "password" placeholder= "Password"/>
-                        <p id = "requirements">Must Contain:
-                            <span id = "length"> 8 Letters, </span>
-                            <span id = "numbers">1 Number, </span>
-                            <span id = "special">& 1 Special Character</span>
+            <div id = 'register-container'>
+                <div id = 'register-box'>
+                    <p id = 'welcome'>Join the Fight!</p>
+                    <form id = 'registration-form'>
+                        <p id = 'email-text'>Email</p>
+                        <input type = 'text' id = 'email' name = 'email' placeholder = 'Email'/>
+                        <p id = 'username-text'>Username</p>
+                        <input type = 'text' id = 'username' name = 'username' placeholder = 'Username'/>
+                        <p id = 'password-text'>Password</p>
+                        <input type = 'password' id = 'password' name = 'password' placeholder= 'Password'/>
+                        <p id = 'requirements'>Must Contain:
+                            <span id = 'length'> 8 Letters, </span>
+                            <span id = 'numbers'>1 Number, </span>
+                            <span id = 'special'>& 1 Special Character</span>
                         </p>
-                        <button type = "submit" id = "submit" disabled>Submit</button>
+                        <button type = 'submit' id = 'submit' disabled>Submit</button>
                     </form>
                 </div>
             </div>
