@@ -57,7 +57,7 @@ function NavBar() {
                 <div id = 'pixele-logo-container'>
                     <Image
                         id = 'pixele-logo'
-                        src = '/navbar/pixele-logo.png'
+                        src = 'https://assets.pixele.gg/general/pixele-logo.png'
                         alt = 'Pixele Logo'
                         width = {100}
                         height = {100}
