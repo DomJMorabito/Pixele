@@ -11,10 +11,10 @@ import './Credits.css';
 export default function Credits({ isVisible, onClose, hasInteracted }) {
     return (
         <div id = 'credits-modal'
-             className={isVisible ? 'show' : hasInteracted ? 'hide' : ''}
+             className = {isVisible ? 'show' : hasInteracted ? 'hide' : ''}
         >
             <div id = 'credits-content'>
-                <span id = 'close-button' onClick = {onClose}>&times;</span>
+                <span id = 'close-button' onClick = { onClose }>&times;</span>
                     <p id = 'header'>Credits & Attributions</p>
                     <p id = 'top-line'>All rights reserved to the following studios/publishers:</p>
                     <p id = 'line'>

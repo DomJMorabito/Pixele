@@ -12,7 +12,7 @@ import AlertIndicator from '../../components/alert-indicator/AlertIndicator';
 
 import { showIndicator } from '@/app/utils/show-indicator';
 import { validateInputs } from '@/app/utils/validate-inputs';
-import {sendLoginRequest } from '@/app/utils/send-login-request';
+import { sendLoginRequest } from '@/app/utils/send-login-request';
 
 // CSS Imports:
 

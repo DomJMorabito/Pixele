@@ -16,6 +16,7 @@ body {
     padding: 0;
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
     transition: background-image 0.5s ease-in-out;
     will-change: background-image;
     -ms-overflow-style: none; /* Hides scrollbar on Internet Explorer */
@@ -26,79 +27,79 @@ body {
 }
 
 .homescreen-background {
-    background-image: url('/homescreen/background.png') !important;
+    background-image: url('https://assets.pixele.gg/background/default-background.png') !important;
 }
 
 .login-background {
-    background-image: url('/login/background.png') !important;
+    background-image: url('https://assets.pixele.gg/background/login-background.png') !important;
 }
 
 .register-background {
-    background-image: url('/register/background.png') !important;
+    background-image: url('https://assets.pixele.gg/background/register-background.png') !important;
 }
 
 .overwatch-homescreen-background {
-    background-image: url('/overwatch/game-card/background.png') !important;
+    background-image: url('https://assets.pixele.gg/background/overwatch-background.png') !important;
 }
 
 .overwatch-game-background {
-    background-image: url('/overwatch/guess-grid/game-background.png') !important;
+    background-image: url('https://assets.pixele.gg/background/overwatch-game-background.png') !important;
 }
 
 .ssb-homescreen-background {
-    background-image: url('/ssb/game-card/background.png') !important;
+    background-image: url('https://assets.pixele.gg/background/ssb-background.png') !important;
 }
 
 .ssb-game-background {
-    background-image: url('/ssb/guess-grid/game-background.png') !important;
+    background-image: url('https://assets.pixele.gg/background/ssb-game-background.png') !important;
 }
 
 .pokemon-homescreen-background {
-    background-image: url('/pokemon/game-card/background.png') !important;
+    background-image: url('https://assets.pixele.gg/background/pokemon-background.png') !important;
 }
 
 .pokemon-game-background {
-    background-image: url('/pokemon/guess-grid/game-background.png') !important;
+    background-image: url('https://assets.pixele.gg/background/pokemon-game-background.png') !important;
 }
 
 .valorant-homescreen-background {
-    background-image: url('/valorant/game-card/background.png') !important;
+    background-image: url('https://assets.pixele.gg/background/valorant-background.png') !important;
 }
 
 .valorant-game-background {
-    background-image: url('/valorant/guess-grid/game-background.png') !important;
+    background-image: url('https://assets.pixele.gg/background/valorant-game-background.png') !important;
 }
 
 .r6-homescreen-background {
-    background-image: url('/r6/game-card/background.png') !important;
+    background-image: url('https://assets.pixele.gg/background/r6-background.png') !important;
 }
 
 .r6-game-background {
-    background-image: url('/r6/guess-grid/game-background.png') !important;
+    background-image: url('https://assets.pixele.gg/background/r6-game-background.png') !important;
 }
 
 .minecraft-homescreen-background {
-    background-image: url('/minecraft/game-card/background.png') !important;
+    background-image: url('https://assets.pixele.gg/background/minecraft-background.png') !important;
 }
 
 .minecraft-game-background {
-    background-image: url('/minecraft/guess-grid/game-background.png') !important;
+    background-image: url('https://assets.pixele.gg/background/minecraft-game-background.png') !important;
 }
 
 .clashroyale-homescreen-background {
-    background-image: url('/clashroyale/game-card/background.png') !important;
+    background-image: url('https://assets.pixele.gg/background/clashroyale-background.png') !important;
 }
 
 .clashroyale-game-background {
-    background-image: url('/clashroyale/guess-grid/game-background.png') !important;
+    background-image: url('https://assets.pixele.gg/background/clashroyale-game-background.png') !important;
 }
 
 .pvz-homescreen-background {
-    background-image: url('/pvz/game-card/background.png') !important;
+    background-image: url('https://assets.pixele.gg/background/pvz-background.png') !important;
 }
 
 .pvz-game-background {
-    background-image: url('/pvz/guess-grid/game-background.png') !important;
+    background-image: url('https://assets.pixele.gg/background/pvz-game-background.png') !important;
 }
 
 @media (min-width: 320px) {

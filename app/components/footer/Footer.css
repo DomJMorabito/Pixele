@@ -2,12 +2,12 @@
 
 @font-face {
     font-family: 'Credits';
-    src: url('/fonts/HTP.ttf');
+    src: url('https://assets.pixele.gg/fonts/HTP.ttf');
 }
 
 @font-face {
     font-family: 'Social';
-    src: url('/fonts/Social.ttf');
+    src: url('https://assets.pixele.gg/fonts/Social.ttf');
 }
 
 /* Footer */
@@ -15,7 +15,7 @@
 footer {
     width: 100%;
     text-align: center;
-    background-image: url('/footer/footer-image.png');
+    background-image: url('https://assets.pixele.gg/general/banner.png');
     background-size: cover;
     background-repeat: no-repeat;
 }

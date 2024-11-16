@@ -20,21 +20,21 @@ function GameCard({ id, logoSrc, altText, gameLink, children, onHover, onLeave }
 
     return (
             <div
-                className='game-card'
-                id={id}
-                onClick={handleClick}
-                onMouseEnter={onHover}
-                onMouseLeave={onLeave}
+                className = 'game-card'
+                id = { id }
+                onClick = { handleClick }
+                onMouseEnter = { onHover }
+                onMouseLeave = { onLeave }
             >
                 <Image
-                    src={logoSrc}
-                    alt={altText}
-                    className='game-logo'
-                    width={500}
-                    height={500}
+                    src = { logoSrc }
+                    alt = { altText }
+                    className = 'game-logo'
+                    width = { 500 }
+                    height = { 500 }
                 />
-                <div className='game-title-container'>
-                    {children}
+                <div className = 'game-title-container'>
+                    { children }
                 </div>
             </div>
     );
