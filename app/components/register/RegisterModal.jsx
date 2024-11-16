@@ -23,6 +23,7 @@ import { validateEmail } from '@/app/utils/validate-email';
 import { validateUsernameLength } from '@/app/utils/validate-username-length';
 import { validateUsernameSpecialCharacters } from '@/app/utils/validate-username-special-characters'
 import { validatePassword } from '@/app/utils/validate-password';
+import { validatePasswordsMatch } from '@/app/utils/validate-passwords-match'
 import { sendRegisterRequest } from '@/app/utils/send-register-request';
 import { showFieldError } from '@/app/utils/showFieldError';
 import { RegistrationErrorCode } from '@/app/utils/errors/RegistrationError';
@@ -37,6 +38,7 @@ export default function RegisterModal() {
     useEffect(() => {
         const form = document.getElementById('registration-form');
         const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirm-password');
         const lengthRequirement = document.getElementById('length');
         const numberRequirement = document.getElementById('numbers');
         const specialRequirement = document.getElementById('special');
@@ -45,17 +47,35 @@ export default function RegisterModal() {
         const usernameInput = document.getElementById('username');
         const alertIndicator = document.getElementById('alert-indicator');
 
-        const handlePasswordInput = () => {
+        const handlePasswordInputs = () => {
             const password = passwordInput.value.trim();
-            validatePassword(password, lengthRequirement, numberRequirement, specialRequirement, submitButton);
+            const confirmPassword = confirmPasswordInput.value.trim();
+            const requirementsMet = validatePassword(password, lengthRequirement, numberRequirement, specialRequirement);
+            validatePasswordsMatch(password, confirmPassword, submitButton, requirementsMet)
         };
+
+        const togglePassword = (e) => {
+            e.preventDefault();
+            const input = e.currentTarget.previousElementSibling;
+            const icon = e.currentTarget.querySelector('.material-symbols-outlined');
+            input.type = input.type === 'password' ? 'text' : 'password';
+            icon.textContent = input.type === 'password' ? 'visibility' : 'visibility_off';
+        }
 
         const handleFormSubmission = async (event) => {
             event.preventDefault();
             const email = emailInput.value.trim();
             const username = usernameInput.value.trim();
             const password = passwordInput.value.trim();
+            const confirmPassword = confirmPasswordInput.value.trim();
             const filter = new Filter();
+
+            if (!validatePasswordsMatch(password, confirmPassword, submitButton, true)) {
+                showIndicator('Passwords do not match.', 'bad', alertIndicator);
+                showFieldError(passwordInput);
+                showFieldError(confirmPasswordInput);
+                return;
+            }
 
             if (!validateEmail(email)) { // Check to see if a valid email address was entered.
                 showIndicator('Enter a valid email.', 'bad', alertIndicator);
@@ -137,11 +157,19 @@ export default function RegisterModal() {
             }
         };
 
-        passwordInput.addEventListener('input', handlePasswordInput);
+        passwordInput.addEventListener('input', handlePasswordInputs);
+        confirmPasswordInput.addEventListener('input', handlePasswordInputs);
+        document.querySelectorAll('.toggle-visibility').forEach(toggle => {
+            toggle.addEventListener('click', togglePassword);
+        });
         form.addEventListener('submit', handleFormSubmission);
 
         return () => {
-            passwordInput.removeEventListener('input', handlePasswordInput);
+            passwordInput.removeEventListener('input', handlePasswordInputs);
+            confirmPasswordInput.removeEventListener('input', handlePasswordInputs);
+            document.querySelectorAll('.toggle-visibility').forEach(toggle => {
+                toggle.removeEventListener('click', togglePassword);
+            });
             form.removeEventListener('submit', handleFormSubmission);
         }
     }, [router]);
@@ -152,19 +180,31 @@ export default function RegisterModal() {
             <div id = 'register-container'>
                 <div id = 'register-box'>
                     <p id = 'welcome'>Join the Fight!</p>
-                    <form id = 'registration-form'>
-                        <p id = 'email-text'>Email</p>
-                        <input type = 'text' id = 'email' name = 'email' placeholder = 'Email'/>
-                        <p id = 'username-text'>Username</p>
-                        <input type = 'text' id = 'username' name = 'username' placeholder = 'Username'/>
-                        <p id = 'password-text'>Password</p>
-                        <input type = 'password' id = 'password' name = 'password' placeholder= 'Password'/>
-                        <p id = 'requirements'>Must Contain:
-                            <span id = 'length'> 8 Letters, </span>
-                            <span id = 'numbers'>1 Number, </span>
-                            <span id = 'special'>& 1 Special Character</span>
+                    <form id='registration-form'>
+                        <p id='email-text'>Email</p>
+                        <input type='text' id='email' name='email' placeholder='Email'/>
+                        <p id='username-text'>Username</p>
+                        <input type='text' id='username' name='username' placeholder='Username'/>
+                        <p id='password-text'>Password</p>
+                        <div className='password-container'>
+                            <input type='password' id='password' name='password' placeholder='Password'/>
+                            <span className = 'toggle-visibility'>
+                                <span className = 'material-symbols-outlined'>visibility</span>
+                            </span>
+                        </div>
+                        <p id='requirements'>
+                            <span id='length'> 8 Letters, </span>
+                            <span id='numbers'>1 Number, </span>
+                            <span id='special'>& 1 Special Character</span>
                         </p>
-                        <button type = 'submit' id = 'submit' disabled>Submit</button>
+                        <p id='confirm-password-text'>Confirm Password</p>
+                        <div className='password-container'>
+                            <input type='password' id='confirm-password' placeholder='Confirm Password'/>
+                            <span className='toggle-visibility'>
+                                <span className='material-symbols-outlined'>visibility</span>
+                            </span>
+                        </div>
+                        <button type='submit' id='submit' disabled>Submit</button>
                     </form>
                 </div>
             </div>

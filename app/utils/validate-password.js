@@ -5,9 +5,8 @@
  * @param {HTMLElement} lengthRequirement - The element displaying the length requirement.
  * @param {HTMLElement} numberRequirement - The element displaying the number requirement.
  * @param {HTMLElement} specialRequirement - The element displaying the special character requirement.
- * @param {HTMLElement} confirmButton - The submit button to enable/disable based on validation.
  */
-export const validatePassword = (password, lengthRequirement, numberRequirement, specialRequirement, confirmButton) => {
+export const validatePassword = (password, lengthRequirement, numberRequirement, specialRequirement) => {
     let lengthMet = false;
     let numbersMet = false;
     let specialMet = false;
@@ -16,7 +15,6 @@ export const validatePassword = (password, lengthRequirement, numberRequirement,
         lengthRequirement.classList.remove('requirement-met', 'requirement-not-met');
         numberRequirement.classList.remove('requirement-met', 'requirement-not-met');
         specialRequirement.classList.remove('requirement-met', 'requirement-not-met');
-        confirmButton.disabled = true;
         return;
     }
 
@@ -47,5 +45,5 @@ export const validatePassword = (password, lengthRequirement, numberRequirement,
         specialRequirement.classList.remove('requirement-met');
     }
 
-    confirmButton.disabled = !(lengthMet && numbersMet && specialMet);
+    return lengthMet && numbersMet && specialMet
 }
