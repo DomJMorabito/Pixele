@@ -263,6 +263,7 @@ nav #settings:hover {
 
 @media (min-width: 768px) {
     nav {
+        height: 6.5vh;
         margin-top: 16px;
     }
 
@@ -279,8 +280,8 @@ nav #settings:hover {
     }
 
     #account-modal {
-        width: 20%;
-        padding: 3%;
+        width: 22.5%;
+        padding: 2.5%;
     }
 }
 
@@ -297,8 +298,13 @@ nav #settings:hover {
         margin-right: 7.5%;
     }
 
+    #account-modal {
+        width: 20%;
+        padding: 2.5%;
+    }
+
     #login-logout-button {
-        font-size: 1.5em;
+        font-size: 1.75em;
     }
 
     #sign-up-text {
@@ -310,6 +316,7 @@ nav #settings:hover {
     nav {
         border-radius: 8px;
         margin-top: 16px;
+        height: 7.5vh;
     }
 
     #logo-container {
@@ -346,7 +353,7 @@ nav #settings:hover {
 
     #account-modal {
         width: 10%;
-        padding: 0.75%;
+        padding: 1%;
         border-radius: 10px;
     }
 

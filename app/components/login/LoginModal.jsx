@@ -26,6 +26,15 @@ export default function LoginModal() {
         const passwordInput = document.getElementById('password');
         const confirmButton = document.getElementById('submit');
         const alertIndicator = document.getElementById('alert-indicator');
+        const toggle = document.querySelector('.toggle-visibility');
+
+        const togglePassword = (e) => {
+            e.preventDefault();
+            const input = e.currentTarget.previousElementSibling;
+            const icon = e.currentTarget.querySelector('.material-symbols-outlined');
+            input.type = input.type === 'password' ? 'text' : 'password';
+            icon.textContent = input.type === 'password' ? 'visibility' : 'visibility_off';
+        }
 
         const handleFormSubmission = async (event) => {
             event.preventDefault();
@@ -58,11 +67,13 @@ export default function LoginModal() {
 
         usernameEmailInput.addEventListener('input', () => validateInputs(usernameEmailInput, passwordInput, confirmButton));
         passwordInput.addEventListener('input', () => validateInputs(usernameEmailInput, passwordInput, confirmButton));
+        toggle.addEventListener('click', togglePassword);
         form.addEventListener('submit', handleFormSubmission);
 
         return () => {
             usernameEmailInput.removeEventListener('input', validateInputs);
             passwordInput.removeEventListener('input', validateInputs);
+            toggle.removeEventListener('click', togglePassword);
             form.removeEventListener('submit', handleFormSubmission);
         }
     }, []);
@@ -77,8 +88,13 @@ export default function LoginModal() {
                         <p id = 'username-email-text'>Username/Email</p>
                         <input type = 'text' id = 'username-email' name = 'username-email' placeholder = 'Username or Email'/>
                         <p id = 'password-text'>Password</p>
-                        <input type = 'password' id = 'password' name = 'password' placeholder= 'Password'/>
-                        <button type = 'submit' id = 'submit' disabled>Login</button>
+                        <div className='password-container'>
+                            <input type='password' id='password' name='password' placeholder='Password'/>
+                            <span className='toggle-visibility'>
+                                <span className='material-symbols-outlined'>visibility</span>
+                            </span>
+                        </div>
+                        <button type='submit' id='submit' disabled>Login</button>
                     </form>
                 </div>
             </div>

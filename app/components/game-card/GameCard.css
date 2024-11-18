@@ -657,7 +657,7 @@
     }
 
     #overwatch {
-        border: 8px solid #eff3fa;
+        border: 6px solid #eff3fa;
         border-radius: 5px;
     }
 
@@ -667,7 +667,7 @@
     }
 
     #ssb {
-        border: 8px solid #000000;
+        border: 6px solid #000000;
     }
 
     #ssb .game-title {
@@ -677,7 +677,7 @@
 
     #pokemon {
         border-radius: 10px;
-        border: 8px solid #ffffff;
+        border: 6px solid #ffffff;
     }
 
     #pokemon .game-title {
@@ -698,7 +698,7 @@
     }
 
     #valorant {
-        border: 8px solid #ff4655;
+        border: 6px solid #ff4655;
     }
 
     #valorant .game-title {
@@ -712,7 +712,7 @@
     }
 
     #minecraft {
-        border: 8px solid #000000;
+        border: 6px solid #000000;
     }
 
     #minecraft .game-title {
@@ -723,7 +723,7 @@
     #clashroyale {
         border-radius: 10px;
         box-shadow: inset 0 8px 10px rgba(0, 0, 0, 0.25);
-        border: 8px solid #c6a45d;
+        border: 6px solid #c6a45d;
     }
 
     #clashroyale .game-title {
@@ -742,7 +742,7 @@
 
     #pvz {
         border-radius: 10px;
-        border: 8px solid #d5a151;
+        border: 6px solid #d5a151;
     }
 
     #pvz .game-title {
