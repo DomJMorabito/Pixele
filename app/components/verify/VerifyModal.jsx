@@ -2,7 +2,7 @@
 
 // Next.js Imports:
 
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 
 // React Imports:
 
@@ -19,15 +19,22 @@ import { sendVerificationRequest } from '@/app/utils/api/verify/send-verificatio
 import { resendVerificationCode } from '@/app/utils/api/verify/resend-verification-code';
 import { VerificationErrorCode } from '@/app/utils/errors/verification/VerificationError';
 
+// Component Imports:
+
+import Button from '@/app/components/misc/button/Button';
+
 // CSS Imports:
 
 import './VerifyModal.css';
 
 export default function VerifyModal() {
+    const router = useRouter();
     const [code, setCode] = useState(new Array(6).fill(''));
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [timer, setTimer] = useState(30);
+    const [isLoading, setIsLoading] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
     const inputRefs = useRef([]);
     const searchParams = useSearchParams();
 
@@ -134,18 +141,25 @@ export default function VerifyModal() {
 
     const handleFormSubmission = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
         const alertIndicator = document.getElementById('alert-indicator');
         const verificationCode = code.join('');
         try {
             const data = await sendVerificationRequest(username, verificationCode);
-            showIndicator('Account Verified!', 'good', alertIndicator);
             handleInputStyles('success');
+            setIsSuccess(true);
+            setTimeout(() => {
+                router.push('/login')
+            }, 2000);
         } catch (error) {
             switch (error.code) {
                 case VerificationErrorCode.ALREADY_VERIFIED:
                     showIndicator('Account already verified!', 'good', alertIndicator);
                     handleInputStyles('success');
-                    //redirect to login page
+                    setIsSuccess(true);
+                    setTimeout(() => {
+                        router.push('/login')
+                    }, 2000);
                     break
                 case VerificationErrorCode.MISSING_FIELDS:
                     showIndicator('Missing required fields.', 'bad', alertIndicator);
@@ -177,6 +191,8 @@ export default function VerifyModal() {
                     showIndicator('An unknown error has occurred, please try again later.', 'bad', alertIndicator);
                     handleInputStyles('error');
             }
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -189,7 +205,7 @@ export default function VerifyModal() {
                 <div id = 'verify-box'>
                     <p id = 'verify-text'>Verify Your Account</p>
                     <p id = 'instruction'>Please enter the 6-digit code sent to:</p>
-                    <p id = 'email'><strong>{email}</strong></p>
+                    <p id = 'user-email'><strong>{email}</strong></p>
                     <form id = 'verification-form' onSubmit = { handleFormSubmission }>
                         <div id = 'code-inputs' onPaste = { handlePaste }>
                             {code.map((digit, index) => (
@@ -214,7 +230,16 @@ export default function VerifyModal() {
                         >
                             {timer > 0 ? `Resend Code in ${timer}s` : 'Resend Code'}
                         </p>
-                        <button type = 'submit' id = 'verify' disabled = {isAnyInputNull}>Verify</button>
+                        <Button
+                            type="submit"
+                            id='verify'
+                            loading={isLoading}
+                            success={isSuccess}
+                            successText="Verified!"
+                            disabled={isAnyInputNull}
+                        >
+                            Verify
+                        </Button>
                     </form>
                 </div>
             </div>

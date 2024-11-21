@@ -21,13 +21,14 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: left !important;
 }
 
 #welcome-back, form input, form p, #submit {
     font-family: 'Header', sans-serif;
 }
 
-form {
+#login-form {
     display: flex;
     flex-direction: column;
 }
@@ -38,6 +39,7 @@ form p {
 
 form input {
     background-color: #F1F3F7;
+    text-align: left !important;
 }
 
 #submit {
@@ -94,6 +96,12 @@ form input {
 
 /* Input Field Classes */
 
+.success {
+    color: inherit;
+    border: 2px solid transparent;
+    animation: successFade 0.5s ease forwards;
+}
+
 .error {
     color: #CA2D2D;
     border: 2px solid #CA2D2D;
@@ -102,6 +110,17 @@ form input {
 }
 
 /* Input Field Animations */
+
+@keyframes successFade {
+    0% {
+        color: inherit;
+        border-color: transparent;
+    }
+    100% {
+        color: #00CC66;
+        border-color: #00CC66;
+    }
+}
 
 @keyframes shake {
     0% { transform: translateX(0); }

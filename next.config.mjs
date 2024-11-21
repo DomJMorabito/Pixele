@@ -22,7 +22,7 @@ const nextConfig = {
                             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
                             "font-src 'self' https://fonts.gstatic.com https://assets.pixele.gg",
                             "img-src 'self' https://assets.pixele.gg data: blob:",
-                            "connect-src 'self' https://assets.pixele.gg",
+                            "connect-src 'self' https://assets.pixele.gg https://api.pixele.gg",
                         ].join('; ')
                     }
                 ]

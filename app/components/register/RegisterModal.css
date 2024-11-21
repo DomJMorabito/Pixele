@@ -23,11 +23,11 @@
     align-items: center;
 }
 
-#welcome, form input, form p, #submit {
+#welcome, form input, form p {
     font-family: 'Header', sans-serif;
 }
 
-form {
+#registration-form {
     display: flex;
     flex-direction: column;
 }
@@ -113,6 +113,12 @@ form input {
 
 /* Input Field Classes */
 
+.success {
+    color: inherit;
+    border: 2px solid transparent;
+    animation: successFade 0.5s ease forwards;
+}
+
 .error {
     color: #CA2D2D;
     border: 2px solid #CA2D2D;
@@ -121,6 +127,17 @@ form input {
 }
 
 /* Input Field Animations */
+
+@keyframes successFade {
+    0% {
+        color: inherit;
+        border-color: transparent;
+    }
+    100% {
+        color: #00CC66;
+        border-color: #00CC66;
+    }
+}
 
 @keyframes shake {
     0% { transform: translateX(0); }

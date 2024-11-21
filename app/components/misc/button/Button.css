@@ -1,0 +1,103 @@
+/* Font Families */
+
+@font-face {
+    font-family: 'Header';
+    src: url('https://assets.pixele.gg/fonts/Header.ttf');
+}
+
+/* Button */
+
+.button {
+    position: relative;
+    font-family: 'Header', sans-serif;
+}
+
+.button__content {
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Button Classes */
+
+.button__content--hidden {
+    opacity: 0;
+}
+
+.button__content--visible {
+    opacity: 1;
+}
+
+.button__success {
+    animation: buttonSuccessFade 0.5s ease forwards;
+    pointer-events: none;
+}
+
+/* Button Animations */
+
+@keyframes buttonSuccessFade {
+    0% {
+        background-color: #00CC66;
+    }
+    100% {
+        background-color: #00CC66;
+    }
+}
+
+/* Throbber Animation */
+
+.button__dots {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button__dot {
+    height: 8px;
+    width: 8px;
+    margin-right: 4px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    animation: buttonPulse 1.5s infinite ease-in-out;
+}
+
+.button__dot:last-child {
+    margin-right: 0;
+}
+
+.button__dot:nth-child(1) {
+    animation-delay: -0.3s;
+}
+
+.button__dot:nth-child(2) {
+    animation-delay: -0.1s;
+}
+
+.button__dot:nth-child(3) {
+    animation-delay: 0.1s;
+}
+
+.button__dot:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.button__dot:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+@keyframes buttonPulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+}
