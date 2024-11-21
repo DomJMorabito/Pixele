@@ -96,8 +96,12 @@ export default function LoginModal() {
                         showFieldState(passwordInput);
                         break
                     case LoginErrorCode.USER_NOT_CONFIRMED:
+                        const username = error.details?.username || identifier;
+                        const email = error.details?.email || identifier;
                         showIndicator('Please Complete Verification.', 'bad', alertIndicator);
-                        // redirect to verify page
+                        setTimeout(() => {
+                            router.push(`/verify?email=${encodeURIComponent(email)}&username=${encodeURIComponent(username)}`);
+                        }, 2000);
                         break
                     case LoginErrorCode.USER_NOT_FOUND:
                         showIndicator('No account associated with this Email/Username.', 'bad', alertIndicator);

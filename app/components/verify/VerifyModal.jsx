@@ -131,7 +131,10 @@ export default function VerifyModal() {
                     break
                 case VerificationErrorCode.ALREADY_VERIFIED:
                     showIndicator('Account already verified!', 'good', alertIndicator);
-                    //redirect to login page
+                    setIsSuccess(true);
+                    setTimeout(() => {
+                        router.push('/login')
+                    }, 2000);
                     break
                 default:
                     showIndicator('Failed to resend verification code.', 'bad', alertIndicator);

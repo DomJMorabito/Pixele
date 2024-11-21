@@ -120,7 +120,7 @@ export default function RegisterModal() {
                 });
                 setTimeout(() => {
                     router.push(`/verify?email=${encodeURIComponent(email)}&username=${encodeURIComponent(username)}`);
-                }, 2000)
+                }, 2000);
             } catch (error) {
                 switch (error.code) {
                     case RegistrationErrorCode.MISSING_FIELDS:
