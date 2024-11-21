@@ -1,5 +1,5 @@
-import { createErrorFromResponse } from '@/app/utils/error-handler';
-import { VerificationError } from '@/app/utils/errors/VerificationError';
+import { createErrorFromResponse } from '@/app/utils/errors/error-handler';
+import { VerificationError } from '@/app/utils/errors/verification/VerificationError';
 
 /**
  * Confirms the sign-up verification code for the user with AWS Cognito.
@@ -31,11 +31,18 @@ export const sendVerificationRequest = async (username, verificationCode) => {
 
         return data;
     } catch (error) {
-        if (error instanceof VerificationError) {
+        if (error instanceof VerificationError) { // If it's already a VerificationError (from createErrorFromResponse), rethrow it.
             throw error;
         }
 
-        throw createErrorFromResponse(500, {
+        if (!navigator.online || error.message === 'Failed to fetch') { // Handle network errors or other unexpected errors.
+            throw createErrorFromResponse(500, {
+                message: 'Unable to connect to the server. Please check your internet connection.',
+                code: 'NETWORK_ERROR'
+            }, 'verification');
+        }
+
+        throw createErrorFromResponse(500, { // Handle any other unknown errors.
             message: 'An unknown error occurred',
             code: 'UNKNOWN_ERROR',
         }, 'verification');

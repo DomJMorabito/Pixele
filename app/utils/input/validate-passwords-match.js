@@ -1,5 +1,5 @@
 /**
- * Validates that the password and confirm password inputs match.
+ * Validates that the password and confirm password input match.
  *
  * @param {string} password - The password string to validate.
  * @param {string} confirmPassword - The confirm password string to compare against.

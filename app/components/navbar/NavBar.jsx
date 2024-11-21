@@ -11,7 +11,7 @@ import { useState, useMemo } from 'react';
 
 //Utils Imports:
 
-import { debounce } from '../../utils/debounce';
+import { debounce } from '../../utils/ui/debounce';
 
 // CSS Imports:
 

@@ -18,15 +18,15 @@ import AlertIndicator from '../../components/alert-indicator/AlertIndicator';
 
 // Utils Imports:
 
-import { showIndicator } from '@/app/utils/show-indicator';
-import { validateEmail } from '@/app/utils/validate-email';
-import { validateUsernameLength } from '@/app/utils/validate-username-length';
-import { validateUsernameSpecialCharacters } from '@/app/utils/validate-username-special-characters'
-import { validatePassword } from '@/app/utils/validate-password';
-import { validatePasswordsMatch } from '@/app/utils/validate-passwords-match'
-import { sendRegisterRequest } from '@/app/utils/send-register-request';
-import { showFieldError } from '@/app/utils/showFieldError';
-import { RegistrationErrorCode } from '@/app/utils/errors/RegistrationError';
+import { showIndicator } from '@/app/utils/ui/show-indicator';
+import { validateEmail } from '@/app/utils/input/validate-email';
+import { validateUsernameLength } from '@/app/utils/input/validate-username-length';
+import { validateUsernameSpecialCharacters } from '@/app/utils/input/validate-username-special-characters'
+import { validatePassword } from '@/app/utils/input/validate-password';
+import { validatePasswordsMatch } from '@/app/utils/input/validate-passwords-match'
+import { sendRegisterRequest } from '@/app/utils/api/register/send-register-request';
+import { showFieldError } from '@/app/utils/ui/showFieldError';
+import { RegistrationErrorCode } from '@/app/utils/errors/register/RegistrationError';
 
 // CSS Imports:
 
@@ -115,42 +115,57 @@ export default function RegisterModal() {
                                 showFieldError(input);
                             }
                         });
-                        break;
+                        break
                     case RegistrationErrorCode.DUPLICATE_CREDENTIALS:
                         showIndicator('Both Email and Username are already in use.', 'bad', alertIndicator);
                         showFieldError(emailInput);
                         showFieldError(usernameInput);
-                        break;
+                        break
                     case RegistrationErrorCode.EMAIL_EXISTS:
                         showIndicator('Email already in use', 'bad', alertIndicator);
                         showFieldError(emailInput);
-                        break;
+                        break
                     case RegistrationErrorCode.USERNAME_EXISTS:
                         showIndicator('Username already taken', 'bad', alertIndicator);
                         showFieldError(usernameInput);
-                        break;
+                        break
                     case RegistrationErrorCode.INVALID_EMAIL:
                         showIndicator('Enter a valid email.', 'bad', alertIndicator);
                         showFieldError(emailInput);
-                        break;
+                        break
                     case RegistrationErrorCode.INVALID_USERNAME:
                         showFieldError(usernameInput);
                         if (error.details?.requirements?.minLength) {
                             showIndicator('Username must be 5-18 characters.', 'bad', alertIndicator);
                         } else if (error.details?.requirements?.allowedCharacters) {
                             showIndicator('Username cannot contain any special characters.', 'bad', alertIndicator);
-                        } else {
-                            showIndicator('Invalid username format.', 'bad', alertIndicator);
                         }
-                        break;
+                        break
                     case RegistrationErrorCode.INAPPROPRIATE_CONTENT:
                         showIndicator('Seriously?', 'bad', alertIndicator);
                         showFieldError(usernameInput);
-                        break;
+                        break
+                    case RegistrationErrorCode.INVALID_PASSWORD:
+                        showIndicator('Password does not meet the requirements.', 'bad', alertIndicator);
+                        showFieldError(passwordInput);
+                        showFieldError(confirmPasswordInput);
+                        break
+                    case RegistrationErrorCode.RATE_LIMIT_EXCEEDED:
+                        showIndicator('Too many attempts. Please try again later.', 'bad', alertIndicator);
+                        [emailInput, usernameInput, passwordInput, confirmPasswordInput].forEach(input => {
+                            showFieldError(input);
+                        });
+                        break
+                    case RegistrationErrorCode.SERVER_ERROR:
+                        showIndicator('Internal server error. Please try again later.', 'bad', alertIndicator);
+                        [emailInput, usernameInput, passwordInput, confirmPasswordInput].forEach(input => {
+                            showFieldError(input);
+                        });
+                        break
                     default:
                         console.error('Error signing up:', error);
                         showIndicator('An unknown error has occurred, please try again later.', 'bad', alertIndicator);
-                        [emailInput, usernameInput, passwordInput].forEach(input => {
+                        [emailInput, usernameInput, passwordInput, confirmPasswordInput].forEach(input => {
                             showFieldError(input);
                         });
                 }

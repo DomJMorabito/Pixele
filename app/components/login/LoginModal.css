@@ -130,6 +130,7 @@ form input {
 
     form input {
         margin-top: -5%;
+        font-size: 0.75em;
     }
 
     #username-email-text {
@@ -138,6 +139,10 @@ form input {
 
     #password-text {
         margin-bottom: 0;
+    }
+
+    .toggle-visibility .material-symbols-outlined {
+        font-size: 16px;
     }
 
     #submit {
@@ -170,6 +175,7 @@ form input {
 
     form input {
         margin-top: -1.5vh;
+        font-size: 1em;
     }
 
     #username-email-text {
@@ -177,7 +183,7 @@ form input {
     }
 
     .toggle-visibility .material-symbols-outlined {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     #submit {
@@ -212,8 +218,12 @@ form input {
         font-size: 2.25em;
     }
 
-    form input, form p {
+    form p {
         font-size: 1.5em;
+    }
+
+    form input {
+        font-size: 1.25em;
     }
 
     #username-email-text {
@@ -221,7 +231,7 @@ form input {
     }
 
     .toggle-visibility .material-symbols-outlined {
-        font-size: 28px;
+        font-size: 24px;
     }
 
     #submit {
@@ -259,8 +269,12 @@ form input {
         font-size: 2.75em;
     }
 
-    form input, form p {
+    form p {
         font-size: 2em;
+    }
+
+    form input {
+        font-size: 1.75em;
     }
 
     #username-email-text {
@@ -268,7 +282,7 @@ form input {
     }
 
     .toggle-visibility .material-symbols-outlined {
-        font-size: 40px;
+        font-size: 32px;
     }
 
     #submit {
@@ -286,12 +300,20 @@ form input {
         font-size: 3.5em;
     }
 
-    form input, form p {
+    form p {
         font-size: 2.5em;
+    }
+
+    form input {
+        font-size: 2.25em;
     }
 
     #username-email-text {
         margin-bottom: 32px;
+    }
+
+    .toggle-visibility .material-symbols-outlined {
+        font-size: 40px;
     }
 
     #submit {

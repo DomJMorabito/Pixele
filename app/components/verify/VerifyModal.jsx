@@ -14,10 +14,10 @@ import AlertIndicator from '@/app/components/alert-indicator/AlertIndicator';
 
 // Utils Imports:
 
-import { showIndicator } from '@/app/utils/show-indicator';
-import { sendVerificationRequest } from '@/app/utils/send-verification-request';
-import { resendVerificationCode } from '@/app/utils/resend-verification-code';
-import { VerificationErrorCode } from '@/app/utils/errors/VerificationError';
+import { showIndicator } from '@/app/utils/ui/show-indicator';
+import { sendVerificationRequest } from '@/app/utils/api/verify/send-verification-request';
+import { resendVerificationCode } from '@/app/utils/api/verify/resend-verification-code';
+import { VerificationErrorCode } from '@/app/utils/errors/verification/VerificationError';
 
 // CSS Imports:
 
@@ -91,6 +91,19 @@ export default function VerifyModal() {
         }
     };
 
+    const handleInputStyles = (style, duration = 500) => {
+        inputRefs.current.forEach(input => {
+            input.classList.remove('error', 'success');
+            input.classList.add(style);
+
+            if (duration && style === 'error') {
+                setTimeout(() => {
+                    input.classList.remove('error');
+                }, duration);
+            }
+        });
+    }
+
     const handleResendCode = async (e) => {
         e.preventDefault();
         if (timer > 0) {
@@ -105,13 +118,14 @@ export default function VerifyModal() {
             switch (error.code) {
                 case VerificationErrorCode.RATE_LIMIT_EXCEEDED:
                     showIndicator(`Too many attempts. Please try again in ${error.details?.retryAfter || '30s'}.`, 'bad', alertIndicator);
-                    break;
+                    break
                 case VerificationErrorCode.USER_NOT_FOUND:
                     showIndicator('User not found.', 'bad', alertIndicator);
-                    break;
+                    break
                 case VerificationErrorCode.ALREADY_VERIFIED:
                     showIndicator('Account already verified!', 'good', alertIndicator);
-                    break;
+                    //redirect to login page
+                    break
                 default:
                     showIndicator('Failed to resend verification code.', 'bad', alertIndicator);
             }
@@ -125,71 +139,43 @@ export default function VerifyModal() {
         try {
             const data = await sendVerificationRequest(username, verificationCode);
             showIndicator('Account Verified!', 'good', alertIndicator);
-            inputRefs.current.forEach(input => {
-                input.classList.remove('error', 'success');
-                input.classList.add('success');
-            });
+            handleInputStyles('success');
         } catch (error) {
             switch (error.code) {
-                case VerificationErrorCode.INVALID_CODE:
-                    showIndicator('Verification Code is Incorrect.', 'bad', alertIndicator);
-                    inputRefs.current.forEach(input => {
-                        input.classList.remove('error', 'success');
-                        input.classList.add('error');
-                    });
-                    setTimeout(() => {
-                        inputRefs.current.forEach(input => {
-                            input.classList.remove('error');
-                        });
-                    }, 500);
-                    break;
-                case VerificationErrorCode.USER_NOT_FOUND:
-                    showIndicator('User not found.', 'bad', alertIndicator);
-                    inputRefs.current.forEach(input => {
-                        input.classList.remove('error', 'success');
-                        input.classList.add('error');
-                    });
-                    setTimeout(() => {
-                        inputRefs.current.forEach(input => {
-                            input.classList.remove('error');
-                        });
-                    }, 500);
-                    break;
-                case VerificationErrorCode.RATE_LIMIT_EXCEEDED:
-                    showIndicator('Too many attempts. Please try again later.', 'bad', alertIndicator);
-                    inputRefs.current.forEach(input => {
-                        input.classList.remove('error', 'success');
-                        input.classList.add('error');
-                    });
-                    setTimeout(() => {
-                        inputRefs.current.forEach(input => {
-                            input.classList.remove('error');
-                        });
-                    }, 500);
-                    break;
-                case VerificationErrorCode.EXPIRED_CODE:
-                    showIndicator('Verification code has expired. Please request a new one.', 'bad', alertIndicator);
-                    setTimer(0);
-                    inputRefs.current.forEach(input => {
-                        input.classList.remove('error', 'success');
-                        input.classList.add('error');
-                    });
-                    setTimeout(() => {
-                        inputRefs.current.forEach(input => {
-                            input.classList.remove('error');
-                        });
-                    }, 500);
-                    break;
                 case VerificationErrorCode.ALREADY_VERIFIED:
                     showIndicator('Account already verified!', 'good', alertIndicator);
-                    inputRefs.current.forEach(input => {
-                        input.classList.remove('error', 'success');
-                        input.classList.add('success');
-                    });
-                    break;
+                    handleInputStyles('success');
+                    //redirect to login page
+                    break
+                case VerificationErrorCode.MISSING_FIELDS:
+                    showIndicator('Missing required fields.', 'bad', alertIndicator);
+                    handleInputStyles('error');
+                    break
+                case VerificationErrorCode.INVALID_CODE:
+                    showIndicator('Verification Code is Incorrect.', 'bad', alertIndicator);
+                    handleInputStyles('error');
+                    break
+                case VerificationErrorCode.USER_NOT_FOUND:
+                    showIndicator('User not found.', 'bad', alertIndicator);
+                    handleInputStyles('error');
+                    break
+                case VerificationErrorCode.EXPIRED_CODE:
+                    setTimer(0);
+                    showIndicator('Verification code has expired. Please request a new one.', 'bad', alertIndicator);
+                    handleInputStyles('error');
+                    break
+                case VerificationErrorCode.RATE_LIMIT_EXCEEDED:
+                    showIndicator('Too many attempts. Please try again later.', 'bad', alertIndicator);
+                    handleInputStyles('error');
+                    break
+                case VerificationErrorCode.SERVER_ERROR:
+                    showIndicator('Internal server error. Please try again later.', 'bad', alertIndicator);
+                    handleInputStyles('error');
+                    break
                 default:
-                    console.error('Error signing up:', error);
+                    console.error('Error verifying:', error);
                     showIndicator('An unknown error has occurred, please try again later.', 'bad', alertIndicator);
+                    handleInputStyles('error');
             }
         }
     };

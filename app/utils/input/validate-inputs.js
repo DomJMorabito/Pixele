@@ -1,5 +1,5 @@
 /**
- * Validates the username/email and password inputs to enable or disable the submit button.
+ * Validates the username/email and password input to enable or disable the submit button.
  *
  * @param {HTMLElement} usernameEmailInput - The input element for the username or email.
  * @param {HTMLElement} passwordInput - The input element for the password.

@@ -3,13 +3,13 @@
  */
 export const VerificationErrorCode = {
     MISSING_FIELDS: 'MISSING_FIELDS',           // Username or code missing
-    RATE_LIMIT_EXCEEDED: 'RATE_LIMIT_EXCEEDED', // Too many attempts
-    USER_NOT_FOUND: 'USER_NOT_FOUND',           // User doesn't exist
-    NETWORK_ERROR: 'NETWORK_ERROR',             // Connection Issues
-    SERVER_ERROR: 'SERVER_ERROR',               // Internal server error
     INVALID_CODE: 'INVALID_CODE',               // Verification code validation failed
+    USER_NOT_FOUND: 'USER_NOT_FOUND',           // User doesn't exist
     EXPIRED_CODE: 'EXPIRED_CODE',               // Code has expired
     ALREADY_VERIFIED: 'ALREADY_VERIFIED',       // User is already verified
+    RATE_LIMIT_EXCEEDED: 'RATE_LIMIT_EXCEEDED', // Too many attempts
+    SERVER_ERROR: 'SERVER_ERROR',               // Internal server error
+    NETWORK_ERROR: 'NETWORK_ERROR',             // Connection Issues
     UNKNOWN_ERROR: 'UNKNOWN_ERROR',             // Fallback for unexpected errors
 };
 
@@ -38,22 +38,5 @@ export class VerificationError extends Error {
         this.code = code;
         this.details = details;
         this.timestamp = new Date().toISOString();
-    }
-
-    /**
-     * Converts the error to a user-friendly format
-     * Useful for logging or sending to error tracking services
-     *
-     * @returns {Object} Formatted error object
-     */
-    toJSON() {
-        return {
-            name: this.name,
-            code: this.code,
-            message: this.message,
-            details: this.details,
-            timestamp: this.timestamp,
-            stack: this.stack
-        };
     }
 }

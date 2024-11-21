@@ -10,13 +10,15 @@ import AlertIndicator from '../../components/alert-indicator/AlertIndicator';
 
 // Utils Imports:
 
-import { showIndicator } from '@/app/utils/show-indicator';
-import { validateInputs } from '@/app/utils/validate-inputs';
-import { sendLoginRequest } from '@/app/utils/send-login-request';
+import { showIndicator } from '@/app/utils/ui/show-indicator';
+import { validateInputs } from '@/app/utils/input/validate-inputs';
+import { sendLoginRequest } from '@/app/utils/api/login/send-login-request';
+import { LoginErrorCode } from '@/app/utils/errors/login/LoginError';
 
 // CSS Imports:
 
 import './LoginModal.css';
+import {showFieldError} from "@/app/utils/ui/showFieldError";
 
 export default function LoginModal() {
 
@@ -44,23 +46,59 @@ export default function LoginModal() {
             try {
                 const data = await sendLoginRequest(identifier, password);
                 showIndicator('Login Successful!', 'good', alertIndicator);
-                form.reset();
-                confirmButton.disabled = true;
             } catch (error) {
-                if (error.message === 'User not found...') {
-                    showIndicator('No User Associated with this Email/Username', 'bad', alertIndicator);
-                    usernameEmailInput.classList.add('error');
-                    setTimeout(() => {
-                        usernameEmailInput.classList.remove('error');
-                    }, 300);
-                } else if (error.message === 'Incorrect Password...') {
-                    showIndicator('Password is Incorrect', 'bad', alertIndicator);
-                    passwordInput.classList.add('error');
-                    setTimeout(() => {
-                        passwordInput.classList.remove('error');
-                    }, 300);
-                } else {
-                    showIndicator('An unknown error has occurred, please try again later.', 'bad', alertIndicator);
+                switch (error.code) {
+                    case LoginErrorCode.MISSING_FIELDS:
+                        error.details.missingFields.forEach(field => {
+                            const input = document.getElementById(field);
+                            if (input) {
+                                showFieldError(input);
+                            }
+                        });
+                        break
+                    case LoginErrorCode.AUTHENTICATION_INCOMPLETE:
+                        if (error.details?.nextStep?.signInStep === 'CONFIRM_SIGN_UP') {
+                            showIndicator('test1', 'bad', alertIndicator);
+                            //redirect to verify page
+                        }
+                        break
+                    case LoginErrorCode.AUTH_COMPLETION_FAILED:
+                        showIndicator('Login failed. Please try again.', 'bad', alertIndicator);
+                        showFieldError(usernameEmailInput);
+                        showFieldError(passwordInput);
+                        break
+                    case LoginErrorCode.TOKEN_UNAVAILABLE:
+                        showIndicator('No access token available after authentication.', 'bad', alertIndicator);
+                        showFieldError(usernameEmailInput);
+                        showFieldError(passwordInput);
+                        break
+                    case LoginErrorCode.USER_NOT_CONFIRMED:
+                        showIndicator('test2', 'bad', alertIndicator);
+                        // redirect to verify page
+                        break
+                    case LoginErrorCode.USER_NOT_FOUND:
+                        showIndicator('No account associated with this Email/Username.', 'bad', alertIndicator);
+                        showFieldError(usernameEmailInput);
+                        break
+                    case LoginErrorCode.INVALID_CREDENTIALS:
+                        showIndicator('Email/Username or Password is incorrect.', 'bad', alertIndicator);
+                        showFieldError(passwordInput);
+                        break
+                    case LoginErrorCode.RATE_LIMIT_EXCEEDED:
+                        showIndicator('Too many attempts. Please try again later.', 'bad', alertIndicator);
+                        showFieldError(usernameEmailInput);
+                        showFieldError(passwordInput);
+                        break
+                    case LoginErrorCode.SERVER_ERROR:
+                        showIndicator('Internal server error. Please try again later.', 'bad', alertIndicator);
+                        showFieldError(usernameEmailInput);
+                        showFieldError(passwordInput);
+                        break
+                    default:
+                        console.error('Error logging in:', error);
+                        showIndicator('An unknown error has occurred, please try again later.', 'bad', alertIndicator);
+                        showFieldError(usernameEmailInput);
+                        showFieldError(passwordInput);
                 }
             }
         };

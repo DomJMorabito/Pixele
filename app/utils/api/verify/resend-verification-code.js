@@ -1,7 +1,7 @@
 // Utils Imports:
 
-import { VerificationError } from '@/app/utils/errors/VerificationError';
-import { createErrorFromResponse } from '@/app/utils/error-handler';
+import { VerificationError } from '@/app/utils/errors/verification/VerificationError';
+import { createErrorFromResponse } from '@/app/utils/errors/error-handler';
 
 /**
  * Resends the verification code for the specified username.
@@ -51,6 +51,6 @@ export const resendVerificationCode = async (username) => {
             details: {
                 originalError: error.message
             }
-        })
+        }, 'verification')
     }
 }

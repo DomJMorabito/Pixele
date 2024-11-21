@@ -8,6 +8,26 @@ const nextConfig = {
                 pathname: '**'
             }
         ]
+    },
+    async headers() {
+        return [
+            {
+                source: '/:path*',
+                headers: [
+                    {
+                        key: 'Content-Security-Policy',
+                        value: [
+                            "default-src 'self'",
+                            "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+                            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+                            "font-src 'self' https://fonts.gstatic.com https://assets.pixele.gg",
+                            "img-src 'self' https://assets.pixele.gg data: blob:",
+                            "connect-src 'self' https://assets.pixele.gg",
+                        ].join('; ')
+                    }
+                ]
+            }
+        ]
     }
 };
 
