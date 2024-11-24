@@ -1,43 +1,59 @@
-# 1. Use official Node.js image as the base image:
+# Base image for all stages
 
-FROM node:18-alpine AS builder
+FROM node:18-alpine AS base
 
-# 2. Set working directory inside the container:
+# Install dependencies stage
 
+FROM base AS deps
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+
+# Builder stage
+
+FROM base AS builder
 WORKDIR /app
 
-# 3. Copy package.json & package-lock.json to install dependencies:
+# Copy dependencies from previous stage
 
-COPY package*.json ./
-
-# 4. Install dependencies:
-
-RUN npm install
-
-# 5. Copy all source code to the container:
-
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# 6. Build Next.js app:
+# Set production environment
 
+ENV NEXT_TELEMETRY_DISABLED 1
+ENV NODE_ENV production
 RUN npm run build
 
-# 7. Use a second, smaller base image to run app in production:
+# Production runner stage
 
-FROM node:18-alpine
-
-# 8. Set working directory inside the container:
-
+FROM base AS runner
 WORKDIR /app
+ENV NEXT_TELEMETRY_DISABLED 1
+ENV NODE_ENV production
 
-# 9. Copy the built files from the builder stage:
+# Create non-root user
 
-COPY --from=builder /app ./
+RUN addgroup --system --gid 1001 pixele
+RUN adduser --system --uid 1001 pixeleuser
 
-# 10. Expose the port Next.js uses (3000 by default):
+# Copy only necessary files
+
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+
+# Set permissions
+
+RUN chown -R pixeleuser:pixele /app
+
+# Switch to non-root user
+
+USER pixeleuser
+
+# Expose port
 
 EXPOSE 3000
 
-# 11. Start the Next.js app:
+# Use server.js from standalone output
 
-CMD ["npm", "start"]
+CMD ["node", "server.js"]

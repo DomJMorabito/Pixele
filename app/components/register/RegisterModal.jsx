@@ -108,7 +108,7 @@ export default function RegisterModal() {
                     showFieldState(usernameInput);
                     return;
                 }
-                const data = await sendRegisterRequest(username, email, password);
+                await sendRegisterRequest(username, email, password);
                 setIsSuccess(true);
                 const inputs = [emailInput, usernameInput, passwordInput, confirmPasswordInput];
                 inputs.forEach(input => {

@@ -44,16 +44,10 @@ export const handleLoginError = (status, data) => {
                 LoginErrorCode.SERVER_ERROR,
                 data.details
             )
-        case 'USER_NOT_CONFIRMED':
-            return new LoginError(
-                'Please verify your email before logging in.',
-                LoginErrorCode.USER_NOT_CONFIRMED,
-                data.details
-            )
-        case 'AUTHENTICATION_INCOMPLETE':
+        case 'AUTH_INCOMPLETE':
             return new LoginError(
                 'Further authorization required.',
-                LoginErrorCode.AUTHENTICATION_INCOMPLETE,
+                LoginErrorCode.AUTH_INCOMPLETE,
                 data.details
             )
         case 'AUTH_COMPLETION_FAILED':

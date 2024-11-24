@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 
 import VerifyModal from '@/app/components/verify/VerifyModal';
 
-export default function VerifyPage() {
+export default function VerifyPage({ searchParams}) {
 
     // Makes sure that the background image is always set to the default whenever the page is loaded.
     useEffect(() => {
@@ -28,7 +28,10 @@ export default function VerifyPage() {
     return (
         <>
             <main>
-                <VerifyModal />
+                <VerifyModal
+                    email = { searchParams.email }
+                    username = { searchParams.username }
+                />
             </main>
         </>
     )

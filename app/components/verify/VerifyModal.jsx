@@ -2,7 +2,7 @@
 
 // Next.js Imports:
 
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 // React Imports:
 
@@ -27,27 +27,13 @@ import Button from '@/app/components/misc/button/Button';
 
 import './VerifyModal.css';
 
-export default function VerifyModal() {
+export default function VerifyModal({ email, username }) {
     const router = useRouter();
     const [code, setCode] = useState(new Array(6).fill(''));
-    const [email, setEmail] = useState('');
-    const [username, setUsername] = useState('');
     const [timer, setTimer] = useState(30);
     const [isLoading, setIsLoading] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const inputRefs = useRef([]);
-    const searchParams = useSearchParams();
-
-    useEffect(() => {
-        const emailParam = searchParams.get('email');
-        const usernameParam = searchParams.get('username');
-        if (emailParam) {
-            setEmail(emailParam);
-        }
-        if (usernameParam) {
-            setUsername(usernameParam);
-        }
-    }, [searchParams]);
 
     useEffect(() => {
         if (timer > 0) {
@@ -148,7 +134,7 @@ export default function VerifyModal() {
         const alertIndicator = document.getElementById('alert-indicator');
         const verificationCode = code.join('');
         try {
-            const data = await sendVerificationRequest(username, verificationCode);
+            await sendVerificationRequest(username, verificationCode);
             handleInputStyles('success');
             setIsSuccess(true);
             setTimeout(() => {

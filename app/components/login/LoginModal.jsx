@@ -56,7 +56,7 @@ export default function LoginModal() {
             const password = passwordInput.value.trim();
 
             try {
-                const data = await sendLoginRequest(identifier, password);
+                await sendLoginRequest(identifier, password);
                 setIsSuccess(true);
                 const inputs = [usernameEmailInput, passwordInput];
                 inputs.forEach(input => {
@@ -67,7 +67,7 @@ export default function LoginModal() {
                     });
                 });
                 setTimeout(() => {
-                    router.push('/')
+                    router.push('/');
                 }, 2000);
             } catch (error) {
                 switch (error.code) {
@@ -79,10 +79,35 @@ export default function LoginModal() {
                             }
                         });
                         break
-                    case LoginErrorCode.AUTHENTICATION_INCOMPLETE:
+                    case LoginErrorCode.AUTH_INCOMPLETE:
                         if (error.details?.nextStep?.signInStep === 'CONFIRM_SIGN_UP') {
+                            const username = error.details?.username || identifier;
+                            const email = error.details?.email || identifier;
                             showIndicator('Please Complete Verification.', 'bad', alertIndicator);
-                            //redirect to verify page
+                            showFieldState(usernameEmailInput);
+                            showFieldState(passwordInput);
+                            setTimeout(() => {
+                                router.push(`/verify?email=${encodeURIComponent(email)}&username=${encodeURIComponent(username)}`);
+                            }, 2000);
+                        } else if (error.details?.nextStep?.signInStep === 'RESET_PASSWORD') {
+                            showIndicator('Please reset password.', 'bad', alertIndicator);
+                            showFieldState(usernameEmailInput);
+                            showFieldState(passwordInput);
+                            // redirect to reset password page.
+                        } else if (error.details?.nextStep?.signInStep === 'CONFIRM_SIGN_IN_WITH_TOTP_CODE') {
+                            showIndicator('Enter code found on authentication app.', 'bad', alertIndicator);
+                            showFieldState(usernameEmailInput);
+                            showFieldState(passwordInput);
+                            // redirect to verify page
+                        } else if (error.details?.nextStep?.signInStep === 'CONFIRM_SIGN_IN_WITH_EMAIL_CODE') {
+                            showIndicator('Enter code sent to your email.', 'bad', alertIndicator);
+                            showFieldState(usernameEmailInput);
+                            showFieldState(passwordInput);
+                            // redirect to verify page
+                        } else {
+                            showIndicator('An unknown error has occurred. Please try again later.', 'bad', alertIndicator);
+                            showFieldState(usernameEmailInput);
+                            showFieldState(passwordInput);
                         }
                         break
                     case LoginErrorCode.AUTH_COMPLETION_FAILED:
@@ -94,14 +119,6 @@ export default function LoginModal() {
                         showIndicator('No access token available after authentication.', 'bad', alertIndicator);
                         showFieldState(usernameEmailInput);
                         showFieldState(passwordInput);
-                        break
-                    case LoginErrorCode.USER_NOT_CONFIRMED:
-                        const username = error.details?.username || identifier;
-                        const email = error.details?.email || identifier;
-                        showIndicator('Please Complete Verification.', 'bad', alertIndicator);
-                        setTimeout(() => {
-                            router.push(`/verify?email=${encodeURIComponent(email)}&username=${encodeURIComponent(username)}`);
-                        }, 2000);
                         break
                     case LoginErrorCode.USER_NOT_FOUND:
                         showIndicator('No account associated with this Email/Username.', 'bad', alertIndicator);
