@@ -11,7 +11,7 @@ import { VerificationError } from '@/app/utils/errors/verification/VerificationE
  */
 export const sendVerificationRequest = async (username, verificationCode) => {
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/verify`, {
+        const response = await fetch(`${process.env.API_URL}/users/verify`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ export const sendVerificationRequest = async (username, verificationCode) => {
             throw error;
         }
 
-        if (!navigator.online || error.message === 'Failed to fetch') { // Handle network errors or other unexpected errors.
+        if (error.message === 'Failed to fetch') { // Handle network errors or other unexpected errors.
             throw createErrorFromResponse(500, {
                 message: 'Unable to connect to the server. Please check your internet connection.',
                 code: 'NETWORK_ERROR'
