@@ -1,8 +1,10 @@
 // Component Imports:
-import NavBar from './components/navbar/NavBar';
+
+import NavBar from '@/app/components/nav-bar/NavBar';
 
 // CSS Imports:
-import './layout.css';
+
+import '@/app/layout.css'
 
 export default function Layout({ children }) {
     return (

@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 // Component Imports:
 
-import LoginModal from '../components/login/LoginModal';
+import LoginModal from '@/app/components/login/LoginModal';
 
 export default function LoginPage() {
 

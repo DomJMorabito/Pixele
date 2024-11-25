@@ -1,4 +1,4 @@
-import { RegistrationError, RegistrationErrorCode } from '../register/RegistrationError';
+import { RegistrationError, RegistrationErrorCode } from '@/app/utils/errors/register/RegistrationError';
 
 /**
  * Creates a RegistrationError from an API response

@@ -14,7 +14,7 @@ import { Filter } from 'bad-words';
 
 // Component Imports:
 
-import AlertIndicator from '../../components/alert-indicator/AlertIndicator';
+import AlertIndicator from '@/app/components/alert-indicator/AlertIndicator';
 
 // Utils Imports:
 
@@ -34,7 +34,7 @@ import Button from '@/app/components/misc/button/Button';
 
 // CSS Imports:
 
-import './RegisterModal.css';
+import '@/app/components/register/RegisterModal.css'
 
 export default function RegisterModal() {
     const router = useRouter();

@@ -6,7 +6,7 @@ import React from 'react';
 
 // CSS Imports:
 
-import './Credits.css';
+import '@/app/components/credits/Credits.css';
 
 export default function Credits({ isVisible, onClose, hasInteracted }) {
 

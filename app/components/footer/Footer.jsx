@@ -10,11 +10,11 @@ import React, { useState } from 'react';
 
 // Component Imports:
 
-import Credits from '../credits/Credits';
+import Credits from '@/app/components/credits/Credits';
 
 // CSS Imports:
 
-import './Footer.css';
+import '@/app/components/footer/Footer.css';
 
 export default function Footer() {
 

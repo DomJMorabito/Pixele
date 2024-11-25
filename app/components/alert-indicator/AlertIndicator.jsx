@@ -1,6 +1,6 @@
 // CSS Imports:
 
-import './AlertIndicator.css';
+import '@/app/components/alert-indicator/AlertIndicator.css';
 
 export default function AlertIndicator() {
     return (

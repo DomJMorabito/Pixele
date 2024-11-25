@@ -10,14 +10,14 @@ import { useEffect, useState } from 'react';
 
 // Component Imports:
 
-import AlertIndicator from '../../components/alert-indicator/AlertIndicator';
+import AlertIndicator from '@/app/components/alert-indicator/AlertIndicator';
 
 // Utils Imports:
 
 import { showIndicator } from '@/app/utils/ui/show-indicator';
 import { validateInputs } from '@/app/utils/input/validate-inputs';
 import { sendLoginRequest } from '@/app/utils/api/login/send-login-request';
-import { showFieldState } from "@/app/utils/ui/show-field-state";
+import { showFieldState } from '@/app/utils/ui/show-field-state';
 import { LoginErrorCode } from '@/app/utils/errors/login/LoginError';
 
 // Component Imports:
@@ -26,7 +26,7 @@ import Button from '@/app/components/misc/button/Button';
 
 // CSS Imports:
 
-import './LoginModal.css';
+import '@/app/components/login/LoginModal.css';
 
 export default function LoginModal() {
     const router = useRouter();

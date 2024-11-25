@@ -1,4 +1,4 @@
-import { LoginError, LoginErrorCode } from '../login/LoginError';
+import { LoginError, LoginErrorCode } from '@/app/utils/errors/login/LoginError';
 
 /**
  * Creates a LoginError from an API response

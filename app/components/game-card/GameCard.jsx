@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 
 // CSS Imports:
 
-import './GameCard.css';
+import '@/app/components/game-card/GameCard.css';
 
 function GameCard({ id, logoSrc, altText, gameLink, children, onHover, onLeave }) {
 

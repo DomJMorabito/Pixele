@@ -11,11 +11,11 @@ import { useState, useMemo } from 'react';
 
 //Utils Imports:
 
-import { debounce } from '../../utils/ui/debounce';
+import { debounce } from '@/app/utils/ui/debounce';
 
 // CSS Imports:
 
-import './NavBar.css';
+import '@/app/components/nav-bar/NavBar.css';
 
 function NavBar() {
 

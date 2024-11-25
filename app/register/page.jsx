@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 // Component Imports:
 
-import RegisterModal from '../components/register/RegisterModal';
+import RegisterModal from '@/app/components/register/RegisterModal';
 
 export default function RegisterPage() {
 

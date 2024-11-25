@@ -10,11 +10,11 @@ import GameCard from '@/app/components/game-card/GameCard';
 
 //Utils Imports:
 
-import { debounce } from '../../utils/ui/debounce';
+import { debounce } from '@/app/utils/ui/debounce';
 
 // CSS Imports:
 
-import './GameCardGrid.css';
+import '@/app/components/game-card-grid/GameCardGrid.css';
 
 function GameCardGrid() {
     const games = [

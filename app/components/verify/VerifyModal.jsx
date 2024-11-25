@@ -25,7 +25,7 @@ import Button from '@/app/components/misc/button/Button';
 
 // CSS Imports:
 
-import './VerifyModal.css';
+import '@/app/components/verify/VerifyModal.css';
 
 export default function VerifyModal({ email, username }) {
     const router = useRouter();
