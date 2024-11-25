@@ -5,117 +5,12 @@
     src: url('https://assets.pixele.gg/fonts/HTP.ttf');
 }
 
-/* Credits Overlay */
-
-#credits-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease-in-out,
-                visibility 0.5s ease-in-out;
-    z-index: 101;
-}
-
-/* Credits Overlay Classes */
-
-#credits-overlay.overlay-show {
-    opacity: 1;
-    visibility: visible;
-}
-
-#credits-overlay.overlay-hide {
-    opacity: 0;
-    visibility: hidden;
-}
-
-/* Credits Modal */
-
-#credits-modal {
+#header, #top-line, #line, #modal-close-button {
     font-family: 'Credits', serif;
-    position: relative;
-    opacity: 0;
-    bottom: 0;
-    z-index: 102;
-    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
-    transform: translateY(100%);
-    transition: opacity 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
-                transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-    will-change: opacity, transform;
-}
-
-#credits-content {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    box-sizing: border-box;
-}
-
-#close-button {
-    align-self: flex-end;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-#close-button:hover {
-    color: #6794D5;
-}
-
-#credits-modal.show {
-    animation: popUp 0.5s ease forwards;
-}
-
-#credits-modal.hide {
-    animation: popDown 0.5s ease forwards;
-}
-
-/* Animations */
-
-@keyframes popUp {
-    0% {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes popDown {
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(100%);
-        opacity: 0;
-    }
 }
 
 @media (min-width: 320px) {
-    #credits-modal {
-        top: 10%;
-        width: 75%;
-    }
-
-    #credits-content {
-        border-radius: 10px;
-        padding: 5%;
-        border: 3px solid #000000;
-    }
-
-    #close-button {
+    #modal-close-button {
         margin-top: -7.5%;
         font-size: 1.75em;
     }
@@ -149,7 +44,7 @@
 }
 
 @media (min-width: 425px) {
-    #credits-close-button {
+    #modal-close-button {
         font-size: 2.5em;
     }
 
@@ -167,12 +62,7 @@
 }
 
 @media (min-width: 768px) {
-    #credits-modal {
-        top: 11%;
-        width: 50%;
-    }
-
-    #close-button {
+    #modal-close-button {
         font-size: 3em;
     }
 
@@ -190,7 +80,7 @@
 }
 
 @media (min-width: 1024px) {
-    #close-button {
+    #modal-close-button {
         font-size: 3.75em;
     }
 
@@ -207,18 +97,8 @@
     }
 }
 
-@media (min-width: 1440px) {
-    #credits-modal {
-        width: 25%;
-    }
-}
-
 @media (min-width: 2560px) {
-    #credits-modal {
-        width: 22.5%
-    }
-
-    #close-button {
+    #modal-close-button {
         font-size: 4.5em;
     }
 
@@ -236,11 +116,7 @@
 }
 
 @media (min-width: 3840px) {
-    #credits-content {
-        border: 5px solid #000000;
-    }
-
-    #close-button {
+    #modal-close-button {
         font-size: 6em;
     }
 
