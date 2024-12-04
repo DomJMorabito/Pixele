@@ -20,10 +20,25 @@ body {
     transition: background-image 0.5s ease-in-out;
     will-change: background-image;
     -ms-overflow-style: none; /* Hides scrollbar on Internet Explorer */
+    opacity: 0;
+    animation: backgroundFadeIn 0.3s ease-in forwards;
 }
-
 ::-webkit-scrollbar {
     display: none; /* Hides scrollbar on Chrome, Safari, Edge, & all other webkit browsers (Opera, Brave, etc.) */
+}
+
+@keyframes backgroundFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+[class*="-background"] {
+    transition: background-image 0.5s ease-in-out;
+    opacity: 1;
 }
 
 .homescreen-background {

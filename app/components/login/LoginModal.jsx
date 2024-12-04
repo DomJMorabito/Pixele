@@ -32,6 +32,7 @@ export default function LoginModal() {
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [isError, setIsError] = useState(false);
 
     useEffect(() => {
         const form = document.getElementById('login-form');
@@ -52,6 +53,7 @@ export default function LoginModal() {
         const handleFormSubmission = async (event) => {
             event.preventDefault();
             setIsLoading(true);
+            setIsError(false);
             const identifier = usernameEmailInput.value.trim();
             const password = passwordInput.value.trim();
 
@@ -86,6 +88,7 @@ export default function LoginModal() {
                             showIndicator('Please Complete Verification.', 'bad', alertIndicator);
                             showFieldState(usernameEmailInput);
                             showFieldState(passwordInput);
+                            setIsError(true);
                             setTimeout(() => {
                                 router.push(`/verify?email=${encodeURIComponent(email)}&username=${encodeURIComponent(username)}`);
                             }, 2000);
@@ -95,15 +98,25 @@ export default function LoginModal() {
                             showFieldState(passwordInput);
                             // redirect to reset password page.
                         } else if (error.details?.nextStep?.signInStep === 'CONFIRM_SIGN_IN_WITH_TOTP_CODE') {
+                            const username = error.details?.username || identifier;
+                            const email = error.details?.email || identifier;
                             showIndicator('Enter code found on authentication app.', 'bad', alertIndicator);
                             showFieldState(usernameEmailInput);
                             showFieldState(passwordInput);
-                            // redirect to verify page
+                            setIsError(true);
+                            setTimeout(() => {
+                                router.push(`/verify?email=${encodeURIComponent(email)}&username=${encodeURIComponent(username)}`);
+                            }, 2000);
                         } else if (error.details?.nextStep?.signInStep === 'CONFIRM_SIGN_IN_WITH_EMAIL_CODE') {
+                            const username = error.details?.username || identifier;
+                            const email = error.details?.email || identifier;
                             showIndicator('Enter code sent to your email.', 'bad', alertIndicator);
                             showFieldState(usernameEmailInput);
                             showFieldState(passwordInput);
-                            // redirect to verify page
+                            setIsError(true);
+                            setTimeout(() => {
+                                router.push(`/verify?email=${encodeURIComponent(email)}&username=${encodeURIComponent(username)}`);
+                            }, 2000);
                         } else {
                             showIndicator('An unknown error has occurred. Please try again later.', 'bad', alertIndicator);
                             showFieldState(usernameEmailInput);
@@ -183,6 +196,7 @@ export default function LoginModal() {
                             id='submit'
                             loading={isLoading}
                             success={isSuccess}
+                            error={isError}
                             successText="Welcome!"
                             disabled
                         >

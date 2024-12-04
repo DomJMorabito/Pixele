@@ -1,0 +1,94 @@
+/* Font Families */
+
+@font-face {
+    font-family: 'R6';
+    src: url('https://assets.pixele.gg/fonts/R6.otf');
+}
+
+/* R6 Game Card Styling */
+
+#r6, #r6 .game-title {
+    position: relative;
+}
+
+#r6 {
+    background-color: hsla(0, 0%, 100%, .15);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#r6:hover {
+    background-color: #2499ff;
+}
+
+
+#r6 .game-title {
+    font-family: 'R6', sans-serif;
+    color: #24262a;
+    background-color: #c3c3c3;
+    transition: background-color 0.3s ease;
+    z-index: 3
+}
+
+#r6:hover .game-title {
+    background-color: #00ffe5;
+}
+
+#r6::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #00ffe5, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+    will-change: opacity;
+}
+
+#r6:hover::after {
+    opacity: 1;
+}
+
+@media (min-width: 320px) {
+    #r6 .game-title {
+        font-size: 1em;
+        padding: 8.5px;
+    }
+}
+
+@media (min-width: 425px) {
+    #r6 .game-title {
+        font-size: 1.4em;
+        padding: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    #r6 .game-title {
+        font-size: 1.6em;
+        padding: 14px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #r6 .game-title {
+        font-size: 1.8em;
+        padding: 17px;
+    }
+}
+
+@media (min-width: 2560px) {
+    #r6 .game-title {
+        font-size: 3em;
+        padding: 26.5px;
+    }
+}
+
+@media (min-width: 3840px) {
+    #r6 .game-title {
+        font-size: 4em;
+        padding: 42px;
+    }
+}

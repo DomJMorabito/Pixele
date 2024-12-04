@@ -1,0 +1,78 @@
+/* Font Families */
+
+@font-face {
+    font-family: 'Minecraft';
+    src: url('https://assets.pixele.gg/fonts/Minecraft.ttf');
+}
+
+/* Minecraft Game Card Styling */
+
+#minecraft {
+    background-image: url('https://assets.pixele.gg/game-card/minecraft/background.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+#minecraft .game-title {
+    font-family: 'Minecraft', sans-serif;
+    color: #ABA09D;
+    background: linear-gradient(to bottom, #262423 3px, #000000 3px);
+    transition: color 0.3s ease;
+    will-change: background, color;
+}
+
+#minecraft:hover .game-title {
+    color: #ffffff;
+    background: linear-gradient(to bottom, #3d3938 3px, #171615 3px);
+}
+
+@media (min-width: 320px) {
+    #minecraft {
+        border: 3px solid #000000;
+    }
+
+    #minecraft .game-title{
+        font-size: 0.9em;
+        padding: 11px;
+    }
+}
+
+@media (min-width: 425px) {
+    #minecraft .game-title {
+        font-size: 1.2em;
+        padding: 14px;
+    }
+}
+
+@media (min-width: 768px) {
+    #minecraft .game-title {
+        padding: 17px;
+        font-size: 1.3em;
+    }
+}
+
+@media (min-width: 1024px) {
+    #minecraft .game-title {
+        font-size: 1.5em;
+        padding: 21.5px;
+    }
+}
+
+@media (min-width: 2560px) {
+    #minecraft {
+        border: 6px solid #000000;
+    }
+
+    #minecraft .game-title {
+        font-size: 2.5em;
+        padding: 33px;
+    }
+}
+
+@media (min-width: 3840px) {
+    #minecraft .game-title {
+        font-size: 4em;
+        padding: 46px;
+    }
+}

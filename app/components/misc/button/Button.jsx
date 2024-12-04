@@ -10,7 +10,9 @@ const Button = ({
     children,
     loading = false,
     success = false,
+    error = false,
     successText = "You're in.",
+    errorText = 'Uh oh...',
     type = 'button',
     onClick,
     className = '',
@@ -20,11 +22,11 @@ const Button = ({
         <button
             type={type}
             onClick={onClick}
-            className={`button ${className} ${success ? 'button__success' : ''}`}
+            className={`button ${className} ${success ? 'button__success' : ''} ${error ? 'button__error' : ''}`}
             {...props}
         >
       <span className={`button__content ${loading ? 'button__content--hidden' : 'button__content--visible'}`}>
-        {success ? successText : children}
+        {success ? successText : error ? errorText : children}
       </span>
 
             {loading && (

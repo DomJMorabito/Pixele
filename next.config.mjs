@@ -10,6 +10,21 @@ const nextConfig = {
             }
         ]
     },
+    async redirects() {
+        return [
+            {
+                source: '/:path*',
+                has: [
+                    {
+                        type: 'host',
+                        value: 'www.pixele.gg',
+                    },
+                ],
+                destination: 'https://pixele.gg/:path*',
+                permanent: true
+            }
+        ]
+    },
     async headers() {
         return [
             {

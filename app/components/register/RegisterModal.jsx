@@ -85,25 +85,25 @@ export default function RegisterModal() {
                     return;
                 }
 
-                if (!validateEmail(email)) { // Check to see if a valid email address was entered.
+                if (!validateEmail(email)) {
                     showIndicator('Enter a valid email.', 'bad', alertIndicator);
                     showFieldState(emailInput);
                     return;
                 }
 
-                if (!validateUsernameLength(username)) { // Check to see if the entered username is between 5-18 characters long.
+                if (!validateUsernameLength(username)) {
                     showIndicator('Username must be 5-18 characters.', 'bad', alertIndicator);
                     showFieldState(usernameInput);
                     return;
                 }
 
-                if (!validateUsernameSpecialCharacters(username)) { // Check to see if the entered username contains any special characters (!, @, ?, etc.)
+                if (!validateUsernameSpecialCharacters(username)) {
                     showIndicator('Username cannot contain any special characters.', 'bad', alertIndicator);
                     showFieldState(usernameInput);
                     return;
                 }
 
-                if (filter.isProfane(username)) { // Check to see if the entered username contains any profane words.
+                if (filter.isProfane(username)) {
                     showIndicator('Really.', 'bad', alertIndicator);
                     showFieldState(usernameInput);
                     return;

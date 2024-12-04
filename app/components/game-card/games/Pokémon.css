@@ -1,0 +1,167 @@
+/* Font Families */
+
+@font-face {
+    font-family: 'Pokémon';
+    src: url('https://assets.pixele.gg/fonts/Pokémon.ttf');
+}
+
+/* Pokémon Game Card Styling */
+
+#pokemon .game-title, #identifier, #dragon, #fire {
+    font-family: 'Pokémon', sans-serif;
+}
+
+#pokemon {
+    background-color: #f2f2f2;
+}
+
+#pokemon .game-title {
+    color: #313131;
+}
+
+#types {
+    display: flex;
+    align-self: flex-start;
+    text-align: center;
+}
+
+#pokemon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+#identifier {
+    align-self: flex-start;
+    color: #919191;
+}
+
+#dragon, #fire {
+    color: #ffffff;
+}
+
+#dragon {
+    background: linear-gradient(to bottom, #54A4CF 50%, #F06D57 50%);
+}
+
+#fire {
+    background-color: #FD7D25;
+}
+
+@media (min-width: 320px) {
+    #pokemon {
+        border-radius: 5px;
+        border: 3px solid #ffffff;
+    }
+
+    #pokemon .game-title {
+        font-size: 0.75em;
+    }
+
+    #identifier {
+        font-size: 0.5em;
+    }
+
+    #types {
+        font-size: 0.4em;
+        gap: 4px;
+    }
+
+    #dragon, #fire {
+        padding: 2px 4px;
+        border-radius: 3px;
+    }
+}
+
+@media (min-width: 425px) {
+    #pokemon .game-title {
+        font-size: 1em;
+    }
+
+    #identifier {
+        font-size: 0.75em;
+    }
+
+    #types {
+        font-size: 0.5em;
+    }
+}
+
+@media (min-width: 768px) {
+    #pokemon .game-title {
+        font-size: 1.2em;
+    }
+
+    #identifier {
+        font-size: 0.85em;
+    }
+
+    #types {
+        gap: 8px;
+        font-size: 0.6em;
+    }
+
+    #dragon, #fire {
+        padding: 4px 8px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #pokemon .game-title {
+        font-size: 1.4em;
+    }
+
+    #identifier {
+        font-size: 1em;
+    }
+
+    #types {
+        font-size: 0.8em;
+    }
+}
+
+@media (min-width: 2560px) {
+    #pokemon {
+        border-radius: 10px;
+        border: 6px solid #ffffff;
+    }
+
+    #pokemon .game-title {
+        font-size: 2em;
+    }
+
+    #identifier {
+        font-size: 1.5em;
+    }
+
+    #types {
+        font-size: 1.2em;
+    }
+
+    #dragon, #fire {
+        padding: 6px 10px;
+        border-radius: 10px;
+    }
+}
+
+@media (min-width: 3840px) {
+    #pokemon .game-title {
+        font-size: 3em;
+    }
+
+    #identifier {
+        font-size: 2.5em;
+    }
+
+    #types {
+        gap: 16px;
+    }
+
+    #dragon, #fire {
+        padding: 8px 16px;
+        font-size: 1.7em;
+        border-radius: 15px;
+    }
+}

@@ -1,0 +1,71 @@
+/* Font Families */
+
+@font-face {
+    font-family: 'PVZ';
+    src: url('https://assets.pixele.gg/fonts/PVZ.ttf');
+}
+
+/* Plants Vs. Zombies 2 Game Card Styling */
+
+#pvz {
+    background-image: url('https://assets.pixele.gg/game-card/pvz/background.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#pvz .game-title {
+    font-family: 'PVZ', sans-serif;
+    color: #5a5120;
+    background-color: #eee5c6;
+}
+
+@media (min-width: 320px) {
+    #pvz {
+        border-radius: 5px;
+        border: 3px solid #d5a151;
+    }
+
+    #pvz .game-title {
+        padding: 9px;
+    }
+}
+
+@media (min-width: 425px) {
+    #pvz .game-title {
+        font-size: 1.1em;
+        padding: 13.5px;
+    }
+}
+
+@media (min-width: 768px) {
+    #pvz .game-title {
+        font-size: 1.5em;
+        padding: 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #pvz .game-title {
+        font-size: 1.85em;
+        padding: 18px;
+    }
+}
+
+@media (min-width: 2560px) {
+    #pvz {
+        border-radius: 10px;
+        border: 6px solid #d5a151;
+    }
+
+    #pvz .game-title {
+        font-size: 3em;
+        padding: 28.5px;
+    }
+}
+
+@media (min-width: 3840px) {
+    #pvz .game-title {
+        font-size: 4.75em;
+        padding: 37px;
+    }
+}

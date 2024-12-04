@@ -1,0 +1,74 @@
+/* Font Families */
+
+@font-face {
+    font-family: 'Overwatch';
+    src: url('https://assets.pixele.gg/fonts/Overwatch.otf');
+}
+
+/* Overwatch Game Card Styling */
+
+#overwatch {
+    background: #ccdcf5;
+}
+
+#overwatch .game-title {
+    font-family: 'Overwatch', sans-serif;
+    color: #303132;
+    background: #eff3fa;
+}
+
+#overwatch:hover .game-title {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+@media (min-width: 320px) {
+    #overwatch {
+        border: 3px solid #eff3fa;
+    }
+
+    #overwatch .game-title {
+        font-size: 0.75em;
+        padding: 10.5px;
+    }
+}
+
+@media (min-width: 425px) {
+    #overwatch .game-title {
+        font-size: 1em;
+        padding: 13.5px;
+    }
+}
+
+@media (min-width: 768px) {
+    #overwatch .game-title {
+        font-size: 1.2em;
+        padding: 17.5px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #overwatch .game-title {
+        font-size: 1.5em;
+        padding: 20px;
+    }
+}
+
+@media (min-width: 2560px) {
+    #overwatch {
+        border: 6px solid #eff3fa;
+        border-radius: 5px;
+    }
+
+    #overwatch .game-title {
+        font-size: 2em;
+        padding: 36px;
+    }
+}
+
+@media (min-width: 3840px) {
+    #overwatch .game-title {
+        padding: 51px;
+        font-size: 3em;
+    }
+}

@@ -33,6 +33,7 @@ export default function VerifyModal({ email, username }) {
     const [timer, setTimer] = useState(30);
     const [isLoading, setIsLoading] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [isResendLoading, setIsResendLoading] = useState(false);
     const inputRefs = useRef([]);
 
     useEffect(() => {
@@ -103,6 +104,7 @@ export default function VerifyModal({ email, username }) {
             return;
         }
         const alertIndicator = document.getElementById('alert-indicator');
+        setIsResendLoading(true);
         try {
             await resendVerificationCode(username);
             setTimer(30);
@@ -119,12 +121,14 @@ export default function VerifyModal({ email, username }) {
                     showIndicator('Account already verified!', 'good', alertIndicator);
                     setIsSuccess(true);
                     setTimeout(() => {
-                        router.push('/login')
+                        router.push('/login');
                     }, 2000);
                     break
                 default:
                     showIndicator('Failed to resend verification code.', 'bad', alertIndicator);
             }
+        } finally {
+            setIsResendLoading(false);
         }
     }
 
@@ -213,11 +217,16 @@ export default function VerifyModal({ email, username }) {
                             ))}
                         </div>
                         <p
-                            id = 'resend-code'
-                            onClick = {handleResendCode}
-                            className = {`resend-link ${timer > 0 ? 'disabled' : ''}`}
+                            id="resend-code"
+                            onClick={(!timer && !isResendLoading) ? handleResendCode : undefined}
+                            className={`resend-link ${(timer > 0 || isResendLoading) ? 'disabled' : ''}`}
                         >
-                            {timer > 0 ? `Resend Code in ${timer}s` : 'Resend Code'}
+                            {timer > 0
+                                ? `Resend Code in ${timer}s`
+                                : isResendLoading
+                                    ? 'Sending...'
+                                    : 'Resend Code'
+                            }
                         </p>
                         <Button
                             type="submit"
