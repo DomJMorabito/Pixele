@@ -87,15 +87,15 @@
     }
 
     #ssb .game-title {
-        font-size: 2em;
-        padding: 36.5px
+        font-size: 1.75em;
+        padding: 27.5px
     }
 }
 
 @media (min-width: 3840px) {
     #ssb .game-title {
-        font-size: 3em;
-        padding: 51px;
+        font-size: 2.5em;
+        padding: 43px;
         background-image: repeating-linear-gradient(
                 -45deg,
                 rgb(55, 55, 55) 7px,

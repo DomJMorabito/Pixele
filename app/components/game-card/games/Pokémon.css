@@ -129,15 +129,15 @@
     }
 
     #pokemon .game-title {
-        font-size: 2em;
+        font-size: 1.75em;
     }
 
     #identifier {
-        font-size: 1.5em;
+        font-size: 1.25em;
     }
 
     #types {
-        font-size: 1.2em;
+        font-size: 1em;
     }
 
     #dragon, #fire {
@@ -148,11 +148,11 @@
 
 @media (min-width: 3840px) {
     #pokemon .game-title {
-        font-size: 3em;
+        font-size: 2.5em;
     }
 
     #identifier {
-        font-size: 2.5em;
+        font-size: 2em;
     }
 
     #types {

@@ -92,14 +92,14 @@
     }
 
     #valorant .game-title {
-        font-size: 3em;
-        padding: 26.5px;
+        font-size: 2.5em;
+        padding: 20.5px;
     }
 }
 
 @media (min-width: 3840px) {
     #valorant .game-title {
-        font-size: 4em;
-        padding: 42px;
+        font-size: 3em;
+        padding: 38px;
     }
 }

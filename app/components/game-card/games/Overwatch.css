@@ -61,14 +61,14 @@
     }
 
     #overwatch .game-title {
-        font-size: 2em;
-        padding: 36px;
+        font-size: 1.75em;
+        padding: 27.5px;
     }
 }
 
 @media (min-width: 3840px) {
     #overwatch .game-title {
-        padding: 51px;
-        font-size: 3em;
+        padding: 42.5px;
+        font-size: 2.5em;
     }
 }
