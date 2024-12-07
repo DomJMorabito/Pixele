@@ -1,0 +1,119 @@
+/* Font Families */
+
+@font-face {
+    font-family: 'Header';
+    src: url('https://assets.pixele.gg/fonts/Header.ttf');
+}
+
+/* Form */
+
+#form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#form-box {
+    background-color: #ffffff;
+    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.75));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-title {
+    font-family: 'Header', sans-serif;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+}
+
+.verification-form {
+    align-items: center;
+    text-align: center;
+}
+
+.verification-form .button {
+    margin-top: 0;
+}
+
+@media (min-width: 320px) {
+    #form-box {
+        border-radius: 5px;
+        width: 80%;
+        padding: 3%;
+        border: 3px solid #000000;
+    }
+
+    #form-title {
+        font-size: 1.25em;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 375px) {
+    #form-box {
+        width: 75%;
+    }
+}
+
+@media (min-width: 425px) {
+    #form-title {
+        font-size: 1.75em;
+        margin-top: 5%;
+    }
+}
+
+@media (min-width: 768px) {
+    #form-box {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1024px) {
+    #form-box {
+        width: 45%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .verification-form {
+        width: 87.5%;
+    }
+
+    #form-box {
+        width: 20%;
+        padding: 1.5%;
+    }
+
+    #form-title {
+        margin-top: 2.5%;
+        font-size: 1.75em;
+    }
+}
+
+@media (min-width: 2560px) {
+    #form-box {
+        border: 4px solid #000000;
+        border-radius: 10px;
+        padding: 1%;
+    }
+
+    #form-title {
+        font-size: 2.25em;
+    }
+}
+
+@media (min-width: 3840px) {
+    #form-box {
+        border: 7px solid #000000;
+    }
+
+    #form-title {
+        font-size: 3em;
+    }
+}

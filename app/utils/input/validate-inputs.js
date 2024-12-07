@@ -1,12 +1,12 @@
 /**
- * Validates the username/email and password input to enable or disable the submit button.
+ * Validates that both identifier & password are present.
  *
  * @param {HTMLElement} usernameEmailInput - The input element for the username or email.
  * @param {HTMLElement} passwordInput - The input element for the password.
- * @param {HTMLElement} confirmButton - The submit button that should be enabled or disabled based on input validation.
+ * @returns {boolean} - Whether both values are present.
  */
-export const validateInputs = (usernameEmailInput, passwordInput, confirmButton) => {
+export const validateInputs = (usernameEmailInput, passwordInput) => {
     const identifier = usernameEmailInput.value.trim();
     const password = passwordInput.value.trim();
-    confirmButton.disabled = !identifier || !password;
+    return identifier.length > 0 && password.length > 0;
 }

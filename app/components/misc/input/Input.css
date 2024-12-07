@@ -1,0 +1,114 @@
+/* Font Families */
+
+@font-face {
+    font-family: 'Header';
+    src: url('https://assets.pixele.gg/fonts/Header.ttf');
+}
+
+/* Input */
+
+.form-input {
+    font-family: 'Header', sans-serif;
+    background-color: #F1F3F7;
+}
+
+[id$="-text"] {
+    font-family: 'Header', sans-serif;
+    align-items: flex-start;
+}
+
+/* Input Classes */
+
+.success {
+    color: inherit;
+    border: 2px solid transparent;
+    animation: successFade 0.5s ease forwards;
+}
+
+.error {
+    color: #CA2D2D;
+    border: 2px solid #CA2D2D;
+    animation: shake 0.3s;
+    animation-iteration-count: 1;
+}
+
+/* Input Animations */
+
+@keyframes successFade {
+    0% {
+        color: inherit;
+        border-color: transparent;
+    }
+    100% {
+        color: #00CC66;
+        border-color: #00CC66;
+    }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+@media (min-width: 320px) {
+    [id$="-text"] {
+        margin-bottom: 2px;
+    }
+    .form-input {
+        font-size: 0.75em;
+        border: 2px solid #000000;
+    }
+}
+
+@media (min-width: 425px) {
+    [id$="-text"] {
+        font-size: 1.25em;
+    }
+
+    .form-input {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 1024px) {
+    [id$="-text"] {
+        font-size: 1.5em;
+    }
+
+    .form-input {
+        font-size: 1.25em;
+    }
+}
+
+@media (min-width: 1440px) {
+    [id$="-text"] {
+        font-size: 1.25em;
+    }
+
+    .form-input {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 2560px) {
+    [id$="-text"] {
+        font-size: 1.5em;
+    }
+
+    .form-input {
+        font-size: 1.25em;
+    }
+}
+
+@media (min-width: 3840px) {
+    [id$="-text"] {
+        font-size: 2em;
+    }
+
+    .form-input {
+        font-size: 1.75em;
+    }
+}

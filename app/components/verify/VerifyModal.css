@@ -7,69 +7,16 @@
 
 /* Verify Modal */
 
-#verify-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-#verify-box {
-    background-color: #ffffff;
-    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.75));
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-#verify-text, #user-email, #instruction, .code-input, #resend-code, #verify {
+#user-email, #instruction, #resend-code, #verify {
     font-family: 'Header', sans-serif;
-}
-
-#verification-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 #instruction {
     color: #5D6166;
 }
 
-#code-inputs {
-    display: flex;
-    width: 100%;
-}
-
-.code-input {
-    text-align: center !important;
-    background-color: #F1F3F7;
-}
-
 #resend-code {
     transition: color 0.5s ease;
-}
-
-#verify {
-    align-self: center;
-    border: none;
-    color: #ffffff;
-    background-color: #0074E0;
-    cursor: pointer;
-    transition: background-color 0.5s ease, transform, 0.25s ease;
-}
-
-#verify:hover {
-    background-color: #148EFF;
-    transform: scale(1.05);
-}
-
-#verify:disabled {
-    background-color: #5D6166;
-    cursor: not-allowed;
 }
 
 /* Resend Code Classes */
@@ -84,46 +31,9 @@
     cursor: not-allowed;
 }
 
-/* Input Field Classes */
-
-.error {
-    color: #CA2D2D;
-    border: 2px solid #CA2D2D;
-    animation: shake 0.3s;
-    animation-iteration-count: 1;
-}
-
-.success {
-    color: #00CC66;
-    border: 2px solid #00CC66;
-    transition: color 0.5s ease, border 0.5s ease;
-}
-
-/* Input Field Animations */
-
-@keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
-}
-
 @media (min-width: 320px) {
-    #verify-box {
-        border-radius: 5px;
-        width: 80%;
-        padding: 3%;
-        border: 3px solid #000000;
-    }
-
-    #verify-text {
-        font-size: 1.25em;
-        margin-bottom: 0;
-    }
-
     #instruction {
-        font-size: 0.75em;
+        font-size: 0.7em;
         margin: 5% 0 0 0;
     }
 
@@ -135,40 +45,14 @@
         width: 85%
     }
 
-    .code-input {
-        width: 80%;
-        margin: 0 2.5%;
-        padding: 1%;
-        font-size: 1.25em;
-        border: 2px solid #000000;
-        border-radius: 5px;
-    }
-
     #resend-code {
         font-size: 0.75em;
-    }
-
-    #verify {
-        border-radius: 5px;
-        padding: 2.5% 7.5% 2.5% 7.5%;
-        font-size: 1.25em;
-    }
-}
-
-@media (min-width: 375px) {
-    #verify-box {
-        width: 75%;
     }
 }
 
 @media (min-width: 425px) {
-    #verify-text {
-        font-size: 1.75em;
-        margin-top: 5%;
-    }
-
     #instruction {
-        font-size: 1em;
+        font-size: 0.9em;
         margin: 2.5% 0 0 0;
     }
 
@@ -176,51 +60,22 @@
         font-size: 1.1em;
     }
 
-    .code-input {
-        padding: 1.5%;
-        font-size: 1.5em;
-    }
-
     #resend-code {
         font-size: 0.9em;
-    }
-
-    #verify {
-        font-size: 1.5em;
     }
 }
 
 @media (min-width: 768px) {
-    #verify-box {
-        width: 50%;
-    }
-
-    #verify-text {
-        font-size: 2em;
-    }
-
     form {
         width: 80%;
     }
 
     #instruction {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     #user-email {
         font-size: 1.25em;
-    }
-
-    #verification-form {
-        width: 85%;
-    }
-
-    #code-inputs {
-        width: 90%;
-    }
-
-    .code-input {
-        font-size: 1.75em;
     }
 
     #resend-code {
@@ -229,84 +84,44 @@
 }
 
 @media (min-width: 1024px) {
-    #verify-box {
-        width: 45%;
-    }
-
-    #verify-text {
-        font-size: 2.25em;
-    }
-
     form {
         width: 77.5%;
     }
 
     #instruction {
-        font-size: 1.25em;
+        font-size: 1.15em;
     }
 
     #user-email {
         font-size: 1.5em;
     }
 
-    .code-input {
-        font-size: 2em;
-    }
-
     #resend-code {
         font-size: 1.25em;
-    }
-
-    #verify {
-        font-size: 2em;
     }
 }
 
 @media (min-width: 1440px) {
-    #verify-box {
-        width: 20%;
-        padding: 1.5%;
-    }
-
-    #verify-text {
-        margin-top: 2.5%;
-        font-size: 1.75em;
+    form {
+        width: 82.5%;
     }
 
     #instruction {
-        font-size: 1em;
+        font-size: 0.9em;
     }
 
     #user-email {
         font-size: 1.25em;
     }
 
-    #verification-form {
-        width: 95%;
-    }
-
-    .code-input {
-        font-size: 1.75em;
-    }
-
     #resend-code {
         font-size: 1em;
-    }
-
-    #verify {
-        font-size: 1.5em;
     }
 }
 
 @media (min-width: 2560px) {
-    #verify-box {
-        border: 4px solid #000000;
-        border-radius: 10px;
-        padding: 1%;
-    }
-
-    #verify-text {
-        font-size: 2.25em;
+    form {
+        width: 80%;
     }
 
     #instruction {
@@ -317,32 +132,12 @@
         font-size: 1.5em;
     }
 
-    #verification-form {
-        width: 90%;
-    }
-
-    .code-input {
-        font-size: 2.25em;
-    }
-
     #resend-code {
         font-size: 1.25em;
-    }
-
-    #verify {
-        font-size: 2em;
     }
 }
 
 @media (min-width: 3840px) {
-    #verify-box {
-        border: 7px solid #000000;
-    }
-
-    #verify-text {
-        font-size: 3em;
-    }
-
     #instruction {
         font-size: 1.75em;
     }
@@ -351,19 +146,7 @@
         font-size: 2.25em;
     }
 
-    #verification-form {
-        width: 80%;
-    }
-
-    .code-input {
-        font-size: 2.5em;
-    }
-
     #resend-code {
         font-size: 1.75em;
-    }
-
-    #verify {
-        font-size: 2.5em;
     }
 }

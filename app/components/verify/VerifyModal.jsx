@@ -11,6 +11,9 @@ import { useEffect, useState, useRef } from 'react';
 // Component Imports:
 
 import AlertIndicator from '@/app/components/alert-indicator/AlertIndicator';
+import Button from '@/app/components/misc/button/Button';
+import Form from '@/app/components/misc/form/Form';
+import CodeInput from '@/app/components/misc/code-input/CodeInput';
 
 // Utils Imports:
 
@@ -18,10 +21,6 @@ import { showIndicator } from '@/app/utils/ui/show-indicator';
 import { sendVerificationRequest } from '@/app/utils/api/verify/send-verification-request';
 import { resendVerificationCode } from '@/app/utils/api/verify/resend-verification-code';
 import { VerificationErrorCode } from '@/app/utils/errors/verification/VerificationError';
-
-// Component Imports:
-
-import Button from '@/app/components/misc/button/Button';
 
 // CSS Imports:
 
@@ -42,48 +41,6 @@ export default function VerifyModal({ email, username }) {
             return () => clearTimeout(countdown);
         }
     }, [timer]);
-
-    const handleChange = (e, index) => {
-        const { value } = e.target;
-
-        if (/^\d$/.test(value)) {
-            const newCode = [...code];
-            newCode[index] = value;
-            setCode(newCode);
-
-            if (index < 5 && value) {
-                inputRefs.current[index + 1].focus();
-            }
-        }
-    };
-
-    const handleKeyDown = (e, index) => {
-        if (e.key === 'Backspace') {
-            if (code[index]) {
-                const newCode = [...code];
-                newCode[index] = '';
-                setCode(newCode);
-            } else if (index > 0) {
-                inputRefs.current[index - 1].focus();
-                const newCode = [...code];
-                newCode[index - 1] = '';
-                setCode(newCode);
-            }
-        } else if (e.key === 'ArrowLeft' && index > 0) {
-            inputRefs.current[index - 1].focus();
-        } else if (e.key === 'ArrowRight' && index < 5) {
-            inputRefs.current[index + 1].focus();
-        }
-    };
-
-    const handlePaste = (e) => {
-        const pasteData = e.clipboardData.getData('text').slice(0, 6).split('');
-        if (pasteData.every(char => /^\d$/.test(char))) {
-            setCode(pasteData);
-            pasteData.forEach((num, i) => inputRefs.current[i].value = num);
-            inputRefs.current[5].focus();
-        }
-    };
 
     const handleInputStyles = (style, duration = 500) => {
         inputRefs.current.forEach(input => {
@@ -194,53 +151,41 @@ export default function VerifyModal({ email, username }) {
     return (
         <>
             <AlertIndicator />
-            <div id = 'verify-container'>
-                <div id = 'verify-box'>
-                    <p id = 'verify-text'>Verify Your Account</p>
-                    <p id = 'instruction'>Please enter the 6-digit code sent to:</p>
-                    <p id = 'user-email'><strong>{email}</strong></p>
-                    <form id = 'verification-form' onSubmit = { handleFormSubmission }>
-                        <div id = 'code-inputs' onPaste = { handlePaste }>
-                            {code.map((digit, index) => (
-                                <input
-                                    key = {index}
-                                    type = 'text'
-                                    maxLength = '1'
-                                    value = {digit}
-                                    ref= {(element) => {
-                                        inputRefs.current[index] = element;
-                                    }}
-                                    onChange = {(e) => handleChange(e, index)}
-                                    onKeyDown = {(e) => handleKeyDown(e, index)}
-                                    className = 'code-input'
-                                />
-                            ))}
-                        </div>
-                        <p
-                            id="resend-code"
-                            onClick={(!timer && !isResendLoading) ? handleResendCode : undefined}
-                            className={`resend-link ${(timer > 0 || isResendLoading) ? 'disabled' : ''}`}
-                        >
-                            {timer > 0
-                                ? `Resend Code in ${timer}s`
-                                : isResendLoading
-                                    ? 'Sending...'
-                                    : 'Resend Code'
-                            }
-                        </p>
-                        <Button
-                            type="submit"
-                            id='verify'
-                            loading={isLoading}
-                            success={isSuccess}
-                            successText="Verified!"
-                            disabled={isAnyInputNull}
-                        >
-                            Verify
-                        </Button>
-                    </form>
-                </div>
-            </div>
+            <Form
+                title="Verify Your Account"
+                onSubmit={handleFormSubmission}
+                className="verification-form"
+            >
+                <p id="instruction">Please enter the 6-digit code sent to:</p>
+                <p id="user-email">{email}</p>
+                <CodeInput
+                    length={6}
+                    value={code}
+                    onChange={setCode}
+                    disabled={isLoading}
+                />
+                <p
+                    id="resend-code"
+                    onClick={(!timer && !isResendLoading) ? handleResendCode : undefined}
+                    className={`resend-link ${(timer > 0 || isResendLoading) ? 'disabled' : ''}`}
+                >
+                    {timer > 0
+                        ? `Resend Code in ${timer}s`
+                        : isResendLoading
+                            ? 'Sending...'
+                            : 'Resend Code'
+                    }
+                </p>
+                <Button
+                    type="submit"
+                    loading={isLoading}
+                    success={isSuccess}
+                    successText="Verified!"
+                    disabled={isAnyInputNull}
+                >
+                    Verify
+                </Button>
+            </Form>
         </>
     )
 }

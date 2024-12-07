@@ -16,6 +16,7 @@ const Button = ({
     type = 'button',
     onClick,
     className = '',
+    disabled = false,
     ...props
 }) => {
     return (
@@ -23,6 +24,7 @@ const Button = ({
             type={type}
             onClick={onClick}
             className={`button ${className} ${success ? 'button__success' : ''} ${error ? 'button__error' : ''}`}
+            disabled={disabled || loading}
             {...props}
         >
       <span className={`button__content ${loading ? 'button__content--hidden' : 'button__content--visible'}`}>

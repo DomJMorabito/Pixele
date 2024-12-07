@@ -1,0 +1,98 @@
+/* Font Families */
+
+@font-face {
+    font-family: 'Header';
+    src: url('https://assets.pixele.gg/fonts/Header.ttf');
+}
+
+/* Code Input */
+
+#code-inputs {
+    display: flex;
+    width: 100%;
+}
+
+.code-input {
+    font-family: 'Header', sans-serif;
+    text-align: center;
+    background-color: #F1F3F7;
+}
+
+/* Code Input Classes */
+
+.code-input.success {
+    color: #00CC66;
+    border: 2px solid #00CC66;
+    transition: color 0.5s ease, border 0.5s ease;
+}
+
+.code-input.error {
+    color: #CA2D2D;
+    border: 2px solid #CA2D2D;
+    animation: shake 0.3s;
+    animation-iteration-count: 1;
+}
+
+/* Code Input Animations */
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+@media (min-width: 320px) {
+    .code-input {
+        width: 80%;
+        margin: 0 2.5%;
+        padding: 1%;
+        font-size: 1.25em;
+        border: 2px solid #000000;
+        border-radius: 5px;
+    }
+}
+
+@media (min-width: 425px) {
+    .code-input {
+        padding: 1.5%;
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 768px) {
+    #code-inputs {
+        width: 90%;
+    }
+
+    .code-input {
+        font-size: 1.75em;
+    }
+}
+
+@media (min-width: 1024px) {
+    .code-input {
+        font-size: 2em;
+    }
+}
+
+@media (min-width: 1440px) {
+    .code-input {
+        font-size: 1.75em;
+    }
+}
+
+@media (min-width: 2560px) {
+    .code-input {
+        font-size: 2.25em;
+    }
+}
+@media (min-width: 3840px) {
+    #code-inputs {
+        width: 70%;
+    }
+    .code-input {
+        font-size: 2.5em;
+    }
+}
