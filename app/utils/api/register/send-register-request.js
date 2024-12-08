@@ -14,7 +14,7 @@ import { RegistrationError } from '@/app/utils/errors/register/RegistrationError
  */
 export const sendRegisterRequest = async (username, email, password) => {
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/register`, {
+        const response = await fetch(`https://api.pixele.gg/users/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

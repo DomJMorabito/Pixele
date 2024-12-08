@@ -13,7 +13,7 @@ import { LoginError } from '@/app/utils/errors/login/LoginError';
  */
 export const sendLoginRequest = async (identifier, password) => {
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/login`, {
+        const response = await fetch(`https://api.pixele.gg/users/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
