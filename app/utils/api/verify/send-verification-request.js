@@ -13,7 +13,7 @@ import { VerificationError } from '@/app/utils/errors/verification/VerificationE
  */
 export const sendVerificationRequest = async (username, verificationCode) => {
     try {
-        const response = await fetch(`${process.env.API_URL}/users/verify`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/verify`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

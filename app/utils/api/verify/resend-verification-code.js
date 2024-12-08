@@ -12,7 +12,7 @@ import { createErrorFromResponse } from '@/app/utils/errors/error-handler';
  */
 export const resendVerificationCode = async (username) => {
     try {
-        const response = await fetch(`${process.env.API_URL}/users/resend-verification-code`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/resend-verification-code`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
