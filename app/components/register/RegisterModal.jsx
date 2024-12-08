@@ -67,7 +67,6 @@ export default function RegisterModal() {
     }, [router]);
 
     const handleFormSubmission = async (event) => {
-        console.log('click!');
         event.preventDefault();
         setIsLoading(true);
         const emailInput = document.getElementById('email');
