@@ -19,6 +19,7 @@ export const sendLoginRequest = async (identifier, password) => {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
+            credentials: 'include',
             body: JSON.stringify({
                 identifier,
                 password
