@@ -163,6 +163,7 @@ export default function VerifyModal({ email, username }) {
                     value={code}
                     onChange={setCode}
                     disabled={isLoading}
+                    inputRefs={inputRefs}
                 />
                 <p
                     id="resend-code"

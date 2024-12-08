@@ -1,7 +1,3 @@
-// React Imports:
-
-import { useRef } from 'react';
-
 // CSS Imports:
 
 import '@/app/components/misc/code-input/CodeInput.css';
@@ -10,9 +6,9 @@ const CodeInput = ({
     length = 6,
     value = [],
     onChange,
-    disabled = false
+    disabled = false,
+    inputRefs
 }) => {
-    const inputRefs = useRef([]);
 
     const handleChange = (e, index) => {
         const { value: inputValue } = e.target;
