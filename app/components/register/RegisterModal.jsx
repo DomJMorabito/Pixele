@@ -206,16 +206,19 @@ export default function RegisterModal() {
                     id="email"
                     placeholder="Email"
                     label = 'Email'
+                    disabled={isLoading}
                 />
                 <Input
                     id="username"
                     placeholder="Username"
                     label = 'Username'
+                    disabled={isLoading}
                 />
                 <PasswordInput
                     id="password"
                     placeholder="Password"
                     label = 'Password'
+                    disabled={isLoading}
                 />
                 <p id="requirements">
                     <span id="length"> 8 Letters, </span>
@@ -226,6 +229,7 @@ export default function RegisterModal() {
                     id="confirm-password"
                     placeholder="Confirm Password"
                     label = 'Confirm Password'
+                    disabled={isLoading}
                 />
                 <Button
                     type="submit"

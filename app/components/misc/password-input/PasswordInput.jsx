@@ -5,7 +5,8 @@ import '@/app/components/misc/password-input/PasswordInput.css';
 const PasswordInput = ({
     id,
     label,
-    placeholder
+    placeholder,
+    disabled = false
 }) => {
     const togglePassword = (e) => {
         e.preventDefault();
@@ -24,6 +25,7 @@ const PasswordInput = ({
                     id={id}
                     className="form-input"
                     placeholder={placeholder}
+                    disabled={disabled}
                 />
                 <span className="toggle-visibility" onClick={togglePassword}>
                     <span className="material-symbols-outlined">visibility</span>

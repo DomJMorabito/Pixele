@@ -5,7 +5,8 @@ import '@/app/components/misc/input/Input.css';
 const Input = ({
     id,
     label,
-    placeholder
+    placeholder,
+    disabled = false,
 }) => {
     return (
         <>
@@ -15,6 +16,7 @@ const Input = ({
                 id={id}
                 className="form-input"
                 placeholder={placeholder}
+                disabled={disabled}
             />
         </>
     );

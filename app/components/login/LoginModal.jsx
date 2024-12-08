@@ -180,11 +180,13 @@ export default function LoginModal() {
                     id="username-email"
                     placeholder="Username or Email"
                     label="Username/Email"
+                    disabled={isLoading}
                 />
                 <PasswordInput
                     id="password"
                     placeholder="Password"
                     label="Password"
+                    disabled={isLoading}
                 />
                 <Button
                     type="submit"
