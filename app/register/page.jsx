@@ -9,6 +9,9 @@ import { useEffect } from 'react';
 import RegisterModal from '@/app/components/register/RegisterModal';
 
 export default function RegisterPage() {
+    useEffect(() => {
+        document.title = 'Register | Pixele';
+    }, []);
 
     // Makes sure that the background image is always set to the default whenever the page is loaded.
     useEffect(() => {

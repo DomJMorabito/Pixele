@@ -7,6 +7,9 @@ import { useEffect } from 'react';
 // Component Imports:
 
 export default function OverwatchPage() {
+    useEffect(() => {
+        document.title = 'Overwatch 2 | Pixele';
+    }, []);
 
     // Makes sure that the background image is always set to the default whenever the page is loaded.
     useEffect(() => {

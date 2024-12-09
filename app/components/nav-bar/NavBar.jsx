@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 
 // React Imports:
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 
 //Utils Imports:
 
@@ -18,9 +18,43 @@ import { debounce } from '@/app/utils/ui/debounce';
 import '@/app/components/nav-bar/NavBar.css';
 
 function NavBar() {
-
     const router = useRouter();
     const [isVisible, setVisible] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [userInfo, setUserInfo] = useState({ email: '', username: '' });
+
+    useEffect(() => {
+        checkAuthStatus();
+    }, []);
+
+    const checkAuthStatus = () => {
+        const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+            const [key, value] = cookie.trim().split('=');
+            acc[key] = value;
+            return acc;
+        }, {});
+
+        if (cookies.pixele_session && cookies.pixele_user) {
+            try {
+                const userCookie = JSON.parse(decodeURIComponent(cookies.pixele_user));
+                setUserInfo({
+                    email: userCookie.email,
+                    username: userCookie.username,
+                });
+                setIsAuthenticated(true);
+            } catch (error) {
+                setIsAuthenticated(false);
+            }
+        } else {
+            setIsAuthenticated(false);
+        }
+    }
+
+    const handleLogout = () => {
+        setIsAuthenticated(false);
+        setUserInfo({ email: '', username: '' });
+        handleClick();
+    }
 
     // Handles redirecting the user back to the home screen when the Pixele logo is pressed.
     const handleClick = () => {
@@ -73,7 +107,9 @@ function NavBar() {
                     onMouseLeave = {hide}
                 >
                     <span className = 'material-symbols-outlined' id = 'account'>account_circle</span>
-                    <div id = 'account-name'>Account</div>
+                    <div id = 'account-name'>
+                        {isAuthenticated ? userInfo.username : 'Account'}
+                    </div>
                     <span className = 'material-symbols-outlined' id = 'chevron-down'>expand_more</span>
                     <div
                         id = 'account-modal'
@@ -81,10 +117,22 @@ function NavBar() {
                         onMouseEnter = {clearHide}
                         onMouseLeave = {hide}
                     >
-                        <button id = 'login-logout-button' onClick = {loginRouter}>Login</button>
-                        <div id = 'sign-up-section' onClick = {registerRouter}>
-                            <div id='sign-up-text'><span className='material-symbols-outlined' id='sign-up'>person_add</span>Sign Up</div>
-                        </div>
+                        {isAuthenticated ? (
+                            <>
+                                <div id="account-email">{userInfo.email}</div>
+                                <button id='login-logout-button' onClick={handleLogout}>Logout</button>
+                            </>
+                        ) : (
+                            <>
+                                <button id='login-logout-button' onClick={loginRouter}>Login</button>
+                                <div id='sign-up-section' onClick={registerRouter}>
+                                    <div id='sign-up-text'>
+                                        <span className='material-symbols-outlined' id='sign-up'>person_add</span>
+                                        Sign Up
+                                    </div>
+                                </div>
+                            </>
+                        )}
                     </div>
                 </div>
             </div>

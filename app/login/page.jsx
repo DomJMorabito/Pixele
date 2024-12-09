@@ -9,6 +9,9 @@ import { useEffect } from 'react';
 import LoginModal from '@/app/components/login/LoginModal';
 
 export default function LoginPage() {
+    useEffect(() => {
+        document.title = 'Login | Pixele';
+    }, []);
 
     // Makes sure that the background image is always set to the default whenever the page is loaded.
     useEffect(() => {

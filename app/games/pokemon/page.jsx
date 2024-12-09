@@ -7,6 +7,9 @@ import { useEffect } from 'react';
 // Component Imports:
 
 export default function PokemonPage() {
+    useEffect(() => {
+        document.title = 'Pokémon | Pixele';
+    }, []);
 
     // Makes sure that the background image is always set to the default whenever the page is loaded.
     useEffect(() => {

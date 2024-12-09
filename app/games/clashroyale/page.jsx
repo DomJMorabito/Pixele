@@ -7,6 +7,9 @@ import { useEffect } from 'react';
 // Component Imports:
 
 export default function ClashRoyalePage() {
+    useEffect(() => {
+        document.title = 'Clash Royale | Pixele';
+    }, []);
 
     // Makes sure that the background image is always set to the default whenever the page is loaded.
     useEffect(() => {
