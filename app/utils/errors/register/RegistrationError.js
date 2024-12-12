@@ -40,6 +40,5 @@ export class RegistrationError extends Error {
         this.name = 'RegistrationError';
         this.code = code;
         this.details = details;
-        this.timestamp = new Date().toISOString();
     }
 }

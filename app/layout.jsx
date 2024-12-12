@@ -1,6 +1,7 @@
 // Component Imports:
 
 import NavBar from '@/app/components/nav-bar/NavBar';
+import AlertIndicator from '@/app/components/alert-indicator/AlertIndicator';
 
 // CSS Imports:
 
@@ -58,6 +59,7 @@ export default function Layout({ children }) {
             <title>Pixele</title>
         </head>
         <body>
+        <AlertIndicator />
         <NavBar/>
         {children}
             </body>

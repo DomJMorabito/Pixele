@@ -139,6 +139,11 @@
         padding: 2.5% 7.5% 2.5% 7.5%;
         font-size: 1.25em;
     }
+
+    .nav-button {
+        margin: 0;
+        width: 100%;
+    }
 }
 
 @media (min-width: 425px) {

@@ -14,7 +14,6 @@ import { Filter } from 'bad-words';
 
 // Component Imports:
 
-import AlertIndicator from '@/app/components/alert-indicator/AlertIndicator';
 import Button from '@/app/components/misc/button/Button';
 import Form from '@/app/components/misc/form/Form';
 import Input from '@/app/components/misc/input/Input';
@@ -196,7 +195,6 @@ export default function RegisterModal() {
 
     return (
         <>
-            <AlertIndicator />
             <Form
                 title="Join the Fight!"
                 onSubmit={handleFormSubmission}

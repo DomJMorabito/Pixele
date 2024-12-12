@@ -51,6 +51,19 @@
     }
 }
 
+@media (min-width: 1440px) {
+    #pvz .game-title {
+        font-size: 1.6em;
+    }
+}
+
+@media (min-width: 1920px) {
+    #pvz .game-title {
+        font-size: 1.85em;
+    }
+}
+
+
 @media (min-width: 2560px) {
     #pvz {
         border-radius: 10px;

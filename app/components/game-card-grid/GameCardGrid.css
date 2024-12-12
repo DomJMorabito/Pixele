@@ -35,6 +35,12 @@
     }
 }
 
+@media (min-width: 1920px) {
+    #game-card-grid {
+        width: 60vw;
+    }
+}
+
 @media (min-width: 2560px) {
     #game-card-grid {
         width: 60vw;

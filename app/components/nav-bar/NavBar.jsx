@@ -9,9 +9,16 @@ import { useRouter } from 'next/navigation';
 
 import { useState, useMemo, useEffect } from 'react';
 
+// Component Imports:
+
+import Button from "@/app/components/misc/button/Button";
+
 //Utils Imports:
 
 import { debounce } from '@/app/utils/ui/debounce';
+import { showIndicator } from "@/app/utils/ui/show-indicator";
+import { sendLogoutRequest } from "@/app/utils/api/logout/send-logout-request";
+import { LogoutErrorCode } from "@/app/utils/errors/logout/LogoutError";
 
 // CSS Imports:
 
@@ -22,6 +29,7 @@ function NavBar() {
     const [isVisible, setVisible] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [userInfo, setUserInfo] = useState({ email: '', username: '' });
+    const [isLoggingOut, setIsLoggingOut] = useState(false);
 
     useEffect(() => {
         checkAuthStatus();
@@ -50,10 +58,36 @@ function NavBar() {
         }
     }
 
-    const handleLogout = () => {
-        setIsAuthenticated(false);
-        setUserInfo({ email: '', username: '' });
-        handleClick();
+    const handleLogout = async () => {
+        setIsLoggingOut(true);
+        const alertIndicator = document.getElementById('alert-indicator');
+
+        try {
+            await sendLogoutRequest();
+            setIsAuthenticated(false);
+            setUserInfo({email: '', username: ''});
+            showIndicator('See ya!', 'good', alertIndicator);
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            window.location.reload();
+            handleClick();
+        } catch (error) {
+            switch (error.code) {
+                case LogoutErrorCode.LOGOUT_FAILED:
+                    showIndicator('Logout failed.', 'bad', alertIndicator);
+                    break
+                case LogoutErrorCode.NO_SESSION:
+                    showIndicator('No user currently logged in.', 'bad', alertIndicator);
+                    break
+                case LogoutErrorCode.SERVER_ERROR:
+                    showIndicator('Internal server error. Please try again later.', 'bad', alertIndicator);
+                    break
+                default:
+                    console.error('Error logging out:', error);
+                    showIndicator('An unknown error has occurred, please try again later.', 'bad', alertIndicator);
+            }
+        } finally {
+            setIsLoggingOut(false);
+        }
     }
 
     // Handles redirecting the user back to the home screen when the Pixele logo is pressed.
@@ -119,12 +153,23 @@ function NavBar() {
                     >
                         {isAuthenticated ? (
                             <>
-                                <div id="account-email">{userInfo.email}</div>
-                                <button id='login-logout-button' onClick={handleLogout}>Logout</button>
+                                <Button
+                                    onClick={handleLogout}
+                                    className="nav-button"
+                                    loading={isLoggingOut}
+                                    disabled={isLoggingOut}
+                                >
+                                    Logout
+                                </Button>
                             </>
                         ) : (
                             <>
-                                <button id='login-logout-button' onClick={loginRouter}>Login</button>
+                                <Button
+                                    onClick={loginRouter}
+                                    className="nav-button"
+                                >
+                                    Login
+                                </Button>
                                 <div id='sign-up-section' onClick={registerRouter}>
                                     <div id='sign-up-text'>
                                         <span className='material-symbols-outlined' id='sign-up'>person_add</span>

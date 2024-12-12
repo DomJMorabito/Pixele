@@ -54,6 +54,18 @@
     }
 }
 
+@media (min-width: 1440px) {
+    #overwatch .game-title {
+        font-size: 1.25em;
+    }
+}
+
+@media (min-width: 1920px) {
+    #overwatch .game-title {
+        font-size: 1.5em;
+    }
+}
+
 @media (min-width: 2560px) {
     #overwatch {
         border: 6px solid #eff3fa;

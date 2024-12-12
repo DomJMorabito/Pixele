@@ -164,7 +164,7 @@ footer {
         border: 3px solid #000000;
     }
 
-    #ko-fi-button img {
+    #ko-fi-button img, .social-icon img {
         height: 40px;
     }
 
@@ -174,10 +174,6 @@ footer {
 
     .social-icon {
         margin-top: 3%;
-    }
-
-    .social-icon img {
-        height: 40px;
     }
 
     #credits {
@@ -190,20 +186,28 @@ footer {
         font-size: 1.75em;
     }
 
-    #ko-fi-button img {
+    #ko-fi-button img, .social-icon img  {
         height: 48px;
     }
 
     #social-icon {
         padding-top: 1.5%;
     }
-
-    .social-icon img {
-        height: 48px;
-    }
 }
 
 @media (min-width: 1440px) {
+    #social-container {
+        width: 25%;
+        padding: 1% 2.5% 0 2.5%;
+        margin-bottom: 2.5%;
+    }
+
+    #ko-fi-button img, .social-icon img  {
+        height: 42px;
+    }
+}
+
+@media (min-width: 1920px) {
     #social-container {
         width: 20%;
         padding: 1% 2.5% 0 2.5%;
@@ -213,6 +217,10 @@ footer {
     .social-icon {
         margin-left: 2.5%;
         margin-right: 2.5%;
+    }
+
+    #ko-fi-button img, .social-icon img  {
+        height: 48px;
     }
 }
 
@@ -228,11 +236,7 @@ footer {
         font-size: 1.75em;
     }
 
-    #ko-fi-button img {
-        height: 58px;
-    }
-
-    .social-icon img {
+    #ko-fi-button img, .social-icon img {
         height: 58px;
     }
 
@@ -251,11 +255,7 @@ footer {
         font-size: 2.75em;
     }
 
-    #ko-fi-button img {
-        height: 96px;
-    }
-
-    .social-icon img {
+    #ko-fi-button img, .social-icon img {
         height: 96px;
     }
 

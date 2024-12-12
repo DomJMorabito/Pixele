@@ -79,6 +79,18 @@
     }
 }
 
+@media (min-width: 1440px) {
+    #r6 .game-title {
+        font-size: 1.6em;
+    }
+}
+
+@media (min-width: 1920px) {
+    #r6 .game-title {
+        font-size: 1.8em;
+    }
+}
+
 @media (min-width: 2560px) {
     #r6 .game-title {
         font-size: 2.5em;

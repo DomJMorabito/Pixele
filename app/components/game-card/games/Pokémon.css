@@ -122,6 +122,18 @@
     }
 }
 
+@media (min-width: 1440px) {
+    #pokemon .game-title {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 1920px) {
+    #pokemon .game-title {
+        font-size: 1.4em;
+    }
+}
+
 @media (min-width: 2560px) {
     #pokemon {
         border-radius: 10px;

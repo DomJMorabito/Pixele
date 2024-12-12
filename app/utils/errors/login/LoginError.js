@@ -39,6 +39,5 @@ export class LoginError extends Error {
         this.name = 'LoginError';
         this.code = code;
         this.details = details;
-        this.timestamp = new Date().toISOString();
     }
 }

@@ -37,6 +37,5 @@ export class VerificationError extends Error {
         this.name = 'VerificationError';
         this.code = code;
         this.details = details;
-        this.timestamp = new Date().toISOString();
     }
 }

@@ -89,6 +89,22 @@
 
 @media (min-width: 1440px) {
     #clashroyale .game-title {
+        font-size: 1em;
+        text-shadow:
+                -2px -2px 0 #000,
+                0   -2px 0 #000,
+                2px -2px 0 #000,
+                2px  0   0 #000,
+                2px  2px 0 #000,
+                0    2px 0 #000,
+                -2px  2px 0 #000,
+                -2px  0   0 #000;
+    }
+}
+
+@media (min-width: 1980px) {
+    #clashroyale .game-title {
+        font-size: 1.2em;
         text-shadow:
                 -3px -3px 0 #000,
                 0   -3px 0 #000,

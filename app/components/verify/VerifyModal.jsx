@@ -10,7 +10,6 @@ import { useEffect, useState, useRef } from 'react';
 
 // Component Imports:
 
-import AlertIndicator from '@/app/components/alert-indicator/AlertIndicator';
 import Button from '@/app/components/misc/button/Button';
 import Form from '@/app/components/misc/form/Form';
 import CodeInput from '@/app/components/misc/code-input/CodeInput';
@@ -150,7 +149,6 @@ export default function VerifyModal({ email, username }) {
 
     return (
         <>
-            <AlertIndicator />
             <Form
                 title="Verify Your Account"
                 onSubmit={handleFormSubmission}
