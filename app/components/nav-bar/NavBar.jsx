@@ -36,25 +36,81 @@ function NavBar() {
     }, []);
 
     const checkAuthStatus = () => {
+        console.debug('Raw cookie string:', document.cookie);
         const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-            const [key, value] = cookie.trim().split('=');
-            acc[key] = value;
-            return acc;
+            try {
+                const [key, value] = cookie.trim().split('=');
+                if (!key || !value) {
+                    console.warn('Malformed cookie found:', cookie);
+                    return acc;
+                }
+                acc[key.trim()] = value;
+                return acc;
+            } catch (error) {
+                console.error('Error parsing cookie:', cookie, error);
+                return acc;
+            }
         }, {});
 
-        if (cookies.pixele_session && cookies.pixele_user) {
+        console.debug('Parsed cookies:', cookies);
+
+        const hasSessionCookie = 'pixele_session' in cookies;
+        const hasUserCookie = 'pixele_user' in cookies;
+
+        console.debug('Cookie presence check:', {
+            hasSessionCookie,
+            hasUserCookie,
+            sessionCookie: cookies['pixele_session'],
+            userCookie: cookies['pixele_user']
+        });
+
+        if (hasSessionCookie && hasUserCookie) {
             try {
-                const userCookie = JSON.parse(decodeURIComponent(cookies.pixele_user));
+                const decodedCookie = decodeURIComponent(cookies['pixele_user']);
+
+                console.debug('Decoded user cookie:', decodedCookie);
+
+                if (!decodedCookie.startsWith('{') || !decodedCookie.endsWith('}')) {
+                    throw new Error('Invalid JSON structure in user cookie');
+                }
+
+                const userCookie = JSON.parse(decodedCookie);
+                if (!userCookie.email || !userCookie.username) {
+                    throw new Error('Missing required fields in user cookie');
+                }
+
+                console.debug('Successfully parsed user info:', userCookie);
+
                 setUserInfo({
                     email: userCookie.email,
                     username: userCookie.username,
                 });
                 setIsAuthenticated(true);
             } catch (error) {
+                console.error('Error processing user cookie:', {
+                    error,
+                    rawCookie: cookies['pixele_user'],
+                    type: error.name,
+                    message: error.message
+                });
+
+                if (error instanceof URIError) {
+                    console.error('Failed to decode cookie - possibly malformed URL encoding');
+                } else if (error instanceof SyntaxError) {
+                    console.error('Failed to parse JSON - possibly malformed JSON structure');
+                }
+
                 setIsAuthenticated(false);
+                setUserInfo({ email: '', username: '' });
             }
         } else {
+            console.debug('Required cookies not found:', {
+                sessionCookie: hasSessionCookie,
+                userCookie: hasUserCookie
+            });
+
             setIsAuthenticated(false);
+            setUserInfo({ email: '', username: '' });
         }
     }
 
