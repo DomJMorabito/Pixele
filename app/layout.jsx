@@ -1,10 +1,6 @@
-'use client';
-
 // Component Imports:
 
-import NavBar from '@/app/components/nav-bar/NavBar';
-import AlertIndicator from '@/app/components/alert-indicator/AlertIndicator';
-import { AuthProvider } from "@/app/contexts/AuthProvider";
+import LayoutContent from '@/app/components/layout/LayoutContent';
 
 // CSS Imports:
 
@@ -62,11 +58,9 @@ export default function Layout({ children }) {
             <title>Pixele</title>
         </head>
             <body>
-                <AuthProvider>
-                    <AlertIndicator />
-                    <NavBar />
+                <LayoutContent>
                     {children}
-                </AuthProvider>
+                </LayoutContent>
             </body>
         </html>
     );
