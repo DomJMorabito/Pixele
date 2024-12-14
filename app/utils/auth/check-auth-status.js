@@ -1,5 +1,5 @@
 /**
- * Checks the authentication status by parsing cookies and extracting user information.
+ * Checks the authentication status by parsing pixele_user cookie and extracting user information.
  * Returns user info and authentication status.
  *
  * @returns {Object} Authentication result object
@@ -17,7 +17,10 @@ export const checkAuthStatus = () => {
         return acc;
     }, {});
 
-    if (!cookies['pixele_session'] || !cookies['pixele_user']) {
+    if (!cookies['pixele_user']) {
+        console.log('Missing required cookies:', {
+            hasUser: !!cookies['pixele_user']
+        });
         return {
             isAuthenticated: false,
             userInfo: defaultUserInfo
@@ -25,9 +28,7 @@ export const checkAuthStatus = () => {
     }
 
     try {
-        // Parse and decode user cookie
         const userInfo = JSON.parse(decodeURIComponent(cookies['pixele_user']));
-
         return {
             isAuthenticated: true,
             userInfo: {
@@ -36,7 +37,7 @@ export const checkAuthStatus = () => {
             }
         };
     } catch (error) {
-        console.error('Error parsing user cookie:', error);
+        console.error('Error in cookie parsing chain:', error);
         return {
             isAuthenticated: false,
             userInfo: defaultUserInfo
