@@ -74,14 +74,20 @@ function NavBar() {
     // Handles hiding the account modal when hovering over the account section stops. Debounces the function to prevent flickering.
     const hide = useMemo(() => debounce(() => setVisible(false), 500), []);
 
-    // Handles redirecting the user to the login page when the login button is pressed.
     const loginRouter = () => {
         router.push('/login');
     }
 
-    // Handles redirecting the user to the registration page when the sign-up button is pressed.
     const registerRouter = () => {
         router.push('/register');
+    }
+
+    const settingsRouter = () => {
+        router.push('/settings');
+    }
+
+    const leaderboardRouter = () => {
+        router.push('/leaderboard');
     }
 
     // Resets the debounce timer when hovering over the account section starts and stops rapidly to prevent flickering.
@@ -105,7 +111,7 @@ function NavBar() {
                 </div>
             </div>
             <div id = 'options-container'>
-                <span className = 'material-symbols-outlined' id = 'settings'>settings</span>
+                <span className = 'material-symbols-outlined' id = 'leaderboard' onClick={leaderboardRouter}>bar_chart_4_bars</span>
                 <div
                     id = 'account-section'
                     onMouseEnter = {show}
@@ -124,6 +130,12 @@ function NavBar() {
                     >
                         {isAuthenticated ? (
                             <>
+                                <div id = "settings-section" onClick={settingsRouter}>
+                                    <div id = "settings-text">
+                                        <span className = 'material-symbols-outlined' id = 'settings'>settings</span>
+                                        Settings
+                                    </div>
+                                </div>
                                 <Button
                                     onClick={handleLogout}
                                     className="nav-button"

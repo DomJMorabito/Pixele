@@ -22,6 +22,7 @@ import { validateInputs } from '@/app/utils/input/validate-inputs';
 import { sendLoginRequest } from '@/app/utils/api/login/send-login-request';
 import { showFieldState } from '@/app/utils/ui/show-field-state';
 import { LoginErrorCode } from '@/app/utils/errors/login/LoginError';
+import { parseCookies } from '@/app/utils/auth/parse-cookies';
 
 // CSS Imports:
 
@@ -53,11 +54,30 @@ export default function LoginModal() {
 
     const handleFormSubmission = async (event) => {
         event.preventDefault();
-        setIsLoading(true);
-        setIsError(false);
+        const alertIndicator = document.getElementById('alert-indicator');
         const usernameEmailInput = document.getElementById('username-email');
         const passwordInput = document.getElementById('password');
-        const alertIndicator = document.getElementById('alert-indicator');
+        const cookies = parseCookies();
+
+        if (cookies['pixele_user']) {
+            showIndicator('You are already logged in!', 'good', alertIndicator);
+            setIsSuccess(true);
+            const inputs = [usernameEmailInput, passwordInput];
+            inputs.forEach(input => {
+                showFieldState(input, {
+                    duration: 2000,
+                    state: 'success',
+                    persist: true
+                });
+            });
+            setTimeout(() => {
+                router.push('/');
+            }, 2000);
+            return;
+        }
+
+        setIsLoading(true);
+        setIsError(false);
         const identifier = usernameEmailInput.value.trim();
         const password = passwordInput.value.trim();
 
@@ -73,7 +93,7 @@ export default function LoginModal() {
                 });
             });
             setTimeout(() => {
-                router.push('/');
+                window.location.href = '/';
             }, 2000);
         } catch (error) {
             switch (error.code) {

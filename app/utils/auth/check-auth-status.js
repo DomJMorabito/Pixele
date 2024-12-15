@@ -1,3 +1,7 @@
+// Utils Imports:
+
+import { parseCookies } from '@/app/utils/auth/parse-cookies';
+
 /**
  * Checks the authentication status by parsing pixele_user cookie and extracting user information.
  * Returns user info and authentication status.
@@ -10,17 +14,9 @@
  */
 export const checkAuthStatus = () => {
     const defaultUserInfo = { email: '', username: '' };
-
-    const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-        const [key, value] = cookie.trim().split('=');
-        acc[key.trim()] = value;
-        return acc;
-    }, {});
+    const cookies = parseCookies();
 
     if (!cookies['pixele_user']) {
-        console.log('Missing required cookies:', {
-            hasUser: !!cookies['pixele_user']
-        });
         return {
             isAuthenticated: false,
             userInfo: defaultUserInfo
