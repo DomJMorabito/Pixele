@@ -30,6 +30,8 @@ import { validatePasswordsMatch } from '@/app/utils/input/validate-passwords-mat
 import { sendRegisterRequest } from '@/app/utils/api/register/send-register-request';
 import { showFieldState } from '@/app/utils/ui/show-field-state';
 import { RegistrationErrorCode } from '@/app/utils/errors/register/RegistrationError';
+import { checkUsernameAvailability } from '@/app/utils/api/register/check-username-availability';
+import { validateUsername } from '@/app/utils/input/validate-username';
 
 // CSS Imports:
 
@@ -40,20 +42,74 @@ export default function RegisterModal() {
     const [isLoading, setIsLoading] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const [isFormValid, setIsFormValid] = useState(false);
+    const [isCheckingUsername, setIsCheckingUsername] = useState(false);
+    const [isUsernameTaken, setIsUsernameTaken] = useState(false);
+    const [isUsernameValid, setIsUsernameValid] = useState(false);
+    const [hasSpecialChars, setHasSpecialChars] = useState(false);
+    const [isValidLength, setIsValidLength] = useState(false);
+
+    useEffect(() => {
+        let timeoutId;
+        const usernameInput = document.getElementById('username');
+        const usernameLengthRequirement = document.getElementById('username-length');
+        const usernameSpecialRequirement = document.getElementById('username-special');
+
+        const handleUsernameInput = async (event) => {
+            const username = event.target.value.trim();
+            setIsValidLength(validateUsernameLength(username));
+            setHasSpecialChars(!validateUsernameSpecialCharacters(username));
+            const usernameIsValid = validateUsername(
+                username,
+                usernameLengthRequirement,
+                usernameSpecialRequirement
+            );
+            setIsUsernameValid(usernameIsValid);
+            clearTimeout(timeoutId);
+            if (!username) {
+                setIsUsernameTaken(false);
+                setIsCheckingUsername(false);
+                return;
+            }
+
+            if (usernameIsValid) {
+                setIsCheckingUsername(true);
+                timeoutId = setTimeout(async () => {
+                    try {
+                        const isAvailable = await checkUsernameAvailability(username);
+                        setIsUsernameTaken(!isAvailable);
+                    } catch (error) {
+                        console.error('Error checking username availability:', error);
+                    } finally {
+                        setIsCheckingUsername(false);
+                    }
+                }, 500);
+            } else {
+                setIsUsernameTaken(false);
+                setIsCheckingUsername(false);
+            }
+        };
+
+        usernameInput.addEventListener('input', handleUsernameInput);
+
+        return () => {
+            usernameInput.removeEventListener('input', handleUsernameInput);
+            clearTimeout(timeoutId);
+        }
+    }, [])
 
     useEffect(() => {
         const passwordInput = document.getElementById('password');
         const confirmPasswordInput = document.getElementById('confirm-password');
-        const lengthRequirement = document.getElementById('length');
-        const numberRequirement = document.getElementById('numbers');
-        const specialRequirement = document.getElementById('special');
+        const passwordLengthRequirement = document.getElementById('password-length');
+        const passwordNumberRequirement = document.getElementById('password-numbers');
+        const passwordSpecialRequirement = document.getElementById('password-special');
 
         const handlePasswordInputs = () => {
             const password = passwordInput.value.trim();
             const confirmPassword = confirmPasswordInput.value.trim();
-            const requirementsMet = validatePassword(password, lengthRequirement, numberRequirement, specialRequirement);
+            const passwordIsValid = validatePassword(password, passwordLengthRequirement, passwordNumberRequirement, passwordSpecialRequirement);
             const submitButton = document.querySelector('button[type="submit"]');
-            setIsFormValid(validatePasswordsMatch(password, confirmPassword, submitButton, requirementsMet))
+            setIsFormValid(validatePasswordsMatch(password, confirmPassword, submitButton, passwordIsValid))
         };
 
         passwordInput.addEventListener('input', handlePasswordInputs);
@@ -209,19 +265,27 @@ export default function RegisterModal() {
                 <Input
                     id="username"
                     placeholder="Username"
-                    label = 'Username'
+                    label={<>Username{isValidLength && !hasSpecialChars && (
+                        <span className={`username-status ${isUsernameTaken ? 'taken' : isCheckingUsername ? '' : 'available'}`}>
+                            {isUsernameTaken ? ' (taken)' : isCheckingUsername ? '' : ' (available)'}
+                        </span>
+                    )}</>}
                     disabled={isLoading}
                 />
+                <p id="username-requirements">
+                    <span id="username-length"> 5-18 Letters </span>
+                    <span id="username-special">& No Special Characters</span>
+                </p>
                 <PasswordInput
                     id="password"
                     placeholder="Password"
                     label = 'Password'
                     disabled={isLoading}
                 />
-                <p id="requirements">
-                    <span id="length"> 8 Letters, </span>
-                    <span id="numbers">1 Number, </span>
-                    <span id="special">& 1 Special Character</span>
+                <p id="password-requirements">
+                    <span id="password-length"> 8 Letters, </span>
+                    <span id="password-numbers">1 Number, </span>
+                    <span id="password-special">& 1 Special Character</span>
                 </p>
                 <PasswordInput
                     id="confirm-password"
@@ -233,10 +297,13 @@ export default function RegisterModal() {
                     type="submit"
                     loading={isLoading}
                     success={isSuccess}
-                    disabled={!isFormValid || isLoading}
+                    disabled={!isFormValid || isLoading || isUsernameTaken || !isUsernameValid}
                 >
                     Submit
                 </Button>
+                <p id="login-redirect">
+                    Already have an account? <span onClick={() => router.push('/login')} id="login-link">Log in!</span>
+                </p>
             </Form>
         </>
     );

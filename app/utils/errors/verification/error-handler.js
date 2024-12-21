@@ -1,3 +1,5 @@
+// Utils Imports:
+
 import { VerificationError, VerificationErrorCode } from '@/app/utils/errors/verification/VerificationError';
 
 /**
@@ -24,6 +26,12 @@ export const handleVerificationError = (status, data) => {
             return new VerificationError(
                 'User not found.',
                 VerificationErrorCode.USER_NOT_FOUND,
+                data.details
+            )
+        case 'EMAIL_SEND_FAILED':
+            return new VerificationError(
+                'Failed to send Email. Please try again soon.',
+                VerificationErrorCode.EMAIL_SEND_FAILED,
                 data.details
             )
         case 'ALREADY_VERIFIED':

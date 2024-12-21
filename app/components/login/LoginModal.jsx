@@ -216,6 +216,11 @@ export default function LoginModal() {
                 >
                     Login
                 </Button>
+                <div id = "login-form-links">
+                    <p onClick={() => router.push('/reset-password')} className="login-form-link">Forgot Password?</p>
+                    <span id = "login-link-divider">|</span>
+                    <p onClick={() => router.push('/register')} className="login-form-link">Sign Up!</p>
+                </div>
             </Form>
         </>
     );

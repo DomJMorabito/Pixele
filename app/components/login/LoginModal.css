@@ -1,6 +1,38 @@
+/* Login modal */
+
+#login-form-links {
+    font-family: Header, sans-serif;
+    align-self: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.login-form-link {
+    color: #0074E0;
+    cursor: pointer;
+}
+
+#login-link-divider {
+    color: #5D6166;
+    margin: 0 5% 0 5%;
+}
+
 @media (min-width: 320px) {
     form {
         width: 85%;
+    }
+
+    #login-form-links {
+        font-size: 0.75em;
+    }
+}
+
+@media (min-width: 425px) {
+    #login-form-links {
+        font-size: 0.9em;
     }
 }
 
@@ -8,10 +40,36 @@
     form {
         width: 80%;
     }
+
+    #login-form-links {
+        font-size: 1em;
+    }
 }
 
 @media (min-width: 1024px) {
     form {
         width: 77.5%;
+    }
+
+    #login-form-links {
+        font-size: 1.25em;
+    }
+}
+
+@media (min-width: 1440px) {
+    #login-form-links {
+        font-size: 0.9em;
+    }
+}
+
+@media (min-width: 1920px) {
+    #login-form-links {
+        font-size: 1.25em;
+    }
+}
+
+@media (min-width: 3840px) {
+    #login-form-links {
+        font-size: 1.75em;
     }
 }

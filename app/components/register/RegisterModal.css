@@ -7,20 +7,41 @@
 
 /* Register Modal */
 
-#requirements {
+#username-requirements, #password-requirements {
     font-family: Header, sans-serif;
     color: #5D6166;
     transition: color 0.25s ease-in-out;
 }
 
-/* Error Message Classes */
-
-.requirement-met {
-    color: #00CC66;
+.username-status {
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out, color 0.25s ease-in-out;
 }
 
-.requirement-not-met {
+#login-redirect, #login-link {
+    font-family: Header, sans-serif;
+    align-self: center;
+}
+
+#login-redirect {
+    color: #5D6166;
+}
+
+#login-link {
+    color: #0074E0;
+    cursor: pointer;
+}
+
+/* Error Message Classes */
+
+.requirement-met, .username-status.available {
+    color: #00CC66;
+    opacity: 1;
+}
+
+.requirement-not-met, .username-status.taken {
     color: #CA2D2D;
+    opacity: 1;
 }
 
 .requirement-met, .requirement-not-met {
@@ -32,16 +53,24 @@
         width: 85%
     }
 
-    #requirements {
+    #username-requirements, #password-requirements {
         font-size: 0.6em;
         margin-top: 1%;
         margin-bottom: -5%;
     }
+
+    #login-redirect {
+        font-size: 0.75em;
+    }
 }
 
 @media (min-width: 425px) {
-    #requirements {
+    #username-requirements, #password-requirements {
         font-size: 0.7em;
+    }
+
+    #login-redirect {
+        font-size: 0.9em;
     }
 }
 
@@ -50,8 +79,12 @@
         width: 80%;
     }
 
-    #requirements {
+    #username-requirements, #password-requirements {
         font-size: 0.8em;
+    }
+
+    #login-redirect {
+        font-size: 1em;
     }
 }
 
@@ -60,25 +93,43 @@
         width: 77.5%;
     }
 
-    #requirements {
+    #username-requirements, #password-requirements {
         font-size: 0.9em;
+    }
+
+    #login-redirect {
+        font-size: 1.25em;
     }
 }
 
 @media (min-width: 1440px) {
-    #requirements {
+    #username-requirements, #password-requirements {
         font-size: 0.75em;
+    }
+
+    #login-redirect {
+        font-size: 0.9em;
+    }
+}
+
+@media (min-width: 1920px) {
+    #login-redirect {
+        font-size: 1.25em;
     }
 }
 
 @media (min-width: 2560px) {
-    #requirements {
+    #username-requirements, #password-requirements {
         font-size: 1em;
     }
 }
 
 @media (min-width: 3840px) {
-    #requirements {
+    #username-requirements, #password-requirements {
         font-size: 1.25em;
+    }
+
+    #login-redirect {
+        font-size: 1.75em;
     }
 }

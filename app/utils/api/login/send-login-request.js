@@ -1,6 +1,6 @@
 // Utils Imports:
 
-import {createErrorFromResponse} from '@/app/utils/errors/error-handler';
+import { createErrorFromResponse } from '@/app/utils/errors/error-handler';
 import { LoginError } from '@/app/utils/errors/login/LoginError';
 
 /**

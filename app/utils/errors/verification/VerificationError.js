@@ -5,6 +5,7 @@ export const VerificationErrorCode = {
     MISSING_FIELDS: 'MISSING_FIELDS',           // Username or code missing
     INVALID_CODE: 'INVALID_CODE',               // Verification code validation failed
     USER_NOT_FOUND: 'USER_NOT_FOUND',           // User doesn't exist
+    EMAIL_SEND_FAILED: 'EMAIL_SEND_FAILED',     // Failed to send email
     EXPIRED_CODE: 'EXPIRED_CODE',               // Code has expired
     ALREADY_VERIFIED: 'ALREADY_VERIFIED',       // User is already verified
     RATE_LIMIT_EXCEEDED: 'RATE_LIMIT_EXCEEDED', // Too many attempts
