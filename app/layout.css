@@ -119,24 +119,54 @@ body {
 
 @media (min-width: 320px) {
     main {
-        margin-top: calc(7.5vh + 16px);
+        margin-top: 58.5px;
+    }
+}
+
+@media (min-width: 375px) {
+    main {
+        margin-top: 66px;
+    }
+}
+
+@media (min-width: 425px) {
+    main {
+        margin-top: 81px;
     }
 }
 
 @media (min-width: 768px) {
     main {
-        margin-top: calc(7.5vh + 32px);
+        margin-top: 96.5px;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        margin-top: 121px;
+    }
+}
+
+@media (min-width: 1440px) {
+    main {
+        margin-top: 96.5px;
+    }
+}
+
+@media (min-width: 1920px) {
+    main {
+        margin-top: 113px;
     }
 }
 
 @media (min-width: 2560px) {
     main {
-        margin-top: calc(7.5vh + 56px);
+        margin-top: 156px;
     }
 }
 
 @media (min-width: 3840px) {
     main {
-        margin-top: calc(7.5vh + 64px);
+        margin-top: 234px;
     }
 }

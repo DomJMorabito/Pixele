@@ -114,13 +114,17 @@
 
 @media (min-width: 1920px) {
     #login-redirect {
-        font-size: 1.25em;
+        font-size: 1.1em;
     }
 }
 
 @media (min-width: 2560px) {
     #username-requirements, #password-requirements {
         font-size: 1em;
+    }
+
+    #login-redirect {
+        font-size: 1.25em;
     }
 }
 

@@ -99,10 +99,10 @@ footer {
 
 @media (min-width: 320px) {
     #social-container {
-        margin-bottom: 5%;
+        width: 192px;
+        padding: 8px 16px 0;
+        margin-bottom: 16px;
         border-radius: 0 0 10px 10px;
-        padding: 2.5% 5% 0 5%;
-        width: 60%;
     }
 
     #credits {
@@ -140,7 +140,9 @@ footer {
 
 @media (min-width: 375px) {
     #social-container {
-        width: 50%;
+        width: 187.5px;
+        padding: 9.4px 18.75px 0;
+        margin-bottom: 18.75px;
     }
 
     .social-icon {
@@ -149,6 +151,12 @@ footer {
 }
 
 @media (min-width: 425px) {
+    #social-container {
+        width: 215px;
+        padding: 10.75px 21.5px 0;
+        margin-bottom: 21.5px;
+    }
+
     .social-icon {
         padding: 0 5% 0 5%;
     }
@@ -156,11 +164,13 @@ footer {
 
 @media (min-width: 768px) {
     #social-container {
-        width: 37.5%;
+        width: 288px;
+        padding: 19px 38.4px 0;
+        margin-bottom: 38.4px;
     }
 
     #ko-fi-button {
-        font-size: 1.5em;
+        font-size: 1.25em;
         border: 3px solid #000000;
     }
 
@@ -186,6 +196,12 @@ footer {
         font-size: 1.75em;
     }
 
+    #social-container {
+        width: 348px;
+        padding: 25.6px 45px 0;
+        margin-bottom: 51px;
+    }
+
     #ko-fi-button img, .social-icon img  {
         height: 48px;
     }
@@ -196,10 +212,14 @@ footer {
 }
 
 @media (min-width: 1440px) {
+    #ko-fi-button {
+        font-size: 1.25em;
+    }
+
     #social-container {
-        width: 25%;
-        padding: 1% 2.5% 0 2.5%;
-        margin-bottom: 2.5%;
+        width: 360px;
+        padding: 14px 36px 0;
+        margin-bottom: 36px;
     }
 
     #ko-fi-button img, .social-icon img  {
@@ -208,10 +228,14 @@ footer {
 }
 
 @media (min-width: 1920px) {
+    #ko-fi-button {
+        font-size: 1.5em;
+    }
+
     #social-container {
-        width: 20%;
-        padding: 1% 2.5% 0 2.5%;
-        margin-bottom: 2.5%;
+        width: 384px;
+        padding: 19px 48px 0;
+        margin-bottom: 48px;
     }
 
     .social-icon {
@@ -226,7 +250,9 @@ footer {
 
 @media (min-width: 2560px) {
     #social-container {
-        width: 17.5%;
+        width: 448px;
+        padding: 25.6px 64px 0;
+        margin-bottom: 64px;
         border-radius: 0 0 10px 10px;
     }
 
@@ -247,6 +273,9 @@ footer {
 
 @media (min-width: 3840px) {
     #social-container {
+        width: 672px;
+        padding: 38px 96px 0;
+        margin-bottom: 96px;
         border-radius: 0 0 15px 15px;
     }
 
@@ -256,7 +285,7 @@ footer {
     }
 
     #ko-fi-button img, .social-icon img {
-        height: 96px;
+        height: 88px;
     }
 
     #credits {

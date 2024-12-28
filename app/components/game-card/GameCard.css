@@ -55,46 +55,58 @@
 
 @media (min-width: 320px) {
     .game-card {
-        width: 40vw;
+        width: 122px;
         margin: 0 4px 8px;
+    }
+}
+
+@media (min-width: 375px) {
+    .game-card {
+        width: 144px;
     }
 }
 
 @media (min-width: 425px) {
     .game-card {
-        width: 39vw;
+        width: 162px;
     }
 }
 
 @media (min-width: 768px) {
     .game-card {
-        width: 30vw;
+        width: 224.4px;
         margin: 0 8px 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .game-card {
+        width: 301px;
     }
 }
 
 @media (min-width: 1440px) {
     .game-card {
-        width: 20vw;
+        width: 282px;
     }
 }
 
 @media (min-width: 1920px) {
     .game-card {
-        width: 16vw;
-        margin: 0 8px 16px;
+        width: 301px;
     }
 }
 
 @media (min-width: 2560px) {
     .game-card {
-        width: 15vw;
-        margin: 0 18px 32px;
+        width: 372px;
+        margin: 0 12px 24px;
     }
 }
 
 @media (min-width: 3840px) {
     .game-card {
-        margin: 18px 24px;
+        width: 564px;
+        margin: 0 16px 32px;
     }
 }

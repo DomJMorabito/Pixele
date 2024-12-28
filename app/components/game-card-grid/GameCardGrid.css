@@ -13,42 +13,54 @@
 
 @media (min-width: 320px) {
     #game-card-grid {
-        width: 95vw;
+        width: 304px;
+    }
+}
+
+@media (min-width: 375px) {
+    #game-card-grid {
+        width: 356px;
     }
 }
 
 @media (min-width: 425px) {
     #game-card-grid {
-        width: 85vw;
+        width: 365px;
     }
 }
 
 @media (min-width: 768px) {
     #game-card-grid {
-        width: 75vw;
+        width: 576px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #game-card-grid {
+        width: 768px;
     }
 }
 
 @media (min-width: 1440px) {
     #game-card-grid {
-        width: 70vw;
+        width: 1008px;
     }
 }
 
 @media (min-width: 1920px) {
     #game-card-grid {
-        width: 60vw;
+        width: 1152px;
     }
 }
 
 @media (min-width: 2560px) {
     #game-card-grid {
-        width: 60vw;
+        width: 1536px;
     }
 }
 
 @media (min-width: 3840px) {
     #game-card-grid {
-        width: 55vw;
+        width: 2112px;
     }
 }
