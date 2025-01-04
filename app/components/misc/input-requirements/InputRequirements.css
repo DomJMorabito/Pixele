@@ -1,0 +1,63 @@
+#password-requirements, #username-requirements {
+    font-family: Header, sans-serif;
+    color: #5D6166;
+    transition: color 0.25s ease-in-out;
+}
+
+.requirement-met {
+    color: #00CC66;
+    opacity: 1;
+}
+
+.requirement-not-met {
+    color: #CA2D2D;
+    opacity: 1;
+}
+
+.requirement-met, .requirement-not-met {
+    transition: color 0.25s ease-in-out;
+}
+
+@media (min-width: 320px) {
+    #password-requirements, #username-requirements {
+        font-size: 0.6em;
+        margin-top: 1%;
+        margin-bottom: -5%;
+    }
+}
+
+@media (min-width: 425px) {
+    #password-requirements, #username-requirements {
+        font-size: 0.7em;
+    }
+}
+
+@media (min-width: 768px) {
+    #password-requirements, #username-requirements {
+        font-size: 0.8em;
+    }
+}
+
+@media (min-width: 1024px) {
+    #password-requirements, #username-requirements {
+        font-size: 0.9em;
+    }
+}
+
+@media (min-width: 1440px) {
+    #password-requirements, #username-requirements {
+        font-size: 0.75em;
+    }
+}
+
+@media (min-width: 2560px) {
+    #password-requirements, #username-requirements {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 3840px) {
+    #password-requirements, #username-requirements {
+        font-size: 1.25em;
+    }
+}

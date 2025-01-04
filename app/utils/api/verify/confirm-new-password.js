@@ -4,22 +4,26 @@ import { VerificationError } from '@/app/utils/errors/verification/VerificationE
 import { createErrorFromResponse } from '@/app/utils/errors/error-handler';
 
 /**
- * Sends a reset password email request to the server
+ * Confirms the new password using the reset code
  *
- * @param {string} identifier - The identifier (email address or username) to send the reset password link to
- * @returns {Promise<Object>} - A promise that resolves with the server response data if successful
- * @throws {Error} - Throws an error if the request fails
+ * @param {string} username - The username or email of the user
+ * @param {string} confirmationCode - The reset code sent to the user's email
+ * @param {string} newPassword - The new password to set
+ * @returns {Promise<Object>} - A promise that resolves with the server response data
+ * @throws {Error} - Throws an error if the confirmation fails
  */
-export const sendResetPasswordEmail = async (identifier) => {
+export const confirmNewPassword = async (username, confirmationCode, newPassword) => {
     try {
-        const response = await fetch('https://api.pixele.gg/users/reset-password/send-email', {
+        const response = await fetch('https://api.pixele.gg/users/reset-password/confirm-new-password', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
             },
             body: JSON.stringify({
-                identifier,
+                username,
+                confirmationCode,
+                newPassword
             })
         });
 

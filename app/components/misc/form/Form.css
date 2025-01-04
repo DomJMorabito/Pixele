@@ -37,7 +37,19 @@
     text-align: center;
 }
 
-.verification-form .button {
+.verification-form #password-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.verification-form CodeInput + .button,
+.verification-form #resend-code + .button {
+    margin-top: 0;
+}
+
+.verification-form #password-text {
     margin-top: 0;
 }
 
@@ -63,10 +75,6 @@
 }
 
 @media (min-width: 425px) {
-    .verification-form {
-        width: 279px;
-    }
-
     #form-box {
         width: 310px;
         padding: 12.9px;
@@ -79,10 +87,6 @@
 }
 
 @media (min-width: 768px) {
-    .verification-form {
-        width: 300px;
-    }
-
     #form-box {
         width: 384px;
         padding: 23px;
@@ -90,10 +94,6 @@
 }
 
 @media (min-width: 1024px) {
-    .verification-form {
-        width: 345px;
-    }
-
     #form-box {
         width: 461px;
         padding: 30.7px;
@@ -101,10 +101,6 @@
 }
 
 @media (min-width: 1440px) {
-    .verification-form {
-        width: 283px;
-    }
-
     #form-box {
         width: 324px;
         padding: 21.6px;
@@ -117,10 +113,6 @@
 }
 
 @media (min-width: 1920px) {
-    .verification-form {
-        width: 336px;
-    }
-
     #form-box {
         width: 384px;
         padding: 28.8px;
@@ -128,10 +120,6 @@
 }
 
 @media (min-width: 2560px) {
-    .verification-form {
-        width: 448px;
-    }
-
     #form-box {
         width: 512px;
         border: 4px solid #000000;
@@ -145,10 +133,6 @@
 }
 
 @media (min-width: 3840px) {
-    .verification-form {
-        width: 672px;
-    }
-
     #form-box {
         width: 768px;
         padding: 38.4px;

@@ -34,6 +34,12 @@ export const handleVerificationError = (status, data) => {
                 VerificationErrorCode.EMAIL_SEND_FAILED,
                 data.details
             )
+        case 'EXPIRED_CODE':
+            return new VerificationError(
+                'Verification code expired. Please request a new one.',
+                VerificationErrorCode.EXPIRED_CODE,
+                data.details
+            )
         case 'ALREADY_VERIFIED':
             return new VerificationError(
                 'This account is already verified.',
@@ -46,10 +52,22 @@ export const handleVerificationError = (status, data) => {
                 VerificationErrorCode.RATE_LIMIT_EXCEEDED,
                 data.details
             )
+        case 'DATABASE_ERROR':
+            return new VerificationError(
+                'Unable to complete verification. Please try again later.',
+                VerificationErrorCode.DATABASE_ERROR,
+                data.details
+            )
         case 'SERVER_ERROR':
             return new VerificationError(
                 'Unable to complete verification. Please try again later.',
                 VerificationErrorCode.SERVER_ERROR,
+                data.details
+            )
+        case 'INVALID_PASSWORD':
+            return new VerificationError(
+                'Password requirements not met.',
+                VerificationErrorCode.INVALID_PASSWORD,
                 data.details
             )
         default:

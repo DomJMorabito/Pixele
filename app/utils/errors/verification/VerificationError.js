@@ -9,9 +9,12 @@ export const VerificationErrorCode = {
     EXPIRED_CODE: 'EXPIRED_CODE',               // Code has expired
     ALREADY_VERIFIED: 'ALREADY_VERIFIED',       // User is already verified
     RATE_LIMIT_EXCEEDED: 'RATE_LIMIT_EXCEEDED', // Too many attempts
+    DATABASE_ERROR: 'DATABASE_ERROR',           // Error updating instance of user in RDS
     SERVER_ERROR: 'SERVER_ERROR',               // Internal server error
     NETWORK_ERROR: 'NETWORK_ERROR',             // Connection Issues
     UNKNOWN_ERROR: 'UNKNOWN_ERROR',             // Fallback for unexpected errors
+    // FOR PASSWORD RESET
+    INVALID_PASSWORD: 'INVALID_PASSWORD',       // Password requirements not met
 };
 
 /**

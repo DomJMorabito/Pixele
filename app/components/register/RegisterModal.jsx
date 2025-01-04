@@ -18,6 +18,7 @@ import Button from '@/app/components/misc/button/Button';
 import Form from '@/app/components/misc/form/Form';
 import Input from '@/app/components/misc/input/Input';
 import PasswordInput from '@/app/components/misc/password-input/PasswordInput';
+import InputRequirements from "@/app/components/misc/input-requirements/InputRequirements";
 
 // Utils Imports:
 
@@ -25,8 +26,8 @@ import { showIndicator } from '@/app/utils/ui/show-indicator';
 import { validateEmail } from '@/app/utils/input/validate-email';
 import { validateUsernameLength } from '@/app/utils/input/validate-username-length';
 import { validateUsernameSpecialCharacters } from '@/app/utils/input/validate-username-special-characters'
-import { validatePassword } from '@/app/utils/input/validate-password';
 import { validatePasswordsMatch } from '@/app/utils/input/validate-passwords-match'
+import { setupPasswordValidation } from "@/app/utils/input/set-up-password-validation";
 import { sendRegisterRequest } from '@/app/utils/api/register/send-register-request';
 import { showFieldState } from '@/app/utils/ui/show-field-state';
 import { RegistrationErrorCode } from '@/app/utils/errors/register/RegistrationError';
@@ -98,27 +99,7 @@ export default function RegisterModal() {
     }, [])
 
     useEffect(() => {
-        const passwordInput = document.getElementById('password');
-        const confirmPasswordInput = document.getElementById('confirm-password');
-        const passwordLengthRequirement = document.getElementById('password-length');
-        const passwordNumberRequirement = document.getElementById('password-numbers');
-        const passwordSpecialRequirement = document.getElementById('password-special');
-
-        const handlePasswordInputs = () => {
-            const password = passwordInput.value.trim();
-            const confirmPassword = confirmPasswordInput.value.trim();
-            const passwordIsValid = validatePassword(password, passwordLengthRequirement, passwordNumberRequirement, passwordSpecialRequirement);
-            const submitButton = document.querySelector('button[type="submit"]');
-            setIsFormValid(validatePasswordsMatch(password, confirmPassword, submitButton, passwordIsValid))
-        };
-
-        passwordInput.addEventListener('input', handlePasswordInputs);
-        confirmPasswordInput.addEventListener('input', handlePasswordInputs);
-
-        return () => {
-            passwordInput.removeEventListener('input', handlePasswordInputs);
-            confirmPasswordInput.removeEventListener('input', handlePasswordInputs);
-        }
+        return setupPasswordValidation(setIsFormValid);
     }, [router]);
 
     const handleFormSubmission = async (event) => {
@@ -138,6 +119,7 @@ export default function RegisterModal() {
 
         try {
             if (!validatePasswordsMatch(password, confirmPassword, submitButton, true)) {
+                console.error('Passwords do not match.');
                 showIndicator('Passwords do not match.', 'bad', alertIndicator);
                 showFieldState(passwordInput);
                 showFieldState(confirmPasswordInput);
@@ -145,30 +127,35 @@ export default function RegisterModal() {
             }
 
             if (!validateEmail(email)) {
+                console.error('Input is not a valid email address.');
                 showIndicator('Enter a valid email.', 'bad', alertIndicator);
                 showFieldState(emailInput);
                 return;
             }
 
             if (!validateUsernameLength(username)) {
+                console.error('Username must be 5-18 characters.');
                 showIndicator('Username must be 5-18 characters.', 'bad', alertIndicator);
                 showFieldState(usernameInput);
                 return;
             }
 
             if (!validateUsernameSpecialCharacters(username)) {
+                console.error('Username cannot contain any special characters.');
                 showIndicator('Username cannot contain any special characters.', 'bad', alertIndicator);
                 showFieldState(usernameInput);
                 return;
             }
 
             if (filter.isProfane(username)) {
+                console.error('Really. (Username contains profanity)');
                 showIndicator('Really.', 'bad', alertIndicator);
                 showFieldState(usernameInput);
                 return;
             }
             await sendRegisterRequest(username, email, password);
             setIsSuccess(true);
+            console.log('Successfully sent Registration request!');
             const inputs = [emailInput, usernameInput, passwordInput, confirmPasswordInput];
             inputs.forEach(input => {
                 showFieldState(input, {
@@ -183,6 +170,7 @@ export default function RegisterModal() {
         } catch (error) {
             switch (error.code) {
                 case RegistrationErrorCode.MISSING_FIELDS:
+                    console.error(error);
                     showIndicator('Please fill out all fields.', 'bad', alertIndicator);
                     error.details.missingFields.forEach(field => {
                         const input = document.getElementById(field);
@@ -192,53 +180,63 @@ export default function RegisterModal() {
                     });
                     break
                 case RegistrationErrorCode.DUPLICATE_CREDENTIALS:
+                    console.error(error);
                     showIndicator('Both Email and Username are already in use.', 'bad', alertIndicator);
                     showFieldState(emailInput);
                     showFieldState(usernameInput);
                     break
                 case RegistrationErrorCode.EMAIL_EXISTS:
+                    console.error(error);
                     showIndicator('Email already in use', 'bad', alertIndicator);
                     showFieldState(emailInput);
                     break
                 case RegistrationErrorCode.USERNAME_EXISTS:
+                    console.error(error);
                     showIndicator('Username already taken', 'bad', alertIndicator);
                     showFieldState(usernameInput);
                     break
                 case RegistrationErrorCode.INVALID_EMAIL:
+                    console.error(error);
                     showIndicator('Enter a valid email.', 'bad', alertIndicator);
                     showFieldState(emailInput);
                     break
                 case RegistrationErrorCode.INVALID_USERNAME:
                     showFieldState(usernameInput);
                     if (error.details?.requirements?.minLength) {
+                        console.error(error);
                         showIndicator('Username must be 5-18 characters.', 'bad', alertIndicator);
                     } else if (error.details?.requirements?.allowedCharacters) {
+                        console.error(error);
                         showIndicator('Username cannot contain any special characters.', 'bad', alertIndicator);
                     }
                     break
                 case RegistrationErrorCode.INAPPROPRIATE_CONTENT:
+                    console.error(error);
                     showIndicator('Seriously?', 'bad', alertIndicator);
                     showFieldState(usernameInput);
                     break
                 case RegistrationErrorCode.INVALID_PASSWORD:
+                    console.error(error);
                     showIndicator('Password does not meet the requirements.', 'bad', alertIndicator);
                     showFieldState(passwordInput);
                     showFieldState(confirmPasswordInput);
                     break
                 case RegistrationErrorCode.RATE_LIMIT_EXCEEDED:
+                    console.error(error);
                     showIndicator('Too many attempts. Please try again later.', 'bad', alertIndicator);
                     [emailInput, usernameInput, passwordInput, confirmPasswordInput].forEach(input => {
                         showFieldState(input);
                     });
                     break
                 case RegistrationErrorCode.SERVER_ERROR:
+                    console.error(error);
                     showIndicator('Internal server error. Please try again later.', 'bad', alertIndicator);
                     [emailInput, usernameInput, passwordInput, confirmPasswordInput].forEach(input => {
                         showFieldState(input);
                     });
                     break
                 default:
-                    console.error('Error signing up:', error);
+                    console.error(error);
                     showIndicator('An unknown error has occurred, please try again later.', 'bad', alertIndicator);
                     [emailInput, usernameInput, passwordInput, confirmPasswordInput].forEach(input => {
                         showFieldState(input);
@@ -272,21 +270,27 @@ export default function RegisterModal() {
                     )}</>}
                     disabled={isLoading}
                 />
-                <p id="username-requirements">
-                    <span id="username-length"> 5-18 Letters </span>
-                    <span id="username-special">& No Special Characters</span>
-                </p>
+                <InputRequirements
+                    id="username-requirements"
+                    requirements={[
+                        { id: 'username-length', text: '5-18 Letters' },
+                        { id: 'username-special', text: 'No Special Characters' }
+                    ]}
+                />
                 <PasswordInput
                     id="password"
                     placeholder="Password"
                     label = 'Password'
                     disabled={isLoading}
                 />
-                <p id="password-requirements">
-                    <span id="password-length"> 8 Letters, </span>
-                    <span id="password-numbers">1 Number, </span>
-                    <span id="password-special">& 1 Special Character</span>
-                </p>
+                <InputRequirements
+                    id="password-requirements"
+                    requirements={[
+                        { id: 'password-length', text: '8 Letters' },
+                        { id: 'password-numbers', text: '1 Number' },
+                        { id: 'password-special', text: '1 Special Character' }
+                    ]}
+                />
                 <PasswordInput
                     id="confirm-password"
                     placeholder="Confirm Password"

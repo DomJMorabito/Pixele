@@ -60,6 +60,7 @@ export default function LoginModal() {
         const cookies = parseCookies();
 
         if (cookies['pixele_user']) {
+            console.log('You are already logged in!');
             showIndicator('You are already logged in!', 'good', alertIndicator);
             setIsSuccess(true);
             const inputs = [usernameEmailInput, passwordInput];
@@ -84,6 +85,7 @@ export default function LoginModal() {
         try {
             await sendLoginRequest(identifier, password);
             setIsSuccess(true);
+            console.log('Successfully sent Login request!');
             const inputs = [usernameEmailInput, passwordInput];
             inputs.forEach(input => {
                 showFieldState(input, {
@@ -98,7 +100,8 @@ export default function LoginModal() {
         } catch (error) {
             switch (error.code) {
                 case LoginErrorCode.MISSING_FIELDS:
-                    showIndicator('Missing required fields.', 'bad', alertIndicator);
+                    console.error('Missing required fields.', error);
+                    showIndicator('Please fill out all fields.', 'bad', alertIndicator);
                     error.details.missingFields.forEach(field => {
                         const input = document.getElementById(field);
                         if (input) {
@@ -107,6 +110,7 @@ export default function LoginModal() {
                     });
                     break
                 case LoginErrorCode.AUTH_INCOMPLETE:
+                    console.error('Verification incomplete.', error);
                     if (error.details?.nextStep?.signInStep === 'CONFIRM_SIGN_UP') {
                         const username = error.details?.username || identifier;
                         const email = error.details?.email || identifier;
@@ -149,29 +153,35 @@ export default function LoginModal() {
                     }
                     break
                 case LoginErrorCode.AUTH_COMPLETION_FAILED:
+                    console.error('Login failed.', error);
                     showIndicator('Login failed. Please try again.', 'bad', alertIndicator);
                     showFieldState(usernameEmailInput);
                     showFieldState(passwordInput);
                     break
                 case LoginErrorCode.TOKEN_UNAVAILABLE:
+                    console.error('No access token provided.', error)
                     showIndicator('No access token available after authentication.', 'bad', alertIndicator);
                     showFieldState(usernameEmailInput);
                     showFieldState(passwordInput);
                     break
                 case LoginErrorCode.USER_NOT_FOUND:
+                    console.error('No user found.', error);
                     showIndicator('No account associated with this Email/Username.', 'bad', alertIndicator);
                     showFieldState(usernameEmailInput);
                     break
                 case LoginErrorCode.INVALID_CREDENTIALS:
+                    console.error('Email/Username or Password is incorrect.', error);
                     showIndicator('Email/Username or Password is incorrect.', 'bad', alertIndicator);
                     showFieldState(passwordInput);
                     break
                 case LoginErrorCode.RATE_LIMIT_EXCEEDED:
+                    console.error('Please slow down.', error);
                     showIndicator('Too many attempts. Please try again later.', 'bad', alertIndicator);
                     showFieldState(usernameEmailInput);
                     showFieldState(passwordInput);
                     break
                 case LoginErrorCode.SERVER_ERROR:
+                    console.error('Internal server error.', error);
                     showIndicator('Internal server error. Please try again later.', 'bad', alertIndicator);
                     showFieldState(usernameEmailInput);
                     showFieldState(passwordInput);

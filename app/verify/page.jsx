@@ -8,7 +8,12 @@ import { useEffect } from 'react';
 
 import VerifyModal from '@/app/components/verify/VerifyModal';
 
-export default function VerifyPage({ searchParams}) {
+// Utils Imports:
+
+import { sendVerificationRequest } from "@/app/utils/api/verify/send-verification-request";
+import { resendVerificationCode } from "@/app/utils/api/verify/resend-verification-code";
+
+export default function VerifyPage({ searchParams }) {
 
     // Makes sure that the background image is always set to the default whenever the page is loaded.
     useEffect(() => {
@@ -31,6 +36,8 @@ export default function VerifyPage({ searchParams}) {
                 <VerifyModal
                     email = { searchParams.email }
                     username = { searchParams.username }
+                    onSubmit={ sendVerificationRequest }
+                    onResend={ resendVerificationCode }
                 />
             </main>
         </>
