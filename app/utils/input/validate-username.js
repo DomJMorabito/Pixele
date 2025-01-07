@@ -1,38 +1,17 @@
 /**
- * Validates the username input against specified requirements.
+ * Validates that a username meets all requirements:
+ * - Must be between 5 and 18 characters
+ * - Cannot contain special characters (only letters and numbers allowed)
  *
  * @param {string} username - The username string to validate.
- * @param {HTMLElement} lengthRequirement - The element displaying the length requirement.
- * @param {HTMLElement} specialRequirement - The element displaying the special character requirement.
- * @returns {boolean} - Returns true if all requirements are met, false otherwise.
+ * @param {boolean} isValidLength - Whether the username meets length requirements.
+ * @param {boolean} hasNoSpecialChars - Whether the username is free of special characters.
+ * @returns {boolean} - Returns true if all username requirements are met, false otherwise.
  */
-export const validateUsername = (username, lengthRequirement, specialRequirement) => {
-    let lengthMet = false;
-    let specialMet = false;
-
-    if (username === '') {
-        lengthRequirement.classList.remove('requirement-met', 'requirement-not-met');
-        specialRequirement.classList.remove('requirement-met', 'requirement-not-met');
-        return false;
-    }
-
-    if (username.length >= 5 && username.length <= 18) {
-        lengthRequirement.classList.add('requirement-met');
-        lengthRequirement.classList.remove('requirement-not-met');
-        lengthMet = true;
-    } else {
-        lengthRequirement.classList.add('requirement-not-met');
-        lengthRequirement.classList.remove('requirement-met');
-    }
-
-    if (/^[a-zA-Z0-9]+$/.test(username)) {
-        specialRequirement.classList.add('requirement-met');
-        specialRequirement.classList.remove('requirement-not-met');
-        specialMet = true;
-    } else {
-        specialRequirement.classList.add('requirement-not-met');
-        specialRequirement.classList.remove('requirement-met');
-    }
-
-    return lengthMet && specialMet;
-}
+export const validateUsername = (
+    username,
+        isValidLength,
+        hasNoSpecialChars
+) => {
+    return username && isValidLength && hasNoSpecialChars;
+};

@@ -11,18 +11,23 @@ const PasswordInput = ({
     id,
     label,
     placeholder,
-    disabled = false
+    disabled = false,
+    value,
+    onChange,
+    className = '',
+    state
 }) => {
     const [isVisible, setIsVisible] = useState(false);
-
+    const stateClass = state ? state: '';
 
     const togglePassword = (e) => {
         e.preventDefault();
         const input = e.currentTarget.previousElementSibling;
         input.type = input.type === 'password' ? 'text' : 'password';
         if (!isVisible) {
-            const hideOnType = () => {
+            const hideOnType = (e) => {
                 setIsVisible(false);
+                onChange?.(e)
                 input.removeEventListener('input', hideOnType);
             };
             input.addEventListener('input', hideOnType);
@@ -37,9 +42,11 @@ const PasswordInput = ({
                 <input
                     type={isVisible ? 'text' : 'password'}
                     id={id}
-                    className="form-input"
+                    className={`form-input ${stateClass} ${className}`}
                     placeholder={placeholder}
                     disabled={disabled}
+                    value={value}
+                    onChange={onChange}
                 />
                 <span className="toggle-visibility" onClick={togglePassword}>
                     <span className="material-symbols-outlined">

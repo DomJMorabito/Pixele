@@ -7,7 +7,8 @@ const CodeInput = ({
     value = [],
     onChange,
     disabled = false,
-    inputRefs
+    inputRefs,
+    state = ''
 }) => {
 
     const handleChange = (e, index) => {
@@ -70,7 +71,7 @@ const CodeInput = ({
                     }}
                     onChange={e => handleChange(e, index)}
                     onKeyDown={e => handleKeyDown(e, index)}
-                    className="code-input"
+                    className={`code-input ${state}`}
                     disabled={disabled}
                 />
             ))}

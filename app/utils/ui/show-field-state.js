@@ -1,25 +1,32 @@
 /**
- * Temporarily adds a state class to a form field to indicate validation status.
+ * Manages field states in React components.
  *
- * @param {HTMLElement} field - The DOM element to show the state on
+ * @param {string} fieldId - The ID of the field to update
+ * @param {Function} setFieldStates - setState function for field states
  * @param {Object} [options] - Optional configuration object
  * @param {number} [options.duration=500] - Duration in milliseconds to show the state
  * @param {'error' | 'success'} [options.state='error'] - The state to show ('error' or 'success')
- * @param {boolean} [options.persist=false] - Whether to persist the state (don't remove class after duration)
+ * @param {boolean} [options.persist=false] - Whether to persist the state
  * @returns {void}
  */
-export const showFieldState = (field, options = {}) => {
+export const showFieldState = (fieldId, setFieldStates, options = {}) => {
     const {
         duration = 500,
         state = 'error',
         persist = false
     } = typeof options === 'number' ? { duration: options } : options;
 
-    field.classList.add(state);
+    setFieldStates(prev => ({
+        ...prev,
+        [fieldId]: state
+    }));
 
     if (!persist) {
         setTimeout(() => {
-            field.classList.remove(state);
+            setFieldStates(prev => ({
+                ...prev,
+                [fieldId]: ''
+            }));
         }, duration);
     }
 };

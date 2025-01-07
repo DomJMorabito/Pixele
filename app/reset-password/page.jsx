@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 // Component Imports:
 
-import ResetPasswordModal from '@/app/components/reset-password/ResetPasswordModal';
+import ResetPasswordForm from '@/app/components/reset-password/ResetPasswordForm';
 
 export default function ResetPasswordPage() {
     useEffect(() => {
@@ -32,7 +32,7 @@ export default function ResetPasswordPage() {
     return (
         <>
             <main>
-                <ResetPasswordModal />
+                <ResetPasswordForm />
             </main>
         </>
     );

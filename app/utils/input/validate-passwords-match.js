@@ -8,11 +8,6 @@
  * @returns {boolean} - Whether the passwords match.
  */
 export const validatePasswordsMatch = (password, confirmPassword, confirmButton, requirementsMet) => {
-    if (!password || !confirmPassword) {
-        confirmButton.disabled = true;
-        return false;
-    }
-
     const passwordsMatch = password === confirmPassword;
     confirmButton.disabled = !(passwordsMatch && requirementsMet);
     return passwordsMatch;

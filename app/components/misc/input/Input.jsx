@@ -7,16 +7,24 @@ const Input = ({
     label,
     placeholder,
     disabled = false,
+    value,
+    onChange,
+    className = '',
+    state
 }) => {
+    const stateClass = state ? state : '';
+
     return (
         <>
             <p id={`${id}-text`}>{label}</p>
             <input
                 type="text"
                 id={id}
-                className="form-input"
+                className={`form-input ${stateClass} ${className}`}
                 placeholder={placeholder}
                 disabled={disabled}
+                value={value}
+                onChange={onChange}
             />
         </>
     );

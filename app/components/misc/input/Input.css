@@ -26,7 +26,7 @@
 }
 
 .error {
-    color: #CA2D2D;
+    color: #CA2D2D !important;
     border: 2px solid #CA2D2D !important;
     animation: shake 0.3s;
     animation-iteration-count: 1;
@@ -40,7 +40,7 @@
         border-color: transparent;
     }
     100% {
-        color: #00CC66;
+        color: #00CC66 !important;
         border-color: #00CC66 !important;
     }
 }

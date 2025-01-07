@@ -1,49 +1,18 @@
 /**
- * Validates the password input against specified requirements.
+ * Validates that a password meets all required criteria:
+ * - Contains at least one number
+ * - Contains at least one special character
+ * - Meets minimum length requirement
  *
- * @param {string} password - The password string to validate.
- * @param {HTMLElement} lengthRequirement - The element displaying the length requirement.
- * @param {HTMLElement} numberRequirement - The element displaying the number requirement.
- * @param {HTMLElement} specialRequirement - The element displaying the special character requirement.
+ * @param {boolean} hasNumber - Whether the password contains a number.
+ * @param {boolean} hasSpecialChar - Whether the password contains a special character.
+ * @param {boolean} isValidLength - Whether the password meets length requirements.
+ * @returns {boolean} - Returns true if all password requirements are met, false otherwise.
  */
-export const validatePassword = (password, lengthRequirement, numberRequirement, specialRequirement) => {
-    let lengthMet = false;
-    let numbersMet = false;
-    let specialMet = false;
-
-    if (password === '') { // Handle case where password input box is empty or the user has not typed anything in yet.
-        lengthRequirement.classList.remove('requirement-met', 'requirement-not-met');
-        numberRequirement.classList.remove('requirement-met', 'requirement-not-met');
-        specialRequirement.classList.remove('requirement-met', 'requirement-not-met');
-        return;
-    }
-
-    if (password.length >= 8) { // Check if password is 8 characters or longer.
-        lengthRequirement.classList.add('requirement-met');
-        lengthRequirement.classList.remove('requirement-not-met');
-        lengthMet = true;
-    } else {
-        lengthRequirement.classList.add('requirement-not-met');
-        lengthRequirement.classList.remove('requirement-met');
-    }
-
-    if (/\d/.test(password)) { // Check to see if password contains a number.
-        numberRequirement.classList.add('requirement-met');
-        numberRequirement.classList.remove('requirement-not-met');
-        numbersMet = true;
-    } else {
-        numberRequirement.classList.add('requirement-not-met');
-        numberRequirement.classList.remove('requirement-met');
-    }
-
-    if (/[^A-Za-z0-9]/.test(password)) { // Check to see if password contains a special character (!, ?, @, etc.).
-        specialRequirement.classList.add('requirement-met');
-        specialRequirement.classList.remove('requirement-not-met');
-        specialMet = true;
-    } else {
-        specialRequirement.classList.add('requirement-not-met');
-        specialRequirement.classList.remove('requirement-met');
-    }
-
-    return lengthMet && numbersMet && specialMet
+export const validatePassword = (
+        hasNumber,
+        hasSpecialChar,
+        isValidLength
+) => {
+    return hasNumber && hasSpecialChar && isValidLength;
 }

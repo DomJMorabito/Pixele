@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 // Component Imports:
 
-import VerifyModal from "@/app/components/verify/VerifyModal";
+import VerificationForm from "@/app/components/verify/VerificationForm";
 
 // Utils Imports:
 
@@ -14,6 +14,9 @@ import { confirmNewPassword } from '@/app/utils/api/verify/confirm-new-password'
 import { sendResetPasswordEmail } from "@/app/utils/api/verify/send-reset-password-email";
 
 export default function NewPasswordPage({ searchParams }) {
+    useEffect(() => {
+        document.title = 'New Password | Pixele';
+    }, []);
 
     // Makes sure that the background image is always set to the default whenever the page is loaded.
     useEffect(() => {
@@ -33,7 +36,7 @@ export default function NewPasswordPage({ searchParams }) {
     return (
         <>
             <main>
-                <VerifyModal
+                <VerificationForm
                     email={ searchParams.email }
                     username={ searchParams.username }
                     isPasswordReset={ true }

@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 // Component Imports:
 
-import LoginModal from '@/app/components/login/LoginModal';
+import LoginForm from '@/app/components/login/LoginForm';
 
 export default function LoginPage() {
     useEffect(() => {
@@ -32,7 +32,7 @@ export default function LoginPage() {
     return (
         <>
             <main>
-                <LoginModal />
+                <LoginForm />
             </main>
         </>
     );

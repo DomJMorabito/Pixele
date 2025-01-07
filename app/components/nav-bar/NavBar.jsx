@@ -13,10 +13,13 @@ import { useState, useMemo } from 'react';
 
 import Button from "@/app/components/misc/button/Button";
 
+// Context Imports:
+
+import { useAlert } from '@/app/contexts/AlertProvider';
+
 //Utils Imports:
 
 import { debounce } from '@/app/utils/ui/debounce';
-import { showIndicator } from "@/app/utils/ui/show-indicator";
 import { sendLogoutRequest } from "@/app/utils/api/logout/send-logout-request";
 import { LogoutErrorCode } from "@/app/utils/errors/logout/LogoutError";
 import { useAuth } from '@/app/contexts/AuthProvider';
@@ -26,6 +29,7 @@ import { useAuth } from '@/app/contexts/AuthProvider';
 import '@/app/components/nav-bar/NavBar.css';
 
 function NavBar() {
+    const { showAlert } = useAlert();
     const router = useRouter();
     const [isVisible, setVisible] = useState(false);
     const [isLoggingOut, setIsLoggingOut] = useState(false);
@@ -33,28 +37,27 @@ function NavBar() {
 
     const handleLogout = async () => {
         setIsLoggingOut(true);
-        const alertIndicator = document.getElementById('alert-indicator');
 
         try {
             await sendLogoutRequest();
             refreshAuth();
-            showIndicator('See ya!', 'good', alertIndicator);
+            showAlert('See ya!', 'good');
             await new Promise(resolve => setTimeout(resolve, 2000));
             handleClick();
         } catch (error) {
             switch (error.code) {
                 case LogoutErrorCode.LOGOUT_FAILED:
-                    showIndicator('Logout failed.', 'bad', alertIndicator);
+                    showAlert('Logout failed.', 'bad');
                     break
                 case LogoutErrorCode.NO_SESSION:
-                    showIndicator('No user currently logged in.', 'bad', alertIndicator);
+                    showAlert('No user currently logged in.', 'bad');
                     break
                 case LogoutErrorCode.SERVER_ERROR:
-                    showIndicator('Internal server error. Please try again later.', 'bad', alertIndicator);
+                    showAlert('Internal server error. Please try again later.', 'bad');
                     break
                 default:
                     console.error('Error logging out:', error);
-                    showIndicator('An unknown error has occurred, please try again later.', 'bad', alertIndicator);
+                    showAlert('An unknown error has occurred, please try again later.', 'bad');
             }
         } finally {
             setIsLoggingOut(false);

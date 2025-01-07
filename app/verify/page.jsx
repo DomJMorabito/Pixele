@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 // Component Imports:
 
-import VerifyModal from '@/app/components/verify/VerifyModal';
+import VerificationForm from "@/app/components/verify/VerificationForm";
 
 // Utils Imports:
 
@@ -14,6 +14,9 @@ import { sendVerificationRequest } from "@/app/utils/api/verify/send-verificatio
 import { resendVerificationCode } from "@/app/utils/api/verify/resend-verification-code";
 
 export default function VerifyPage({ searchParams }) {
+    useEffect(() => {
+        document.title = 'Verify | Pixele';
+    }, []);
 
     // Makes sure that the background image is always set to the default whenever the page is loaded.
     useEffect(() => {
@@ -33,7 +36,7 @@ export default function VerifyPage({ searchParams }) {
     return (
         <>
             <main>
-                <VerifyModal
+                <VerificationForm
                     email = { searchParams.email }
                     username = { searchParams.username }
                     onSubmit={ sendVerificationRequest }

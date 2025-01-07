@@ -4,7 +4,7 @@ const characters = [
         arena: 'Training Camp (0)',
         rarity: 'Common',
         type: 'Spell',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -12,7 +12,7 @@ const characters = [
         arena: 'Training Camp (0)',
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -20,7 +20,7 @@ const characters = [
         arena: 'Training Camp (0)',
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 3
     },
     {
@@ -28,7 +28,7 @@ const characters = [
         arena: 'Training Camp (0)',
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 3
     },
     {
@@ -36,14 +36,14 @@ const characters = [
         arena: 'Training Camp (0)',
         rarity: 'Common',
         type: 'Tower Troop',
-        evolution: 'N/A'
+        evolution: false
     },
     {
         name: 'Fireball',
         arena: 'Training Camp (0)',
         rarity: 'Rare',
         type: 'Spell',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -51,7 +51,7 @@ const characters = [
         arena: 'Training Camp (0)',
         rarity: 'Rare',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -59,7 +59,7 @@ const characters = [
         arena: 'Training Camp (0)',
         rarity: 'Rare',
         type: 'Troop',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 4
     },
     {
@@ -67,7 +67,7 @@ const characters = [
         arena: 'Training Camp (0)',
         rarity: 'Rare',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 5
     },
     {
@@ -75,7 +75,7 @@ const characters = [
         arena: 'Goblin Stadium (1)',
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 2
     },
     {
@@ -83,7 +83,7 @@ const characters = [
         arena: 'Goblin Stadium (1)',
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 2
     },
     {
@@ -91,7 +91,7 @@ const characters = [
         arena: 'Goblin Stadium (1)',
         rarity: 'Rare',
         type: 'Building',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 4
     },
     {
@@ -99,7 +99,7 @@ const characters = [
         arena: 'Goblin Stadium (1)',
         rarity: 'Rare',
         type: 'Building',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 5
     },
     {
@@ -107,7 +107,7 @@ const characters = [
         arena: 'Bone Pit (2)',
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 2
     },
     {
@@ -115,7 +115,7 @@ const characters = [
         arena: 'Bone Pit (2)',
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 1
     },
     {
@@ -123,7 +123,7 @@ const characters = [
         arena: 'Bone Pit (2)',
         rarity: 'Rare',
         type: 'Building',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -131,7 +131,7 @@ const characters = [
         arena: 'Bone Pit (2)',
         rarity: 'Rare',
         type: 'Troop',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 4
     },
     {
@@ -139,7 +139,7 @@ const characters = [
         arena: 'Barbarian Bowl (3)',
         rarity: 'Common',
         type: 'Building',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 3
     },
     {
@@ -147,7 +147,7 @@ const characters = [
         arena: 'Barbarian Bowl (3)',
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 5
     },
     {
@@ -155,7 +155,7 @@ const characters = [
         arena: 'Barbarian Bowl (3)',
         rarity: 'Rare',
         type: 'Troop',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 4
     },
     {
@@ -163,7 +163,7 @@ const characters = [
         arena: 'Barbarian Bowl (3)',
         rarity: 'Rare',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -171,7 +171,7 @@ const characters = [
         arena: 'Spell Valley (4)',
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 1
     },
     {
@@ -179,7 +179,7 @@ const characters = [
         arena: 'Spell Valley (4)',
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -187,7 +187,7 @@ const characters = [
         arena: 'Spell Valley (4)',
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 1
     },
     {
@@ -195,7 +195,7 @@ const characters = [
         arena: 'Spell Valley (4)',
         rarity: 'Rare',
         type: 'Building',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -203,7 +203,7 @@ const characters = [
         arena: 'Spell Valley (4)',
         rarity: 'Rare',
         type: 'Building',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 5
     },
     {
@@ -211,7 +211,7 @@ const characters = [
         arena: 'Spell Valley (4)',
         rarity: 'Rare',
         type: 'Troop',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 5
     },
     {
@@ -219,7 +219,7 @@ const characters = [
         arena: "Builder's Workshop (5)",
         rarity: 'Common',
         type: 'Spell',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 2
     },
     {
@@ -227,7 +227,7 @@ const characters = [
         arena: "Builder's Workshop (5)",
         rarity: 'Common',
         type: 'Building',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 4
     },
     {
@@ -235,7 +235,7 @@ const characters = [
         arena: "Builder's Workshop (5)",
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 2
     },
     {
@@ -243,7 +243,7 @@ const characters = [
         arena: "Builder's Workshop (5)",
         rarity: 'Rare',
         type: 'Spell',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 6
     },
     {
@@ -251,7 +251,7 @@ const characters = [
         arena: "Builder's Workshop (5)",
         rarity: 'Rare',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -259,7 +259,7 @@ const characters = [
         arena: "Builder's Workshop (5)",
         rarity: 'Rare',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -267,7 +267,7 @@ const characters = [
         arena: "P.E.K.K.S's Playhouse (6)",
         rarity: 'Epic',
         type: 'Spell',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 3
     },
     {
@@ -275,7 +275,7 @@ const characters = [
         arena: "P.E.K.K.S's Playhouse (6)",
         rarity: 'Epic',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -283,7 +283,7 @@ const characters = [
         arena: "P.E.K.K.S's Playhouse (6)",
         rarity: 'Epic',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -291,7 +291,7 @@ const characters = [
         arena: "P.E.K.K.S's Playhouse (6)",
         rarity: 'Epic',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -299,7 +299,7 @@ const characters = [
         arena: "P.E.K.K.S's Playhouse (6)",
         rarity: 'Epic',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 5
     },
     {
@@ -307,7 +307,7 @@ const characters = [
         arena: "P.E.K.K.S's Playhouse (6)",
         rarity: 'Epic',
         type: 'Troop',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 7
     },
     {
@@ -315,7 +315,7 @@ const characters = [
         arena: 'Royal Arena (7)',
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 7
     },
     {
@@ -323,7 +323,7 @@ const characters = [
         arena: 'Royal Arena (7)',
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 6
     },
     {
@@ -331,7 +331,7 @@ const characters = [
         arena: 'Royal Arena (7)',
         rarity: 'Rare',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 5
     },
     {
@@ -339,7 +339,7 @@ const characters = [
         arena: 'Royal Arena (7)',
         rarity: 'Rare',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 9
     },
     {
@@ -347,7 +347,7 @@ const characters = [
         arena: 'Royal Arena (7)',
         rarity: 'Epic',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 5
     },
     {
@@ -355,7 +355,7 @@ const characters = [
         arena: 'Royal Arena (7)',
         rarity: 'Epic',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 5
     },
     {
@@ -363,7 +363,7 @@ const characters = [
         arena: 'Royal Arena (7)',
         rarity: 'Epic',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 5
     },
     {
@@ -371,7 +371,7 @@ const characters = [
         arena: 'Frozen Peak (8)',
         rarity: 'Common',
         type: 'Spell',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 2
     },
     {
@@ -379,7 +379,7 @@ const characters = [
         arena: 'Frozen Peak (8)',
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 1
     },
     {
@@ -387,7 +387,7 @@ const characters = [
         arena: 'Frozen Peak (8)',
         rarity: 'Rare',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -395,7 +395,7 @@ const characters = [
         arena: 'Frozen Peak (8)',
         rarity: 'Rare',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 2
     },
     {
@@ -403,7 +403,7 @@ const characters = [
         arena: 'Frozen Peak (8)',
         rarity: 'Epic',
         type: 'Spell',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 6
     },
     {
@@ -411,7 +411,7 @@ const characters = [
         arena: 'Frozen Peak (8)',
         rarity: 'Epic',
         type: 'Spell',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -419,7 +419,7 @@ const characters = [
         arena: 'Frozen Peak (8)',
         rarity: 'Epic',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 6
     },
     {
@@ -427,7 +427,7 @@ const characters = [
         arena: 'Frozen Peak (8)',
         rarity: 'Epic',
         type: 'Tower Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 0
     },
     {
@@ -435,7 +435,7 @@ const characters = [
         arena: 'Jungle Arena (9)',
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -443,7 +443,7 @@ const characters = [
         arena: 'Jungle Arena (9)',
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -451,7 +451,7 @@ const characters = [
         arena: 'Jungle Arena (9)',
         rarity: 'Rare',
         type: 'Building',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 6
     },
     {
@@ -459,7 +459,7 @@ const characters = [
         arena: 'Jungle Arena (9)',
         rarity: 'Rare',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: true,
         elixir: 3
     },
     {
@@ -467,7 +467,7 @@ const characters = [
         arena: 'Jungle Arena (9)',
         rarity: 'Epic',
         type: 'Spell',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 2
     },
     {
@@ -475,7 +475,7 @@ const characters = [
         arena: 'Jungle Arena (9)',
         rarity: 'Epic',
         type: 'Spell',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -483,7 +483,7 @@ const characters = [
         arena: 'Jungle Arena (9)',
         rarity: 'Epic',
         type: 'Troop',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 6
     },
     {
@@ -491,7 +491,7 @@ const characters = [
         arena: 'Hog Mountain (10)',
         rarity: 'Common',
         type: 'Building',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 4
     },
     {
@@ -499,7 +499,7 @@ const characters = [
         arena: 'Hog Mountain (10)',
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 6
     },
     {
@@ -507,7 +507,7 @@ const characters = [
         arena: 'Hog Mountain (10)',
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 5
     },
     {
@@ -515,7 +515,7 @@ const characters = [
         arena: 'Hog Mountain (10)',
         rarity: 'Rare',
         type: 'Building',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -523,7 +523,7 @@ const characters = [
         arena: 'Hog Mountain (10)',
         rarity: 'Rare',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -531,7 +531,7 @@ const characters = [
         arena: 'Hog Mountain (10)',
         rarity: 'Epic',
         type: 'Building',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 6
     },
     {
@@ -539,7 +539,7 @@ const characters = [
         arena: 'Hog Mountain (10)',
         rarity: 'Epic',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -547,7 +547,7 @@ const characters = [
         arena: 'Hog Mountain (10)',
         rarity: 'Epic',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 8
     },
     {
@@ -555,7 +555,7 @@ const characters = [
         arena: 'Electro Valley (11)',
         rarity: 'Legendary',
         type: 'Spell',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 2
     },
     {
@@ -563,7 +563,7 @@ const characters = [
         arena: 'Electro Valley (11)',
         rarity: 'Legendary',
         type: 'Troop',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 7
     },
     {
@@ -571,7 +571,7 @@ const characters = [
         arena: 'Electro Valley (11)',
         rarity: 'Legendary',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 5
     },
     {
@@ -579,7 +579,7 @@ const characters = [
         arena: 'Electro Valley (11)',
         rarity: 'Legendary',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -587,7 +587,7 @@ const characters = [
         arena: 'Electro Valley (11)',
         rarity: 'Legendary',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -595,7 +595,7 @@ const characters = [
         arena: 'Electro Valley (11)',
         rarity: 'Legendary',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 6
     },
     {
@@ -603,7 +603,7 @@ const characters = [
         arena: 'Electro Valley (11)',
         rarity: 'Legendary',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -611,7 +611,7 @@ const characters = [
         arena: 'Electro Valley (11)',
         rarity: 'Legendary',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -619,7 +619,7 @@ const characters = [
         arena: 'Electro Valley (11)',
         rarity: 'Legendary',
         type: 'Tower Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 0
     },
     {
@@ -627,7 +627,7 @@ const characters = [
         arena: 'Spooky Town (12)',
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 3
     },
     {
@@ -635,7 +635,7 @@ const characters = [
         arena: 'Spooky Town (12)',
         rarity: 'Rare',
         type: 'Spell',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -643,7 +643,7 @@ const characters = [
         arena: 'Spooky Town (12)',
         rarity: 'Epic',
         type: 'Troop',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 5
     },
     {
@@ -651,7 +651,7 @@ const characters = [
         arena: 'Spooky Town (12)',
         rarity: 'Epic',
         type: 'Troop',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 2
     },
     {
@@ -659,7 +659,7 @@ const characters = [
         arena: 'Spooky Town (12)',
         rarity: 'Legendary',
         type: 'Spell',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 5
     },
     {
@@ -667,7 +667,7 @@ const characters = [
         arena: 'Spooky Town (12)',
         rarity: 'Legendary',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -675,7 +675,7 @@ const characters = [
         arena: 'Spooky Town (12)',
         rarity: 'Legendary',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -683,7 +683,7 @@ const characters = [
         arena: 'Spooky Town (12)',
         rarity: 'Legendary',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -691,7 +691,7 @@ const characters = [
         arena: 'Spooky Town (12)',
         rarity: 'Rare',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -699,7 +699,7 @@ const characters = [
         arena: "Rascal's Hideout (13)",
         rarity: 'Common',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 5
     },
     {
@@ -707,7 +707,7 @@ const characters = [
         arena: "Rascal's Hideout (13)",
         rarity: 'Rare',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 1
     },
     {
@@ -715,7 +715,7 @@ const characters = [
         arena: "Rascal's Hideout (13)",
         rarity: 'Epic',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 7
     },
     {
@@ -723,7 +723,7 @@ const characters = [
         arena: "Rascal's Hideout (13)",
         rarity: 'Epic',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 5
     },
     {
@@ -731,7 +731,7 @@ const characters = [
         arena: "Rascal's Hideout (13)",
         rarity: 'Legendary',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -739,7 +739,7 @@ const characters = [
         arena: "Rascal's Hideout (13)",
         rarity: 'Legendary',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -747,7 +747,7 @@ const characters = [
         arena: "Rascal's Hideout (13)",
         rarity: 'Legendary',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 7
     },
     {
@@ -755,7 +755,7 @@ const characters = [
         arena: "Rascal's Hideout (13)",
         rarity: 'Rare',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 2
     },
     {
@@ -763,7 +763,7 @@ const characters = [
         arena: "Rascal's Hideout (13)",
         rarity: 'Legendary',
         type: 'Tower Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 0
     },
     {
@@ -771,7 +771,7 @@ const characters = [
         arena: 'Serenity Peak (14)',
         rarity: 'Common',
         type: 'Spell',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -779,7 +779,7 @@ const characters = [
         arena: 'Serenity Peak (14)',
         rarity: 'Rare',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -787,7 +787,7 @@ const characters = [
         arena: 'Serenity Peak (14)',
         rarity: 'Epic',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 5
     },
     {
@@ -795,7 +795,7 @@ const characters = [
         arena: 'Serenity Peak (14)',
         rarity: 'Epic',
         type: 'Building',
-        evolution: 'Yes',
+        evolution: true,
         elixir: 4
     },
     {
@@ -803,7 +803,7 @@ const characters = [
         arena: 'Serenity Peak (14)',
         rarity: 'Epic',
         type: 'Spell',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 2
     },
     {
@@ -811,7 +811,7 @@ const characters = [
         arena: 'Serenity Peak (14)',
         rarity: 'Legendary',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -819,7 +819,7 @@ const characters = [
         arena: 'Serenity Peak (14)',
         rarity: 'Legendary',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -827,7 +827,7 @@ const characters = [
         arena: 'Serenity Peak (14)',
         rarity: 'Epic',
         type: 'Spell',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 2
     },
     {
@@ -835,7 +835,7 @@ const characters = [
         arena: "Miner's Mine (15)",
         rarity: 'Rare',
         type: 'Building',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 6
     },
     {
@@ -843,7 +843,7 @@ const characters = [
         arena: "Miner's Mine (15)",
         rarity: 'Epic',
         type: 'Spell',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -851,7 +851,7 @@ const characters = [
         arena: "Miner's Mine (15)",
         rarity: 'Epic',
         type: 'Spell',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -859,7 +859,7 @@ const characters = [
         arena: "Miner's Mine (15)",
         rarity: 'Epic',
         type: 'Spell',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 0
     },
     {
@@ -867,7 +867,7 @@ const characters = [
         arena: "Miner's Mine (15)",
         rarity: 'Epic',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 5
     },
     {
@@ -875,7 +875,7 @@ const characters = [
         arena: "Miner's Mine (15)",
         rarity: 'Legendary',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -883,7 +883,7 @@ const characters = [
         arena: "Miner's Mine (15)",
         rarity: 'Legendary',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -891,7 +891,7 @@ const characters = [
         arena: "Miner's Mine (15)",
         rarity: 'Epic',
         type: 'Spell',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -899,7 +899,7 @@ const characters = [
         arena: "Miner's Mine (15)",
         rarity: 'Legendary',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 5
     },
     {
@@ -907,7 +907,7 @@ const characters = [
         arena: "Executioner's Kitchen (16)",
         rarity: 'Champion',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -915,7 +915,7 @@ const characters = [
         arena: "Executioner's Kitchen (16)",
         rarity: 'Champion',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -923,7 +923,7 @@ const characters = [
         arena: 'Royal Crypt (17)',
         rarity: 'Champion',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 4
     },
     {
@@ -931,7 +931,7 @@ const characters = [
         arena: 'Royal Crypt (17)',
         rarity: 'Champion',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 5
     },
     {
@@ -939,7 +939,7 @@ const characters = [
         arena: 'Silent Sanctuary (18)',
         rarity: 'Champion',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 5
     },
     {
@@ -947,7 +947,7 @@ const characters = [
         arena: 'Silent Sanctuary (18)',
         rarity: 'Champion',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 3
     },
     {
@@ -955,7 +955,7 @@ const characters = [
         arena: 'Silent Sanctuary (18)',
         rarity: 'Champion',
         type: 'Troop',
-        evolution: 'N/A',
+        evolution: false,
         elixir: 5
     }
 ];

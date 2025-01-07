@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 // Component Imports:
 
-import RegisterModal from '@/app/components/register/RegisterModal';
+import RegistrationForm from "@/app/components/register/RegistrationForm";
 
 export default function RegisterPage() {
     useEffect(() => {
@@ -32,7 +32,7 @@ export default function RegisterPage() {
     return (
         <>
             <main>
-                <RegisterModal />
+                <RegistrationForm />
             </main>
         </>
     );
