@@ -116,7 +116,9 @@ export default function ResetPasswordForm() {
                 case VerificationErrorCode.MISSING_FIELDS:
                     console.error(error);
                     showAlert('Please fill out all fields.', 'bad');
-                    showFieldState('identifier', setFieldState);
+                    error.details.missingFields.forEach(fieldId => {
+                        showFieldState(fieldId, setFieldState);
+                    });
                     break
                 case VerificationErrorCode.USER_NOT_FOUND:
                     console.error(error);
@@ -140,7 +142,7 @@ export default function ResetPasswordForm() {
                     break
                 default:
                     console.error(error);
-                    showAlert('An unknown error has occurred, please try again later.', 'bad');
+                    showAlert('An unknown error has occurred. Please try again later.', 'bad');
                     showFieldState('identifier', setFieldState);
             }
         } finally {

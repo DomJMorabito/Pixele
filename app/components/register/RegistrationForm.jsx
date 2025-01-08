@@ -287,6 +287,7 @@ export default function RegistrationForm() {
                     console.error(error);
                     showAlert('Password does not meet the requirements.', 'bad');
                     showFieldState('password', setFieldState);
+                    showFieldState('confirmPassword', setFieldState);
                     break
                 case RegistrationErrorCode.RATE_LIMIT_EXCEEDED:
                     console.error(error);

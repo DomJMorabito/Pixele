@@ -128,14 +128,14 @@ export default function LoginForm() {
         } catch (error) {
             switch (error.code) {
                 case LoginErrorCode.MISSING_FIELDS:
-                    console.error('Missing required fields.', error);
+                    console.error(error);
                     showAlert('Please fill out all fields.', 'bad');
                     error.details.missingFields.forEach(fieldId => {
                         showFieldState(fieldId, setFieldState);
                     });
                     break
                 case LoginErrorCode.AUTH_INCOMPLETE:
-                    console.error('Verification incomplete.', error);
+                    console.error(error);
                     if (error.details?.nextStep?.signInStep === 'CONFIRM_SIGN_UP') {
                         const username = error.details?.username || formData.identifier;
                         const email = error.details?.email || formData.identifier;
@@ -182,43 +182,43 @@ export default function LoginForm() {
                     }
                     break
                 case LoginErrorCode.AUTH_COMPLETION_FAILED:
-                    console.error('Login failed.', error);
+                    console.error(error);
                     showAlert('Login failed. Please try again.', 'bad');
                     showFieldState('identifier', setFieldState);
                     showFieldState('password', setFieldState);
                     break
                 case LoginErrorCode.TOKEN_UNAVAILABLE:
-                    console.error('No access token provided.', error)
+                    console.error(error)
                     showAlert('No access token available after authentication.', 'bad');
                     showFieldState('identifier', setFieldState);
                     showFieldState('password', setFieldState);
                     break
                 case LoginErrorCode.USER_NOT_FOUND:
-                    console.error('No user found.', error);
-                    showAlert('No account associated with this Email/Username.', 'bad');
+                    console.error(error);
+                    showAlert('No account associated with this Email/Username:', 'bad');
                     showFieldState('identifier', setFieldState);
                     break
                 case LoginErrorCode.INVALID_CREDENTIALS:
-                    console.error('Email/Username or Password is incorrect.', error);
+                    console.error(error);
                     showAlert('Email/Username or Password is incorrect.', 'bad');
                     showFieldState('identifier', setFieldState);
                     showFieldState('password', setFieldState);
                     break
                 case LoginErrorCode.RATE_LIMIT_EXCEEDED:
-                    console.error('Please slow down.', error);
+                    console.error(error);
                     showAlert('Too many attempts. Please try again later.', 'bad');
                     showFieldState('identifier', setFieldState);
                     showFieldState('password', setFieldState);
                     break
                 case LoginErrorCode.SERVER_ERROR:
-                    console.error('Internal server error.', error);
+                    console.error(error);
                     showAlert('Internal server error. Please try again later.', 'bad');
                     showFieldState('identifier', setFieldState);
                     showFieldState('password', setFieldState);
                     break
                 default:
-                    console.error('Error logging in:', error);
-                    showAlert('An unknown error has occurred, please try again later.', 'bad');
+                    console.error(error);
+                    showAlert('An unknown error has occurred. Please try again later.', 'bad');
                     showFieldState('identifier', setFieldState);
                     showFieldState('password', setFieldState);
             }

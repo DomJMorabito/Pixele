@@ -47,16 +47,19 @@ function NavBar() {
         } catch (error) {
             switch (error.code) {
                 case LogoutErrorCode.LOGOUT_FAILED:
+                    console.log(error);
                     showAlert('Logout failed.', 'bad');
                     break
                 case LogoutErrorCode.NO_SESSION:
+                    console.log(error);
                     showAlert('No user currently logged in.', 'bad');
                     break
                 case LogoutErrorCode.SERVER_ERROR:
+                    console.log(error);
                     showAlert('Internal server error. Please try again later.', 'bad');
                     break
                 default:
-                    console.error('Error logging out:', error);
+                    console.error(error);
                     showAlert('An unknown error has occurred, please try again later.', 'bad');
             }
         } finally {

@@ -240,7 +240,7 @@ export default function VerificationForm({
         } catch (error) {
             switch (error.code) {
                 case VerificationErrorCode.ALREADY_VERIFIED:
-                    console.log('You are already verified!', error);
+                    console.log(error);
                     showAlert('Account already verified!', 'good');
                     showFieldState('code', setFieldState, {
                         state: 'success',
@@ -253,25 +253,21 @@ export default function VerificationForm({
                     }, 2000);
                     break
                 case VerificationErrorCode.MISSING_FIELDS:
-                    console.error('Missing required fields.', error);
+                    console.error(error);
                     showAlert('Please fill out all fields.', 'bad');
-                    showFieldState('code', setFieldState);
-                    if (isPasswordReset) {
-                        showFieldState('password', setFieldState);
-                        showFieldState('confirmPassword', setFieldState);
-                    }
+                    error.details.missingFields
+                        .filter(fieldId => fieldId !== 'username')
+                        .forEach(fieldId => {
+                            showFieldState(fieldId, setFieldState);
+                        });
                     break
                 case VerificationErrorCode.INVALID_CODE:
-                    console.error('Provided verification code is incorrect.', error);
+                    console.error(error);
                     showAlert('Verification Code is Incorrect.', 'bad');
                     showFieldState('code', setFieldState);
-                    if (isPasswordReset) {
-                        showFieldState('password', setFieldState);
-                        showFieldState('confirmPassword', setFieldState);
-                    }
                     break
                 case VerificationErrorCode.USER_NOT_FOUND:
-                    console.error('No user found.', error);
+                    console.error(error);
                     showAlert('User not found.', 'bad');
                     showFieldState('code', setFieldState);
                     if (isPasswordReset) {
@@ -281,16 +277,12 @@ export default function VerificationForm({
                     break
                 case VerificationErrorCode.EXPIRED_CODE:
                     setTimer(0);
-                    console.error('Verification code expired.', error);
+                    console.error(error);
                     showAlert('Verification code has expired. Please request a new one.', 'bad');
                     showFieldState('code', setFieldState);
-                    if (isPasswordReset) {
-                        showFieldState('password', setFieldState);
-                        showFieldState('confirmPassword', setFieldState);
-                    }
                     break
                 case VerificationErrorCode.RATE_LIMIT_EXCEEDED:
-                    console.error('Please slow down.', error);
+                    console.error(error);
                     showAlert('Too many attempts. Please try again later.', 'bad');
                     showFieldState('code', setFieldState);
                     if (isPasswordReset) {
@@ -299,7 +291,7 @@ export default function VerificationForm({
                     }
                     break
                 case VerificationErrorCode.DATABASE_ERROR:
-                    console.error('Error updating user in database.', error);
+                    console.error(error);
                     showAlert('Verification failed. Please try again later.', 'bad');
                     showFieldState('code', setFieldState);
                     if (isPasswordReset) {
@@ -308,7 +300,7 @@ export default function VerificationForm({
                     }
                     break
                 case VerificationErrorCode.SERVER_ERROR:
-                    console.error('Internal server error.', error);
+                    console.error(error);
                     showAlert('Internal server error. Please try again later.', 'bad');
                     showFieldState('code', setFieldState);
                     if (isPasswordReset) {
@@ -317,8 +309,8 @@ export default function VerificationForm({
                     }
                     break
                 default:
-                    console.error('Error verifying:', error);
-                    showAlert('An unknown error has occurred, please try again later.', 'bad');
+                    console.error(error);
+                    showAlert('An unknown error has occurred. Please try again later.', 'bad');
                     showFieldState('code', setFieldState);
                     if (isPasswordReset) {
                         showFieldState('password', setFieldState);
