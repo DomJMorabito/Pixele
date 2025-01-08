@@ -9,7 +9,7 @@
 
 .username-status {
     opacity: 0;
-    transition: opacity 0.25s ease-in-out, color 0.25s ease-in-out;
+    transition: opacity 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 #login-redirect, #login-link {
@@ -35,6 +35,11 @@
 
 .username-status.taken {
     color: #CA2D2D;
+    opacity: 1;
+}
+
+.username-status.checking {
+    color: #5D6166;
     opacity: 1;
 }
 

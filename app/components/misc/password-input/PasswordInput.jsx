@@ -1,6 +1,6 @@
 // React Imports:
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // CSS Imports:
 
@@ -20,7 +20,14 @@ const PasswordInput = ({
     const [isVisible, setIsVisible] = useState(false);
     const stateClass = state ? state: '';
 
+    useEffect(() => {
+        if (disabled && isVisible) {
+            setIsVisible(false);
+        }
+    }, [disabled, isVisible]);
+
     const togglePassword = (e) => {
+        if (disabled) return;
         e.preventDefault();
         const input = e.currentTarget.previousElementSibling;
         input.type = input.type === 'password' ? 'text' : 'password';
@@ -48,7 +55,11 @@ const PasswordInput = ({
                     value={value}
                     onChange={onChange}
                 />
-                <span className="toggle-visibility" onClick={togglePassword}>
+                <span
+                    className={`toggle-visibility ${stateClass}`}
+                    onClick={togglePassword}
+                    style={{cursor: disabled ? 'not-allowed' : 'pointer'}}
+                >
                     <span className="material-symbols-outlined">
                         {isVisible ? 'visibility_off' : 'visibility'}
                     </span>

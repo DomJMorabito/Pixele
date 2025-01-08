@@ -38,6 +38,7 @@ import { validatePassword } from "@/app/utils/input/validate-password";
 import { validatePasswordLength } from "@/app/utils/input/validate-password-length";
 import { validatePasswordNumbers } from "@/app/utils/input/validate-password-numbers";
 import { validatePasswordSpecialCharacters } from "@/app/utils/input/validate-password-special-characters";
+import { maskEmail } from "@/app/utils/ui/mask-email";
 
 // CSS Imports:
 
@@ -78,6 +79,12 @@ export default function RegistrationForm() {
         passwordHasNumber: false
     });
 
+    // API status state:
+    const [usernameApiStatus, setUsernameApiStatus] = useState({
+        isAvailable: false,
+        hasChecked: false
+    });
+
     // UI states:
     const [isLoading, setIsLoading] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
@@ -91,16 +98,32 @@ export default function RegistrationForm() {
                     isUsernameTaken: false,
                     isCheckingUsername: false,
                 }));
+                setUsernameApiStatus({
+                    isAvailable: false,
+                    hasChecked: false
+                })
                 return;
             }
 
             setValidation(prev => ({ ...prev, isCheckingUsername: true }));
+            setUsernameApiStatus(prev => ({
+                ...prev,
+                hasChecked: false
+            }));
 
             try {
                 const isAvailable = await checkUsernameAvailability(formData.username);
                 setValidation(prev => ({ ...prev, isUsernameTaken: !isAvailable }));
+                setUsernameApiStatus({
+                    isAvailable,
+                    hasChecked: true
+                })
             } catch (error) {
                 console.error('Error checking username availability:', error);
+                setUsernameApiStatus({
+                    isAvailable: false,
+                    hasChecked: false
+                })
             } finally {
                 setValidation(prev => ({ ...prev, isCheckingUsername: false }))
             }
@@ -236,7 +259,8 @@ export default function RegistrationForm() {
             });
 
             setTimeout(() => {
-                router.push(`/verify?email=${encodeURIComponent(formData.email)}&username=${encodeURIComponent(formData.username)}`);
+                const maskedEmail = maskEmail(formData.email);
+                router.push(`/verify?email=${encodeURIComponent(maskedEmail)}&username=${encodeURIComponent(formData.username)}`);
             }, 2000);
         } catch (error) {
             switch (error.code) {
@@ -342,12 +366,15 @@ export default function RegistrationForm() {
                 value={formData.username}
                 onChange={handleInputChange}
                 placeholder='Username'
-                label={<>Username{validation.usernameIsValidLength && !validation.usernameHasSpecialChars && (
-                    <span
-                        className={`username-status ${validation.isUsernameTaken ? 'taken' : validation.isCheckingUsername ? '' : 'available'}`}>
-                        {validation.isUsernameTaken ? ' (taken)' : validation.isCheckingUsername ? '' : ' (available)'}
-                    </span>
-                )}</>}
+                label={<>
+                    Username
+                    {validation.usernameIsValidLength &&
+                        !validation.usernameHasSpecialChars && (
+                            <span className={`username-status ${validation.isCheckingUsername ? 'checking' : usernameApiStatus.hasChecked ? (usernameApiStatus.isAvailable ? 'available' : 'taken') : ''}`}>
+                                {validation.isCheckingUsername ? ' (checking...)' : usernameApiStatus.hasChecked ? (usernameApiStatus.isAvailable ? ' (available)' : ' (taken)') : ''}
+                            </span>
+                        )}
+                </>}
                 disabled={isLoading}
                 state={fieldState.username}
             />

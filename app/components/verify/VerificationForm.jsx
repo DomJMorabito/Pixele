@@ -68,7 +68,7 @@ export default function VerificationForm({
     });
 
     // UI states:
-    const [timer, setTimer] = useState(30);
+    const [timer, setTimer] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const [isResendLoading, setIsResendLoading] = useState(false);
@@ -237,6 +237,10 @@ export default function VerificationForm({
                 duration: 2000,
                 persist: true
             });
+
+            setTimeout(() => {
+                router.push('/login');
+            }, 2000);
         } catch (error) {
             switch (error.code) {
                 case VerificationErrorCode.ALREADY_VERIFIED:

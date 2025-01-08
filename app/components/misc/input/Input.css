@@ -19,13 +19,13 @@
 
 /* Input Classes */
 
-.success {
-    color: inherit;
-    border: 2px solid transparent;
-    animation: successFade 0.5s ease forwards;
+.form-input.success {
+    transition: color 0.5s ease, border-color 0.5s ease;
+    color: #00CC66 !important;
+    border-color: #00CC66 !important;
 }
 
-.error {
+.form-input.error {
     color: #CA2D2D !important;
     border: 2px solid #CA2D2D !important;
     animation: shake 0.3s;
@@ -33,17 +33,6 @@
 }
 
 /* Input Animations */
-
-@keyframes successFade {
-    0% {
-        color: inherit;
-        border-color: transparent;
-    }
-    100% {
-        color: #00CC66 !important;
-        border-color: #00CC66 !important;
-    }
-}
 
 @keyframes shake {
     0% { transform: translateX(0); }
