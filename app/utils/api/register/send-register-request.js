@@ -63,7 +63,7 @@ export const sendRegisterRequest = async (username, email, password) => {
         const data = await response.json();
 
         if (!response.ok) {
-            throw createErrorFromResponse(response.status, data, 'registration');
+            return createErrorFromResponse(response.status, data, 'registration');
         }
 
         return data;

@@ -31,7 +31,7 @@ export async function checkUsernameAvailability(username) {
         });
 
         if (!response.ok) {
-            throw createErrorFromResponse(response.status, data, 'registration');
+            return createErrorFromResponse(response.status, data, 'registration');
         }
 
         const data = await response.json();

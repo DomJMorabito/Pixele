@@ -51,6 +51,12 @@ export const handleRegistrationError = (status, data) => {
                 RegistrationErrorCode.INVALID_INPUT,
                 data.details
             )
+        case 'DATABASE_ERROR':
+            return new RegistrationError(
+                'Could not complete registration. Please try again later.',
+                RegistrationErrorCode.DATABASE_ERROR,
+                data.details
+            )
         case 'INAPPROPRIATE_CONTENT':
             return new RegistrationError(
                 'Username contains inappropriate content',

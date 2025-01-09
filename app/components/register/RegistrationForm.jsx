@@ -313,7 +313,14 @@ export default function RegistrationForm() {
                         })
                     }
                     showAlert('Invalid input provided.', 'bad');
-                    break;
+                    break
+                case RegistrationErrorCode.DATABASE_ERROR:
+                    console.error(error);
+                    showAlert('Could not complete registration. Please try again later.', 'bad');
+                    ['email', 'username', 'password', 'confirmPassword'].forEach(fieldId => {
+                        showFieldState(fieldId, setFieldState);
+                    });
+                    break
                 case RegistrationErrorCode.INAPPROPRIATE_CONTENT:
                     console.error(error);
                     showAlert('Seriously?', 'bad');

@@ -31,7 +31,7 @@ export default function AlertIndicator() {
             }, 500);
             return () => clearTimeout(timeout);
         }
-    }, [alert.isVisible]);
+    }, [alert.isVisible, isInitialized]);
 
     if (!isInitialized) return null;
 

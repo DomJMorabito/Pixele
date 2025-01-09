@@ -147,6 +147,12 @@ export default function LoginForm() {
                         });
                     }
                     break
+                case LoginErrorCode.DATABASE_ERROR:
+                    console.error(error);
+                    showAlert('Could not complete login. Please try again later.', 'bad');
+                    showFieldState('identifier', setFieldState);
+                    showFieldState('password', setFieldState);
+                    break
                 case LoginErrorCode.AUTH_INCOMPLETE:
                     console.error(error);
                     if (error.details?.nextStep?.signInStep === 'CONFIRM_SIGN_UP') {

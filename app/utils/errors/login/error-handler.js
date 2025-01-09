@@ -38,6 +38,12 @@ export const handleLoginError = (status, data) => {
                 LoginErrorCode.INVALID_INPUT,
                 data.details
             )
+        case 'DATABASE_ERROR':
+            return new LoginError(
+                'Unable to complete login. Please try again later.',
+                LoginErrorCode.DATABASE_ERROR,
+                data.details
+            )
         case 'RATE_LIMIT_EXCEEDED':
             return new LoginError(
                 'Too many attempts. Please try again later.',

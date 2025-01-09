@@ -9,6 +9,7 @@ export const RegistrationErrorCode = {
     INVALID_EMAIL: 'INVALID_EMAIL',                 // Email format is invalid
     INVALID_USERNAME: 'INVALID_USERNAME',           // Username format/length invalid
     INVALID_INPUT: 'INVALID_INPUT',                 // typeof assertion failed
+    DATABASE_ERROR: 'DATABASE_ERROR',               // could not make insertion/update into db
     INAPPROPRIATE_CONTENT: 'INAPPROPRIATE_CONTENT', // Profanity/inappropriate content
     INVALID_PASSWORD: 'INVALID_PASSWORD',           // Password requirements not met
     RATE_LIMIT_EXCEEDED: 'RATE_LIMIT_EXCEEDED',     // Too many attempts
