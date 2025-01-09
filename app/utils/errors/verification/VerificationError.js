@@ -8,6 +8,7 @@ export const VerificationErrorCode = {
     EMAIL_SEND_FAILED: 'EMAIL_SEND_FAILED',     // Failed to send email
     EXPIRED_CODE: 'EXPIRED_CODE',               // Code has expired
     ALREADY_VERIFIED: 'ALREADY_VERIFIED',       // User is already verified
+    INVALID_INPUT: 'INVALID_INPUT',             // typeof assertion failed
     RATE_LIMIT_EXCEEDED: 'RATE_LIMIT_EXCEEDED', // Too many attempts
     DATABASE_ERROR: 'DATABASE_ERROR',           // Error updating instance of user in RDS
     SERVER_ERROR: 'SERVER_ERROR',               // Internal server error

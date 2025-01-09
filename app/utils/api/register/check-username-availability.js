@@ -11,6 +11,16 @@ import { RegistrationError } from '@/app/utils/errors/register/RegistrationError
  * @throws {Error} - Throws an error if the network request fails
  */
 export async function checkUsernameAvailability(username) {
+    if (typeof username !== 'string' || !username.trim()) {
+        throw createErrorFromResponse(400, {
+            message: 'Username must be valid.',
+            code: 'INVALID_INPUT',
+            details: {
+                field: 'username',
+                received: typeof username
+            }
+        }, 'registration');
+    }
     try {
         const response = await fetch(`https://api.pixele.gg/users/check-username-availability?username=${encodeURIComponent(username.trim())}`, {
             method: 'GET',

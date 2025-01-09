@@ -8,6 +8,7 @@ export const LoginErrorCode = {
     ACCOUNT_LOCKED: 'ACCOUNT_LOCKED',                   // Too many failed attempts
     RATE_LIMIT_EXCEEDED: 'RATE_LIMIT_EXCEEDED',         // Too many attempts
     AUTH_INCOMPLETE: 'AUTH_INCOMPLETE',                 // User must complete MFA/SMS/Email authentication
+    INVALID_INPUT: 'INVALID_INPUT',                     // typeof assertion failed
     AUTH_COMPLETION_FAILED: 'AUTH_COMPLETION_FAILED',   // User failed to authorize their account
     TOKEN_UNAVAILABLE: 'TOKEN_UNAVAILABLE',             // No token generated from authentication
     SERVER_ERROR: 'SERVER_ERROR',                       // Internal server error

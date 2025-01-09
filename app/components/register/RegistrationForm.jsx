@@ -302,6 +302,18 @@ export default function RegistrationForm() {
                     }
                     showFieldState('username', setFieldState);
                     break
+                case RegistrationErrorCode.INVALID_INPUT:
+                    console.error(error);
+                    if (error.details?.field) {
+                        const fields = Array.isArray(error.details.field)
+                            ? error.details.field
+                            : [error.details.field];
+                        fields.forEach(fieldId => {
+                            showFieldState(fieldId, setFieldState);
+                        })
+                    }
+                    showAlert('Invalid input provided.', 'bad');
+                    break;
                 case RegistrationErrorCode.INAPPROPRIATE_CONTENT:
                     console.error(error);
                     showAlert('Seriously?', 'bad');

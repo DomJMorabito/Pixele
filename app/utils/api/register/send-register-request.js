@@ -13,6 +13,39 @@ import { RegistrationError } from '@/app/utils/errors/register/RegistrationError
  * @throws {Error} - Throws an error if the response is not OK, with a message from the server or a default error message.
  */
 export const sendRegisterRequest = async (username, email, password) => {
+    if (typeof username !== 'string' || !username.trim()) {
+        throw createErrorFromResponse(400, {
+            message: 'Username must be valid.',
+            code: 'INVALID_INPUT',
+            details: {
+                field: 'username',
+                received: typeof username
+            }
+        }, 'registration');
+    }
+    if (typeof email !== 'string' || !email.trim()) {
+        throw createErrorFromResponse(400, {
+            message: 'Email must be valid.',
+            code: 'INVALID_INPUT',
+            details: {
+                field: 'email',
+                received: typeof email
+            }
+        }, 'registration');
+    }
+    if (typeof password !== 'string' || !password.trim()) {
+        throw createErrorFromResponse(400, {
+            message: 'Password must be valid.',
+            code: 'INVALID_INPUT',
+            details: {
+                field: [
+                    'password',
+                    'confirmPassword'
+                ],
+                received: typeof password
+            }
+        }, 'registration');
+    }
     try {
         const response = await fetch(`https://api.pixele.gg/users/register`, {
             method: 'POST',

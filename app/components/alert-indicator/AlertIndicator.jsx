@@ -13,8 +13,15 @@ import '@/app/components/alert-indicator/AlertIndicator.css';
 export default function AlertIndicator() {
     const { alert } = useAlert();
     const [isHiding, setIsHiding] = useState(false);
+    const [isInitialized, setIsInitialized] = useState(false);
 
     useEffect(() => {
+        setIsInitialized(true);
+    }, []);
+
+    useEffect(() => {
+        if (!isInitialized) return;
+
         if (alert.isVisible) {
             setIsHiding(false);
         } else {
@@ -25,6 +32,8 @@ export default function AlertIndicator() {
             return () => clearTimeout(timeout);
         }
     }, [alert.isVisible]);
+
+    if (!isInitialized) return null;
 
     const classes = [
         alert.type,

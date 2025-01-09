@@ -120,6 +120,13 @@ export default function ResetPasswordForm() {
                         showFieldState(fieldId, setFieldState);
                     });
                     break
+                case VerificationErrorCode.INVALID_INPUT:
+                    console.error(error);
+                    if (error.details?.field === 'identifier') {
+                        showAlert('Invalid input provided.', 'bad');
+                        showFieldState('identifier', setFieldState);
+                    }
+                    break;
                 case VerificationErrorCode.USER_NOT_FOUND:
                     console.error(error);
                     showAlert('User not found.', 'bad');

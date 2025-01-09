@@ -32,6 +32,12 @@ export const handleLoginError = (status, data) => {
                 LoginErrorCode.ACCOUNT_LOCKED,
                 data.details
             )
+        case 'INVALID_INPUT':
+            return new LoginError(
+                'All inputs must be valid.',
+                LoginErrorCode.INVALID_INPUT,
+                data.details
+            )
         case 'RATE_LIMIT_EXCEEDED':
             return new LoginError(
                 'Too many attempts. Please try again later.',

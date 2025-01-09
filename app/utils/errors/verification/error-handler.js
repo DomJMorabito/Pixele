@@ -46,6 +46,12 @@ export const handleVerificationError = (status, data) => {
                 VerificationErrorCode.ALREADY_VERIFIED,
                 data.details
             )
+        case 'INVALID_INPUT':
+            return new VerificationError(
+                'Input must be valid.',
+                VerificationErrorCode.INVALID_INPUT,
+                data.details
+            )
         case 'RATE_LIMIT_EXCEEDED':
             return new VerificationError(
                 'Too many verification attempts. Please try again later.',

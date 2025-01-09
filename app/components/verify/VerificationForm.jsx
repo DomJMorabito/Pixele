@@ -270,6 +270,19 @@ export default function VerificationForm({
                     showAlert('Verification Code is Incorrect.', 'bad');
                     showFieldState('code', setFieldState);
                     break
+                case VerificationErrorCode.INVALID_INPUT:
+                    console.error(error);
+                    if (error.details?.field) {
+                        const fields = Array.isArray(error.details.field)
+                            ? error.details.field
+                            : [error.details.field];
+                        fields.filter(fieldId => fieldId !== 'username' && fieldId !== 'identifier')
+                            .forEach(fieldId => {
+                                showFieldState(fieldId, setFieldState);
+                            });
+                    }
+                    showAlert('Invalid input provided.', 'bad');
+                    break
                 case VerificationErrorCode.USER_NOT_FOUND:
                     console.error(error);
                     showAlert('User not found.', 'bad');

@@ -134,6 +134,19 @@ export default function LoginForm() {
                         showFieldState(fieldId, setFieldState);
                     });
                     break
+                case LoginErrorCode.INVALID_INPUT:
+                    console.error(error);
+                    showAlert('Invalid input provided.', 'bad');
+                    if (error.details?.field) {
+                        const fields = Array.isArray(error.details.field)
+                            ? error.details.field
+                            : [error.details.field];
+
+                        fields.forEach(fieldId => {
+                            showFieldState(fieldId, setFieldState);
+                        });
+                    }
+                    break
                 case LoginErrorCode.AUTH_INCOMPLETE:
                     console.error(error);
                     if (error.details?.nextStep?.signInStep === 'CONFIRM_SIGN_UP') {

@@ -45,6 +45,12 @@ export const handleRegistrationError = (status, data) => {
                 RegistrationErrorCode.INVALID_PASSWORD,
                 data.details
             )
+        case 'INVALID_INPUT':
+            return new RegistrationError(
+                'Input must be valid.',
+                RegistrationErrorCode.INVALID_INPUT,
+                data.details
+            )
         case 'INAPPROPRIATE_CONTENT':
             return new RegistrationError(
                 'Username contains inappropriate content',

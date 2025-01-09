@@ -13,6 +13,39 @@ import { createErrorFromResponse } from '@/app/utils/errors/error-handler';
  * @throws {Error} - Throws an error if the confirmation fails
  */
 export const confirmNewPassword = async (username, confirmationCode, newPassword) => {
+    if (typeof username !== 'string' || !username.trim()) {
+        throw createErrorFromResponse(400, {
+            message: 'Username must be valid.',
+            code: 'INVALID_INPUT',
+            details: {
+                field: 'username',
+                received: typeof username
+            }
+        }, 'verification');
+    }
+    if (typeof confirmationCode !== 'string' || !confirmationCode.trim()) {
+        throw createErrorFromResponse(400, {
+            message: 'Code must be valid.',
+            code: 'INVALID_INPUT',
+            details: {
+                field: 'code',
+                received: typeof confirmationCode
+            }
+        }, 'verification');
+    }
+    if (typeof newPassword !== 'string' || !newPassword.trim()) {
+        throw createErrorFromResponse(400, {
+            message: 'Password must be valid.',
+            code: 'INVALID_INPUT',
+            details: {
+                field: [
+                    'password',
+                    'confirmPassword'
+                ],
+                received: typeof newPassword
+            }
+        }, 'verification');
+    }
     try {
         const response = await fetch('https://api.pixele.gg/users/reset-password/confirm-new-password', {
             method: 'POST',

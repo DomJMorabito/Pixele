@@ -12,6 +12,26 @@ import { VerificationError } from '@/app/utils/errors/verification/VerificationE
  * @throws {Error} - Throws an error if the verification request fails.
  */
 export const sendVerificationRequest = async (username, verificationCode) => {
+    if (typeof username !== 'string' || !username.trim()) {
+        throw createErrorFromResponse(400, {
+            message: 'Username must be valid.',
+            code: 'INVALID_INPUT',
+            details: {
+                field: 'username',
+                received: typeof username
+            }
+        }, 'verification');
+    }
+    if (typeof verificationCode !== 'string' || !verificationCode.trim()) {
+        throw createErrorFromResponse(400, {
+            message: 'Code must be valid.',
+            code: 'INVALID_INPUT',
+            details: {
+                field: 'code',
+                received: typeof verificationCode
+            }
+        }, 'verification');
+    }
     try {
         const response = await fetch(`https://api.pixele.gg/users/verify`, {
             method: 'POST',

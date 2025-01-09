@@ -11,6 +11,16 @@ import { createErrorFromResponse } from '@/app/utils/errors/error-handler';
  * @throws {Error} - Throws an error if the request fails
  */
 export const sendResetPasswordEmail = async (identifier) => {
+    if (typeof identifier !== 'string' || !identifier.trim()) {
+        throw createErrorFromResponse(400, {
+            message: 'Identifier must be valid.',
+            code: 'INVALID_INPUT',
+            details: {
+                field: 'identifier',
+                received: typeof identifier
+            }
+        }, 'verification');
+    }
     try {
         const response = await fetch('https://api.pixele.gg/users/reset-password/send-email', {
             method: 'POST',

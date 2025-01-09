@@ -8,6 +8,7 @@ export const RegistrationErrorCode = {
     USERNAME_EXISTS: 'USERNAME_EXISTS',             // Username already taken
     INVALID_EMAIL: 'INVALID_EMAIL',                 // Email format is invalid
     INVALID_USERNAME: 'INVALID_USERNAME',           // Username format/length invalid
+    INVALID_INPUT: 'INVALID_INPUT',                 // typeof assertion failed
     INAPPROPRIATE_CONTENT: 'INAPPROPRIATE_CONTENT', // Profanity/inappropriate content
     INVALID_PASSWORD: 'INVALID_PASSWORD',           // Password requirements not met
     RATE_LIMIT_EXCEEDED: 'RATE_LIMIT_EXCEEDED',     // Too many attempts

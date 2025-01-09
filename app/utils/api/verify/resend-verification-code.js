@@ -11,6 +11,16 @@ import { createErrorFromResponse } from '@/app/utils/errors/error-handler';
  * @throws {Error} - Throws an error if the resend request fails.
  */
 export const resendVerificationCode = async (username) => {
+    if (typeof username !== 'string' || !username.trim()) {
+        throw createErrorFromResponse(400, {
+            message: 'Username must be valid.',
+            code: 'INVALID_INPUT',
+            details: {
+                field: 'username',
+                received: typeof username
+            }
+        }, 'verification');
+    }
     try {
         const response = await fetch(`https://api.pixele.gg/users/resend-verification-code`, {
             method: 'POST',

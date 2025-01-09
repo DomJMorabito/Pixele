@@ -12,6 +12,26 @@ import { LoginError } from '@/app/utils/errors/login/LoginError';
  * @throws {Error} - Throws an error if the response is not OK, with a message from the server or a default error message.
  */
 export const sendLoginRequest = async (identifier, password) => {
+    if (typeof identifier !== 'string' || !identifier.trim()) {
+        throw createErrorFromResponse(400, {
+            message: 'Username/email must be valid.',
+            code: 'INVALID_INPUT',
+            details: {
+                field: 'identifier',
+                received: typeof identifier
+            }
+        }, 'login');
+    }
+    if (typeof password !== 'string' || !password.trim()) {
+        throw createErrorFromResponse(400, {
+            message: 'Password must be valid.',
+            code: 'INVALID_INPUT',
+            details: {
+                field: 'password',
+                received: typeof password
+            }
+        }, 'login');
+    }
     try {
         const response = await fetch(`https://api.pixele.gg/users/login`, {
             method: 'POST',
