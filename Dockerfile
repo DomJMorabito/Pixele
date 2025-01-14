@@ -1,6 +1,6 @@
 # Base image for all stages
 
-FROM node:18-alpine AS base
+FROM node:20-alpine AS base
 
 # Install dependencies stage
 
@@ -23,7 +23,8 @@ COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
-RUN npm run build
+RUN npm run build --verbose || (cat /app/.next/error.log && exit 1)
+RUN test -d /app/.next/standalone || (echo "Standalone directory is missing. Ensure 'output: standalone' is configured in next.config.js" && exit 1)
 
 # Production runner stage
 
@@ -41,6 +42,7 @@ RUN adduser --system --uid 1001 pixeleuser
 
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/public ./public
 
 # Set permissions
 
@@ -53,6 +55,8 @@ USER pixeleuser
 # Expose port
 
 EXPOSE 3000
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:3000/api/health', (r) => r.statusCode === 200 ? process.exit(0) : process.exit(1))"
 
 # Use server.js from standalone output
 
