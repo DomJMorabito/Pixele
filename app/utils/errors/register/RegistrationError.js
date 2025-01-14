@@ -1,5 +1,5 @@
 /**
- * Error codes for different verification-related error scenarios
+ * Error codes for different registration-related error scenarios.
  */
 export const RegistrationErrorCode = {
     MISSING_FIELDS: 'MISSING_FIELDS',               // Required fields are missing
@@ -26,7 +26,7 @@ export const RegistrationErrorCode = {
  */
 export class RegistrationError extends Error {
     /**
-     * Creates a new VerificationError
+     * Creates a new RegistrationError
      *
      * @param {string} message - User-friendly error message
      * @param {string} code - Error code from RegistrationErrorCodes

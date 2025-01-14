@@ -4,6 +4,7 @@ import { handleRegistrationError } from '@/app/utils/errors/register/error-handl
 import { handleVerificationError } from '@/app/utils/errors/verification/error-handler';
 import { handleLoginError } from '@/app/utils/errors/login/error-handler';
 import { handleLogoutError } from '@/app/utils/errors/logout/error-handler';
+import { handleGameError } from '@/app/utils/errors/game/error-handler';
 
 /**
  * Creates an appropriate error instance based on the API response
@@ -21,7 +22,9 @@ export const createErrorFromResponse = (status, data, errorType = 'unknown') => 
         case 'login':
             return handleLoginError(status, data)
         case 'logout':
-            return handleLogoutError(status, data);
+            return handleLogoutError(status, data)
+        case 'game':
+            return handleGameError(status, data);
         default:
             return new Error(data.message || 'An unknown error occurred');
     }

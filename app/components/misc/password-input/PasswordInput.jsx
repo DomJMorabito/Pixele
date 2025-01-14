@@ -60,9 +60,11 @@ const PasswordInput = ({
                     onClick={togglePassword}
                     style={{cursor: disabled ? 'not-allowed' : 'pointer'}}
                 >
-                    <span className="material-symbols-outlined">
-                        {isVisible ? 'visibility_off' : 'visibility'}
-                    </span>
+                    <div id="visibility-toggle-container">
+                        <span className="material-symbols-outlined">
+                            {isVisible ? 'visibility_off' : 'visibility'}
+                        </span>
+                    </div>
                 </span>
             </div>
         </>
