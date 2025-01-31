@@ -6,30 +6,31 @@ import { useEffect } from 'react';
 
 // Component Imports:
 
+import GuessGrid from "@/app/components/guess-grid/GuessGrid";
+
+// Context Imports:
+
+import { useBackground, backgrounds } from '@/app/contexts/BackgroundProvider';
+
 export default function ClashRoyalePage() {
+    const { setBackground } = useBackground();
     useEffect(() => {
         document.title = 'Clash Royale | Pixele';
-    }, []);
-
-    // Makes sure that the background image is always set to the default whenever the page is loaded.
-    useEffect(() => {
-
-        document.body.classList.forEach(cls => {
-            if (cls.endsWith('-background')) {
-                document.body.classList.remove(cls);
-            }
-        });
-
-        document.body.classList.add('clashroyale-game-background');
-
+        setBackground(backgrounds.clashroyale.game);
         return () => {
-            document.body.classList.remove('clashroyale-game-background');
+            setBackground(backgrounds.homescreen);
         }
-    });
+    }, [setBackground]);
 
     return (
         <>
             <main>
+                <GuessGrid
+                    gameId="clashroyale"
+                    attributes={['Card', 'Elixir', 'Rarity', 'Type', 'Arena', 'Evolution']}
+                    maxGuesses={5}
+                    inputPlaceholder="Choose your Card..."
+                />
             </main>
         </>
     );

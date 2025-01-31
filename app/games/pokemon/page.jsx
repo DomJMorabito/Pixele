@@ -6,30 +6,31 @@ import { useEffect } from 'react';
 
 // Component Imports:
 
+import GuessGrid from "@/app/components/guess-grid/GuessGrid";
+
+// Context Imports:
+
+import { useBackground, backgrounds } from '@/app/contexts/BackgroundProvider';
+
 export default function PokemonPage() {
+    const { setBackground } = useBackground();
     useEffect(() => {
         document.title = 'Pokémon | Pixele';
-    }, []);
-
-    // Makes sure that the background image is always set to the default whenever the page is loaded.
-    useEffect(() => {
-
-        document.body.classList.forEach(cls => {
-            if (cls.endsWith('-background')) {
-                document.body.classList.remove(cls);
-            }
-        });
-
-        document.body.classList.add('pokemon-game-background');
-
+        setBackground(backgrounds.pokemon.game);
         return () => {
-            document.body.classList.remove('pokemon-game-background');
+            setBackground(backgrounds.homescreen);
         }
-    });
+    }, [setBackground]);
 
     return (
         <>
             <main>
+                <GuessGrid
+                    gameId="pokemon"
+                    attributes={['Pokémon', 'Gen.', 'Type 1', 'Type 2', 'Height', 'Weight']}
+                    maxGuesses={8}
+                    inputPlaceholder="Who's that Pokémon..."
+                />
             </main>
         </>
     );

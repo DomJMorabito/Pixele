@@ -1,0 +1,24 @@
+/* Game Input */
+
+#guess-input {
+    white-space: nowrap;
+    outline: none;
+}
+
+@media (min-width: 320px) {
+    #guess-input {
+        margin: 3px;
+    }
+}
+
+@media (min-width: 2560px) {
+    #guess-input {
+        margin: 5px;
+    }
+}
+
+@media (min-width: 3840px) {
+    #guess-input {
+        margin: 7px;
+    }
+}

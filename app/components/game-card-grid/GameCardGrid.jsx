@@ -6,7 +6,11 @@ import { useMemo, useEffect, useState } from 'react';
 
 // Component Imports:
 
-import GameCard from '@/app/components/game-card/GameCard';
+import GameCard from '@/app/components/game-card-grid/components/game-card/GameCard';
+
+// Context Imports:
+
+import { useBackground, backgrounds } from '@/app/contexts/BackgroundProvider';
 
 //Utils Imports:
 
@@ -18,6 +22,7 @@ import '@/app/components/game-card-grid/GameCardGrid.css';
 
 function GameCardGrid() {
     const [supportsHover, setSupportsHover] = useState(true);
+    const { setBackground, resetBackground } = useBackground();
 
     useEffect(() => {
         const mediaQuery = window.matchMedia('(hover: hover)');
@@ -109,39 +114,27 @@ function GameCardGrid() {
         },
     ];
 
-    // Makes sure that the background image is always set to the default whenever the page is loaded.
     useEffect(() => {
-        document.body.classList.forEach(cls => {
-            if (cls.endsWith('-background')) {
-                document.body.classList.remove(cls);
+        setBackground(backgrounds.homescreen);
+    }, [setBackground]);
+
+    const handleHover = useMemo(() =>
+            debounce((gameId) => {
+                if (supportsHover && backgrounds[gameId]?.hover) {
+                    setBackground(backgrounds[gameId].hover);
+                }
+            }, 225),
+        [supportsHover, setBackground]
+    );
+
+    const handleLeave = useMemo(() =>
+        debounce(() => {
+            if (supportsHover) {
+                resetBackground();
             }
-        });
-        document.body.classList.add('homescreen-background');
-    }, []);
-
-    // Handles hovering over the GameCard to change the background image to the game specific image.
-    const handleHover = useMemo(() => debounce((bgClass) => {
-        if (supportsHover) {
-            document.body.classList.forEach(cls => {
-                if (cls.endsWith('-background')) {
-                    document.body.classList.remove(cls);
-                }
-            });
-            document.body.classList.add(bgClass);
-        }
-    }, 225), [supportsHover]);
-
-    //Handles changing the background image back to the default when hovering over the GameCard stops.
-    const handleLeave = useMemo(() => debounce(() => {
-        if (supportsHover) {
-            document.body.classList.forEach(cls => {
-                if (cls.endsWith('-background')) {
-                    document.body.classList.remove(cls);
-                }
-            });
-            document.body.classList.add('homescreen-background');
-        }
-    }, 225), [supportsHover]);
+        }, 225),
+        [supportsHover, resetBackground]
+    )
 
     return (
         <div id='game-card-grid'>
@@ -152,7 +145,7 @@ function GameCardGrid() {
                     logoSrc = {game.logoSrc}
                     altText = {game.altText}
                     gameLink = {game.gameLink}
-                    onHover = {supportsHover ? () => handleHover(`${game.id}-homescreen-background`) : undefined}
+                    onHover = {supportsHover ? () => handleHover(game.id) : undefined}
                     onLeave = {supportsHover ? handleLeave : undefined}
                 >
                     {game.extraContent}

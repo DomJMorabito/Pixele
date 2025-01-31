@@ -1,0 +1,148 @@
+/* Game Card */
+
+.game-card {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px var(--box-shadow);
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    cursor: pointer;
+    animation: gameCardAnimation 1s ease none;
+    transition: transform 0.2s ease;
+    will-change: transform;
+}
+
+.game-logo {
+    width: 100%;
+    height: auto;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    will-change: transform, filter;
+}
+
+.game-title-container {
+    width: 100%;
+    text-align: center;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 2px 2px var(--drop-shadow));
+}
+
+.game-card:hover .game-logo {
+    filter: drop-shadow(0 2px 2px var(--drop-shadow));
+}
+
+.game-card:hover .game-title {
+    filter: none;
+}
+
+/* Game Card Animations */
+
+@keyframes gameCardAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 320px) {
+    .game-card {
+        width: 122px;
+        margin: 0 4px 8px;
+    }
+
+    .game-title-container {
+        height: 32px;
+    }
+}
+
+@media (min-width: 375px) {
+    .game-card {
+        width: 135px;
+    }
+
+    .game-title-container {
+        height: 36px;
+    }
+}
+
+@media (min-width: 425px) {
+    .game-card {
+        width: 162px;
+    }
+
+    .game-title-container {
+        height: 48px;
+    }
+}
+
+@media (min-width: 768px) {
+    .game-card {
+        width: 200px;
+        margin: 0 6px 12px;
+    }
+
+    .game-title-container {
+        height: 55px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .game-card {
+        width: 250px;
+    }
+
+    .game-title-container {
+        height: 66px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .game-card {
+        width: 200px;
+        margin: 0 6px 12px;
+    }
+
+    .game-title-container {
+        height: 55px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .game-card {
+        width: 250px;
+        margin: 0 8px 16px;
+    }
+
+    .game-title-container {
+        height: 66px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .game-card {
+        width: 295px;
+        margin: 0 8px 16px;
+    }
+
+    .game-title-container {
+        height: 81px;
+    }
+}
+
+@media (min-width: 3840px) {
+    .game-card {
+        width: 450px;
+        margin: 0 12px 24px;
+    }
+
+    .game-title-container {
+        height: 119px;
+    }
+}

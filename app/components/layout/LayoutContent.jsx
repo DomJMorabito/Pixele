@@ -13,6 +13,7 @@ import AlertIndicator from '@/app/components/alert-indicator/AlertIndicator';
 
 import { AuthProvider } from "@/app/contexts/AuthProvider";
 import { AlertProvider } from '@/app/contexts/AlertProvider'
+import { BackgroundProvider } from '@/app/contexts/BackgroundProvider';
 
 export default function LayoutContent({ children }) {
     useEffect(() => {
@@ -23,8 +24,10 @@ export default function LayoutContent({ children }) {
         <AuthProvider>
             <AlertProvider>
                 <AlertIndicator />
-                <NavBar />
-                {children}
+                <BackgroundProvider>
+                    <NavBar />
+                    {children}
+                </BackgroundProvider>
             </AlertProvider>
         </AuthProvider>
     );

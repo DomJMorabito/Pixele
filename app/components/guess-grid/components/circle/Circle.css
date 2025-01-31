@@ -1,0 +1,72 @@
+/* Circle */
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    filter: drop-shadow(0 2px 4px var(--drop-shadow));
+    background-color: var(--black);
+}
+
+@media (min-width: 320px) {
+    .circle {
+        height: 42px;
+        width: 42px;
+        margin: 3px;
+    }
+}
+
+@media (min-width: 375px) {
+    .circle {
+        height: 48px;
+        width: 48px;
+    }
+}
+
+@media (min-width: 425px) {
+    .circle {
+        height: 55px;
+        width: 55px;
+    }
+}
+
+@media (min-width: 768px) {
+    .circle {
+        height: 75px;
+        width: 75px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .circle {
+        height: 90px;
+        width: 90px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .circle {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .circle {
+        height: 125px;
+        width: 125px;
+        margin: 5px;
+    }
+}
+
+@media (min-width: 3840px) {
+    .circle {
+        height: 175px;
+        width: 175px;
+        margin: 7px;
+    }
+}

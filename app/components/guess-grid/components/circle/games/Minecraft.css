@@ -1,0 +1,29 @@
+/* Minecraft Circle */
+
+.minecraft-circle {
+    background-color: #209F4A;
+}
+
+@media (min-width: 320px) {
+    .minecraft-circle {
+        border: 1px solid #4D7163;
+    }
+}
+
+@media (min-width: 768px) {
+    .minecraft-circle {
+        border: 2px solid #4D7163;
+    }
+}
+
+@media (min-width: 2560px) {
+    .minecraft-circle {
+        border: 3px solid #4D7163;
+    }
+}
+
+@media (min-width: 3840px) {
+    .minecraft-circle {
+        border: 4px solid #4D7163;
+    }
+}

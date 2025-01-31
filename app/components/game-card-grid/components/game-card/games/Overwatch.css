@@ -1,0 +1,97 @@
+/* Overwatch Game Card */
+
+#overwatch {
+    background: var(--overwatch-game-card-background);
+}
+
+#overwatch .game-title {
+    font-family: var(--poppins), sans-serif;
+    color: var(--overwatch-game-card-title);
+    background: var(--overwatch-game-card-title-background);
+}
+
+#overwatch:hover .game-title {
+    color: var(--black);
+    background-color: var(--white);
+}
+
+@media (min-width: 320px) {
+    #overwatch {
+        border: 2px solid var(--overwatch-game-card-border);
+    }
+
+    #overwatch .game-title {
+        font-size: 0.6em;
+        padding: 9px;
+    }
+}
+
+@media (min-width: 375px) {
+    #overwatch .game-title {
+        font-size: 0.7em;
+        padding: 9.5px;
+    }
+}
+
+@media (min-width: 425px) {
+    #overwatch {
+        border: 3px solid var(--overwatch-game-card-border);
+    }
+
+    #overwatch .game-title {
+        font-size: 0.9em;
+        padding: 13.5px;
+    }
+}
+
+@media (min-width: 768px) {
+
+
+    #overwatch .game-title {
+        font-size: 1em;
+        padding: 15px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #overwatch .game-title {
+        font-size: 1.1em;
+        padding: 20px;
+    }
+}
+
+@media (min-width: 1440px) {
+    #overwatch .game-title {
+        font-size: 1em;
+        padding: 15px;
+    }
+}
+
+@media (min-width: 1920px) {
+    #overwatch .game-title {
+        font-size: 1.1em;
+        padding: 20px;
+    }
+}
+
+@media (min-width: 2560px) {
+    #overwatch {
+        border-radius: 5px;
+    }
+
+    #overwatch .game-title {
+        font-size: 1.3em;
+        padding: 25px;
+    }
+}
+
+@media (min-width: 3840px) {
+    #overwatch {
+        border: 4px solid var(--overwatch-game-card-border);
+    }
+
+    #overwatch .game-title {
+        padding: 35.5px;
+        font-size: 2em;
+    }
+}

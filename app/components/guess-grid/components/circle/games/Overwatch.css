@@ -1,0 +1,29 @@
+/* Overwatch Circle */
+
+.overwatch-circle {
+    background-color: var(--overwatch-circle-background);
+}
+
+@media (min-width: 320px) {
+    .overwatch-circle {
+        border: 1px solid var(--overwatch-circle-border);
+    }
+}
+
+@media (min-width: 768px) {
+    .overwatch-circle {
+        border: 2px solid var(--overwatch-circle-border);
+    }
+}
+
+@media (min-width: 2560px) {
+    .overwatch-circle {
+        border: 3px solid var(--overwatch-circle-border);
+    }
+}
+
+@media (min-width: 3840px) {
+    .overwatch-circle {
+        border: 4px solid var(--overwatch-circle-border);
+    }
+}

@@ -10,7 +10,8 @@ const Input = ({
     value,
     onChange,
     className = '',
-    state
+    state,
+    autoComplete
 }) => {
     const stateClass = state ? state : '';
 
@@ -25,6 +26,7 @@ const Input = ({
                 disabled={disabled}
                 value={value}
                 onChange={onChange}
+                autoComplete={autoComplete}
             />
         </>
     );

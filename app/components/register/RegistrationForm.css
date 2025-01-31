@@ -1,45 +1,39 @@
-/* Font Families */
-
-@font-face {
-    font-family: 'Header';
-    src: url('https://assets.pixele.gg/fonts/Header.ttf');
-}
-
 /* Register Modal */
 
 .username-status {
     opacity: 0;
     transition: opacity 0.5s ease-in-out, color 0.5s ease-in-out;
+    will-change: opacity, color;
 }
 
 #login-redirect, #login-link {
-    font-family: Header, sans-serif;
+    font-family: var(--poppins), sans-serif;
     align-self: center;
 }
 
 #login-redirect {
-    color: #5D6166;
+    color: var(--disabled);
 }
 
 #login-link {
-    color: #0074E0;
+    color: var(--link);
     cursor: pointer;
 }
 
 /* Error Message Classes */
 
 .username-status.available {
-    color: #00CC66;
+    color: var(--success);
     opacity: 1;
 }
 
 .username-status.taken {
-    color: #CA2D2D;
+    color: var(--error);
     opacity: 1;
 }
 
 .username-status.checking {
-    color: #5D6166;
+    color: var(--disabled);
     opacity: 1;
 }
 
@@ -49,20 +43,35 @@
     }
 
     #login-redirect {
-        font-size: 0.75em;
+        font-size: 0.6em;
+    }
+}
+
+@media (min-width: 375px) {
+    #login-redirect {
+        font-size: 0.7em;
     }
 }
 
 @media (min-width: 425px) {
-
     #login-redirect {
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 }
 
 @media (min-width: 768px) {
     form {
-        width: 80%;
+        width: 251px;
+    }
+
+    #login-redirect {
+        font-size: 0.85em;
+    }
+}
+
+@media (min-width: 1024px) {
+    form {
+        width: 282px;
     }
 
     #login-redirect {
@@ -70,36 +79,42 @@
     }
 }
 
-@media (min-width: 1024px) {
-    form {
-        width: 77.5%;
-    }
-
-    #login-redirect {
-        font-size: 1.25em;
-    }
-}
-
 @media (min-width: 1440px) {
+    form {
+        width: 251px;
+    }
+
     #login-redirect {
-        font-size: 0.9em;
+        font-size: 0.85em;
     }
 }
 
 @media (min-width: 1920px) {
+    form {
+        width: 282px;
+    }
+
+    #login-redirect {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 2560px) {
+    form {
+        width: 337px;
+    }
+
     #login-redirect {
         font-size: 1.1em;
     }
 }
 
-@media (min-width: 2560px) {
-    #login-redirect {
-        font-size: 1.25em;
-    }
-}
-
 @media (min-width: 3840px) {
+    form {
+        width: 476px;
+    }
+
     #login-redirect {
-        font-size: 1.75em;
+        font-size: 1.6em;
     }
 }

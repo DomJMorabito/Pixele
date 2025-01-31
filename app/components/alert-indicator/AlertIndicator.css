@@ -1,25 +1,18 @@
-/* Font Families */
-
-@font-face {
-    font-family: 'Indicator';
-    src: url('https://assets.pixele.gg/fonts/Header.ttf');
-}
-
 /* Alert Indicator */
 
 #alert-indicator {
-    font-family: 'Indicator', sans-serif;
+    font-family: var(--poppins), sans-serif;
     position: fixed;
     text-align: center;
     top: -2.5%;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-    color: #ffffff;
+    color: var(--white);
     z-index: 101;
+    filter: drop-shadow(0 2px 2px var(--drop-shadow));
     transition: opacity 1s;
-    will-change: opacity, transform;
-    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+    will-change: opacity, top;
 }
 
 /* Alert Indicator Classes */
@@ -33,11 +26,11 @@
 }
 
 #alert-indicator.good {
-    background-color: #00CC66;
+    background-color: var(--success);
 }
 
 #alert-indicator.bad {
-    background-color: #CA2D2D;
+    background-color: var(--error);
 }
 
 /* Alert Indicator Animations */

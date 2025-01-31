@@ -1,4 +1,4 @@
-const characters = [
+export const characters = [
     {
         name: 'Arrows',
         arena: 'Training Camp (0)',

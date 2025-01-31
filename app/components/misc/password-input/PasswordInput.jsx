@@ -15,7 +15,8 @@ const PasswordInput = ({
     value,
     onChange,
     className = '',
-    state
+    state,
+    autoComplete
 }) => {
     const [isVisible, setIsVisible] = useState(false);
     const stateClass = state ? state: '';
@@ -54,6 +55,7 @@ const PasswordInput = ({
                     disabled={disabled}
                     value={value}
                     onChange={onChange}
+                    autoComplete={autoComplete}
                 />
                 <span
                     className={`toggle-visibility ${stateClass}`}

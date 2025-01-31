@@ -29,10 +29,10 @@ import { useAlert } from '@/app/contexts/AlertProvider';
 import { validateEmail } from '@/app/utils/input/validate-email';
 import { validateUsernameLength } from '@/app/utils/input/validate-username-length';
 import { validateUsernameSpecialCharacters } from '@/app/utils/input/validate-username-special-characters';
-import { sendRegisterRequest } from '@/app/utils/api/register/send-register-request';
+import { sendRegisterRequest } from '@/app/api/register/send-register-request';
 import { showFieldState } from '@/app/utils/ui/show-field-state';
 import { RegistrationErrorCode } from '@/app/utils/errors/register/RegistrationError';
-import { checkUsernameAvailability } from '@/app/utils/api/register/check-username-availability';
+import { checkUsernameAvailability } from '@/app/api/register/check-username-availability';
 import { validateUsername } from '@/app/utils/input/validate-username';
 import { validatePassword } from "@/app/utils/input/validate-password";
 import { validatePasswordLength } from "@/app/utils/input/validate-password-length";
@@ -379,12 +379,14 @@ export default function RegistrationForm() {
                 label='Email'
                 disabled={isLoading}
                 state={fieldState.email}
+                autoComplete="email"
             />
             <Input
                 id='username'
                 value={formData.username}
                 onChange={handleInputChange}
                 placeholder='Username'
+                autoComplete="username"
                 label={<>
                     Username
                     {validation.usernameIsValidLength &&
@@ -406,6 +408,7 @@ export default function RegistrationForm() {
             />
             <PasswordInput
                 id="password"
+                autoComplete="new-password"
                 value={formData.password}
                 onChange={handleInputChange}
                 placeholder='Password'
@@ -423,6 +426,7 @@ export default function RegistrationForm() {
             />
             <PasswordInput
                 id="confirmPassword"
+                autoComplete="new-password"
                 value={formData.confirmPassword}
                 onChange={handleInputChange}
                 placeholder='Confirm Password'
@@ -436,7 +440,7 @@ export default function RegistrationForm() {
                 success={isSuccess}
                 disabled={!isFormValid}
             >
-                Submit
+                Register
             </Button>
             <p id="login-redirect">
                 Already have an account?{' '}

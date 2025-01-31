@@ -1,4 +1,4 @@
-const characters = [
+export const characters = [
     {
         name: 'Ana',
         role: 'Support',
@@ -277,6 +277,7 @@ const characters = [
     },
     {
         name: 'Torbjörn',
+        aliases: [ 'Torbjorn' ],
         role: 'Damage',
         releaseYear: 2016,
         age: 59,

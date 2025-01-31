@@ -1,4 +1,4 @@
-const characters = [
+export const characters = [
     {
         "name": "Bulbasaur",
         "type1": "Grass",

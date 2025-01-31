@@ -8,26 +8,19 @@ import { useEffect } from 'react';
 
 import RegistrationForm from "@/app/components/register/RegistrationForm";
 
+// Context Imports:
+
+import { useBackground, backgrounds } from '@/app/contexts/BackgroundProvider';
+
 export default function RegisterPage() {
+    const { setBackground } = useBackground();
     useEffect(() => {
         document.title = 'Register | Pixele';
-    }, []);
-
-    // Makes sure that the background image is always set to the default whenever the page is loaded.
-    useEffect(() => {
-
-        document.body.classList.forEach(cls => {
-            if (cls.endsWith('-background')) {
-                document.body.classList.remove(cls);
-            }
-        });
-
-        document.body.classList.add('register-background');
-
+        setBackground(backgrounds.register);
         return () => {
-            document.body.classList.remove('register-background');
+            setBackground(backgrounds.homescreen);
         }
-    });
+    }, [setBackground]);
 
     return (
         <>

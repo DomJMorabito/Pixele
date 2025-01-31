@@ -1,0 +1,16 @@
+/* Attribute Indicator Container */
+
+#attribute-indicator-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#attribute-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0 2px 2px var(--drop-shadow));
+}

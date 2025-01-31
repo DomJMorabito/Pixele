@@ -21,7 +21,7 @@ import { useAlert } from '@/app/contexts/AlertProvider';
 
 // Utils Imports:
 
-import { sendLoginRequest } from '@/app/utils/api/login/send-login-request';
+import { sendLoginRequest } from '@/app/api/login/send-login-request';
 import { showFieldState } from '@/app/utils/ui/show-field-state';
 import { LoginErrorCode } from '@/app/utils/errors/login/LoginError';
 import { parseCookies } from '@/app/utils/auth/parse-cookies';
@@ -254,6 +254,7 @@ export default function LoginForm() {
         >
             <Input
                 id="username-email"
+                autoComplete="username"
                 value={formData.identifier}
                 onChange={handleInputChange}
                 placeholder="Username or Email"
@@ -263,6 +264,7 @@ export default function LoginForm() {
             />
             <PasswordInput
                 id="password"
+                autoComplete="current-password"
                 value={formData.password}
                 onChange={handleInputChange}
                 placeholder="Password"

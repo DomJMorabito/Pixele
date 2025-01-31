@@ -20,7 +20,7 @@ import { useAlert } from '@/app/contexts/AlertProvider';
 //Utils Imports:
 
 import { debounce } from '@/app/utils/ui/debounce';
-import { sendLogoutRequest } from "@/app/utils/api/logout/send-logout-request";
+import { sendLogoutRequest } from "@/app/api/logout/send-logout-request";
 import { LogoutErrorCode } from "@/app/utils/errors/logout/LogoutError";
 import { useAuth } from '@/app/contexts/AuthProvider';
 

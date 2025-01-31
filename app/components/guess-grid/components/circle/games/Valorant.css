@@ -1,0 +1,29 @@
+/* Valorant Circle */
+
+.valorant-circle {
+    background-color: #1E3851;
+}
+
+@media (min-width: 320px) {
+    .valorant-circle {
+        border: 1px solid #AAB4BA;
+    }
+}
+
+@media (min-width: 768px) {
+    .valorant-circle {
+        border: 2px solid #AAB4BA;
+    }
+}
+
+@media (min-width: 2560px) {
+    .valorant-circle {
+        border: 3px solid #AAB4BA;
+    }
+}
+
+@media (min-width: 3840px) {
+    .valorant-circle {
+        border: 4px solid #AAB4BA;
+    }
+}

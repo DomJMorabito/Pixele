@@ -8,7 +8,8 @@ const CodeInput = ({
     onChange,
     disabled = false,
     inputRefs,
-    state = ''
+    state = '',
+    autoComplete
 }) => {
 
     const handleChange = (e, index) => {
@@ -63,6 +64,8 @@ const CodeInput = ({
             {Array(length).fill(0).map((_, index) => (
                 <input
                     key={index}
+                    id={`code-input-${index}`}
+                    name={`code-input-${index}`}
                     type="text"
                     maxLength={1}
                     value={value[index] || ''}
@@ -73,6 +76,7 @@ const CodeInput = ({
                     onKeyDown={e => handleKeyDown(e, index)}
                     className={`code-input ${state}`}
                     disabled={disabled}
+                    autoComplete={autoComplete}
                 />
             ))}
         </div>

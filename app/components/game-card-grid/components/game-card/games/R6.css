@@ -1,0 +1,109 @@
+/* R6 Game Card */
+
+#r6, #r6 .game-title {
+    position: relative;
+}
+
+#r6 {
+    background-color: var(--r6-game-card-background);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    will-change: transform, background-color;
+}
+
+#r6:hover {
+    background-color: var(--r6-game-card-background-blue);
+}
+
+
+#r6 .game-title {
+    font-family: var(--scout-condensed-italic), sans-serif;
+    color: var(--r6-game-card-title);
+    background-color: var(--r6-game-card-title-background);
+    z-index: 3;
+    transition: background-color 0.3s ease;
+    will-change: background-color;
+}
+
+#r6:hover .game-title {
+    background-color: var(--r6-game-card-title-blue);
+}
+
+#r6::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, var(--r6-game-card-title-blue), transparent 50%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+    will-change: opacity;
+}
+
+#r6:hover::after {
+    opacity: 1;
+}
+
+@media (min-width: 320px) {
+    #r6 .game-title {
+        font-size: 0.8em;
+        padding: 8.5px;
+    }
+}
+
+@media (min-width: 375px) {
+    #r6 .game-title {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 425px) {
+    #r6 .game-title {
+        font-size: 1.25em;
+        padding: 12px;
+    }
+}
+
+@media (min-width: 768px) {
+    #r6 .game-title {
+        font-size: 1.4em;
+        padding: 14px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #r6 .game-title {
+        font-size: 1.6em;
+        padding: 17.5px;
+    }
+}
+
+@media (min-width: 1440px) {
+    #r6 .game-title {
+        font-size: 1.4em;
+        padding: 14px;
+    }
+}
+
+@media (min-width: 1920px) {
+    #r6 .game-title {
+        font-size: 1.6em;
+        padding: 17.5px;
+    }
+}
+
+@media (min-width: 2560px) {
+    #r6 .game-title {
+        font-size: 2em;
+        padding: 21px;
+    }
+}
+
+@media (min-width: 3840px) {
+    #r6 .game-title {
+        font-size: 3em;
+        padding: 30.5px;
+    }
+}

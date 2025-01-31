@@ -1,0 +1,76 @@
+/* Overwatch Guess Input */
+
+.overwatch-guess-input {
+    font-family: var(--poppins), sans-serif;
+    color: var(--black);
+    background-color: var(--white);
+    transition: border;
+    will-change: border;
+}
+
+@media (min-width: 320px) {
+    .overwatch-guess-input {
+        border: 1px solid var(--white);
+        border-radius: 5px;
+        width: 146px;
+        padding: 5px;
+        font-size: 0.95em;
+    }
+
+    .overwatch-guess-input:hover {
+        border: 1px solid var(--overwatch-guess-input-border-hover);
+    }
+
+    .overwatch-guess-input:focus {
+        border: 1px solid var(--overwatch-guess-input-border-focus);
+    }
+}
+
+@media (min-width: 375px) {
+    .overwatch-guess-input {
+        font-size: 1em;
+        padding: 7.5px;
+    }
+}
+
+@media (min-width: 768px) {
+    .overwatch-guess-input {
+        border: 2px solid var(--white);
+    }
+
+    .overwatch-guess-input:hover {
+        border: 2px solid var(--overwatch-guess-input-border-hover);
+    }
+
+    .overwatch-guess-input:focus {
+        border: 2px solid var(--overwatch-guess-input-border-focus);
+    }
+}
+
+@media (min-width: 2560px) {
+    .overwatch-guess-input {
+        border: 3px solid var(--white);
+    }
+
+    .overwatch-guess-input:hover {
+        border: 3px solid var(--overwatch-guess-input-border-hover);
+    }
+
+    .overwatch-guess-input:focus {
+        border: 3px solid var(--overwatch-guess-input-border-focus);
+    }
+}
+
+@media (min-width: 3840px) {
+    .overwatch-guess-input {
+        border: 4px solid var(--white);
+    }
+
+    .overwatch-guess-input:hover {
+        border: 4px solid var(--overwatch-guess-input-border-hover);
+    }
+
+    .overwatch-guess-input:focus {
+        border: 4px solid var(--overwatch-guess-input-border-focus);
+    }
+}

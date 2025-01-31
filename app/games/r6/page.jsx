@@ -6,30 +6,31 @@ import { useEffect } from 'react';
 
 // Component Imports:
 
+import GuessGrid from "@/app/components/guess-grid/GuessGrid";
+
+// Context Imports:
+
+import { useBackground, backgrounds } from '@/app/contexts/BackgroundProvider';
+
 export default function R6Page() {
+    const { setBackground } = useBackground();
     useEffect(() => {
         document.title = 'R6 | Pixele';
-    }, []);
-
-    // Makes sure that the background image is always set to the default whenever the page is loaded.
-    useEffect(() => {
-
-        document.body.classList.forEach(cls => {
-            if (cls.endsWith('-background')) {
-                document.body.classList.remove(cls);
-            }
-        });
-
-        document.body.classList.add('r6-game-background');
-
+        setBackground(backgrounds.r6.game);
         return () => {
-            document.body.classList.remove('r6-game-background');
+            setBackground(backgrounds.homescreen);
         }
-    });
+    }, [setBackground]);
 
     return (
         <>
             <main>
+                <GuessGrid
+                    gameId="r6"
+                    attributes={['Operator', 'Side', 'Speed', 'Health', 'Gender', 'Release Year']}
+                    maxGuesses={5}
+                    inputPlaceholder="Choose your Operator..."
+                />
             </main>
         </>
     );

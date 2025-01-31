@@ -1,18 +1,11 @@
-/* Font Families */
-
-@font-face {
-    font-family: 'Header';
-    src: url('https://assets.pixele.gg/fonts/Header.ttf');
-}
-
 /* Verify Modal */
 
 #user-email, #instruction, #resend-code, #verify {
-    font-family: 'Header', sans-serif;
+    font-family: var(--poppins), sans-serif;
 }
 
 #instruction {
-    color: #5D6166;
+    color: var(--disabled);
 }
 
 #resend-code {
@@ -22,27 +15,66 @@
 /* Resend Code Classes */
 
 .resend-link {
-    color: #0074E0;
+    color: var(--link);
     cursor: pointer;
 }
 
 .resend-link.disabled {
-    color: #5D6166;
+    color: var(--disabled);
     cursor: not-allowed;
 }
 
 @media (min-width: 320px) {
+    form {
+        width: 190px;
+    }
+
     #instruction {
-        font-size: 0.7em;
-        margin: 5% 0 0 0;
+        font-size: 0.55em;
+        margin: 2.5% 0 0 0;
     }
 
     #user-email {
-        font-size: 0.9em;
+        font-size: 0.75em;
+        margin-top: 6px;
     }
 
+    #resend-code {
+        font-size: 0.6em;
+    }
+}
+
+@media (min-width: 375px) {
     form {
-        width: 85%
+        width: 200px;
+    }
+
+    #instruction {
+        font-size: 0.6em;
+    }
+
+    #user-email {
+        font-size: 0.85em;
+        margin-top: 8px;
+    }
+
+    #resend-code {
+        font-size: 0.7em;
+    }
+}
+
+@media (min-width: 425px) {
+    form {
+        width: 250px;
+    }
+
+    #instruction {
+        font-size: 0.7em;
+    }
+
+    #user-email {
+        font-size: 1em;
+        margin-top: 8px;
     }
 
     #resend-code {
@@ -50,10 +82,50 @@
     }
 }
 
-@media (min-width: 425px) {
+@media (min-width: 768px) {
+    form {
+        width: 265px;
+    }
+
     #instruction {
+        font-size: 0.75em;
+    }
+
+    #user-email {
+        font-size: 1.1em;
+        margin-top: 12px;
+    }
+
+    #resend-code {
+        font-size: 0.8em;
+    }
+}
+
+@media (min-width: 1024px) {
+    form {
+        width: 300px;
+    }
+
+    #instruction {
+        font-size: 0.95em;
+    }
+
+    #user-email {
+        font-size: 1.2em;
+    }
+
+    #resend-code {
         font-size: 0.9em;
-        margin: 2.5% 0 0 0;
+    }
+}
+
+@media (min-width: 1440px) {
+    form {
+        width: 265px;
+    }
+
+    #instruction {
+        font-size: 0.75em;
     }
 
     #user-email {
@@ -61,92 +133,61 @@
     }
 
     #resend-code {
+        font-size: 0.8em;
+    }
+}
+
+@media (min-width: 1920px) {
+    form {
+        width: 300px;
+    }
+
+    #instruction {
+        font-size: 0.95em;
+    }
+
+    #user-email {
+        font-size: 1.2em;
+    }
+
+    #resend-code {
         font-size: 0.9em;
-    }
-}
-
-@media (min-width: 768px) {
-    form {
-        width: 80%;
-    }
-
-    #instruction {
-        font-size: 1em;
-    }
-
-    #user-email {
-        font-size: 1.25em;
-    }
-
-    #resend-code {
-        font-size: 1em;
-    }
-}
-
-@media (min-width: 1024px) {
-    form {
-        width: 77.5%;
-    }
-
-    #instruction {
-        font-size: 1.15em;
-    }
-
-    #user-email {
-        font-size: 1.5em;
-    }
-
-    #resend-code {
-        font-size: 1.25em;
-    }
-}
-
-@media (min-width: 1440px) {
-    form {
-        width: 82.5%;
-    }
-
-    #instruction {
-        font-size: 0.85em;
-    }
-
-    #user-email {
-        font-size: 1.25em;
-    }
-
-    #resend-code {
-        font-size: 1em;
     }
 }
 
 @media (min-width: 2560px) {
     form {
-        width: 80%;
+        width: 348px;
     }
 
     #instruction {
-        font-size: 1.25em;
+        font-size: 1.1em;
     }
 
     #user-email {
-        font-size: 1.5em;
+        font-size: 1.3em;
     }
 
     #resend-code {
-        font-size: 1.25em;
+        font-size: 1.1em;
     }
 }
 
 @media (min-width: 3840px) {
+    form {
+        width: 485px;
+    }
+
     #instruction {
-        font-size: 1.75em;
+        font-size: 1.4em;
     }
 
     #user-email {
-        font-size: 2.25em;
+        font-size: 2em;
+        margin-top: 20px;
     }
 
     #resend-code {
-        font-size: 1.75em;
+        font-size: 1.5em;
     }
 }

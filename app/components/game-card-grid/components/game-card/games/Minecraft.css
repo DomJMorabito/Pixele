@@ -1,0 +1,96 @@
+/* Minecraft Game Card */
+
+#minecraft {
+    background-image: url('https://assets.pixele.gg/game-card/minecraft/background.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+#minecraft .game-title {
+    font-family: var(--minecraft-ten), sans-serif;
+    color: var(--minecraft-game-card-title);
+    background: linear-gradient(to bottom, var(--minecraft-game-card-title-linear-gradient-top) 3px, var(--black) 3px);
+    transition: background, 0.3s ease, color 0.3s ease;
+    will-change: background, color;
+}
+
+#minecraft:hover .game-title {
+    color: var(--white);
+    background: linear-gradient(to bottom, var(--minecraft-game-card-title-linear-gradient-top-hover) 3px, var(--minecraft-game-card-title-linear-gradient-bottom-hover) 3px);
+}
+
+@media (min-width: 320px) {
+    #minecraft {
+        border: 2px solid var(--black);
+    }
+
+    #minecraft .game-title{
+        font-size: 0.7em;
+        padding: 9px;
+    }
+}
+
+@media (min-width: 375px) {
+    #minecraft .game-title {
+        font-size: 0.8em;
+        padding: 10px;
+    }
+}
+
+@media (min-width: 425px) {
+    #minecraft {
+        border: 3px solid var(--black);
+    }
+
+    #minecraft .game-title {
+        font-size: 1em;
+        padding: 14px;
+    }
+}
+
+@media (min-width: 768px) {
+    #minecraft .game-title {
+        font-size: 1em;
+        padding: 17.5px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #minecraft .game-title {
+        font-size: 1.3em;
+        padding: 20px;
+    }
+}
+
+@media (min-width: 1440px) {
+    #minecraft .game-title {
+        font-size: 1em;
+        padding: 17.5px;
+    }
+}
+
+@media (min-width: 1920px) {
+    #minecraft .game-title {
+        font-size: 1.3em;
+        padding: 20.5px;
+    }
+}
+
+@media (min-width: 2560px) {
+    #minecraft .game-title {
+        font-size: 1.6em;
+        padding: 25px;
+    }
+}
+
+@media (min-width: 3840px) {
+    #minecraft {
+        border: 4px solid var(--black);
+    }
+
+    #minecraft .game-title {
+        font-size: 2.5em;
+        padding: 34.5px;
+    }
+}

@@ -1,4 +1,4 @@
-const characters = [
+export const characters = [
     {
         name: 'Peashooter',
         sunCost: 100,

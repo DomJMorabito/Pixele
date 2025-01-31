@@ -1,7 +1,7 @@
 /* Login modal */
 
 #login-form-links {
-    font-family: Header, sans-serif;
+    font-family: var(--poppins), sans-serif;
     align-self: center;
     text-align: center;
     display: flex;
@@ -11,12 +11,12 @@
 }
 
 .login-form-link {
-    color: #0074E0;
+    color: var(--link);
     cursor: pointer;
 }
 
 #login-link-divider {
-    color: #5D6166;
+    color: var(--disabled);
     margin: 0 5% 0 5%;
 }
 
@@ -26,13 +26,19 @@
     }
 
     #login-form-links {
-        font-size: 0.75em;
+        font-size: 0.6em;
+    }
+}
+
+@media (min-width: 375px) {
+    #login-form-links {
+        font-size: 0.7em;
     }
 }
 
 @media (min-width: 425px) {
     #login-form-links {
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 }
 
@@ -42,34 +48,56 @@
     }
 
     #login-form-links {
-        font-size: 1em;
+        font-size: 0.85em;
     }
 }
 
 @media (min-width: 1024px) {
     form {
-        width: 77.5%;
+        width: 282px;
     }
 
     #login-form-links {
-        font-size: 1.25em;
+        font-size: 1em;
     }
 }
 
 @media (min-width: 1440px) {
+    form {
+        width: 251px;
+    }
+
     #login-form-links {
-        font-size: 0.9em;
+        font-size: 0.85em;
     }
 }
 
 @media (min-width: 1920px) {
+    form {
+        width: 282px;
+    }
+
     #login-form-links {
-        font-size: 1.25em;
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 2560px) {
+    form {
+        width: 337px;
+    }
+
+    #login-form-links {
+        font-size: 1.1em;
     }
 }
 
 @media (min-width: 3840px) {
+    form {
+        width: 476px;
+    }
+
     #login-form-links {
-        font-size: 1.75em;
+        font-size: 1.6em;
     }
 }

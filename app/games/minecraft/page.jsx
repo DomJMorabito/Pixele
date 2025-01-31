@@ -6,30 +6,32 @@ import { useEffect } from 'react';
 
 // Component Imports:
 
+import GuessGrid from "@/app/components/guess-grid/GuessGrid";
+
+// Context Imports:
+
+import { useBackground, backgrounds } from '@/app/contexts/BackgroundProvider';
+
 export default function MinecraftPage() {
+    const { setBackground } = useBackground();
     useEffect(() => {
         document.title = 'Minecraft | Pixele';
-    }, []);
-
-    // Makes sure that the background image is always set to the default whenever the page is loaded.
-    useEffect(() => {
-
-        document.body.classList.forEach(cls => {
-            if (cls.endsWith('-background')) {
-                document.body.classList.remove(cls);
-            }
-        });
-
-        document.body.classList.add('minecraft-game-background');
-
+        setBackground(backgrounds.minecraft.game);
         return () => {
-            document.body.classList.remove('minecraft-game-background');
+            setBackground(backgrounds.homescreen);
         }
-    });
+
+    }, [setBackground]);
 
     return (
         <>
             <main>
+                <GuessGrid
+                    gameId="minecraft"
+                    attributes={['Mob', 'Realm', 'Behavior', 'Health', 'Height', 'Release Update']}
+                    maxGuesses={5}
+                    inputPlaceholder="Select your Mob..."
+                />
             </main>
         </>
     );

@@ -1,0 +1,6 @@
+/* Overwatch Attributes */
+
+.overwatch-attributes {
+    font-family: var(--big-noodle-too-oblique), sans-serif;
+    color: var(--overwatch-attribute-indicator);
+}

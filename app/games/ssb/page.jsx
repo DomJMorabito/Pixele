@@ -6,30 +6,31 @@ import { useEffect } from 'react';
 
 // Component Imports:
 
+import GuessGrid from "@/app/components/guess-grid/GuessGrid";
+
+// Context Imports:
+
+import { useBackground, backgrounds } from '@/app/contexts/BackgroundProvider';
+
 export default function SSBPage() {
+    const { setBackground } = useBackground();
     useEffect(() => {
         document.title = 'SSBU | Pixele';
-    }, []);
-
-    // Makes sure that the background image is always set to the default whenever the page is loaded.
-    useEffect(() => {
-
-        document.body.classList.forEach(cls => {
-            if (cls.endsWith('-background')) {
-                document.body.classList.remove(cls);
-            }
-        });
-
-        document.body.classList.add('ssb-game-background');
-
+        setBackground(backgrounds.ssb.game);
         return () => {
-            document.body.classList.remove('ssb-game-background');
+            setBackground(backgrounds.homescreen);
         }
-    });
+    }, [setBackground]);
 
     return (
         <>
             <main>
+                <GuessGrid
+                    gameId="ssb"
+                    attributes={['Fighter', 'Series', 'Species', 'Weight', 'Gender', 'Release Game']}
+                    maxGuesses={6}
+                    inputPlaceholder="Choose your Fighter..."
+                />
             </main>
         </>
     );

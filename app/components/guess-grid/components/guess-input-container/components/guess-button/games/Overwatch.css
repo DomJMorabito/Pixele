@@ -1,0 +1,79 @@
+/* Overwatch Guess Button */
+
+.overwatch-guess-button {
+    font-family: var(--big-noodle-too-oblique), sans-serif;
+    color: var(--white);
+    background-color: var(--overwatch-guess-button-background);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    will-change: transform, background-color;
+}
+
+.overwatch-guess-button:hover {
+    transform: scale(1.05);
+    background-color: var(--overwatch-guess-button-background-hover);
+}
+
+@media (min-width: 320px) {
+    .overwatch-guess-button {
+        border: 1px solid var(--overwatch-guess-button-border);
+        border-radius: 5px;
+        font-size: 1.1em;
+        padding: 5px;
+    }
+}
+
+@media (min-width: 375px) {
+    .overwatch-guess-button {
+        font-size: 1.25em;
+        padding: 6px;
+    }
+}
+
+@media (min-width: 425px) {
+    .overwatch-guess-button {
+        font-size: 1.35em;
+        padding: 7px;
+    }
+}
+
+@media (min-width: 768px) {
+    .overwatch-guess-button {
+        font-size: 1.5em;
+        padding: 8px;
+        border: 2px solid var(--overwatch-guess-button-border);
+    }
+}
+
+@media (min-width: 1024px) {
+    .overwatch-guess-button {
+        font-size: 1.6em;
+    }
+}
+
+@media (min-width: 1440px) {
+    .overwatch-guess-button {
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 1920px) {
+    .overwatch-guess-button {
+        font-size: 1.6em;
+    }
+}
+
+@media (min-width: 2560px) {
+    .overwatch-guess-button {
+        font-size: 2em;
+        padding: 10px;
+        border: 3px solid var(--overwatch-guess-button-border);
+    }
+}
+
+@media (min-width: 3840px) {
+    .overwatch-guess-button {
+        font-size: 2.75em;
+        padding: 12px;
+        border: 4px solid var(--overwatch-guess-button-border);
+    }
+}

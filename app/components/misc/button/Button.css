@@ -1,30 +1,24 @@
-/* Font Families */
-
-@font-face {
-    font-family: 'Header';
-    src: url('https://assets.pixele.gg/fonts/Header.ttf');
-}
-
 /* Button */
 
 .button {
     position: relative;
-    font-family: 'Header', sans-serif;
+    font-family: var(--poppins), sans-serif;
     align-self: center;
     border: none;
-    color: #ffffff;
-    background-color: #0074E0;
+    color: var(--white);
+    background-color: var(--button-background);
     cursor: pointer;
     transition: background-color 0.5s ease, transform, 0.25s ease;
+    will-change: background-color, transform;
 }
 
 .button:hover {
-    background-color: #148EFF;
+    background-color: var(--button-background-hover);
     transform: scale(1.05);
 }
 
 .button:disabled {
-    background-color: #5D6166;
+    background-color: var(--disabled);
     cursor: not-allowed;
 }
 
@@ -56,19 +50,19 @@
 
 @keyframes buttonSuccessFade {
     0% {
-        background-color: #00CC66;
+        background-color: var(--success);
     }
     100% {
-        background-color: #00CC66;
+        background-color: var(--success);
     }
 }
 
 @keyframes buttonErrorFade {
     0% {
-        background-color: #CA2D2D;
+        background-color: var(--error);
     }
     100% {
-        background-color: #CA2D2D;
+        background-color: var(--error);
     }
 }
 
@@ -89,8 +83,9 @@
     width: 8px;
     margin-right: 4px;
     border-radius: 4px;
-    background-color: #ffffff;
+    background-color: var(--white);
     animation: buttonPulse 1.5s infinite ease-in-out;
+    will-change: transform, opacity;
 }
 
 .button__dot:last-child {
@@ -134,44 +129,102 @@
 
 @media (min-width: 320px) {
     .button {
-        margin-top: 10%;
         border-radius: 5px;
         padding: 2.5% 7.5% 2.5% 7.5%;
-        font-size: 1.25em;
+        font-size: 0.9em;
+        margin-top: 10px;
     }
 
     .nav-button {
         margin: 0;
         width: 100%;
+        font-size: 0.85em !important;
+    }
+}
+
+@media (min-width: 375px) {
+    .button {
+        margin-top: 12px;
+    }
+
+    .nav-button {
+        font-size: 1em !important;
     }
 }
 
 @media (min-width: 425px) {
     .button {
-        font-size: 1.5em;
+        font-size: 1.1em;
+        margin-top: 12px;
+    }
+
+    .nav-button {
+        font-size: 1.25em !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .button {
+        font-size: 1.1em;
+        margin-top: 16px;
+    }
+
+    .nav-button {
+        font-size: 1.4em !important;
     }
 }
 
 @media (min-width: 1024px) {
     .button {
-        font-size: 2em;
+        font-size: 1.3em;
+        margin-top: 20px;
+    }
+
+    .nav-button {
+        font-size: 1.5em !important;
     }
 }
 
 @media (min-width: 1440px) {
     .button {
-        font-size: 1.5em;
+        font-size: 1.1em;
+        margin-top: 16px;
+    }
+
+    .nav-button {
+        font-size: 1.4em !important;
+    }
+}
+
+@media (min-width: 1920px) {
+    .button {
+        font-size: 1.3em;
+        margin-top: 20px;
+    }
+
+    .nav-button {
+        font-size: 1.5em !important;
     }
 }
 
 @media (min-width: 2560px) {
     .button {
-        font-size: 2em;
+        font-size: 1.5em;
+        margin-top: 24px;
+    }
+
+    .nav-button {
+        font-size: 1.75em !important;
     }
 }
 
 @media (min-width: 3840px) {
     .button {
-        font-size: 2.5em;
+        margin-top: 42px;
+        font-size: 2em;
+    }
+
+    .nav-button {
+        font-size: 2.5em !important;
     }
 }

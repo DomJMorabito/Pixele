@@ -19,48 +19,48 @@
 
 @media (min-width: 375px) {
     #game-card-grid {
-        width: 356px;
+        width: 286px;
     }
 }
 
 @media (min-width: 425px) {
     #game-card-grid {
-        width: 365px;
+        width: 340px;
     }
 }
 
 @media (min-width: 768px) {
     #game-card-grid {
-        width: 576px;
+        width: 424px;
     }
 }
 
 @media (min-width: 1024px) {
     #game-card-grid {
-        width: 768px;
+        width: 532px;
     }
 }
 
 @media (min-width: 1440px) {
     #game-card-grid {
-        width: 1008px;
+        width: 648px;
     }
 }
 
 @media (min-width: 1920px) {
     #game-card-grid {
-        width: 1152px;
+        width: 873px;
     }
 }
 
 @media (min-width: 2560px) {
     #game-card-grid {
-        width: 1536px;
+        width: 933px;
     }
 }
 
 @media (min-width: 3840px) {
     #game-card-grid {
-        width: 2112px;
+        width: 1497px;
     }
 }

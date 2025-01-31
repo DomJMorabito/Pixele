@@ -1,0 +1,29 @@
+/* Clash Royale Circle */
+
+.clashroyale-circle {
+    background-color: #FFD053;
+}
+
+@media (min-width: 320px) {
+    .clashroyale-circle {
+        border: 1px solid #FFBB2A;
+    }
+}
+
+@media (min-width: 768px) {
+    .clashroyale-circle {
+        border: 2px solid #FFBB2A;
+    }
+}
+
+@media (min-width: 2560px) {
+    .clashroyale-circle {
+        border: 3px solid #FFBB2A;
+    }
+}
+
+@media (min-width: 3840px) {
+    .clashroyale-circle {
+        border: 4px solid #FFBB2A;
+    }
+}

@@ -1,0 +1,98 @@
+/* Guess Grid */
+
+#guess-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    animation: guessGridFadeIn 1s ease forwards;
+    will-change: opacity, transform;
+}
+
+.guess-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Picture Square & Result Circle Animations */
+
+@keyframes flip {
+    0% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes guessGridFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 320px) {
+    #guess-grid {
+        width: 300px;
+    }
+}
+
+@media (min-width: 375px) {
+    #guess-grid {
+        width: 336px;
+    }
+}
+
+@media (min-width: 425px) {
+    #guess-grid {
+        width: 378px;
+    }
+}
+
+@media (min-width: 768px) {
+    #guess-grid {
+        width: 510px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #guess-grid {
+        width: 600px;
+    }
+}
+
+@media (min-width: 1440px) {
+    #guess-grid {
+        width: 600px;
+    }
+}
+
+@media (min-width: 1920px) {
+    #guess-grid {
+        width: 660px;
+    }
+}
+
+@media (min-width: 2560px) {
+    #guess-grid {
+        width: 846px;
+    }
+}
+
+@media (min-width: 3840px) {
+    #guess-grid {
+        width: 1182px;
+    }
+}

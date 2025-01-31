@@ -1,3 +1,208 @@
+/* Font Families */
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('https://assets.pixele.gg/fonts/overwatch/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Big Noodle Too Oblique';
+    src: url('https://assets.pixele.gg/fonts/overwatch/Big Noodle Too Oblique.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('https://assets.pixele.gg/fonts/ssb/Roboto Condensed.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Flexo-Demi';
+    src: url('https://assets.pixele.gg/fonts/pokemon/Flexo-Demi.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tungsten Bold';
+    src: url('https://assets.pixele.gg/fonts/valorant/Tungsten-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Scout Condensed Italic';
+    src:    url('https://assets.pixele.gg/fonts/r6/Scout Condensed Italic.woff2') format('woff2'),
+            url('https://assets.pixele.gg/fonts/r6/Scout Condensed Italic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Minecraft Seven';
+    src: url('https://assets.pixele.gg/fonts/minecraft/MinecraftSeven.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Minecraft Ten';
+    src: url('https://assets.pixele.gg/fonts/minecraft/MinecraftTen.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Clash Regular';
+    src: url('https://assets.pixele.gg/fonts/clashroyale/Clash_Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Clash Bold';
+    src: url('https://assets.pixele.gg/fonts/clashroyale/Clash_Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PvZ2 UI';
+    src: url('https://assets.pixele.gg/fonts/pvz/PvZ2 UI.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dosis Bold';
+    src: url('https://assets.pixele.gg/fonts/homescreen/Dosis Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito ExtraBold';
+    src: url('https://assets.pixele.gg/fonts/homescreen/Nunito ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+:root {
+    /* Fonts */
+    --poppins: 'Poppins', var(--fallback);
+    --big-noodle-too-oblique: 'Big Noodle Too Oblique', var(--fallback);
+    --roboto-condensed: 'Roboto Condensed', var(--fallback);
+    --flexo-demi: 'Flexo-Demi', var(--fallback);
+    --tungsten-bold: 'Tungsten Bold', var(--fallback);
+    --scout-condensed-italic: 'Scout Condensed Italic', var(--fallback);
+    --minecraft-seven: 'Minecraft Seven', var(--fallback);
+    --minecraft-ten: 'Minecraft Ten', var(--fallback);
+    --clash-regular: 'Clash Regular', var(--fallback);
+    --clash-bold: 'Clash Bold', var(--fallback);
+    --pvz2-ui: 'Pvz2 UI', var(--fallback);
+    --dosis-bold: 'Dosis Bold', var(--fallback);
+    --nunito-extrabold: 'Nunito ExtraBold', var(--fallback);
+
+    --fallback: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    /* Global */
+    --white: #FFFFFF;
+    --black: #000000;
+    --box-shadow: #00000033;
+    --drop-shadow: #0000007F;
+    --error: #CA2D2D;
+    --success: #00CC66;
+    --disabled: #5D6166;
+    --link: #0074E0;
+    --attribute-indicator-correct: #FFFF00;
+
+    /* Nav Bar */
+    --nav-bar-background: #E5EBF4CC;
+    --nav-bar-account-section-hover: #0000000C;
+    --nav-bar-symbols: #5D6166;
+
+    /* Game Card */
+    --overwatch-game-card-background: #CCDCF5;
+    --overwatch-game-card-title: #303132;
+    --overwatch-game-card-title-background: #EFF3FA;
+    --overwatch-game-card-border: #EFF3FA;
+
+    --ssb-game-card-background-red: #FF4444;
+    --ssb-game-card-background-repeating-linear-gradient: #7B7B7B7F;
+    --ssb-game-card-title-repeating-linear-gradient-grey: #373737;
+
+    --pokemon-game-card-background: #F2F2F2;
+    --pokemon-game-card-title: #313131;
+    --pokemon-game-card-identifier: #919191;
+    --pokemon-fire: #FD7D25;
+    --pokemon-dragon-top: #54A4CF;
+    --pokemon-dragon-bottom: #F06D57;
+
+    --valorant-game-card-background: #101827;
+    --valorant-game-card-title-background: #2A2A2A;
+    --valorant-game-card-title: #FF4655;
+
+    --r6-game-card-background: #FFFFFF26;
+    --r6-game-card-background-blue: #2499FF;
+    --r6-game-card-title: #24262A;
+    --r6-game-card-title-background: #C3C3C3;
+    --r6-game-card-title-blue: #00FFE5;
+
+    --minecraft-game-card-title: #ABA09D;
+    --minecraft-game-card-title-linear-gradient-top: #262423;
+    --minecraft-game-card-title-linear-gradient-top-hover: #3D3938;
+    --minecraft-game-card-title-linear-gradient-bottom-hover: #171615;
+
+    --clashroyale-game-card-background-linear-gradient-top: #F8DA57;
+    --clashroyale-game-card-background-linear-gradient-bottom: #FFBB00;
+    --clashroyale-game-card-title-background-linear-gradient-top: #8CE5F5;
+    --clashroyale-game-card-title-background-linear-gradient-bottom: #00B0FF;
+    --clashroyale-game-card-border: #C6A45D;
+
+    --pvz-game-card-title: #5A5120;
+    --pvz-game-card-title-background: #EEE5C6;
+    --pvz-game-card-border: #D5A151;
+
+    /* Button */
+    --button-background: #0074E0;
+    --button-background-hover: #148EFF;
+
+    /* Input, PasswordInput, & Code Input */
+    --input-background: #F1F3F7;
+    --input-toggle-visibility: #9DA4B2;
+    --input-toggle-visibility-hover: #878A92;
+    --input-visibility-toggle-background: #4E4E4E;
+
+    /* Modal */
+    --modal-close-button-hover: #6794D5;
+
+    /* Attribute Indicator */
+    --overwatch-attribute-indicator: #2E3031;
+    --overwatch-attribute-indicator-background: #EEF4FA;
+
+    /* Picture */
+    --overwatch-picture-background: #CCDCF5;
+    --overwatch-picture-border: #003D79;
+
+    /* Circle */
+    --overwatch-circle-background: #D9D9D9;
+    --overwatch-circle-border: #FA9C1E;
+
+    /* Guess Input */
+    --overwatch-guess-input-border-hover: #ACAEB2;
+    --overwatch-guess-input-border-focus: #ED6516;
+
+    /* Guess Button */
+    --overwatch-guess-button-background: #F06414;
+    --overwatch-guess-button-background-hover: #F1742B;
+    --overwatch-guess-button-border: #CCCCCC;
+}
+
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -17,11 +222,11 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    transition: background-image 0.5s ease-in-out;
-    will-change: background-image;
     -ms-overflow-style: none; /* Hides scrollbar on Internet Explorer */
     opacity: 0;
     animation: backgroundFadeIn 0.3s ease-in forwards;
+    transition: background-image 0.5s ease-in-out;
+    will-change: background-image, opacity;
 }
 ::-webkit-scrollbar {
     display: none; /* Hides scrollbar on Chrome, Safari, Edge, & all other webkit browsers (Opera, Brave, etc.) */
@@ -37,7 +242,6 @@ body {
 }
 
 [class*="-background"] {
-    transition: background-image 0.5s ease-in-out;
     opacity: 1;
 }
 
@@ -119,54 +323,54 @@ body {
 
 @media (min-width: 320px) {
     main {
-        margin-top: 58.5px;
+        margin-top: 52px;
     }
 }
 
 @media (min-width: 375px) {
     main {
-        margin-top: 66px;
+        margin-top: 58px;
     }
 }
 
 @media (min-width: 425px) {
     main {
-        margin-top: 81px;
+        margin-top: 72px;
     }
 }
 
 @media (min-width: 768px) {
     main {
-        margin-top: 96.5px;
+        margin-top: 94px;
     }
 }
 
 @media (min-width: 1024px) {
     main {
-        margin-top: 121px;
+        margin-top: 107px;
     }
 }
 
 @media (min-width: 1440px) {
     main {
-        margin-top: 96.5px;
+        margin-top: 94px;
     }
 }
 
 @media (min-width: 1920px) {
     main {
-        margin-top: 113px;
+        margin-top: 107px;
     }
 }
 
 @media (min-width: 2560px) {
     main {
-        margin-top: 156px;
+        margin-top: 138px;
     }
 }
 
 @media (min-width: 3840px) {
     main {
-        margin-top: 234px;
+        margin-top: 205px;
     }
 }

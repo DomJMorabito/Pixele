@@ -36,7 +36,7 @@ export default function AlertIndicator() {
     if (!isInitialized) return null;
 
     const classes = [
-        alert.type,
+        alert.type && alert.message ? alert.type : '',
         alert.isVisible ? 'show' : '',
         isHiding ? 'hide' : ''
     ].filter(Boolean).join(' ');

@@ -6,30 +6,31 @@ import { useEffect } from 'react';
 
 // Component Imports:
 
+import GuessGrid from "@/app/components/guess-grid/GuessGrid";
+
+// Context Imports:
+
+import { useBackground, backgrounds } from '@/app/contexts/BackgroundProvider';
+
 export default function PVZPage() {
+    const { setBackground } = useBackground();
     useEffect(() => {
         document.title = 'PVZ2 | Pixele';
-    }, []);
-
-    // Makes sure that the background image is always set to the default whenever the page is loaded.
-    useEffect(() => {
-
-        document.body.classList.forEach(cls => {
-            if (cls.endsWith('-background')) {
-                document.body.classList.remove(cls);
-            }
-        });
-
-        document.body.classList.add('pvz-game-background');
-
+        setBackground(backgrounds.pvz.game);
         return () => {
-            document.body.classList.remove('pvz-game-background');
+            setBackground(backgrounds.homescreen);
         }
-    });
+    }, [setBackground]);
 
     return (
         <>
             <main>
+                <GuessGrid
+                    gameId="pvz"
+                    attributes={['Plant', 'Family', 'Cost', 'Area', 'Premium', 'Color']}
+                    maxGuesses={6}
+                    inputPlaceholder="Select your Plant..."
+                />
             </main>
         </>
     );

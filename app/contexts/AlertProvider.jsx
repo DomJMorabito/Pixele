@@ -1,13 +1,13 @@
 // React Imports:
 
-import React, {createContext, useContext, useCallback, useState, useRef} from 'react';
+import React, { createContext, useContext, useCallback, useState, useRef } from 'react';
 
 const AlertContext = createContext(null);
 
 export function AlertProvider({ children }) {
     const [alert, setAlert] = useState({
         message: '',
-        type: 'bad',
+        type: null,
         isVisible: false,
     });
 
@@ -33,7 +33,8 @@ export function AlertProvider({ children }) {
             setTimeout(() => {
                 setAlert(prev => ({
                     ...prev,
-                    message: ''
+                    message: '',
+                    type: null
                 }));
             }, 500);
         }, 3000);

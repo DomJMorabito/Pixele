@@ -1,0 +1,124 @@
+/* Valorant Game Card */
+
+#valorant, #valorant .game-title, .text-wrapper {
+    position: relative;
+}
+
+#valorant, #valorant .game-title {
+    overflow: hidden;
+}
+
+#valorant {
+    background-color: var(--valorant-game-card-background);
+}
+
+#valorant .game-title {
+    font-family: var(--tungsten-bold), sans-serif;
+    background-color: var(--valorant-game-card-title-background);
+    color: var(--valorant-game-card-title);
+    transition: color 0.3s ease;
+    will-change: color;
+}
+
+#valorant:hover .game-title {
+    color: var(--white);
+}
+
+.text-wrapper {
+    z-index: 3;
+}
+
+#valorant .game-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 110%;
+    height: 100%;
+    background-color: var(--valorant-game-card-title);
+    transform-origin: top left;
+    transform: skewX(-10deg);
+    z-index: 2;
+    pointer-events: none;
+    transition: left 0.2s ease;
+    will-change: left;
+}
+
+#valorant:hover .game-title::before {
+    left: 0;
+}
+
+@media (min-width: 320px) {
+    #valorant {
+        border: 2px solid var(--valorant-game-card-title);
+    }
+
+    #valorant .game-title {
+        font-size: 0.85em;
+        padding: 8px;
+    }
+}
+
+@media (min-width: 375px) {
+    #valorant .game-title {
+        font-size: 0.9em;
+        padding: 9px;
+    }
+}
+
+@media (min-width: 425px) {
+    #valorant {
+        border: 3px solid var(--valorant-game-card-title);
+    }
+
+    #valorant .game-title {
+        font-size: 1.25em;
+        padding: 12px;
+    }
+}
+
+@media (min-width: 768px) {
+    #valorant .game-title {
+        font-size: 1.3em;
+        padding: 15px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #valorant .game-title {
+        font-size: 1.5em;
+        padding: 18.5px;
+    }
+}
+
+@media (min-width: 1440px) {
+    #valorant .game-title {
+        font-size: 1.3em;
+        padding: 15px;
+    }
+}
+
+@media (min-width: 1920px) {
+    #valorant .game-title {
+        font-size: 1.5em;
+        padding: 18.5px;
+    }
+}
+
+@media (min-width: 2560px) {
+    #valorant .game-title {
+        font-size: 2em;
+        padding: 21.5px;
+    }
+}
+
+@media (min-width: 3840px) {
+    #valorant {
+        border: 4px solid var(--valorant-game-card-title);
+    }
+
+    #valorant .game-title {
+        font-size: 3em;
+        padding: 30.5px;
+    }
+}

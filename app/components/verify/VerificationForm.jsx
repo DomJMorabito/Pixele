@@ -349,7 +349,7 @@ export default function VerificationForm({
             onSubmit={handleFormSubmission}
             className="verification-form"
         >
-            <p id="instruction">Please enter the 6-digit code sent to:</p>
+            <p id="instruction">Please enter the OTP sent to:</p>
             <p id="user-email">{email}</p>
             <CodeInput
                 length={6}
@@ -358,6 +358,7 @@ export default function VerificationForm({
                 disabled={isLoading}
                 inputRefs={inputRefs}
                 state={fieldState.code}
+                autoComplete='one-time-code'
             />
             <p
                 id="resend-code"
@@ -375,6 +376,7 @@ export default function VerificationForm({
                 <div id="password-section">
                     <PasswordInput
                         id="password"
+                        autoComplete="new-password"
                         value={formData.password}
                         onChange={handlePasswordChange}
                         placeholder="New Password"
@@ -392,6 +394,7 @@ export default function VerificationForm({
                     />
                     <PasswordInput
                         id="confirmPassword"
+                        autoComplete="new-password"
                         value={formData.confirmPassword}
                         onChange={handlePasswordChange}
                         placeholder="Confirm New Password"

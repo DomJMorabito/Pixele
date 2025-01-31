@@ -1,0 +1,16 @@
+/* Attributes */
+
+#attributes {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+}
+
+.attribute {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
