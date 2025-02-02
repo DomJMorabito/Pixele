@@ -38,12 +38,33 @@ const nextConfig = {
                             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
                             "font-src 'self' https://fonts.gstatic.com https://assets.pixele.gg",
                             "img-src 'self' https://assets.pixele.gg data: blob:",
-                            "connect-src 'self' https://assets.pixele.gg https://api.pixele.gg",
+                            "connect-src 'self' https://assets.pixele.gg https://api.pixele.gg"
                         ].join('; ')
                     },
                     {
                         key: 'Strict-Transport-Security',
                         value: 'max-age=31536000; includeSubDomains'
+                    },
+                    {
+                        key: 'X-Frame-Options',
+                        value: 'DENY'
+                    },
+                    {
+                        key: 'X-Consent-Type-Options',
+                        value: 'nosniff'
+                    },
+                    {
+                        key: 'Referrer-Policy',
+                        value: 'strict-origin-when-cross-origin'
+                    },
+                    {
+                        key: 'Permissions-Policy',
+                        value: [
+                            'camera=()',
+                            'microphone=()',
+                            'geolocation=()',
+                            'interest-cohort=()'
+                        ].join(', ')
                     }
                 ]
             }
