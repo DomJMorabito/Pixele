@@ -54,14 +54,14 @@
     }
 
     #valorant .game-title {
-        font-size: 0.85em;
+        font-size: 0.9em;
         padding: 8px;
     }
 }
 
 @media (min-width: 375px) {
     #valorant .game-title {
-        font-size: 0.9em;
+        font-size: 0.95em;
         padding: 9px;
     }
 }
@@ -72,14 +72,14 @@
     }
 
     #valorant .game-title {
-        font-size: 1.25em;
+        font-size: 1.3em;
         padding: 12px;
     }
 }
 
 @media (min-width: 768px) {
     #valorant .game-title {
-        font-size: 1.3em;
+        font-size: 1.35em;
         padding: 15px;
     }
 }
@@ -100,7 +100,7 @@
 
 @media (min-width: 1920px) {
     #valorant .game-title {
-        font-size: 1.5em;
+        font-size: 1.55em;
         padding: 18.5px;
     }
 }

@@ -4,17 +4,25 @@ import Image from 'next/image';
 
 // React Imports:
 
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
 // Utils Imports:
 
 import { formatCharacterDetails, getCharacterImageSrc } from '@/app/utils/game/game-config';
+import { formatGameId } from "@/app/utils/game/format-game-id";
 
 // CSS Imports:
 
 import '@/app/components/guess-grid/components/autocomplete-dropdown/AutocompleteDropdown.css';
 
 const AutocompleteDropdown = ({ inputValue, characters, onSelect, gameId }) => {
+
+    useEffect(() => {
+        if (gameId) {
+            import((`@/app/components/guess-grid/components/autocomplete-dropdown/games/${formatGameId(gameId)}.css`));
+        }
+    }, [gameId]);
+
     const filteredCharacters = useMemo(() => {
         if (!inputValue.trim()) return [];
         const searchTerm = inputValue.toLowerCase();

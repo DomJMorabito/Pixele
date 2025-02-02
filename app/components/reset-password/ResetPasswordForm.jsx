@@ -21,9 +21,9 @@ import { useAlert } from '@/app/contexts/AlertProvider';
 // Utils Imports:
 
 import { showFieldState } from '@/app/utils/ui/show-field-state';
-import { validateEmail } from '@/app/utils/input/validate-email';
-import { validateUsernameLength } from '@/app/utils/input/validate-username-length';
-import { validateUsernameSpecialCharacters } from "@/app/utils/input/validate-username-special-characters";
+import { validateEmail } from '@/app/utils/input/email/validate-email';
+import { validateUsernameLength } from '@/app/utils/input/username/validate-username-length';
+import { validateUsernameSpecialCharacters } from "@/app/utils/input/username/validate-username-special-characters";
 import { sendResetPasswordEmail } from "@/app/api/verify/send-reset-password-email";
 import { VerificationErrorCode } from '@/app/utils/errors/verification/VerificationError';
 

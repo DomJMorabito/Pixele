@@ -58,12 +58,14 @@ const GuessInputContainer = ({
                     placeholder={placeholder}
                     disabled={disabled}
                     className={`${gameId}-guess-input`}
+                    gameId={gameId}
                 />
                 <GuessButton
                     onClick={handleGuess}
                     disabled={disabled || !input.trim()}
                     remainingGuesses={remainingGuesses}
                     className={`${gameId}-guess-button`}
+                    gameId={gameId}
                 />
             </div>
             <AutocompleteDropdown

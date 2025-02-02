@@ -66,6 +66,7 @@ const GuessGrid = ({
                 <Attributes
                     attributes={attributes}
                     className={`${gameId}-attributes`}
+                    gameId={gameId}
                 />
                 {Array.from({ length: numRowsToShow }).map((_, rowIndex) => {
                     const guess = guesses[rowIndex];
@@ -79,6 +80,7 @@ const GuessGrid = ({
                                 rowIndex={rowIndex}
                                 className={`${gameId}-picture`}
                                 picture={guess?.picture}
+                                gameId={gameId}
                             />
                             {Array.from({ length: 5 }).map((_, circleIndex) => (
                                 <Circle
@@ -87,6 +89,7 @@ const GuessGrid = ({
                                     rowIndex={rowIndex}
                                     circleIndex={circleIndex}
                                     result={guess?.results?.[circleIndex]}
+                                    gameId={gameId}
                                 />
                             ))}
                         </div>

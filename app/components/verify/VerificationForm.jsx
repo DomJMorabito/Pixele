@@ -23,10 +23,10 @@ import { useAlert } from '@/app/contexts/AlertProvider';
 // Utils Imports:
 
 import { VerificationErrorCode } from '@/app/utils/errors/verification/VerificationError';
-import { validatePasswordLength } from "@/app/utils/input/validate-password-length";
-import { validatePasswordNumbers } from "@/app/utils/input/validate-password-numbers";
-import { validatePasswordSpecialCharacters } from "@/app/utils/input/validate-password-special-characters";
-import { validatePassword } from "@/app/utils/input/validate-password";
+import { validatePasswordLength } from "@/app/utils/input/password/validate-password-length";
+import { validatePasswordNumbers } from "@/app/utils/input/password/validate-password-numbers";
+import { validatePasswordSpecialCharacters } from "@/app/utils/input/password/validate-password-special-characters";
+import { validatePassword } from "@/app/utils/input/password/validate-password";
 import { showFieldState } from "@/app/utils/ui/show-field-state";
 
 // CSS Imports:

@@ -24,14 +24,6 @@ function GameCardGrid() {
     const [supportsHover, setSupportsHover] = useState(true);
     const { setBackground, resetBackground } = useBackground();
 
-    useEffect(() => {
-        const mediaQuery = window.matchMedia('(hover: hover)');
-        setSupportsHover(mediaQuery.matches);
-        const updateHoverSupport = (e) => setSupportsHover(e.matches);
-        mediaQuery.addEventListener('change', updateHoverSupport);
-        return () => mediaQuery.removeEventListener('change', updateHoverSupport);
-    }, []);
-
     const games = [
         {
             id: 'overwatch',
@@ -115,6 +107,14 @@ function GameCardGrid() {
     ];
 
     useEffect(() => {
+        const mediaQuery = window.matchMedia('(hover: hover)');
+        setSupportsHover(mediaQuery.matches);
+        const updateHoverSupport = (e) => setSupportsHover(e.matches);
+        mediaQuery.addEventListener('change', updateHoverSupport);
+        return () => mediaQuery.removeEventListener('change', updateHoverSupport);
+    }, []);
+
+    useEffect(() => {
         setBackground(backgrounds.homescreen);
     }, [setBackground]);
 
@@ -128,11 +128,11 @@ function GameCardGrid() {
     );
 
     const handleLeave = useMemo(() =>
-        debounce(() => {
-            if (supportsHover) {
-                resetBackground();
-            }
-        }, 225),
+            debounce(() => {
+                if (supportsHover) {
+                    resetBackground();
+                }
+            }, 225),
         [supportsHover, resetBackground]
     )
 

@@ -4,21 +4,24 @@ import Image from "next/image";
 
 // React Imports:
 
-import React from "react";
+import React, { useEffect } from "react";
+
+// Utils Imports:
+
+import { formatGameId } from "@/app/utils/game/format-game-id";
 
 // CSS Imports:
 
 import '@/app/components/guess-grid/components/circle/Circle.css';
-import '@/app/components/guess-grid/components/circle/games/Overwatch.css'
-import '@/app/components/guess-grid/components/circle/games/SSB.css'
-import '@/app/components/guess-grid/components/circle/games/Pokémon.css'
-import '@/app/components/guess-grid/components/circle/games/Valorant.css'
-import '@/app/components/guess-grid/components/circle/games/R6.css'
-import '@/app/components/guess-grid/components/circle/games/Minecraft.css'
-import '@/app/components/guess-grid/components/circle/games/ClashRoyale.css'
-import '@/app/components/guess-grid/components/circle/games/PVZ.css'
 
-const Circle = ({ rowIndex, circleIndex, result, className }) => {
+const Circle = ({ rowIndex, circleIndex, result, className, gameId }) => {
+
+    useEffect(() => {
+        if (gameId) {
+            import((`@/app/components/guess-grid/components/circle/games/${formatGameId(gameId)}.css`));
+        }
+    }, [gameId]);
+
     const combinedClassName = `circle ${className}`.trim();
     return (
         <div

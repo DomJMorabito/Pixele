@@ -67,17 +67,14 @@ function NavBar() {
         }
     }
 
-    // Handles redirecting the user back to the home screen when the Pixele logo is pressed.
     const handleClick = () => {
         router.push('/');
     }
 
-    // Handles showing the account modal when hovering over the account section.
     const show = () => {
         setVisible(true);
     }
 
-    // Handles hiding the account modal when hovering over the account section stops. Debounces the function to prevent flickering.
     const hide = useMemo(() => debounce(() => setVisible(false), 500), []);
 
     const loginRouter = () => {
@@ -96,7 +93,6 @@ function NavBar() {
         router.push('/leaderboard');
     }
 
-    // Resets the debounce timer when hovering over the account section starts and stops rapidly to prevent flickering.
     const clearHide = () => {
         hide.cancel && hide.cancel();
         setVisible(true);

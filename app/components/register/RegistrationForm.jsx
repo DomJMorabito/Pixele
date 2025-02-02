@@ -26,18 +26,18 @@ import { useAlert } from '@/app/contexts/AlertProvider';
 
 // Utils Imports:
 
-import { validateEmail } from '@/app/utils/input/validate-email';
-import { validateUsernameLength } from '@/app/utils/input/validate-username-length';
-import { validateUsernameSpecialCharacters } from '@/app/utils/input/validate-username-special-characters';
+import { validateEmail } from '@/app/utils/input/email/validate-email';
+import { validateUsernameLength } from '@/app/utils/input/username/validate-username-length';
+import { validateUsernameSpecialCharacters } from '@/app/utils/input/username/validate-username-special-characters';
 import { sendRegisterRequest } from '@/app/api/register/send-register-request';
 import { showFieldState } from '@/app/utils/ui/show-field-state';
 import { RegistrationErrorCode } from '@/app/utils/errors/register/RegistrationError';
 import { checkUsernameAvailability } from '@/app/api/register/check-username-availability';
-import { validateUsername } from '@/app/utils/input/validate-username';
-import { validatePassword } from "@/app/utils/input/validate-password";
-import { validatePasswordLength } from "@/app/utils/input/validate-password-length";
-import { validatePasswordNumbers } from "@/app/utils/input/validate-password-numbers";
-import { validatePasswordSpecialCharacters } from "@/app/utils/input/validate-password-special-characters";
+import { validateUsername } from '@/app/utils/input/username/validate-username';
+import { validatePassword } from "@/app/utils/input/password/validate-password";
+import { validatePasswordLength } from "@/app/utils/input/password/validate-password-length";
+import { validatePasswordNumbers } from "@/app/utils/input/password/validate-password-numbers";
+import { validatePasswordSpecialCharacters } from "@/app/utils/input/password/validate-password-special-characters";
 import { maskEmail } from "@/app/utils/ui/mask-email";
 
 // CSS Imports:
@@ -138,7 +138,7 @@ export default function RegistrationForm() {
         const usernameIsValid = validateUsername(
             formData.username,
             validation.usernameIsValidLength,
-            !validation.usernameHasSpecialChars
+            validation.usernameHasSpecialChars
         );
 
         const passwordsMatch = formData.password &&
@@ -160,7 +160,7 @@ export default function RegistrationForm() {
             isUsernameValid: usernameIsValid,
             passwordsMatch,
             usernameIsValidLength: validateUsernameLength(formData.username),
-            usernameHasSpecialChars: !validateUsernameSpecialCharacters(formData.username),
+            usernameHasSpecialChars: validateUsernameSpecialCharacters(formData.username),
             isPasswordValid,
             passwordHasSpecialChar,
             passwordIsValidLength,
@@ -403,7 +403,7 @@ export default function RegistrationForm() {
                 id="username-requirements"
                 requirements={[
                     {id: 'username-length', text: '5-18 Letters', met: validation.usernameIsValidLength},
-                    {id: 'username-special', text: 'No Special Characters', met: !validation.usernameHasSpecialChars}
+                    {id: 'username-special', text: 'No Special Characters', met: validation.usernameHasSpecialChars}
                 ]}
             />
             <PasswordInput

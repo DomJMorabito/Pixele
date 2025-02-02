@@ -2,94 +2,110 @@
 
 @font-face {
     font-family: 'Poppins';
-    src: url('https://assets.pixele.gg/fonts/overwatch/Poppins-SemiBold.ttf') format('truetype');
+    src: url('https://assets.pixele.gg/fonts/overwatch/Poppins-SemiBold.woff2') format('woff2'),
+        url('https://assets.pixele.gg/fonts/overwatch/Poppins-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Big Noodle Too Oblique';
-    src: url('https://assets.pixele.gg/fonts/overwatch/Big Noodle Too Oblique.ttf') format('truetype');
+    src: url('https://assets.pixele.gg/fonts/overwatch/Big Noodle Too Oblique.woff2') format('woff2'),
+        url('https://assets.pixele.gg/fonts/overwatch/Big Noodle Too Oblique.woff') format('woff');
     font-weight: 600;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Roboto Condensed';
-    src: url('https://assets.pixele.gg/fonts/ssb/Roboto Condensed.ttf') format('truetype');
+    src: url('https://assets.pixele.gg/fonts/ssb/Roboto Condensed.woff2') format('woff2'),
+        url('https://assets.pixele.gg/fonts/ssb/Roboto Condensed.woff') format('woff');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Flexo-Demi';
-    src: url('https://assets.pixele.gg/fonts/pokemon/Flexo-Demi.ttf') format('truetype');
+    src: url('https://assets.pixele.gg/fonts/pokemon/Flexo-Demi.woff2') format('woff2'),
+        url('https://assets.pixele.gg/fonts/pokemon/Flexo-Demi.woff') format('woff');
     font-weight: 600;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Tungsten Bold';
-    src: url('https://assets.pixele.gg/fonts/valorant/Tungsten-Bold.ttf') format('truetype');
+    src: url('https://assets.pixele.gg/fonts/valorant/Tungsten-Bold.woff2') format('woff2'),
+        url('https://assets.pixele.gg/fonts/valorant/Tungsten-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Scout Condensed Italic';
-    src:    url('https://assets.pixele.gg/fonts/r6/Scout Condensed Italic.woff2') format('woff2'),
-            url('https://assets.pixele.gg/fonts/r6/Scout Condensed Italic.woff') format('woff');
+    src: url('https://assets.pixele.gg/fonts/r6/Scout Condensed Italic.woff2') format('woff2'),
+        url('https://assets.pixele.gg/fonts/r6/Scout Condensed Italic.woff') format('woff');
     font-weight: 700;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Minecraft Seven';
-    src: url('https://assets.pixele.gg/fonts/minecraft/MinecraftSeven.ttf') format('truetype');
+    src: url('https://assets.pixele.gg/fonts/minecraft/MinecraftSeven.woff2') format('woff2'),
+        url('https://assets.pixele.gg/fonts/minecraft/MinecraftSeven.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Minecraft Ten';
-    src: url('https://assets.pixele.gg/fonts/minecraft/MinecraftTen.woff') format('woff');
+    src: url('https://assets.pixele.gg/fonts/minecraft/MinecraftTen.woff2') format('woff2'),
+        url('https://assets.pixele.gg/fonts/minecraft/MinecraftTen.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Clash Regular';
-    src: url('https://assets.pixele.gg/fonts/clashroyale/Clash_Regular.otf') format('opentype');
+    src: url('https://assets.pixele.gg/fonts/clashroyale/Clash_Regular.woff2') format('woff2'),
+        url('https://assets.pixele.gg/fonts/clashroyale/Clash_Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
-}
-
-@font-face {
-    font-family: 'Clash Bold';
-    src: url('https://assets.pixele.gg/fonts/clashroyale/Clash_Bold.otf') format('opentype');
-    font-weight: 700;
-    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'PvZ2 UI';
-    src: url('https://assets.pixele.gg/fonts/pvz/PvZ2 UI.ttf') format('truetype');
+    src: url('https://assets.pixele.gg/fonts/pvz/PvZ2 UI.woff2') format('woff2'),
+        url('https://assets.pixele.gg/fonts/pvz/PvZ2 UI.woff') format('woff');
     font-weight: 900;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Dosis Bold';
-    src: url('https://assets.pixele.gg/fonts/homescreen/Dosis Bold.ttf') format('truetype');
+    src: url('https://assets.pixele.gg/fonts/homescreen/Dosis Bold.woff2') format('woff2'),
+        url('https://assets.pixele.gg/fonts/homescreen/Dosis Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Nunito ExtraBold';
-    src: url('https://assets.pixele.gg/fonts/homescreen/Nunito ExtraBold.ttf') format('truetype');
+    src: url('https://assets.pixele.gg/fonts/homescreen/Nunito ExtraBold.woff2') format('woff2'),
+        url('https://assets.pixele.gg/fonts/homescreen/Nunito ExtraBold.woff') format('woff');
     font-weight: 800;
     font-style: normal;
+    font-display: swap;
 }
 
 :root {
@@ -103,7 +119,6 @@
     --minecraft-seven: 'Minecraft Seven', var(--fallback);
     --minecraft-ten: 'Minecraft Ten', var(--fallback);
     --clash-regular: 'Clash Regular', var(--fallback);
-    --clash-bold: 'Clash Bold', var(--fallback);
     --pvz2-ui: 'Pvz2 UI', var(--fallback);
     --dosis-bold: 'Dosis Bold', var(--fallback);
     --nunito-extrabold: 'Nunito ExtraBold', var(--fallback);

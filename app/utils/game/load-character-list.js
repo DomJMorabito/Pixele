@@ -5,7 +5,7 @@
  */
 export const loadCharacterList = async (gameId) => {
     try {
-        const characterList = await import((`@/app/games/${gameId}/character-list.js`));
+        const characterList = await import((`@/app/utils/game/character-lists/${gameId}-character-list.js`));
         return characterList.characters;
     } catch (error) {
         console.error(`Error loading character list for ${gameId}:`, error);

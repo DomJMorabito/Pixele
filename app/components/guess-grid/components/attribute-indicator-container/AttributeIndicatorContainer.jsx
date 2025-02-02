@@ -1,22 +1,18 @@
 // React Imports:
 
-import React from 'react';
+import React, {useEffect} from 'react';
 
 // Component Imports:
 
 import AttributeIndicator from '@/app/components/guess-grid/components/attribute-indicator/AttributeIndicator';
 
+// Utils Imports:
+
+import { formatGameId } from "@/app/utils/game/format-game-id";
+
 // CSS Imports:
 
 import '@/app/components/guess-grid/components/attribute-indicator-container/AttributeIndicatorContainer.css';
-import '@/app/components/guess-grid/components/attribute-indicator-container/games/Overwatch.css';
-import '@/app/components/guess-grid/components/attribute-indicator-container/games/SSB.css';
-import '@/app/components/guess-grid/components/attribute-indicator-container/games/Pokémon.css';
-import '@/app/components/guess-grid/components/attribute-indicator-container/games/Valorant.css';
-import '@/app/components/guess-grid/components/attribute-indicator-container/games/R6.css';
-import '@/app/components/guess-grid/components/attribute-indicator-container/games/Minecraft.css';
-import '@/app/components/guess-grid/components/attribute-indicator-container/games/ClashRoyale.css';
-import '@/app/components/guess-grid/components/attribute-indicator-container/games/PVZ.css';
 
 const AttributeIndicatorContainer = ({ guesses, gameId, className }) => {
     const gameAttributes = {
@@ -418,6 +414,12 @@ const AttributeIndicatorContainer = ({ guesses, gameId, className }) => {
     };
 
     const attributes = gameAttributes[gameId] || [];
+
+    useEffect(() => {
+        if (gameId) {
+            import((`@/app/components/guess-grid/components/attribute-indicator-container/games/${formatGameId(gameId)}.css`));
+        }
+    }, [gameId]);
 
     return (
         <div id='attribute-indicator-container' className={className}>

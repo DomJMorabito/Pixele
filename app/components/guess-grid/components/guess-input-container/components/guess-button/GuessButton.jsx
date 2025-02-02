@@ -1,16 +1,23 @@
+// React Imports:
+
+import { useEffect } from "react";
+
+// Utils Imports:
+
+import { formatGameId } from "@/app/utils/game/format-game-id";
+
 // CSS Imports:
 
 import '@/app/components/guess-grid/components/guess-input-container/components/guess-button/GuessButton.css';
-import '@/app/components/guess-grid/components/guess-input-container/components/guess-button/games/Overwatch.css';
-import '@/app/components/guess-grid/components/guess-input-container/components/guess-button/games/SSB.css';
-import '@/app/components/guess-grid/components/guess-input-container/components/guess-button/games/Pokémon.css';
-import '@/app/components/guess-grid/components/guess-input-container/components/guess-button/games/Valorant.css';
-import '@/app/components/guess-grid/components/guess-input-container/components/guess-button/games/R6.css';
-import '@/app/components/guess-grid/components/guess-input-container/components/guess-button/games/Minecraft.css';
-import '@/app/components/guess-grid/components/guess-input-container/components/guess-button/games/ClashRoyale.css';
-import '@/app/components/guess-grid/components/guess-input-container/components/guess-button/games/PVZ.css';
 
-const GuessButton = ({ onClick, disabled, remainingGuesses, className }) => {
+const GuessButton = ({ onClick, disabled, remainingGuesses, className, gameId }) => {
+
+    useEffect(() => {
+        if (gameId) {
+            import((`@/app/components/guess-grid/components/guess-input-container/components/guess-button/games/${formatGameId(gameId)}.css`));
+        }
+    }, [gameId]);
+
     return (
         <button
             type="button"

@@ -98,7 +98,7 @@
 
 @media (min-width: 768px) {
     #pokemon .game-title {
-        font-size: 1em;
+        font-size: 1.05em;
     }
 
     #identifier {
@@ -131,7 +131,7 @@
 
 @media (min-width: 1440px) {
     #pokemon .game-title {
-        font-size: 1em;
+        font-size: 1.05em;
     }
 
     #identifier {
@@ -163,7 +163,7 @@
     }
 
     #pokemon .game-title {
-        font-size: 1.5em;
+        font-size: 1.55em;
     }
 
     #identifier {

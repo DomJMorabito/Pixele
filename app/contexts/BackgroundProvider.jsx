@@ -52,8 +52,8 @@ export function BackgroundProvider({ children }) {
         }
     }, [currentBackground]);
 
-    const setBackground = useCallback((background) => {
-        setCurrentBackground(background);
+    const setBackground = useCallback((newBackground) => {
+        setCurrentBackground(newBackground);
     }, []);
 
     const resetBackground = useCallback(() => {
@@ -68,7 +68,7 @@ export function BackgroundProvider({ children }) {
 
     return (
         <BackgroundContext.Provider value={value}>
-                {children}
+            {children}
         </BackgroundContext.Provider>
     );
 }

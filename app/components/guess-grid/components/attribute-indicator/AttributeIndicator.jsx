@@ -6,20 +6,22 @@ import Image from 'next/image';
 
 import React, { useEffect, useState } from 'react';
 
+// Utils Imports:
+
+import { formatGameId } from '@/app/utils/game/format-game-id';
+
 // CSS Imports:
 
 import '@/app/components/guess-grid/components/attribute-indicator/AttributeIndicator.css'
-import '@/app/components/guess-grid/components/attribute-indicator/games/Overwatch.css'
-import '@/app/components/guess-grid/components/attribute-indicator/games/SSB.css'
-import '@/app/components/guess-grid/components/attribute-indicator/games/Pokémon.css'
-import '@/app/components/guess-grid/components/attribute-indicator/games/Valorant.css'
-import '@/app/components/guess-grid/components/attribute-indicator/games/R6.css'
-import '@/app/components/guess-grid/components/attribute-indicator/games/Minecraft.css'
-import '@/app/components/guess-grid/components/attribute-indicator/games/ClashRoyale.css'
-import '@/app/components/guess-grid/components/attribute-indicator/games/PVZ.css'
 
 const AttributeIndicator = ({ attributeId, imgSrc, text, guesses, gameId }) => {
     const [state, setState] = useState('default');
+
+    useEffect(() => {
+        if (gameId) {
+            import((`@/app/components/guess-grid/components/attribute-indicator/games/${formatGameId(gameId)}.css`));
+        }
+    }, [gameId]);
 
     useEffect(() => {
         if (!guesses || guesses.length === 0) {

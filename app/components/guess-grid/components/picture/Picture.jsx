@@ -4,21 +4,21 @@ import Image from "next/image";
 
 // React Imports:
 
-import React from "react";
+import React, { useEffect } from "react";
+import { formatGameId } from "@/app/utils/game/format-game-id";
 
 // CSS Imports:
 
 import '@/app/components/guess-grid/components/picture/Picture.css';
-import '@/app/components/guess-grid/components/picture/games/Overwatch.css'
-import '@/app/components/guess-grid/components/picture/games/SSB.css'
-import '@/app/components/guess-grid/components/picture/games/Pokémon.css'
-import '@/app/components/guess-grid/components/picture/games/Valorant.css'
-import '@/app/components/guess-grid/components/picture/games/R6.css'
-import '@/app/components/guess-grid/components/picture/games/Minecraft.css'
-import '@/app/components/guess-grid/components/picture/games/ClashRoyale.css'
-import '@/app/components/guess-grid/components/picture/games/PVZ.css'
 
-const Picture = ({ rowIndex, picture, className }) => {
+const Picture = ({ rowIndex, picture, className, gameId }) => {
+
+    useEffect(() => {
+        if (gameId) {
+            import((`@/app/components/guess-grid/components/picture/games/${formatGameId(gameId)}.css`));
+        }
+    }, [gameId]);
+
     const combinedClassName = `picture ${className}`.trim();
     return (
         <div
