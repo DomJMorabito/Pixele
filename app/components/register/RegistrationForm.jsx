@@ -390,7 +390,7 @@ export default function RegistrationForm() {
                 label={<>
                     Username
                     {validation.usernameIsValidLength &&
-                        !validation.usernameHasSpecialChars && (
+                        validation.usernameHasSpecialChars && (
                             <span className={`username-status ${validation.isCheckingUsername ? 'checking' : usernameApiStatus.hasChecked ? (usernameApiStatus.isAvailable ? 'available' : 'taken') : ''}`}>
                                 {validation.isCheckingUsername ? ' (checking...)' : usernameApiStatus.hasChecked ? (usernameApiStatus.isAvailable ? ' (available)' : ' (taken)') : ''}
                             </span>
