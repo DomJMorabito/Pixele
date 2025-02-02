@@ -17,26 +17,11 @@ const nextConfig = {
                 has: [
                     {
                         type: 'host',
-                        value: 'pixele.gg'
+                        value: 'www.pixele.gg',
                     },
-                    {
-                        type: 'protocol',
-                        value: 'http'
-                    }
                 ],
-                permanent: true,
                 destination: 'https://pixele.gg/:path*',
-            },
-            {
-                source: '/:path*',
-                has: [
-                    {
-                        type: 'host',
-                        value: 'www.pixele.gg'
-                    }
-                ],
-                permanent: true,
-                destination: 'https://pixele.gg/:path*',
+                permanent: true
             }
         ]
     },
