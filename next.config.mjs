@@ -17,11 +17,26 @@ const nextConfig = {
                 has: [
                     {
                         type: 'host',
-                        value: 'www.pixele.gg',
+                        value: 'pixele.gg'
                     },
+                    {
+                        type: 'protocol',
+                        value: 'http'
+                    }
                 ],
+                permanent: true,
                 destination: 'https://pixele.gg/:path*',
-                permanent: true
+            },
+            {
+                source: '/:path*',
+                has: [
+                    {
+                        type: 'host',
+                        value: 'www.pixele.gg'
+                    }
+                ],
+                permanent: true,
+                destination: 'https://pixele.gg/:path*',
             }
         ]
     },
@@ -40,6 +55,10 @@ const nextConfig = {
                             "img-src 'self' https://assets.pixele.gg data: blob:",
                             "connect-src 'self' https://assets.pixele.gg https://api.pixele.gg",
                         ].join('; ')
+                    },
+                    {
+                        key: 'Strict-Transport-Security',
+                        value: 'max-age=31536000; includeSubDomains'
                     }
                 ]
             }
