@@ -71,10 +71,10 @@ nav #leaderboard:hover {
 #account-modal::before {
     content: '';
     position: absolute;
-    top: -7.5px;
+    top: -7px;
     left: 50%;
     transform: translateX(-50%);
-    border-width: 0 7.5px 7.5px 7.5px;
+    border-width: 0 7px 7px 7px;
     border-style: solid;
     border-color: transparent transparent var(--white) transparent;
     z-index: 100;

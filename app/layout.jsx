@@ -11,7 +11,7 @@ export default function Layout({ children }) {
         <html lang="en">
         <head>
             <meta charSet="UTF-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
             <link
                 rel="icon"
                 type="image/png"
@@ -40,10 +40,10 @@ export default function Layout({ children }) {
             />
             <title>Pixele</title>
         </head>
-            <body>
-                <LayoutContent>
-                    {children}
-                </LayoutContent>
+        <body>
+        <LayoutContent>
+            {children}
+        </LayoutContent>
             </body>
         </html>
     );
