@@ -2,15 +2,15 @@ export const characters = [
     {
         name: 'Banjo & Kazooie',
         series: 'Banjo-Kazooie',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 106,
-        gender: 'Other',
+        gender: 'N/A',
         species: 'Bear'
     },
     {
         name: 'Bayonetta',
         series: 'Bayonetta',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 81,
         gender: 'Female',
         species: 'Human'
@@ -18,7 +18,7 @@ export const characters = [
     {
         name: 'Bowser',
         series: 'Mario',
-        releaseGame: 'SSB Melee (2)',
+        releaseGame: 'SSB Melee',
         weight: 135,
         gender: 'Male',
         species: 'Koopa'
@@ -26,7 +26,7 @@ export const characters = [
     {
         name: 'Bowser Jr.',
         series: 'Mario',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 108,
         gender: 'Selectable',
         species: 'Koopa'
@@ -34,7 +34,7 @@ export const characters = [
     {
         name: 'Byleth',
         series: 'Fire Emblem',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 97,
         gender: 'Selectable',
         species: 'Human'
@@ -42,7 +42,7 @@ export const characters = [
     {
         name: 'Captain Falcon',
         series: 'F-Zero',
-        releaseGame: 'SSB 64 (1)',
+        releaseGame: 'SSB 64',
         weight: 104,
         gender: 'Male',
         species: 'Human'
@@ -50,7 +50,7 @@ export const characters = [
     {
         name: 'Chrom',
         series: 'Fire Emblem',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 95,
         gender: 'Male',
         species: 'Human'
@@ -58,7 +58,7 @@ export const characters = [
     {
         name: 'Cloud',
         series: 'Final Fantasy',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 100,
         gender: 'Male',
         species: 'Human'
@@ -66,7 +66,7 @@ export const characters = [
     {
         name: 'Corrin',
         series: 'Fire Emblem',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 98,
         gender: 'Selectable',
         species: 'Human'
@@ -74,7 +74,7 @@ export const characters = [
     {
         name: 'Daisy',
         series: 'Mario',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 89,
         gender: 'Female',
         species: 'Human'
@@ -82,7 +82,7 @@ export const characters = [
     {
         name: 'Dark Pit',
         series: 'Kid Icarus',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 96,
         gender: 'Male',
         species: 'Human'
@@ -90,7 +90,7 @@ export const characters = [
     {
         name: 'Dark Samus',
         series: 'Metroid',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 108,
         gender: 'Female',
         species: 'Human'
@@ -98,7 +98,7 @@ export const characters = [
     {
         name: 'Diddy Kong',
         series: 'Donkey Kong',
-        releaseGame: 'SSB Brawl (3)',
+        releaseGame: 'SSB Brawl',
         weight: 90,
         gender: 'Male',
         species: 'Gorilla'
@@ -106,7 +106,7 @@ export const characters = [
     {
         name: 'Donkey Kong',
         series: 'Donkey Kong',
-        releaseGame: 'SSB 64 (1)',
+        releaseGame: 'SSB 64',
         weight: 127,
         gender: 'Male',
         species: 'Gorilla'
@@ -114,7 +114,7 @@ export const characters = [
     {
         name: 'Dr. Mario',
         series: 'Mario',
-        releaseGame: 'SSB Melee (2)',
+        releaseGame: 'SSB Melee',
         weight: 98,
         gender: 'Male',
         species: 'Human'
@@ -122,15 +122,15 @@ export const characters = [
     {
         name: 'Duck Hunt',
         series: 'Duck Hunt',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 86,
-        gender: 'Other',
+        gender: 'N/A',
         species: 'Dog'
     },
     {
         name: 'Falco',
         series: 'Star Fox',
-        releaseGame: 'SSB Melee (2)',
+        releaseGame: 'SSB Melee',
         weight: 82,
         gender: 'Male',
         species: 'Bird'
@@ -138,7 +138,7 @@ export const characters = [
     {
         name: 'Fox',
         series: 'Star Fox',
-        releaseGame: 'SSB 64 (1)',
+        releaseGame: 'SSB 64',
         weight: 77,
         gender: 'Male',
         species: 'Fox'
@@ -146,7 +146,7 @@ export const characters = [
     {
         name: 'Ganondorf',
         series: 'The Legend of Zelda',
-        releaseGame: 'SSB Melee (2)',
+        releaseGame: 'SSB Melee',
         weight: 118,
         gender: 'Male',
         species: 'Human'
@@ -154,15 +154,15 @@ export const characters = [
     {
         name: 'Greninja',
         series: 'Pokémon',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 88,
-        gender: 'Other',
+        gender: 'N/A',
         species: 'Pokémon'
     },
     {
         name: 'Hero',
         series: 'Dragon Quest',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 101,
         gender: 'Male',
         species: 'Human'
@@ -170,15 +170,15 @@ export const characters = [
     {
         name: 'Ice Climbers',
         series: 'Ice Climber',
-        releaseGame: 'SSB Melee (2)',
+        releaseGame: 'SSB Melee',
         weight: 92,
-        gender: 'Other',
+        gender: 'N/A',
         species: 'Human'
     },
     {
         name: 'Ike',
         series: 'Fire Emblem',
-        releaseGame: 'SSB Brawl (3)',
+        releaseGame: 'SSB Brawl',
         weight: 107,
         gender: 'Male',
         species: 'Human'
@@ -186,15 +186,15 @@ export const characters = [
     {
         name: 'Incineroar',
         series: 'Pokémon',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 116,
-        gender: 'Other',
+        gender: 'N/A',
         species: 'Pokémon'
     },
     {
         name: 'Inkling',
         series: 'Splatoon',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 94,
         gender: 'Selectable',
         species: 'Human'
@@ -202,7 +202,7 @@ export const characters = [
     {
         name: 'Isabelle',
         series: 'Animal Crossing',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 88,
         gender: 'Female',
         species: 'Dog'
@@ -210,15 +210,15 @@ export const characters = [
     {
         name: 'Jigglypuff',
         series: 'Pokémon',
-        releaseGame: 'SSB 64 (1)',
+        releaseGame: 'SSB 64',
         weight: 68,
-        gender: 'Other',
+        gender: 'N/A',
         species: 'Pokémon'
     },
     {
         name: 'Joker',
         series: 'Persona',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 93,
         gender: 'Male',
         species: 'Human'
@@ -226,7 +226,7 @@ export const characters = [
     {
         name: 'Kazuya',
         series: 'Tekken',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 113,
         gender: 'Male',
         species: 'Human'
@@ -234,7 +234,7 @@ export const characters = [
     {
         name: 'Ken',
         series: 'Street Fighter',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 103,
         gender: 'Male',
         species: 'Human'
@@ -242,7 +242,7 @@ export const characters = [
     {
         name: 'King Dedede',
         series: 'Kirby',
-        releaseGame: 'SSB Brawl (3)',
+        releaseGame: 'SSB Brawl',
         weight: 127,
         gender: 'Male',
         species: 'Bird'
@@ -250,7 +250,7 @@ export const characters = [
     {
         name: 'King K. Rool',
         series: 'Donkey Kong',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 133,
         gender: 'Male',
         species: 'Crocodile'
@@ -258,7 +258,7 @@ export const characters = [
     {
         name: 'Kirby',
         series: 'Kirby',
-        releaseGame: 'SSB 64 (1)',
+        releaseGame: 'SSB 64',
         weight: 79,
         gender: 'Male',
         species: 'Kirby'
@@ -266,7 +266,7 @@ export const characters = [
     {
         name: 'Link',
         series: 'The Legend of Zelda',
-        releaseGame: 'SSB 64 (1)',
+        releaseGame: 'SSB 64',
         weight: 104,
         gender: 'Male',
         species: 'Human'
@@ -274,7 +274,7 @@ export const characters = [
     {
         name: 'Little Mac',
         series: 'Punch-Out!',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 87,
         gender: 'Male',
         species: 'Human'
@@ -282,15 +282,15 @@ export const characters = [
     {
         name: 'Lucario',
         series: 'Pokémon',
-        releaseGame: 'SSB Brawl (3)',
+        releaseGame: 'SSB Brawl',
         weight: 92,
-        gender: 'Other',
+        gender: 'N/A',
         species: 'Pokémon'
     },
     {
         name: 'Lucas',
         series: 'EarthBound',
-        releaseGame: 'SSB Brawl (3)',
+        releaseGame: 'SSB Brawl',
         weight: 94,
         gender: 'Male',
         species: 'Human'
@@ -298,7 +298,7 @@ export const characters = [
     {
         name: 'Lucina',
         series: 'Fire Emblem',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 90,
         gender: 'Female',
         species: 'Human'
@@ -306,7 +306,7 @@ export const characters = [
     {
         name: 'Luigi',
         series: 'Mario',
-        releaseGame: 'SSB 64 (1)',
+        releaseGame: 'SSB 64',
         weight: 97,
         gender: 'Male',
         species: 'Human'
@@ -314,7 +314,7 @@ export const characters = [
     {
         name: 'Mario',
         series: 'Mario',
-        releaseGame: 'SSB 64 (1)',
+        releaseGame: 'SSB 64',
         weight: 98,
         gender: 'Male',
         species: 'Human'
@@ -322,7 +322,7 @@ export const characters = [
     {
         name: 'Marth',
         series: 'Fire Emblem',
-        releaseGame: 'SSB Melee (2)',
+        releaseGame: 'SSB Melee',
         weight: 90,
         gender: 'Male',
         species: 'Human'
@@ -330,7 +330,7 @@ export const characters = [
     {
         name: 'Mega Man',
         series: 'Mega Man',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 102,
         gender: 'Male',
         species: 'Robot'
@@ -338,7 +338,7 @@ export const characters = [
     {
         name: 'Meta Knight',
         series: 'Kirby',
-        releaseGame: 'SSB Brawl (3)',
+        releaseGame: 'SSB Brawl',
         weight: 80,
         gender: 'Male',
         species: 'Kirby'
@@ -346,15 +346,15 @@ export const characters = [
     {
         name: 'Mewtwo',
         series: 'Pokémon',
-        releaseGame: 'SSB Melee (2)',
+        releaseGame: 'SSB Melee',
         weight: 79,
-        gender: 'Other',
+        gender: 'N/A',
         species: 'Pokémon'
     },
     {
         name: 'Mii Brawler',
         series: 'SSB',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 94,
         gender: 'Selectable',
         species: 'Human'
@@ -362,7 +362,7 @@ export const characters = [
     {
         name: 'Mii Gunner',
         series: 'SSB',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 104,
         gender: 'Selectable',
         species: 'Human'
@@ -370,7 +370,7 @@ export const characters = [
     {
         name: 'Mii Swordsman',
         series: 'SSB',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 104,
         gender: 'Selectable',
         species: 'Human'
@@ -378,7 +378,7 @@ export const characters = [
     {
         name: 'Min Min',
         series: 'ARMS',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 104,
         gender: 'Female',
         species: 'Human'
@@ -386,7 +386,7 @@ export const characters = [
     {
         name: 'Mr. Game & Watch',
         series: 'Game & Watch',
-        releaseGame: 'SSB Melee (2)',
+        releaseGame: 'SSB Melee',
         weight: 75,
         gender: 'Male',
         species: 'Monochrome'
@@ -394,7 +394,7 @@ export const characters = [
     {
         name: 'Mythra',
         series: 'Xenoblade',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 98,
         gender: 'Female',
         species: 'Human'
@@ -402,7 +402,7 @@ export const characters = [
     {
         name: 'Ness',
         series: 'EarthBound',
-        releaseGame: 'SSB 64 (1)',
+        releaseGame: 'SSB 64',
         weight: 94,
         gender: 'Male',
         species: 'Human'
@@ -410,7 +410,7 @@ export const characters = [
     {
         name: 'Olimar',
         series: 'Pikmin',
-        releaseGame: 'SSB Brawl (3)',
+        releaseGame: 'SSB Brawl',
         weight: 79,
         gender: 'Male',
         species: 'Human'
@@ -418,7 +418,7 @@ export const characters = [
     {
         name: 'Pac-Man',
         series: 'Pac-Man',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 95,
         gender: 'Male',
         species: 'Pac-Person'
@@ -426,7 +426,7 @@ export const characters = [
     {
         name: 'Palutena',
         series: 'Kid Icarus',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 91,
         gender: 'Female',
         species: 'Human'
@@ -434,7 +434,7 @@ export const characters = [
     {
         name: 'Peach',
         series: 'Mario',
-        releaseGame: 'SSB Melee (2)',
+        releaseGame: 'SSB Melee',
         weight: 89,
         gender: 'Female',
         species: 'Human'
@@ -442,31 +442,31 @@ export const characters = [
     {
         name: 'Pichu',
         series: 'Pokémon',
-        releaseGame: 'SSB Melee (2)',
+        releaseGame: 'SSB Melee',
         weight: 62,
-        gender: 'Other',
+        gender: 'N/A',
         species: 'Pokémon'
     },
     {
         name: 'Pikachu',
         series: 'Pokémon',
-        releaseGame: 'SSB 64 (1)',
+        releaseGame: 'SSB 64',
         weight: 79,
-        gender: 'Other',
+        gender: 'N/A',
         species: 'Pokémon'
     },
     {
         name: 'Piranha Plant',
         series: 'Mario',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 112,
-        gender: 'Other',
+        gender: 'N/A',
         species: 'Plant'
     },
     {
         name: 'Pit',
         series: 'Kid Icarus',
-        releaseGame: 'SSB Brawl (3)',
+        releaseGame: 'SSB Brawl',
         weight: 96,
         gender: 'Male',
         species: 'Human'
@@ -474,7 +474,7 @@ export const characters = [
     {
         name: 'Pokémon Trainer',
         series: 'Pokémon',
-        releaseGame: 'SSB Brawl (3)',
+        releaseGame: 'SSB Brawl',
         weight: 75,
         gender: 'Selectable',
         species: 'Human'
@@ -482,7 +482,7 @@ export const characters = [
     {
         name: 'Pyra',
         series: 'Xenoblade',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 98,
         gender: 'Female',
         species: 'Human'
@@ -490,7 +490,7 @@ export const characters = [
     {
         name: 'Richter',
         series: 'Castlevania',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 107,
         gender: 'Male',
         species: 'Human'
@@ -498,7 +498,7 @@ export const characters = [
     {
         name: 'Ridley',
         series: 'Metroid',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 107,
         gender: 'Male',
         species: 'Dragon'
@@ -506,7 +506,7 @@ export const characters = [
     {
         name: 'R.O.B.',
         series: 'R.O.B.',
-        releaseGame: 'SSB Brawl (3)',
+        releaseGame: 'SSB Brawl',
         weight: 106,
         gender: 'Male',
         species: 'Robot'
@@ -514,7 +514,7 @@ export const characters = [
     {
         name: 'Robin',
         series: 'Fire Emblem',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 95,
         gender: 'Selectable',
         species: 'Human'
@@ -522,7 +522,7 @@ export const characters = [
     {
         name: 'Rosalina & Luma',
         series: 'Mario',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 82,
         gender: 'Female',
         species: 'Human'
@@ -530,7 +530,7 @@ export const characters = [
     {
         name: 'Roy',
         series: 'Fire Emblem',
-        releaseGame: 'SSB Melee (2)',
+        releaseGame: 'SSB Melee',
         weight: 95,
         gender: 'Male',
         species: 'Human'
@@ -538,7 +538,7 @@ export const characters = [
     {
         name: 'Ryu',
         series: 'Street Fighter',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 103,
         gender: 'Male',
         species: 'Human'
@@ -546,7 +546,7 @@ export const characters = [
     {
         name: 'Samus',
         series: 'Metroid',
-        releaseGame: 'SSB 64 (1)',
+        releaseGame: 'SSB 64',
         weight: 108,
         gender: 'Female',
         species: 'Human'
@@ -554,7 +554,7 @@ export const characters = [
     {
         name: 'Sephiroth',
         series: 'Final Fantasy',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 79,
         gender: 'Male',
         species: 'Human'
@@ -562,7 +562,7 @@ export const characters = [
     {
         name: 'Sheik',
         series: 'The Legend of Zelda',
-        releaseGame: 'SSB Melee (2)',
+        releaseGame: 'SSB Melee',
         weight: 78,
         gender: 'Female',
         species: 'Human'
@@ -570,7 +570,7 @@ export const characters = [
     {
         name: 'Shulk',
         series: 'Xenoblade',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 97,
         gender: 'Male',
         species: 'Human'
@@ -578,7 +578,7 @@ export const characters = [
     {
         name: 'Simon',
         series: 'Castlevania',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 107,
         gender: 'Male',
         species: 'Human'
@@ -586,7 +586,7 @@ export const characters = [
     {
         name: 'Snake',
         series: 'Metal Gear Solid',
-        releaseGame: 'SSB Brawl (3)',
+        releaseGame: 'SSB Brawl',
         weight: 106,
         gender: 'Male',
         species: 'Human'
@@ -594,7 +594,7 @@ export const characters = [
     {
         name: 'Sonic',
         series: 'Sonic the Hedgehog',
-        releaseGame: 'SSB Brawl (3)',
+        releaseGame: 'SSB Brawl',
         weight: 86,
         gender: 'Male',
         species: 'Hedgehog'
@@ -602,7 +602,7 @@ export const characters = [
     {
         name: 'Sora',
         series: 'Kingdom Hearts',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 85,
         gender: 'Male',
         species: 'Human'
@@ -610,7 +610,7 @@ export const characters = [
     {
         name: 'Steve',
         series: 'Minecraft',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 92,
         gender: 'Selectable',
         species: 'Human'
@@ -618,7 +618,7 @@ export const characters = [
     {
         name: 'Terry',
         series: 'Fatal Fury',
-        releaseGame: 'SSB Ultimate (5)',
+        releaseGame: 'SSB Ultimate',
         weight: 108,
         gender: 'Male',
         species: 'Human'
@@ -626,7 +626,7 @@ export const characters = [
     {
         name: 'Toon Link',
         series: 'The Legend of Zelda',
-        releaseGame: 'SSB Brawl (3)',
+        releaseGame: 'SSB Brawl',
         weight: 91,
         gender: 'Male',
         species: 'Human'
@@ -634,7 +634,7 @@ export const characters = [
     {
         name: 'Villager',
         series: 'Animal Crossing',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 92,
         gender: 'Selectable',
         species: 'Human'
@@ -642,7 +642,7 @@ export const characters = [
     {
         name: 'Wario',
         series: 'Wario',
-        releaseGame: 'SSB Brawl (3)',
+        releaseGame: 'SSB Brawl',
         weight: 107,
         gender: 'Male',
         species: 'Human'
@@ -650,7 +650,7 @@ export const characters = [
     {
         name: 'Wii Fit Trainer',
         series: 'Wii Fit',
-        releaseGame: 'SSB 4 (4)',
+        releaseGame: 'SSB 4',
         weight: 96,
         gender: 'Selectable',
         species: 'Human'
@@ -658,7 +658,7 @@ export const characters = [
     {
         name: 'Wolf',
         series: 'Star Fox',
-        releaseGame: 'SSB Brawl (3)',
+        releaseGame: 'SSB Brawl',
         weight: 92,
         gender: 'Male',
         species: 'Wolf'
@@ -666,7 +666,7 @@ export const characters = [
     {
         name: 'Yoshi',
         series: 'Yoshi',
-        releaseGame: 'SSB 64 (1)',
+        releaseGame: 'SSB 64',
         weight: 104,
         gender: 'Male',
         species: 'Yoshi'
@@ -674,7 +674,7 @@ export const characters = [
     {
         name: 'Young Link',
         series: 'The Legend of Zelda',
-        releaseGame: 'SSB Melee (2)',
+        releaseGame: 'SSB Melee',
         weight: 88,
         gender: 'Male',
         species: 'Human'
@@ -682,7 +682,7 @@ export const characters = [
     {
         name: 'Zelda',
         series: 'The Legend of Zelda',
-        releaseGame: 'SSB Melee (2)',
+        releaseGame: 'SSB Melee',
         weight: 85,
         gender: 'Female',
         species: 'Human'
@@ -690,7 +690,7 @@ export const characters = [
     {
         name: 'Zero Suit Samus',
         series: 'Metroid',
-        releaseGame: 'SSB Brawl (3)',
+        releaseGame: 'SSB Brawl',
         weight: 80,
         gender: 'Female',
         species: 'Human'

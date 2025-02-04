@@ -15,7 +15,6 @@ import '@/app/components/game-card-grid/components/game-card/games/Valorant.css'
 import '@/app/components/game-card-grid/components/game-card/games/R6.css';
 import '@/app/components/game-card-grid/components/game-card/games/Minecraft.css';
 import '@/app/components/game-card-grid/components/game-card/games/ClashRoyale.css';
-import '@/app/components/game-card-grid/components/game-card/games/PVZ.css';
 
 function GameCard({ id, logoSrc, altText, gameLink, children, onHover, onLeave }) {
 

@@ -35,10 +35,6 @@ export const backgrounds = {
     clashroyale: {
         hover: 'https://assets.pixele.gg/background/clashroyale-background.png',
         game: 'https://assets.pixele.gg/background/clashroyale-game-background.png'
-    },
-    pvz: {
-        hover: 'https://assets.pixele.gg/background/pvz-background.png',
-        game: 'https://assets.pixele.gg/background/pvz-game-background.png'
     }
 };
 

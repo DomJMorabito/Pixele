@@ -89,18 +89,6 @@ const gameConfig = {
                 Evolution: ${character.evolution}`
         }),
         getImageSrc: (characterName) => `https://assets.pixele.gg/character/clashroyale/crop/${characterName.toLowerCase()}.png`
-    },
-    pvz: {
-        formatDetails: (character) => ({
-            mainLine: character.name,
-            details:
-                `Family: ${character.family}, 
-                Cost: ${character.sunCost} Sun, 
-                Area: ${character.area}, 
-                Premium: ${character.premium}, 
-                Color: ${character.color}`
-        }),
-        getImageSrc: (characterName) => `https://assets.pixele.gg/character/pvz/full/${characterName.toLowerCase()}.png`
     }
 }
 

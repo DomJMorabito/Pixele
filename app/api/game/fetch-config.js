@@ -6,7 +6,7 @@ import { GameError } from '@/app/utils/errors/game/GameError';
 /**
  * Fetches the game configuration from the server for a specific game.
  *
- * @param {string} gameId - The identifier for the game (e.g., 'pokémon', 'pvz').
+ * @param {string} gameId - The identifier for the game (e.g., 'pokémon', 'valorant').
  * @returns {Promise<Object>} - A promise that resolves with the game configuration data.
  * @throws {Error} - Throws an error if the request fails or if gameId is invalid.
  */

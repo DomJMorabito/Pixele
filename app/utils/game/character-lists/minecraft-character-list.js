@@ -5,7 +5,7 @@ export const characters = [
         behavior: 'Passive',
         height: 0.6,
         realm: 'Overworld',
-        releaseUpdate: '1.19 (25)'
+        releaseUpdate: '1.19'
     },
     {
         name: 'Armadillo',
@@ -13,7 +13,7 @@ export const characters = [
         behavior: 'Passive',
         height: 0.65,
         realm: 'Overworld',
-        releaseUpdate: '1.20.5 (27)'
+        releaseUpdate: '1.20.5'
     },
     {
         name: 'Axolotl',
@@ -21,7 +21,7 @@ export const characters = [
         behavior: 'Passive',
         height: 0.42,
         realm: 'Overworld',
-        releaseUpdate: '1.17 (24)'
+        releaseUpdate: '1.17'
     },
     {
         name: 'Bat',
@@ -29,7 +29,7 @@ export const characters = [
         behavior: 'Passive',
         height: 0.9,
         realm: 'Overworld',
-        releaseUpdate: '1.4.2 (12)'
+        releaseUpdate: '1.4.2'
     },
     {
         name: 'Bee',
@@ -37,7 +37,7 @@ export const characters = [
         behavior: 'Neutral',
         height: 0.6,
         realm: 'Overworld',
-        releaseUpdate: '1.15 (21)'
+        releaseUpdate: '1.15'
     },
     {
         name: 'Blaze',
@@ -45,7 +45,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 1.8,
         realm: 'Nether',
-        releaseUpdate: '1.0.0 (10)'
+        releaseUpdate: '1.0.0'
     },
     {
         name: 'Bogged',
@@ -53,7 +53,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 1.99,
         realm: 'Overworld',
-        releaseUpdate: '1.21 (28)'
+        releaseUpdate: '1.21'
     },
     {
         name: 'Breeze',
@@ -61,7 +61,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 1.77,
         realm: 'Overworld',
-        releaseUpdate: '1.21 (28)'
+        releaseUpdate: '1.21'
     },
     {
         name: 'Camel',
@@ -69,7 +69,7 @@ export const characters = [
         behavior: 'Passive',
         height: 2.375,
         realm: 'Overworld',
-        releaseUpdate: '1.20 (26)'
+        releaseUpdate: '1.20'
     },
     {
         name: 'Cat',
@@ -77,7 +77,7 @@ export const characters = [
         behavior: 'Passive',
         height: 0.7,
         realm: 'Overworld',
-        releaseUpdate: '1.14 (20)'
+        releaseUpdate: '1.14'
     },
     {
         name: 'Cave Spider',
@@ -85,7 +85,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 0.5,
         realm: 'Overworld',
-        releaseUpdate: 'Beta 1.8 (9)'
+        releaseUpdate: 'Beta 1.8'
     },
     {
         name: 'Chicken',
@@ -93,14 +93,14 @@ export const characters = [
         behavior: 'Passive',
         height: 0.7,
         realm: 'Overworld',
-        releaseUpdate: 'Alpha 1.0.14 (4)'
+        releaseUpdate: 'Alpha 1.0.14'
     },
     {
         name: 'Cod',
         health: 3,
         behavior: 'Passive',
         height: 0.3,
-        releaseUpdate: '1.13 (19)'
+        releaseUpdate: '1.13'
     },
     {
         name: 'Cow',
@@ -108,7 +108,7 @@ export const characters = [
         behavior: 'Passive',
         height: 1.4,
         realm: 'Overworld',
-        releaseUpdate: 'Alpha 1.0.8 (2)'
+        releaseUpdate: 'Alpha 1.0.8'
     },
     {
         name: 'Creaking',
@@ -116,7 +116,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 2.7,
         realm: 'Overworld',
-        releaseUpdate: '1.21.4 (29)'
+        releaseUpdate: '1.21.4'
     },
     {
         name: 'Creeper',
@@ -124,7 +124,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 1.7,
         realm: 'Overworld',
-        releaseUpdate: 'pre-alpha (1)'
+        releaseUpdate: 'Pre-Alpha'
     },
     {
         name: 'Dolphin',
@@ -132,7 +132,7 @@ export const characters = [
         behavior: 'Passive',
         height: 0.6,
         realm: 'Overworld',
-        releaseUpdate: '1.13 (19)'
+        releaseUpdate: '1.13'
     },
     {
         name: 'Donkey',
@@ -140,7 +140,7 @@ export const characters = [
         behavior: 'Passive',
         height: 1.5,
         realm: 'Overworld',
-        releaseUpdate: '1.6.1 (13)'
+        releaseUpdate: '1.6.1'
     },
     {
         name: 'Drowned',
@@ -148,7 +148,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 1.95,
         realm: 'Overworld',
-        releaseUpdate: '1.13 (19)'
+        releaseUpdate: '1.13'
     },
     {
         name: 'Elder Guardian',
@@ -156,7 +156,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 1.9975,
         realm: 'Overworld',
-        releaseUpdate: '1.8 (14)'
+        releaseUpdate: '1.8'
     },
     {
         name: 'Ender Dragon',
@@ -164,7 +164,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 8,
         realm: 'End',
-        releaseUpdate: '1.0.0 (10)'
+        releaseUpdate: '1.0.0'
     },
     {
         name: 'Enderman',
@@ -172,7 +172,7 @@ export const characters = [
         behavior: 'Neutral',
         height: 2.9,
         realm: 'End',
-        releaseUpdate: 'Beta 1.8 (9)'
+        releaseUpdate: 'Beta 1.8'
     },
     {
         name: 'Endermite',
@@ -180,7 +180,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 0.3,
         realm: 'End',
-        releaseUpdate: '1.8 (14)'
+        releaseUpdate: '1.8'
     },
     {
         name: 'Evoker',
@@ -188,7 +188,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 1.95,
         realm: 'Overworld',
-        releaseUpdate: '1.11 (17)'
+        releaseUpdate: '1.11'
     },
     {
         name: 'Fox',
@@ -196,7 +196,7 @@ export const characters = [
         behavior: 'Passive',
         height: 0.7,
         realm: 'Overworld',
-        releaseUpdate: '1.14 (20)'
+        releaseUpdate: '1.14'
     },
     {
         name: 'Frog',
@@ -204,7 +204,7 @@ export const characters = [
         behavior: 'Passive',
         height: 0.5,
         realm: 'Overworld',
-        releaseUpdate: '1.19 (25)'
+        releaseUpdate: '1.19'
     },
     {
         name: 'Ghast',
@@ -212,7 +212,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 4,
         realm: 'Nether',
-        releaseUpdate: 'Alpha 1.2.0 (5)'
+        releaseUpdate: 'Alpha 1.2.0'
     },
     {
         name: 'Glow Squid',
@@ -220,7 +220,7 @@ export const characters = [
         behavior: 'Passive',
         height: 0.8,
         realm: 'Overworld',
-        releaseUpdate: '1.17 (24)'
+        releaseUpdate: '1.17'
     },
     {
         name: 'Goat',
@@ -228,7 +228,7 @@ export const characters = [
         behavior: 'Neutral',
         height: 1.3,
         realm: 'Overworld',
-        releaseUpdate: '1.17 (24)'
+        releaseUpdate: '1.17'
     },
     {
         name: 'Guardian',
@@ -236,7 +236,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 0.85,
         realm: 'Overworld',
-        releaseUpdate: '1.8 (14)'
+        releaseUpdate: '1.8'
     },
     {
         name: 'Hoglin',
@@ -244,7 +244,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 1.4,
         realm: 'Nether',
-        releaseUpdate: '1.16 (22)'
+        releaseUpdate: '1.16'
     },
     {
         name: 'Horse',
@@ -252,7 +252,7 @@ export const characters = [
         behavior: 'Passive',
         height: 1.6,
         realm: 'Overworld',
-        releaseUpdate: '1.6.1 (13)'
+        releaseUpdate: '1.6.1'
     },
     {
         name: 'Husk',
@@ -260,7 +260,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 1.95,
         realm: 'Overworld',
-        releaseUpdate: '1.10 (16)'
+        releaseUpdate: '1.10'
     },
     {
         name: 'Illusioner',
@@ -268,7 +268,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 1.95,
         realm: 'Overworld',
-        releaseUpdate: '1.12 (18)'
+        releaseUpdate: '1.12'
     },
     {
         name: 'Iron Golem',
@@ -276,7 +276,7 @@ export const characters = [
         behavior: 'Neutral',
         height: 2.7,
         realm: 'Overworld',
-        releaseUpdate: '1.2.1 (11)'
+        releaseUpdate: '1.2.1'
     },
     {
         name: 'Llama',
@@ -284,7 +284,7 @@ export const characters = [
         behavior: 'Neutral',
         height: 1.87,
         realm: 'Overworld',
-        releaseUpdate: '1.11 (17)'
+        releaseUpdate: '1.11'
     },
     {
         name: 'Magma Cube',
@@ -292,7 +292,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 2.04,
         realm: 'Nether',
-        releaseUpdate: '1.0.0 (10)'
+        releaseUpdate: '1.0.0'
     },
     {
         name: 'Mooshroom',
@@ -300,7 +300,7 @@ export const characters = [
         behavior: 'Passive',
         height: 1.4,
         realm: 'Overworld',
-        releaseUpdate: '1.0.0 (10)'
+        releaseUpdate: '1.0.0'
     },
     {
         name: 'Mule',
@@ -308,7 +308,7 @@ export const characters = [
         behavior: 'Passive',
         height: 1.6,
         realm: 'Overworld',
-        releaseUpdate: '1.6.1 (13)'
+        releaseUpdate: '1.6.1'
     },
     {
         name: 'Ocelot',
@@ -316,7 +316,7 @@ export const characters = [
         behavior: 'Passive',
         height: 0.7,
         realm: 'Overworld',
-        releaseUpdate: '1.2.1 (11)'
+        releaseUpdate: '1.2.1'
     },
     {
         name: 'Panda',
@@ -324,7 +324,7 @@ export const characters = [
         behavior: 'Neutral',
         height: 1.25,
         realm: 'Overworld',
-        releaseUpdate: '1.14 (20)'
+        releaseUpdate: '1.14'
     },
     {
         name: 'Parrot',
@@ -332,7 +332,7 @@ export const characters = [
         behavior: 'Passive',
         height: 0.9,
         realm: 'Overworld',
-        releaseUpdate: '1.12 (18)'
+        releaseUpdate: '1.12'
     },
     {
         name: 'Phantom',
@@ -340,7 +340,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 0.5,
         realm: 'Overworld',
-        releaseUpdate: '1.13 (19)'
+        releaseUpdate: '1.13'
     },
     {
         name: 'Pig',
@@ -348,7 +348,7 @@ export const characters = [
         behavior: 'Passive',
         height: 0.9,
         realm: 'Overworld',
-        releaseUpdate: 'pre-alpha (1)'
+        releaseUpdate: 'Pre-Alpha'
     },
     {
         name: 'Piglin',
@@ -356,7 +356,7 @@ export const characters = [
         behavior: 'Neutral',
         height: 1.95,
         realm: 'Nether',
-        releaseUpdate: '1.16 (22)'
+        releaseUpdate: '1.16'
     },
     {
         name: 'Piglin Brute',
@@ -364,7 +364,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 1.95,
         realm: 'Nether',
-        releaseUpdate: '1.16.2 (23)'
+        releaseUpdate: '1.16.2'
     },
     {
         name: 'Pillager',
@@ -372,7 +372,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 1.95,
         realm: 'Overworld',
-        releaseUpdate: '1.14 (20)'
+        releaseUpdate: '1.14'
     },
     {
         name: 'Polar Bear',
@@ -380,7 +380,7 @@ export const characters = [
         behavior: 'Neutral',
         height: 1.4,
         realm: 'Overworld',
-        releaseUpdate: '1.10 (16)'
+        releaseUpdate: '1.10'
     },
     {
         name: 'Pufferfish',
@@ -388,7 +388,7 @@ export const characters = [
         behavior: 'Neutral',
         height: 0.7,
         realm: 'Overworld',
-        releaseUpdate: '1.13 (19)'
+        releaseUpdate: '1.13'
     },
     {
         name: 'Rabbit',
@@ -396,7 +396,7 @@ export const characters = [
         behavior: 'Passive',
         height: 0.5,
         realm: 'Overworld',
-        releaseUpdate: '1.8 (14)'
+        releaseUpdate: '1.8'
     },
     {
         name: 'Ravager',
@@ -404,7 +404,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 2.2,
         realm: 'Overworld',
-        releaseUpdate: '1.14 (20)'
+        releaseUpdate: '1.14'
     },
     {
         name: 'Salmon',
@@ -412,7 +412,7 @@ export const characters = [
         behavior: 'Passive',
         height: 0.4,
         realm: 'Overworld',
-        releaseUpdate: '1.13 (19)'
+        releaseUpdate: '1.13'
     },
     {
         name: 'Sheep',
@@ -420,7 +420,7 @@ export const characters = [
         behavior: 'Passive',
         height: 1.3,
         realm: 'Overworld',
-        releaseUpdate: 'pre-alpha (1)'
+        releaseUpdate: 'Pre-Alpha'
     },
     {
         name: 'Shulker',
@@ -428,7 +428,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 1,
         realm: 'End',
-        releaseUpdate: '1.9 (15)'
+        releaseUpdate: '1.9'
     },
     {
         name: 'Silverfish',
@@ -436,7 +436,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 0.3,
         realm: 'Overworld',
-        releaseUpdate: 'Beta 1.7 (8)'
+        releaseUpdate: 'Beta 1.7'
     },
     {
         name: 'Skeleton',
@@ -444,7 +444,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 1.99,
         realm: 'Overworld',
-        releaseUpdate: 'pre-alpha (1)'
+        releaseUpdate: 'Pre-Alpha'
     },
     {
         name: 'Skeleton Horse',
@@ -452,7 +452,7 @@ export const characters = [
         behavior: 'Passive',
         height: 1.6,
         realm: 'Overworld',
-        releaseUpdate: '1.6.1 (13)'
+        releaseUpdate: '1.6.1'
     },
     {
         name: 'Slime',
@@ -460,7 +460,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 2.04,
         realm: 'Overworld',
-        releaseUpdate: 'Alpha 1.0.11 (3)'
+        releaseUpdate: 'Alpha 1.0.11'
     },
     {
         name: 'Sniffer',
@@ -468,7 +468,7 @@ export const characters = [
         behavior: 'Passive',
         height: 1.75,
         realm: 'Overworld',
-        releaseUpdate: '1.20 (26)'
+        releaseUpdate: '1.20'
     },
     {
         name: 'Snow Golem',
@@ -476,7 +476,7 @@ export const characters = [
         behavior: 'Passive',
         height: 1.9,
         realm: 'Overworld',
-        releaseUpdate: '1.0.0 (10)'
+        releaseUpdate: '1.0.0'
     },
     {
         name: 'Spider',
@@ -484,7 +484,7 @@ export const characters = [
         behavior: 'Neutral',
         height: 0.9,
         realm: 'Overworld',
-        releaseUpdate: 'pre-alpha (1)'
+        releaseUpdate: 'Pre-Alpha'
     },
     {
         name: 'Squid',
@@ -492,7 +492,7 @@ export const characters = [
         behavior: 'Passive',
         height: 0.8,
         realm: 'Overworld',
-        releaseUpdate: 'Beta 1.2 (6)'
+        releaseUpdate: 'Beta 1.2'
     },
     {
         name: 'Stray',
@@ -500,7 +500,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 1.99,
         realm: 'Overworld',
-        releaseUpdate: '1.10 (16)'
+        releaseUpdate: '1.10'
     },
     {
         name: 'Strider',
@@ -508,7 +508,7 @@ export const characters = [
         behavior: 'Passive',
         height: 1.7,
         realm: 'Nether',
-        releaseUpdate: '1.16 (22)'
+        releaseUpdate: '1.16'
     },
     {
         name: 'Tadpole',
@@ -516,7 +516,7 @@ export const characters = [
         behavior: 'Passive',
         height: 0.3,
         realm: 'Overworld',
-        releaseUpdate: '1.19 (25)'
+        releaseUpdate: '1.19'
     },
     {
         name: 'Tropical Fish',
@@ -524,7 +524,7 @@ export const characters = [
         behavior: 'Passive',
         height: 0.4,
         realm: 'Overworld',
-        releaseUpdate: '1.13 (19)'
+        releaseUpdate: '1.13'
     },
     {
         name: 'Turtle',
@@ -532,7 +532,7 @@ export const characters = [
         behavior: 'Passive',
         height: 0.4,
         realm: 'Overworld',
-        releaseUpdate: '1.13 (19)'
+        releaseUpdate: '1.13'
     },
     {
         name: 'Vex',
@@ -540,7 +540,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 0.8,
         realm: 'Overworld',
-        releaseUpdate: '1.11 (17)'
+        releaseUpdate: '1.11'
     },
     {
         name: 'Villager',
@@ -548,7 +548,7 @@ export const characters = [
         behavior: 'Passive',
         height: 1.95,
         realm: 'Overworld',
-        releaseUpdate: '1.0.0 (10)'
+        releaseUpdate: '1.0.0'
     },
     {
         name: 'Vindicator',
@@ -556,7 +556,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 1.95,
         realm: 'Overworld',
-        releaseUpdate: '1.11 (17)'
+        releaseUpdate: '1.11'
     },
     {
         name: 'Wandering Trader',
@@ -564,7 +564,7 @@ export const characters = [
         behavior: 'Passive',
         height: 1.95,
         realm: 'Overworld',
-        releaseUpdate: '1.14 (20)'
+        releaseUpdate: '1.14'
     },
     {
         name: 'Warden',
@@ -572,7 +572,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 2.9,
         realm: 'Overworld',
-        releaseUpdate: '1.19 (25)'
+        releaseUpdate: '1.19'
     },
     {
         name: 'Witch',
@@ -580,7 +580,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 1.95,
         realm: 'Overworld',
-        releaseUpdate: '1.4.2 (12)'
+        releaseUpdate: '1.4.2'
     },
     {
         name: 'Wither',
@@ -588,7 +588,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 3.5,
         realm: 'Overworld',
-        releaseUpdate: '1.4.2 (12)'
+        releaseUpdate: '1.4.2'
     },
     {
         name: 'Wither Skeleton',
@@ -596,7 +596,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 2.4,
         realm: 'Nether',
-        releaseUpdate: '1.4.2 (12)'
+        releaseUpdate: '1.4.2'
     },
     {
         name: 'Wolf',
@@ -604,7 +604,7 @@ export const characters = [
         behavior: 'Neutral',
         height: 0.85,
         realm: 'Overworld',
-        releaseUpdate: 'Beta 1.4 (7)'
+        releaseUpdate: 'Beta 1.4'
     },
     {
         name: 'Zoglin',
@@ -612,7 +612,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 1.4,
         realm: 'Nether',
-        releaseUpdate: '1.16 (22)'
+        releaseUpdate: '1.16'
     },
     {
         name: 'Zombie',
@@ -620,7 +620,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 1.95,
         realm: 'Overworld',
-        releaseUpdate: 'pre-alpha (1)'
+        releaseUpdate: 'Pre-Alpha'
     },
     {
         name: 'Zombie Horse',
@@ -628,7 +628,7 @@ export const characters = [
         behavior: 'Passive',
         height: 1.6,
         realm: 'Overworld',
-        releaseUpdate: '1.6.1 (13)'
+        releaseUpdate: '1.6.1'
     },
     {
         name: 'Zombie Villager',
@@ -636,7 +636,7 @@ export const characters = [
         behavior: 'Hostile',
         height: 1.95,
         realm: 'Overworld',
-        releaseUpdate: '1.4.2 (12)'
+        releaseUpdate: '1.4.2'
     },
     {
         name: 'Zombified Piglin',
@@ -644,6 +644,6 @@ export const characters = [
         behavior: 'Neutral',
         height: 1.95,
         realm: 'Nether',
-        releaseUpdate: 'Alpha 1.2.0 (5)'
+        releaseUpdate: 'Alpha 1.2.0'
     }
 ];

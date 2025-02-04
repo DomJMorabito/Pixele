@@ -124,7 +124,7 @@ export const characters = [
         aliases: ['Kayo', 'Kay O'],
         role: 'Initiator',
         releaseYear: 2021,
-        gender: 'Male',
+        gender: 'N/A',
         origin: 'Alternate Timeline',
         race: 'Cybernetic'
     },
@@ -188,7 +188,7 @@ export const characters = [
         name: 'Clove',
         role: 'Controller',
         releaseYear: 2024,
-        gender: 'Gender-Neutral',
+        gender: 'Non-Binary',
         origin: 'United Kingdom',
         race: 'Radiant'
     },
@@ -199,5 +199,13 @@ export const characters = [
         gender: 'Female',
         origin: 'South Korea',
         race: 'Radiant'
+    },
+    {
+        name: 'Tejo',
+        role: 'Initiator',
+        releaseYear: 2025,
+        gender: 'Male',
+        origin: 'Colombia',
+        race: 'Human'
     }
 ];

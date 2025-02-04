@@ -298,7 +298,7 @@ export const characters = [
         releaseYear: 2024,
         age: 26,
         country: 'Canada',
-        gender: 'N/A'
+        gender: 'Non-Binary'
     },
     {
         name: 'Widowmaker',

@@ -94,16 +94,7 @@ function GameCardGrid() {
             extraContent: (
                 <div className='game-title'>Clash Royale</div>
             ),
-        },
-        {
-            id: 'pvz',
-            logoSrc: 'https://assets.pixele.gg/game-card/pvz/logo.png',
-            altText: 'Plants Vs. Zombies 2 Logo',
-            gameLink: '/games/pvz',
-            extraContent: (
-                <div className='game-title'>Plants Vs. Zombies 2</div>
-            ),
-        },
+        }
     ];
 
     useEffect(() => {

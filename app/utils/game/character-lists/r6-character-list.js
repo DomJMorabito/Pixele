@@ -1,4 +1,4 @@
- export const characters = [
+export const characters = [
     {
         name: 'Skopós',
         aliases: [ 'Skopos' ],
@@ -71,7 +71,7 @@
         side: 'Attack',
         speed: 3,
         health: 1,
-        gender: 'Female',
+        gender: 'Non-Binary',
     },
     {
         name: 'Azami',
