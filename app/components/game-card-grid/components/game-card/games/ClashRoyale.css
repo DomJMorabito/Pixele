@@ -63,8 +63,8 @@
 
 @media (min-width: 768px) {
     #clashroyale .game-title {
-        font-size: 0.85em;
-        padding: 24px;
+        font-size: 0.9em;
+        padding: 22px;
         text-shadow:
                 -2px -2px 0 var(--black),
                 0   -2px 0 var(--black),
@@ -80,22 +80,14 @@
 @media (min-width: 1024px) {
     #clashroyale .game-title {
         font-size: 1.1em;
+        padding: 24px;
     }
 }
 
 @media (min-width: 1440px) {
     #clashroyale .game-title {
-        font-size: 0.85em;
-        text-shadow:
-                -2.5px -2.5px 0 var(--black),
-                0    -2.5px 0 var(--black),
-                2.5px -2.5px 0 var(--black),
-                2.5px  0    0 var(--black),
-                2.5px  2.5px 0 var(--black),
-                0     2.5px 0 var(--black),
-                -2.5px  2.5px 0 var(--black),
-                -2.5px  0    0 var(--black);
-
+        font-size: 0.9em;
+        padding: 22px;
     }
 }
 

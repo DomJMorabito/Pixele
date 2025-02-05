@@ -2,6 +2,10 @@
 
 FROM node:20-alpine AS base
 
+# Add sharp dependencies
+
+RUN apk add --no-cache vips-dev build-base
+
 # Install dependencies stage
 
 FROM base AS deps
@@ -42,6 +46,7 @@ RUN adduser --system --uid 1001 pixeleuser
 
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/node_modules/sharp ./node_modules/sharp
 
 # Set permissions
 

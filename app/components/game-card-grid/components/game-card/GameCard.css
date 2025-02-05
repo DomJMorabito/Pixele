@@ -84,12 +84,12 @@
 
 @media (min-width: 768px) {
     .game-card {
-        width: 200px;
+        width: 215px;
         margin: 0 6px 12px;
     }
 
     .game-title-container {
-        height: 55px;
+        height: 58px;
     }
 }
 
@@ -105,12 +105,12 @@
 
 @media (min-width: 1440px) {
     .game-card {
-        width: 200px;
+        width: 225px;
         margin: 0 6px 12px;
     }
 
     .game-title-container {
-        height: 55px;
+        height: 58px;
     }
 }
 

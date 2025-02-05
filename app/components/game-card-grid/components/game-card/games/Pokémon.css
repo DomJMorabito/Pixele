@@ -107,7 +107,7 @@
 
 @media (min-width: 768px) {
     #pokemon .game-title {
-        font-size: 1.05em;
+        font-size: 1.25em;
         height: 100%;
     }
 
@@ -118,12 +118,12 @@
 
     #types {
         gap: 6px;
-        font-size: 0.6em;
+        font-size: 0.65em;
         height: 100%;
     }
 
     #dragon, #fire {
-        padding: 4px 8px;
+        padding: 3px 6px;
     }
 }
 
@@ -143,15 +143,15 @@
 
 @media (min-width: 1440px) {
     #pokemon .game-title {
-        font-size: 1.05em;
+        font-size: 1.25em;
     }
 
     #identifier {
-        font-size: 0.8em;
+        font-size: 0.85em;
     }
 
     #types {
-        font-size: 0.6em;
+        font-size: 0.65em;
     }
 }
 
@@ -166,6 +166,10 @@
 
     #types {
         font-size: 0.7em;
+    }
+
+    #dragon, #fire {
+        padding: 4px 8px;
     }
 }
 

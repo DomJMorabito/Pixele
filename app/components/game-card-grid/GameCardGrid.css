@@ -31,7 +31,7 @@
 
 @media (min-width: 768px) {
     #game-card-grid {
-        width: 424px;
+        width: 474px;
     }
 }
 
@@ -43,7 +43,7 @@
 
 @media (min-width: 1440px) {
     #game-card-grid {
-        width: 648px;
+        width: 711px;
     }
 }
 

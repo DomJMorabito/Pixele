@@ -79,8 +79,8 @@
 
 @media (min-width: 768px) {
     #valorant .game-title {
-        font-size: 1.4em;
-        padding: 15px;
+        font-size: 1.5em;
+        padding: 14.5px;
     }
 }
 
@@ -93,8 +93,8 @@
 
 @media (min-width: 1440px) {
     #valorant .game-title {
-        font-size: 1.4em;
-        padding: 15px;
+        font-size: 1.5em;
+        padding: 14.5px;
     }
 }
 

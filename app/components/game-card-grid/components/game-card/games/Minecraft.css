@@ -51,8 +51,8 @@
 
 @media (min-width: 768px) {
     #minecraft .game-title {
-        font-size: 1em;
-        padding: 17.5px;
+        font-size: 1.2em;
+        padding: 17px;
     }
 }
 
@@ -65,8 +65,8 @@
 
 @media (min-width: 1440px) {
     #minecraft .game-title {
-        font-size: 1em;
-        padding: 17.5px;
+        font-size: 1.2em;
+        padding: 17px;
     }
 }
 
