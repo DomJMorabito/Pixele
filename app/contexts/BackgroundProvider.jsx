@@ -39,12 +39,20 @@ export const backgrounds = {
 };
 
 export function BackgroundProvider({ children }) {
-    const [currentBackground, setCurrentBackground] = useState(backgrounds.homescreen);
+    const [currentBackground, setCurrentBackground] = useState('');
+    const [loadedBackground, setLoadedBackground] = useState('');
 
     useEffect(() => {
-        document.body.style.backgroundImage = `url(${currentBackground})`;
-        return () => {
-            document.body.style.backgroundImage = '';
+        if (loadedBackground) {
+            document.body.style.backgroundImage = `url(${loadedBackground})`;
+        }
+    }, [loadedBackground]);
+
+    useEffect(() => {
+        const img = new Image();
+        img.src = currentBackground;
+        img.onload = () => {
+            setLoadedBackground(currentBackground)
         }
     }, [currentBackground]);
 

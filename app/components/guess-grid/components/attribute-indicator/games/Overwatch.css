@@ -14,7 +14,7 @@
         border: 1px solid var(--white);
     }
 
-    .overwatch-attribute-indicator-icon {
+    .overwatch-attribute-indicator-icon-wrapper {
         margin-right: 3px;
     }
 }

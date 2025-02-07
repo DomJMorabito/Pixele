@@ -58,9 +58,8 @@ const PasswordInput = ({
                     autoComplete={autoComplete}
                 />
                 <span
-                    className={`toggle-visibility ${stateClass}`}
+                    className={`toggle-visibility ${stateClass} ${disabled ? 'disabled' : ''}`}
                     onClick={togglePassword}
-                    style={{cursor: disabled ? 'not-allowed' : 'pointer'}}
                 >
                     <div id="visibility-toggle-container">
                         <span className="material-symbols-outlined">

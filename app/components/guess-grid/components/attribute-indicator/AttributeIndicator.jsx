@@ -49,13 +49,14 @@ const AttributeIndicator = ({ attributeId, imgSrc, text, guesses, gameId }) => {
             className={className}
         >
             {imgSrc && (
-                <Image
-                    src={imgSrc}
-                    alt=""
-                    width={100}
-                    height={100}
-                    className={`attribute-indicator-icon ${gameId}-attribute-indicator-icon`}
-                />
+                <div className={`attribute-indicator-icon-wrapper ${gameId}-attribute-indicator-icon-wrapper`}>
+                    <Image
+                        src={imgSrc}
+                        alt=""
+                        fill
+                        className={`attribute-indicator-icon ${gameId}-attribute-indicator-icon`}
+                    />
+                </div>
             )}
             {text && <span className="attribute-text">{text}</span>}
         </div>

@@ -8,16 +8,18 @@
     overflow: hidden;
     box-sizing: border-box;
     cursor: pointer;
-    animation: gameCardAnimation 1s ease none;
-    transition: transform 0.2s ease;
-    will-change: transform;
+    opacity: 1;
+    transform-origin: center;
+    animation: gameCardFadeIn 0.5s ease;
+    animation-fill-mode: backwards;
+    transition: transform 0.225s ease-in-out, filter 0.225s ease-in-out;
+    will-change: transform, filter;
 }
 
 .game-logo {
     width: 100%;
     height: auto;
-    transition: transform 0.2s ease, filter 0.2s ease;
-    will-change: transform, filter;
+    transition: filter 0.225s ease-in-out;
 }
 
 .game-title-container {
@@ -38,16 +40,26 @@
     filter: none;
 }
 
+/* Game Card Classes */
+
+.delay-0 { animation-delay: 0ms; }
+.delay-1 { animation-delay: 100ms; }
+.delay-2 { animation-delay: 200ms; }
+.delay-3 { animation-delay: 300ms; }
+.delay-4 { animation-delay: 400ms; }
+.delay-5 { animation-delay: 500ms; }
+.delay-6 { animation-delay: 600ms; }
+
 /* Game Card Animations */
 
-@keyframes gameCardAnimation {
+@keyframes gameCardFadeIn {
     from {
         opacity: 0;
-        transform: translateY(20%);
+        transform: translateY(20%) scale(0.95);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
 }
 

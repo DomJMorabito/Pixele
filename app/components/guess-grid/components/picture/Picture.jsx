@@ -26,7 +26,11 @@ const Picture = ({ rowIndex, picture, className, gameId }) => {
             id={`picture-${rowIndex + 1}`}
         >
             {picture && (
-                <Image src={picture} alt="" fill />
+                <Image
+                    src={picture}
+                    alt=""
+                    fill
+                />
             )}
         </div>
     );

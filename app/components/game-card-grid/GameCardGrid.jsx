@@ -129,7 +129,7 @@ function GameCardGrid() {
 
     return (
         <div id='game-card-grid'>
-            {games.map((game) => (
+            {games.map((game, index) => (
                 <GameCard
                     key = {game.id}
                     id = {game.id}
@@ -138,6 +138,7 @@ function GameCardGrid() {
                     gameLink = {game.gameLink}
                     onHover = {supportsHover ? () => handleHover(game.id) : undefined}
                     onLeave = {supportsHover ? handleLeave : undefined}
+                    delayClass={`delay-${index}`}
                 >
                     {game.extraContent}
                 </GameCard>

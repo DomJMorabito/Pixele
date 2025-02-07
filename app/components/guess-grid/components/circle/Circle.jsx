@@ -31,12 +31,20 @@ const Circle = ({ rowIndex, circleIndex, result, className, gameId }) => {
         >
             {result?.icon && (
                 <div className='icon-container'>
-                    <Image src={result.icon} alt="" fill />
+                    <Image
+                        src={result.icon}
+                        alt=""
+                        fill
+                    />
                 </div>
             )}
             {result?.attributeIcon && (
                 <div className="attribute-icon-container">
-                    <Image src={result.attributeIcon} alt="" fill />
+                    <Image
+                        src={result.attributeIcon}
+                        alt=""
+                        fill
+                    />
                 </div>
             )}
         </div>

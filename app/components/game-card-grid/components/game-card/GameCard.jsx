@@ -16,7 +16,7 @@ import '@/app/components/game-card-grid/components/game-card/games/R6.css';
 import '@/app/components/game-card-grid/components/game-card/games/Minecraft.css';
 import '@/app/components/game-card-grid/components/game-card/games/ClashRoyale.css';
 
-function GameCard({ id, logoSrc, altText, gameLink, children, onHover, onLeave }) {
+function GameCard({ id, logoSrc, altText, gameLink, children, onHover, onLeave, delayClass }) {
 
     const router = useRouter();
 
@@ -27,7 +27,7 @@ function GameCard({ id, logoSrc, altText, gameLink, children, onHover, onLeave }
 
     return (
             <div
-                className = 'game-card'
+                className = {`game-card ${delayClass}`}
                 id = { id }
                 onClick = { handleClick }
                 onMouseEnter = { onHover }
