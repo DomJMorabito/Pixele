@@ -29,15 +29,17 @@
     }
 
     #clashroyale .game-title {
-        font-size: 0.5em;
-        padding: 11.5px;
+        font-size: 9px;
+        padding: 12px;
+        height: 8px;
     }
 }
 
 @media (min-width: 375px) {
     #clashroyale .game-title {
-        font-size: 0.65em;
+        font-size: 10px;
         padding: 13px;
+        height: 10px;
     }
 }
 
@@ -47,8 +49,9 @@
     }
 
     #clashroyale .game-title {
-        font-size: 0.9em;
+        font-size: 13px;
         padding: 17px;
+        height: 14px;
         text-shadow:
                 -1.5px -1.5px 0 var(--black),
                 0   -1.5px 0 var(--black),
@@ -63,8 +66,24 @@
 
 @media (min-width: 768px) {
     #clashroyale .game-title {
-        font-size: 0.9em;
+        font-size: 15px;
         padding: 22px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #clashroyale .game-title {
+        font-size: 18px;
+        padding: 24px;
+        height: 18px;
+    }
+}
+
+@media (min-width: 1440px) {
+    #clashroyale .game-title {
+        font-size: 15px;
+        padding: 22px;
+        height: 14px;
         text-shadow:
                 -2px -2px 0 var(--black),
                 0   -2px 0 var(--black),
@@ -77,24 +96,11 @@
     }
 }
 
-@media (min-width: 1024px) {
-    #clashroyale .game-title {
-        font-size: 1.1em;
-        padding: 24px;
-    }
-}
-
-@media (min-width: 1440px) {
-    #clashroyale .game-title {
-        font-size: 0.9em;
-        padding: 22px;
-    }
-}
-
 @media (min-width: 1920px) {
     #clashroyale .game-title {
-        font-size: 1.15em;
+        font-size: 18px;
         padding: 24px;
+        height: 18px;
     }
 }
 
@@ -105,8 +111,9 @@
     }
 
     #clashroyale .game-title {
-        font-size: 1.3em;
+        font-size: 21px;
         padding: 30px;
+        height: 21px;
         text-shadow:
                 -2.5px -2.5px 0 var(--black),
                 0   -2.5px 0 var(--black),
@@ -125,8 +132,9 @@
     }
 
     #clashroyale .game-title {
-        font-size: 2em;
-        padding: 43.5px;
+        font-size: 32px;
+        padding: 43px;
+        height: 33px;
         text-shadow:
                 -4px -4px 0 var(--black),
                 0   -4px 0 var(--black),

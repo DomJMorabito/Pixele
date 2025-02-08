@@ -26,15 +26,17 @@
     }
 
     #minecraft .game-title{
-        font-size: 0.7em;
+        font-size: 11px;
         padding: 9px;
+        height: 14px;
     }
 }
 
 @media (min-width: 375px) {
     #minecraft .game-title {
-        font-size: 0.8em;
-        padding: 10.5px;
+        font-size: 13px;
+        padding: 10px;
+        height: 16px;
     }
 }
 
@@ -44,43 +46,49 @@
     }
 
     #minecraft .game-title {
-        font-size: 1em;
+        font-size: 16px;
         padding: 14px;
+        height: 20px;
     }
 }
 
 @media (min-width: 768px) {
     #minecraft .game-title {
-        font-size: 1.2em;
+        font-size: 19px;
         padding: 17px;
+        height: 24px;
     }
 }
 
 @media (min-width: 1024px) {
     #minecraft .game-title {
-        font-size: 1.35em;
+        font-size: 21px;
         padding: 20px;
+        height: 26px;
     }
 }
 
 @media (min-width: 1440px) {
     #minecraft .game-title {
-        font-size: 1.2em;
+        font-size: 19px;
         padding: 17px;
+        height: 24px;
     }
 }
 
 @media (min-width: 1920px) {
     #minecraft .game-title {
-        font-size: 1.35em;
-        padding: 20.5px;
+        font-size: 21px;
+        padding: 20px;
+        height: 26px;
     }
 }
 
 @media (min-width: 2560px) {
     #minecraft .game-title {
-        font-size: 1.6em;
+        font-size: 26px;
         padding: 25px;
+        height: 31px;
     }
 }
 
@@ -90,7 +98,8 @@
     }
 
     #minecraft .game-title {
-        font-size: 2.55em;
-        padding: 34.5px;
+        font-size: 40px;
+        padding: 34px;
+        height: 51px;
     }
 }

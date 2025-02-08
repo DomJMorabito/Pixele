@@ -49,7 +49,7 @@
         width: 80%;
         margin: 0 2.5%;
         padding: 1.5%;
-        font-size: 1em;
+        font-size: 16px;
         border: 2px solid var(--black);
         border-radius: 5px;
     }
@@ -61,7 +61,7 @@
     }
 
     .code-input {
-        font-size: 1.05em;
+        font-size: 17px;
     }
 }
 
@@ -71,7 +71,7 @@
     }
 
     .code-input {
-        font-size: 1.15em;
+        font-size: 18px;
     }
 }
 
@@ -81,7 +81,7 @@
     }
 
     .code-input {
-        font-size: 1.25em;
+        font-size: 20px;
     }
 }
 
@@ -91,7 +91,7 @@
     }
 
     .code-input {
-        font-size: 1.4em;
+        font-size: 22px;
     }
 }
 
@@ -101,7 +101,7 @@
     }
 
     .code-input {
-        font-size: 1.25em;
+        font-size: 20px;
     }
 }
 
@@ -111,7 +111,7 @@
     }
 
     .code-input {
-        font-size: 1.4em;
+        font-size: 22px;
     }
 }
 
@@ -121,7 +121,7 @@
     }
 
     .code-input {
-        font-size: 1.9em;
+        font-size: 30px;
     }
 }
 
@@ -131,6 +131,6 @@
     }
 
     .code-input {
-        font-size: 2.25em;
+        font-size: 36px;
     }
 }

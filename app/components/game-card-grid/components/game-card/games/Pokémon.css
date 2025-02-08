@@ -50,16 +50,19 @@
     }
 
     #pokemon .game-title {
-        font-size: 0.6em;
+        font-size: 11px;
+        height: 12px;
     }
 
     #identifier {
-        font-size: 7px;
+        font-size: 8px;
+        height: 9px;
     }
 
     #types {
-        font-size: 7px;
+        font-size: 6px;
         gap: 4px;
+        height: 11px;
     }
 
     #dragon, #fire {
@@ -70,17 +73,13 @@
 
 @media (min-width: 375px) {
     #pokemon .game-title {
-        font-size: 0.8em;
+        font-size: 12px;
         height: 15px;
-    }
-
-    #identifier {
-        height: 8.5px;
     }
 
     #types {
         font-size: 7px;
-        height: 12.5px;
+        height: 12px;
     }
 }
 
@@ -91,35 +90,35 @@
 
     #pokemon .game-title {
         font-size: 15px;
-        height: 18px;
+        height: 19px;
     }
 
     #identifier {
         font-size: 12px;
-        height: 14.5px;
+        height: 14px;
     }
 
     #types {
-        font-size: 9.5px;
-        height: 15.5px;
+        font-size: 9px;
+        height: 15px;
     }
 }
 
 @media (min-width: 768px) {
     #pokemon .game-title {
-        font-size: 1.25em;
-        height: 100%;
+        font-size: 19px;
+        height: 25px;
     }
 
     #identifier {
-        font-size: 0.8em;
-        height: 100%;
+        font-size: 13px;
+        height: 15px;
     }
 
     #types {
         gap: 6px;
-        font-size: 0.65em;
-        height: 100%;
+        font-size: 10px;
+        height: 18px;
     }
 
     #dragon, #fire {
@@ -129,43 +128,57 @@
 
 @media (min-width: 1024px) {
     #pokemon .game-title {
-        font-size: 1.4em;
+        font-size: 21px;
+        height: 27px;
     }
 
     #identifier {
-        font-size: 0.95em;
+        font-size: 16px;
+        height: 19px;
     }
 
     #types {
-        font-size: 0.7em;
+        font-size: 12px;
+        height: 20px;
     }
 }
 
 @media (min-width: 1440px) {
     #pokemon .game-title {
-        font-size: 1.25em;
+        font-size: 19px;
+        height: 25px;
     }
 
     #identifier {
-        font-size: 0.85em;
+        font-size: 13px;
+        height: 15px;
     }
 
     #types {
-        font-size: 0.65em;
+        gap: 6px;
+        font-size: 10px;
+        height: 18px;
+    }
+
+    #dragon, #fire {
+        padding: 3px 6px;
     }
 }
 
 @media (min-width: 1920px) {
     #pokemon .game-title {
-        font-size: 1.4em;
+        font-size: 21px;
+        height: 27px;
     }
 
     #identifier {
-        font-size: 0.95em;
+        font-size: 16px;
+        height: 19px;
     }
 
     #types {
-        font-size: 0.7em;
+        font-size: 12px;
+        height: 20px;
     }
 
     #dragon, #fire {
@@ -179,19 +192,21 @@
     }
 
     #pokemon .game-title {
-        font-size: 1.55em;
+        font-size: 25px;
+        height: 33px;
     }
 
     #identifier {
-        font-size: 1.1em;
+        font-size: 18px;
+        height: 22px;
     }
 
     #types {
-        font-size: 0.95em;
+        font-size: 15px;
+        height: 26px;
     }
 
     #dragon, #fire {
-        padding: 6px 10px;
         border-radius: 7px;
     }
 }
@@ -202,20 +217,23 @@
     }
 
     #pokemon .game-title {
-        font-size: 2.3em;
+        font-size: 38px;
+        height: 47px;
     }
 
     #identifier {
-        font-size: 1.8em;
+        font-size: 28px;
+        height: 34px;
     }
 
     #types {
-        gap: 16px;
-        font-size: 1.25em;
+        gap: 12px;
+        font-size: 20px;
+        height: 38px;
     }
 
     #dragon, #fire {
-        padding: 8px 16px;
-        border-radius: 15px;
+        padding: 7px 14px;
+        border-radius: 10px;
     }
 }

@@ -60,14 +60,14 @@
 @media (min-width: 320px) {
     #alert-indicator {
         padding: 2% 3%;
-        font-size: 1em;
+        font-size: 16px;
         border-radius: 5px;
     }
 }
 
 @media (min-width: 768px) {
     #alert-indicator {
-        font-size: 1.25em;
+        font-size: 20px;
         padding: 1% 2%;
         border-radius: 10px;
     }
@@ -75,7 +75,7 @@
 
 @media (min-width: 1024px) {
     #alert-indicator {
-        font-size: 1.5em;
+        font-size: 24px;
     }
 }
 @media (min-width: 1440px) {
@@ -86,12 +86,12 @@
 
 @media (min-width: 2560px) {
     #alert-indicator {
-        font-size: 2em;
+        font-size: 32px;
     }
 }
 
 @media (min-width: 3840px) {
-    font-size: 2.25em;
+    font-size: 36px;
     padding: 0.75% 1.5%;
     border-radius: 15px;
 }

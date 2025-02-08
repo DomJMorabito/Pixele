@@ -38,14 +38,14 @@ nav {
 }
 
 nav .material-symbols-outlined {
-    transition: transform 0.15s ease, filter 0.5s ease;
+    transition: transform 0.25s ease, filter 0.25s ease;
     will-change: transform, filter;
     color: var(--nav-bar-symbols);
 }
 
 nav #leaderboard:hover {
     transform: scale(1.15);
-    filter: drop-shadow(0 0.25px 0.25px var(--drop-shadow));
+    filter: drop-shadow(0 1px 1px var(--drop-shadow));
     cursor: pointer;
 }
 
@@ -107,7 +107,7 @@ nav #leaderboard:hover {
 
 #settings-section:hover #settings {
     transform: rotate(30deg);
-    filter: drop-shadow(0 0.25px 0.25px var(--drop-shadow));
+    filter: drop-shadow(0 1px 1px var(--drop-shadow));
 }
 
 #sign-up-text, #settings-text {
@@ -141,13 +141,13 @@ nav #leaderboard:hover {
     text-decoration: none;
 }
 
-#leaderboard { /* Will be hidden until Leaderboard page is done. */
-    visibility: hidden;
-}
+/*#leaderboard { !* Will be hidden until Leaderboard page is done. *!*/
+/*    visibility: hidden;*/
+/*}*/
 
-#settings-section { /* Will be hidden until settings page is done. */
-    visibility: hidden;
-}
+/*#settings-section { !* Will be hidden until settings page is done. *!*/
+/*    visibility: hidden;*/
+/*}*/
 
 /* Nav Bar Animations */
 
@@ -179,6 +179,7 @@ nav #leaderboard:hover {
     #logo-container {
         width: 30px;
         padding: 0 11px;
+        border-radius: 5px 0 0 5px;
     }
 
     #options-container {
@@ -187,11 +188,11 @@ nav #leaderboard:hover {
 
     #account-section {
         border-radius: 5px;
-        padding: 4.5px;
+        padding: 4px;
     }
 
     #account-name {
-        font-size: 0.5em;
+        font-size: 9px;
     }
 
     #account {
@@ -199,7 +200,7 @@ nav #leaderboard:hover {
     }
 
     #chevron-down {
-        font-size: 0.85em;
+        font-size: 13px;
         margin-left: 1px;
     }
 
@@ -207,15 +208,11 @@ nav #leaderboard:hover {
         margin-right: 1px;
     }
 
-    nav .material-symbols-outlined {
-        font-size: 3.75vh;
-    }
-
     #account-modal {
         width: 90px;
         padding: 8px;
         border-radius: 5px;
-        margin-top: 2.5px;
+        margin-top: 2px;
     }
 
     #sign-up-section, #settings-section {
@@ -223,11 +220,11 @@ nav #leaderboard:hover {
     }
 
     #sign-up-section {
-        margin-top: 12.5%;
+        margin-top: 11px;
     }
 
     #settings-section {
-        margin-bottom: 12.5%;
+        margin-bottom: 11px;
     }
 
     #leaderboard, #account, #sign-up, #settings {
@@ -235,16 +232,11 @@ nav #leaderboard:hover {
     }
 
     #sign-up-text, #settings-text {
-        font-size: 0.7em;
+        font-size: 11px;
     }
 
     #sign-up, #settings {
         margin-right: 5%;
-    }
-
-    #logo-container {
-        padding: 0 4%;
-        border-radius: 5px 0 0 5px;
     }
 }
 
@@ -272,20 +264,20 @@ nav #leaderboard:hover {
 
     #account-modal {
         width: 100px;
-        padding: 9.5px;
-        margin-top: 1.5px;
+        padding: 9px;
+        margin-top: 1px;
     }
 
     #sign-up-text, #settings-text {
-        font-size: 0.75em;
+        font-size: 12px;
     }
 
     #sign-up-section {
-        margin-top: 10%;
+        margin-top: 10px;
     }
 
     #settings-section {
-        margin-bottom: 10%;
+        margin-bottom: 10px;
     }
 }
 
@@ -304,15 +296,15 @@ nav #leaderboard:hover {
     }
 
     #account-section {
-        padding: 6.5px;
+        padding: 6px;
     }
 
     #chevron-down {
-        font-size: 1em;
+        font-size: 16px;
     }
 
     #account-name {
-        font-size: 0.75em;
+        font-size: 12px;
     }
 
     #leaderboard, #account, #sign-up, #settings {
@@ -321,12 +313,20 @@ nav #leaderboard:hover {
 
     #account-modal {
         width: 120px;
-        padding: 14.5px;
+        padding: 12px;
         margin-top: 0;
     }
 
     #sign-up-text, #settings-text {
-        font-size: 0.9em;
+        font-size: 14px;
+    }
+
+    #sign-up-section {
+        margin-top: 12px;
+    }
+
+    #settings-section {
+        margin-bottom: 12px;
     }
 }
 
@@ -346,15 +346,15 @@ nav #leaderboard:hover {
     }
 
     #account-section {
-        padding: 7.5px;
+        padding: 7px;
     }
 
     #chevron-down {
-        font-size: 1.25em;
+        font-size: 20px;
     }
 
     #account-name {
-        font-size: 0.95em;
+        font-size: 15px;
     }
 
     #account-section {
@@ -369,6 +369,14 @@ nav #leaderboard:hover {
         width: 130px;
         padding: 16px;
     }
+
+    #sign-up-section {
+        margin-top: 13px;
+    }
+
+    #settings-section {
+        margin-bottom: 13px;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -377,7 +385,7 @@ nav #leaderboard:hover {
     }
 
     #logo-container {
-        width: 56.7px;
+        width: 57px;
         padding: 0 35px;
     }
 
@@ -386,15 +394,15 @@ nav #leaderboard:hover {
     }
 
     #account-section {
-        padding: 8.5px;
+        padding: 8px;
     }
 
     #chevron-down {
-        font-size: 1.5em;
+        font-size: 24px;
     }
 
     #account-name {
-        font-size: 1em;
+        font-size: 16px;
     }
 
     #leaderboard, #account, #sign-up, #settings {
@@ -406,7 +414,15 @@ nav #leaderboard:hover {
     }
 
     #sign-up-text, #settings-text {
-        font-size: 1em;
+        font-size: 16px;
+    }
+
+    #sign-up-section {
+        margin-top: 16px;
+    }
+
+    #settings-section {
+        margin-bottom: 16px;
     }
 }
 
@@ -428,11 +444,11 @@ nav #leaderboard:hover {
     }
 
     #account-section {
-        padding: 7.5px;
+        padding: 7px;
     }
 
     #account-name {
-        font-size: 0.95em;
+        font-size: 15px;
     }
 
     #account-modal {
@@ -444,7 +460,15 @@ nav #leaderboard:hover {
     }
 
     #sign-up-text, #settings-text {
-        font-size: 1em;
+        font-size: 16px;
+    }
+
+    #sign-up-section {
+        margin-top: 13px;
+    }
+
+    #settings-section {
+        margin-bottom: 13px;
     }
 }
 
@@ -453,13 +477,9 @@ nav #leaderboard:hover {
         height: 75px;
     }
 
-    #account-name {
-        font-size: 1em;
-    }
-
     #logo-container {
-        width: 56.7px;
-        padding: 0 65px;
+        width: 57px;
+        padding: 0 60px;
     }
 
     #options-container {
@@ -467,7 +487,15 @@ nav #leaderboard:hover {
     }
 
     #account-section {
-        padding: 8.5px;
+        padding: 8px;
+    }
+
+    #chevron-down {
+        font-size: 24px;
+    }
+
+    #account-name {
+        font-size: 16px;
     }
 
     #leaderboard, #account, #sign-up, #settings {
@@ -479,7 +507,15 @@ nav #leaderboard:hover {
     }
 
     #sign-up-text, #settings-text {
-        font-size: 1em;
+        font-size: 16px;
+    }
+
+    #sign-up-section {
+        margin-top: 16px;
+    }
+
+    #settings-section {
+        margin-bottom: 16px;
     }
 }
 
@@ -492,7 +528,7 @@ nav #leaderboard:hover {
 
     #logo-container {
         width: 76px;
-        padding: 0 87px;
+        padding: 0 75px;
         border-radius: 10px 0 0 10px;
     }
 
@@ -504,13 +540,17 @@ nav #leaderboard:hover {
         margin-right: 80px;
     }
 
-    #account-name, #chevron-down {
-        font-size: 1.3em;
+    #account-name {
+        font-size: 21px;
+    }
+
+    #chevron-down {
+        font-size: 20px;
     }
 
     #account-modal {
-        width: 217.6px;
-        padding: 21.75px;
+        width: 200px;
+        padding: 21px;
         border-radius: 10px;
     }
 
@@ -519,7 +559,15 @@ nav #leaderboard:hover {
     }
 
     #sign-up-text, #settings-text {
-        font-size: 1.25em;
+        font-size: 20px;
+    }
+
+    #sign-up-section {
+        margin-top: 20px;
+    }
+
+    #settings-section {
+        margin-bottom: 20px;
     }
 }
 
@@ -532,20 +580,24 @@ nav #leaderboard:hover {
 
     #logo-container {
         width: 113px;
-        padding: 0 130.5px;
+        padding: 0 100px;
         border-radius: 15px 0 0 15px;
     }
 
     #options-container {
-        margin-right: 160px;
+        margin-right: 145px;
     }
 
     #account-section {
         padding: 14px;
     }
 
-    #account-name, #chevron-down {
-        font-size: 2em;
+    #account-name {
+        font-size: 28px;
+    }
+
+    #chevron-down {
+        font-size: 32px;
     }
 
     #leaderboard, #account, #sign-up, #settings {
@@ -553,11 +605,19 @@ nav #leaderboard:hover {
     }
 
     #account-modal {
-        width: 327px;
-        padding: 32.625px;
+        width: 280px;
+        padding: 32px;
     }
 
     #sign-up-text, #settings-text {
-        font-size: 1.75em;
+        font-size: 28px;
+    }
+
+    #sign-up-section {
+        margin-top: 28px;
+    }
+
+    #settings-section {
+        margin-bottom: 28px;
     }
 }

@@ -13,6 +13,12 @@
 .login-form-link {
     color: var(--link);
     cursor: pointer;
+    transition: color 0.15s ease-in-out;
+    will-change: color;
+}
+
+.login-form-link:hover {
+    color: var(--link-hover);
 }
 
 #login-link-divider {
@@ -26,29 +32,29 @@
     }
 
     #login-form-links {
-        font-size: 0.6em;
+        font-size: 10px;
     }
 }
 
 @media (min-width: 375px) {
     #login-form-links {
-        font-size: 0.7em;
+        font-size: 11px;
     }
 }
 
 @media (min-width: 425px) {
     #login-form-links {
-        font-size: 0.8em;
+        font-size: 13px;
     }
 }
 
 @media (min-width: 768px) {
     form {
-        width: 80%;
+        width: 251px;
     }
 
     #login-form-links {
-        font-size: 0.85em;
+        font-size: 14px;
     }
 }
 
@@ -58,7 +64,7 @@
     }
 
     #login-form-links {
-        font-size: 1em;
+        font-size: 16px;
     }
 }
 
@@ -68,7 +74,7 @@
     }
 
     #login-form-links {
-        font-size: 0.85em;
+        font-size: 14px;
     }
 }
 
@@ -78,7 +84,7 @@
     }
 
     #login-form-links {
-        font-size: 1em;
+        font-size: 16px;
     }
 }
 
@@ -88,7 +94,7 @@
     }
 
     #login-form-links {
-        font-size: 1.1em;
+        font-size: 18px;
     }
 }
 
@@ -98,6 +104,6 @@
     }
 
     #login-form-links {
-        font-size: 1.6em;
+        font-size: 25px;
     }
 }

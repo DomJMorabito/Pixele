@@ -31,48 +31,42 @@
 
 @media (min-width: 375px) {
     #password-requirements, #username-requirements {
-        font-size: 0.55em;
+        font-size: 9px;
     }
 }
 
 @media (min-width: 425px) {
     #password-requirements, #username-requirements {
-        font-size: 0.6em;
-    }
-}
-
-@media (min-width: 768px) {
-    #password-requirements, #username-requirements {
-        font-size: 0.65em;
+        font-size: 10px;
     }
 }
 
 @media (min-width: 1024px) {
     #password-requirements, #username-requirements {
-        font-size: 0.7em;
+        font-size: 11px;
     }
 }
 
 @media (min-width: 1440px) {
     #password-requirements, #username-requirements {
-        font-size: 0.65em;
+        font-size: 10px;
     }
 }
 
 @media (min-width: 1920px) {
     #password-requirements, #username-requirements {
-        font-size: 0.7em;
+        font-size: 11px;
     }
 }
 
 @media (min-width: 2560px) {
     #password-requirements, #username-requirements {
-        font-size: 0.85em;
+        font-size: 13px;
     }
 }
 
 @media (min-width: 3840px) {
     #password-requirements, #username-requirements {
-        font-size: 1.15em;
+        font-size: 18px;
     }
 }

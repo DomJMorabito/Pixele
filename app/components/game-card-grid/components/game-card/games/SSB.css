@@ -48,15 +48,17 @@
     }
 
     #ssb .game-title {
-        font-size: 0.7em;
-        padding: 9.5px;
+        font-size: 11px;
+        padding: 10px;
+        height: 12px;
     }
 }
 
 @media (min-width: 375px) {
     #ssb .game-title {
-        font-size: 0.8em;
-        padding: 10.5px;
+        font-size: 12px;
+        padding: 10px;
+        height: 16px;
     }
 }
 
@@ -66,43 +68,49 @@
     }
 
     #ssb .game-title {
-        font-size: 1em;
-        padding: 14.5px;
+        font-size: 16px;
+        padding: 14px;
+        height: 20px;
     }
 }
 
 @media (min-width: 768px) {
     #ssb .game-title {
-        font-size: 1.1em;
-        padding: 18.5px;
+        font-size: 18px;
+        padding: 18px;
+        height: 22px;
     }
 }
 
 @media (min-width: 1024px) {
     #ssb .game-title {
-        font-size: 1.25em;
-        padding: 21.5px;
+        font-size: 20px;
+        padding: 21px;
+        height: 24px;
     }
 }
 
 @media (min-width: 1440px) {
     #ssb .game-title {
-        font-size: 1.1em;
-        padding: 18.5px;
+        font-size: 18px;
+        padding: 18px;
+        height: 22px;
     }
 }
 
 @media (min-width: 1920px) {
     #ssb .game-title {
-        font-size: 1.25em;
-        padding: 21.5px;
+        font-size: 20px;
+        padding: 21px;
+        height: 24px;
     }
 }
 
 @media (min-width: 2560px) {
     #ssb .game-title {
-        font-size: 1.5em;
-        padding: 26.5px
+        font-size: 24px;
+        padding: 26px;
+        height: 29px;
     }
 }
 
@@ -112,8 +120,9 @@
     }
 
     #ssb .game-title {
-        font-size: 2.5em;
+        font-size: 40px;
         padding: 36px;
+        height: 47px;
         background-image: repeating-linear-gradient(
                 -45deg,
                 var(--ssb-game-card-title-repeating-linear-gradient-grey) 7px,

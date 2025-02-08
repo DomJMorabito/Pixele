@@ -17,7 +17,6 @@ export default function InputRequirements({ id, requirements }) {
                         id={req.id}
                         className={reqClass}
                     >
-                        {index === requirements.length - 1 ? '& ' : ''}
                         {req.text}
                         {index < requirements.length - 1 ? ', ' : ''}
                     </span>

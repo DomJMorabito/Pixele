@@ -4,154 +4,163 @@
     font-family: var(--dosis-bold), sans-serif;
 }
 
+#top-line {
+    color: var(--disabled);
+}
+
 @media (min-width: 320px) {
     #modal-close-button {
-        font-size: 1.75em;
+        font-size: 28px;
     }
 
     #header {
-        font-size: 1.1em;
+        font-size: 17px;
         margin-top: -5%;
     }
 
     #top-line {
-        font-size: 0.75em;
+        font-size: 12px;
         margin-top: -5%;
     }
 
     #line {
-        font-size: 0.6em;
+        font-size: 9px;
+        margin: 0;
     }
 }
 
 @media (min-width: 375px) {
     #header {
-        font-size: 1.25em;
+        font-size: 19px;
     }
 
     #top-line {
-        font-size: 0.9em;
+        font-size: 14px;
     }
 
     #line {
-        font-size: 0.75em;
+        font-size: 11px;
     }
 }
 
 @media (min-width: 425px) {
     #modal-close-button {
-        font-size: 2.5em;
+        font-size: 36px;
     }
 
     #header {
-        font-size: 1.5em;
+        font-size: 22px;
     }
 
     #top-line {
-        font-size: 1em;
+        font-size: 16px;
     }
 
     #line {
-        font-size: 0.85em;
+        font-size: 13px;
     }
 }
 
 @media (min-width: 768px) {
     #header {
-        font-size: 1.75em;
+        font-size: 25px;
     }
 
     #top-line {
-        font-size: 1.25em;
+        font-size: 18px;
     }
 
     #line {
-        font-size: 0.95em;
+        font-size: 15px;
     }
 }
 
 @media (min-width: 1024px) {
     #modal-close-button {
-        font-size: 3em;
+        font-size: 40px;
     }
 
     #header {
-        font-size: 2em;
+        font-size: 28px;
     }
 
     #top-line {
-        font-size: 1.35em;
+        font-size: 20px;
     }
 
     #line {
-        font-size: 1.1em;
+        font-size: 17px;
     }
 }
 
 @media (min-width: 1440px) {
     #modal-close-button {
-        font-size: 2.5em;
+        font-size: 36px;
     }
 
     #header {
-        font-size: 1.5em;
+        font-size: 25px;
     }
 
     #top-line {
-        font-size: 1.1em;
+        font-size: 18px;
     }
 
     #line {
-        font-size: 0.9em;
+        font-size: 15px;
     }
 }
 
 @media (min-width: 1920px) {
+    #modal-close-button {
+        font-size: 40px;
+    }
+
     #header {
-        font-size: 1.75em;
+        font-size: 28px;
     }
 
     #top-line {
-        font-size: 1.2em;
+        font-size: 20px;
     }
 
     #line {
-        font-size: 1em;
+        font-size: 17px;
     }
 }
 
 @media (min-width: 2560px) {
     #modal-close-button {
-        font-size: 3.75em;
+        font-size: 54px;
     }
 
     #header {
-        font-size: 2em;
+        font-size: 30px;
     }
 
     #top-line {
-        font-size: 1.5em;
+        font-size: 22px;
     }
 
     #line {
-        font-size: 1.25em;
+        font-size: 19px;
     }
 }
 
 @media (min-width: 3840px) {
     #modal-close-button {
-        font-size: 4.5em;
+        font-size: 68px;
     }
 
     #header {
-        font-size: 2.75em;
+        font-size: 42px;
     }
 
     #top-line {
-        font-size: 2em;
+        font-size: 30px;
     }
 
     #line {
-        font-size: 1.75em;
+        font-size: 26px;
     }
 }

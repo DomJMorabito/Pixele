@@ -131,14 +131,14 @@
     .button {
         border-radius: 5px;
         padding: 2.5% 7.5% 2.5% 7.5%;
-        font-size: 0.9em;
+        font-size: 14px;
         margin-top: 10px;
     }
 
     .nav-button {
         margin: 0;
         width: 100%;
-        font-size: 0.85em !important;
+        font-size: 15px !important;
     }
 }
 
@@ -148,83 +148,83 @@
     }
 
     .nav-button {
-        font-size: 1em !important;
+        font-size: 16px !important;
     }
 }
 
 @media (min-width: 425px) {
     .button {
-        font-size: 1.1em;
+        font-size: 17px;
         margin-top: 12px;
     }
 
     .nav-button {
-        font-size: 1.25em !important;
+        font-size: 20px !important;
     }
 }
 
 @media (min-width: 768px) {
     .button {
-        font-size: 1.1em;
+        font-size: 19px;
         margin-top: 16px;
     }
 
     .nav-button {
-        font-size: 1.4em !important;
+        font-size: 22px !important;
     }
 }
 
 @media (min-width: 1024px) {
     .button {
-        font-size: 1.3em;
+        font-size: 21px;
         margin-top: 20px;
     }
 
     .nav-button {
-        font-size: 1.5em !important;
+        font-size: 24px !important;
     }
 }
 
 @media (min-width: 1440px) {
     .button {
-        font-size: 1.1em;
+        font-size: 19px;
         margin-top: 16px;
     }
 
     .nav-button {
-        font-size: 1.4em !important;
+        font-size: 22px !important;
     }
 }
 
 @media (min-width: 1920px) {
     .button {
-        font-size: 1.3em;
+        font-size: 21px;
         margin-top: 20px;
     }
 
     .nav-button {
-        font-size: 1.5em !important;
+        font-size: 24px !important;
     }
 }
 
 @media (min-width: 2560px) {
     .button {
-        font-size: 1.5em;
+        font-size: 24px;
         margin-top: 24px;
     }
 
     .nav-button {
-        font-size: 1.75em !important;
+        font-size: 28px !important;
     }
 }
 
 @media (min-width: 3840px) {
     .button {
         margin-top: 42px;
-        font-size: 2em;
+        font-size: 32px;
     }
 
     .nav-button {
-        font-size: 2.5em !important;
+        font-size: 40px !important;
     }
 }

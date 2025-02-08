@@ -65,7 +65,7 @@ footer {
 }
 
 #ko-fi-button:hover {
-    filter: drop-shadow(0 1px 1px var(--drop-shadow));
+    box-shadow: 0 2px 5px var(--box-shadow);
     transform: scale(1.05);
 }
 
@@ -96,7 +96,7 @@ footer {
     }
 
     #credits {
-        font-size: 0.75em;
+        font-size: 8px;
         border-radius: 5px;
     }
 
@@ -108,7 +108,7 @@ footer {
         border: 2px solid var(--black);
         border-radius: 5px;
         padding: 2.5%;
-        font-size: 0.5em;
+        font-size: 10px;
         width: 75%;
     }
 
@@ -122,29 +122,25 @@ footer {
     }
 
     .social-icon {
-        margin-left: 2.5px;
-        margin-right: 2.5px;
+        margin-left: 2px;
+        margin-right: 2px;
         padding: 0 5% 0 5%;
     }
 
     .social-icon img {
         height: 18px;
     }
-
-    #credits {
-        font-size: 8px;
-    }
 }
 
 @media (min-width: 375px) {
     #social-container {
         width: 175px;
-        padding: 9.4px 18.75px 0;
-        margin-bottom: 18.75px;
+        padding: 9px 18px 0;
+        margin-bottom: 18px;
     }
 
     #ko-fi-button {
-        font-size: 0.7em;
+        font-size: 11px;
     }
 
     #ko-fi-button img, .social-icon img  {
@@ -156,19 +152,19 @@ footer {
     }
 
     #credits {
-        font-size: 0.6em;
+        font-size: 10px;
     }
 }
 
 @media (min-width: 425px) {
     #social-container {
         width: 200px;
-        padding: 10.75px 21.5px 0;
-        margin-bottom: 21.5px;
+        padding: 10px 21px 0;
+        margin-bottom: 21px;
     }
 
     #ko-fi-button {
-        font-size: 0.8em;
+        font-size: 13px;
     }
 
     #ko-fi-button img, .social-icon img  {
@@ -180,7 +176,7 @@ footer {
     }
 
     #credits {
-        font-size: 0.7em;
+        font-size: 11px;
     }
 }
 
@@ -192,7 +188,7 @@ footer {
     }
 
     #ko-fi-button {
-        font-size: 1em;
+        font-size: 16px;
         border: 3px solid var(--black);
     }
 
@@ -209,7 +205,7 @@ footer {
     }
 
     #credits {
-        font-size: 0.8em;
+        font-size: 13px;
     }
 
     #credits::after {
@@ -218,14 +214,14 @@ footer {
 }
 
 @media (min-width: 1024px) {
-    #ko-fi-button {
-        font-size: 1.25em;
-    }
-
     #social-container {
-        width: 300px;
+        width: 285px;
         padding: 19px 48px 0;
         margin-bottom: 48px;
+    }
+
+    #ko-fi-button {
+        font-size: 20px;
     }
 
     #ko-fi-button img, .social-icon img  {
@@ -237,19 +233,19 @@ footer {
     }
 
     #credits {
-        font-size: 0.9em;
+        font-size: 15px;
     }
 }
 
 @media (min-width: 1440px) {
-    #ko-fi-button {
-        font-size: 1em;
-    }
-
     #social-container {
         width: 250px;
         padding: 14px 36px 0;
         margin-bottom: 36px;
+    }
+
+    #ko-fi-button {
+        font-size: 16px;
     }
 
     #ko-fi-button img, .social-icon img  {
@@ -257,19 +253,19 @@ footer {
     }
 
     #credits {
-        font-size: 0.8em;
+        font-size: 13px;
     }
 }
 
 @media (min-width: 1920px) {
-    #ko-fi-button {
-        font-size: 1.25em;
-    }
-
     #social-container {
-        width: 300px;
+        width: 285px;
         padding: 19px 48px 0;
         margin-bottom: 48px;
+    }
+
+    #ko-fi-button {
+        font-size: 20px;
     }
 
     .social-icon {
@@ -282,44 +278,49 @@ footer {
     }
 
     #credits {
-        font-size: 0.9em;
+        font-size: 15px;
     }
 }
 
 @media (min-width: 2560px) {
     #social-container {
-        width: 375px;
-        padding: 25.6px 64px 0;
-        margin-bottom: 64px;
+        width: 360px;
+        padding: 25px 60px 0;
+        margin-bottom: 60px;
         border-radius: 0 0 10px 10px;
     }
 
     #ko-fi-button {
         border: 4px solid var(--black);
         border-radius: 10px;
-        font-size: 1.5em;
+        font-size: 24px;
     }
 
     #ko-fi-button img, .social-icon img {
         height: 48px;
     }
 
+    .social-icon {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
     #credits {
-        font-size: 1em;
+        font-size: 16px;
     }
 }
 
 @media (min-width: 3840px) {
     #social-container {
         width: 550px;
-        padding: 38px 96px 0;
-        margin-bottom: 96px;
+        padding: 38px 84px 0;
+        margin-bottom: 84px;
         border-radius: 0 0 15px 15px;
     }
 
     #ko-fi-button {
         border: 6px solid var(--black);
-        font-size: 2em;
+        font-size: 32px;
     }
 
     #ko-fi-button img, .social-icon img {
@@ -327,6 +328,6 @@ footer {
     }
 
     #credits {
-        font-size: 1.75em;
+        font-size: 28px;
     }
 }

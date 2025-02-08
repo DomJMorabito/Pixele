@@ -53,15 +53,23 @@
         border: 2px solid var(--valorant-game-card-title);
     }
 
+    .text-wrapper {
+        height: 16px;
+    }
+
     #valorant .game-title {
-        font-size: 0.9em;
+        font-size: 15px;
         padding: 8px;
     }
 }
 
 @media (min-width: 375px) {
+    .text-wrapper {
+        height: 18px;
+    }
+
     #valorant .game-title {
-        font-size: 1em;
+        font-size: 16px;
         padding: 9px;
     }
 }
@@ -71,44 +79,56 @@
         border: 3px solid var(--valorant-game-card-title);
     }
 
+    .text-wrapper {
+        height: 24px;
+    }
+
     #valorant .game-title {
-        font-size: 1.3em;
+        font-size: 21px;
         padding: 12px;
     }
 }
 
 @media (min-width: 768px) {
+    .text-wrapper {
+        height: 30px;
+    }
+
     #valorant .game-title {
-        font-size: 1.5em;
-        padding: 14.5px;
+        font-size: 26px;
+        padding: 14px;
     }
 }
 
 @media (min-width: 1024px) {
     #valorant .game-title {
-        font-size: 1.55em;
-        padding: 18.5px;
+        font-size: 27px;
+        padding: 18px;
     }
 }
 
 @media (min-width: 1440px) {
     #valorant .game-title {
-        font-size: 1.5em;
-        padding: 14.5px;
+        font-size: 26px;
+        padding: 14px;
     }
 }
 
 @media (min-width: 1920px) {
     #valorant .game-title {
-        font-size: 1.55em;
-        padding: 18.5px;
+        font-size: 27px;
+        padding: 18px;
     }
 }
 
 @media (min-width: 2560px) {
+    .text-wrapper {
+        height: 39px;
+    }
+
     #valorant .game-title {
-        font-size: 2.05em;
-        padding: 21.5px;
+        font-size: 34px;
+        padding: 21px;
     }
 }
 
@@ -117,8 +137,12 @@
         border: 4px solid var(--valorant-game-card-title);
     }
 
+    .text-wrapper {
+        height: 59px;
+    }
+
     #valorant .game-title {
-        font-size: 3.05em;
-        padding: 30.5px;
+        font-size: 52px;
+        padding: 30px;
     }
 }

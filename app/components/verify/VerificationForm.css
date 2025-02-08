@@ -17,6 +17,12 @@
 .resend-link {
     color: var(--link);
     cursor: pointer;
+    transition: color 0.15s ease-in-out;
+    will-change: color;
+}
+
+.resend-link:hover {
+    color: var(--link-hover);
 }
 
 .resend-link.disabled {
@@ -30,17 +36,17 @@
     }
 
     #instruction {
-        font-size: 0.55em;
+        font-size: 9px;
         margin: 2.5% 0 0 0;
     }
 
     #user-email {
-        font-size: 0.75em;
+        font-size: 12px;
         margin-top: 6px;
     }
 
     #resend-code {
-        font-size: 0.6em;
+        font-size: 10px;
     }
 }
 
@@ -50,16 +56,16 @@
     }
 
     #instruction {
-        font-size: 0.6em;
+        font-size: 10px;
     }
 
     #user-email {
-        font-size: 0.85em;
+        font-size: 13px;
         margin-top: 8px;
     }
 
     #resend-code {
-        font-size: 0.7em;
+        font-size: 11px;
     }
 }
 
@@ -69,16 +75,16 @@
     }
 
     #instruction {
-        font-size: 0.7em;
+        font-size: 11px;
     }
 
     #user-email {
-        font-size: 1em;
+        font-size: 16px;
         margin-top: 8px;
     }
 
     #resend-code {
-        font-size: 0.75em;
+        font-size: 12px;
     }
 }
 
@@ -88,16 +94,16 @@
     }
 
     #instruction {
-        font-size: 0.75em;
+        font-size: 12px;
     }
 
     #user-email {
-        font-size: 1.1em;
+        font-size: 17px;
         margin-top: 12px;
     }
 
     #resend-code {
-        font-size: 0.8em;
+        font-size: 13px;
     }
 }
 
@@ -107,15 +113,15 @@
     }
 
     #instruction {
-        font-size: 0.95em;
+        font-size: 15px;
     }
 
     #user-email {
-        font-size: 1.2em;
+        font-size: 19px;
     }
 
     #resend-code {
-        font-size: 0.9em;
+        font-size: 14px;
     }
 }
 
@@ -125,15 +131,15 @@
     }
 
     #instruction {
-        font-size: 0.75em;
+        font-size: 12px;
     }
 
     #user-email {
-        font-size: 1.1em;
+        font-size: 17px;
     }
 
     #resend-code {
-        font-size: 0.8em;
+        font-size: 13px;
     }
 }
 
@@ -143,15 +149,15 @@
     }
 
     #instruction {
-        font-size: 0.95em;
+        font-size: 15px;
     }
 
     #user-email {
-        font-size: 1.2em;
+        font-size: 19px;
     }
 
     #resend-code {
-        font-size: 0.9em;
+        font-size: 14px;
     }
 }
 
@@ -161,15 +167,15 @@
     }
 
     #instruction {
-        font-size: 1.1em;
+        font-size: 17px;
     }
 
     #user-email {
-        font-size: 1.3em;
+        font-size: 21px;
     }
 
     #resend-code {
-        font-size: 1.1em;
+        font-size: 17px;
     }
 }
 
@@ -179,15 +185,15 @@
     }
 
     #instruction {
-        font-size: 1.4em;
+        font-size: 22px;
     }
 
     #user-email {
-        font-size: 2em;
+        font-size: 30px;
         margin-top: 20px;
     }
 
     #resend-code {
-        font-size: 1.5em;
+        font-size: 22px;
     }
 }

@@ -48,62 +48,71 @@
 
 @media (min-width: 320px) {
     #r6 .game-title {
-        font-size: 0.8em;
-        padding: 8.5px;
+        font-size: 14px;
+        padding: 9px;
+        height: 14px;
     }
 }
 
 @media (min-width: 375px) {
     #r6 .game-title {
-        font-size: 1em;
+        font-size: 16px;
+        height: 18px;
     }
 }
 
 @media (min-width: 425px) {
     #r6 .game-title {
-        font-size: 1.25em;
+        font-size: 20px;
         padding: 12px;
+        height: 24px;
     }
 }
 
 @media (min-width: 768px) {
     #r6 .game-title {
-        font-size: 1.5em;
-        padding: 14.5px;
+        font-size: 24px;
+        padding: 14px;
+        height: 30px;
     }
 }
 
 @media (min-width: 1024px) {
     #r6 .game-title {
-        font-size: 1.6em;
-        padding: 17.5px;
+        font-size: 26px;
+        padding: 17px;
+        height: 32px;
     }
 }
 
 @media (min-width: 1440px) {
     #r6 .game-title {
-        font-size: 1.5em;
-        padding: 14.5px;
+        font-size: 24px;
+        padding: 14px;
+        height: 30px;
     }
 }
 
 @media (min-width: 1920px) {
     #r6 .game-title {
-        font-size: 1.6em;
-        padding: 17.5px;
+        font-size: 26px;
+        padding: 17px;
+        height: 32px;
     }
 }
 
 @media (min-width: 2560px) {
     #r6 .game-title {
-        font-size: 2em;
+        font-size: 33px;
         padding: 21px;
+        height: 39px;
     }
 }
 
 @media (min-width: 3840px) {
     #r6 .game-title {
-        font-size: 3em;
-        padding: 30.5px;
+        font-size: 50px;
+        padding: 30px;
+        height: 59px;
     }
 }

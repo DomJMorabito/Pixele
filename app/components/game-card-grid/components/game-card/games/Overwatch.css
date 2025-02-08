@@ -21,15 +21,17 @@
     }
 
     #overwatch .game-title {
-        font-size: 0.6em;
+        font-size: 10px;
         padding: 9px;
+        height: 14px;
     }
 }
 
 @media (min-width: 375px) {
     #overwatch .game-title {
-        font-size: 0.7em;
-        padding: 9.5px;
+        font-size: 11px;
+        padding: 9px;
+        height: 18px;
     }
 }
 
@@ -39,35 +41,38 @@
     }
 
     #overwatch .game-title {
-        font-size: 0.9em;
-        padding: 13.5px;
+        font-size: 15px;
+        padding: 13px;
+        height: 22px;
     }
 }
 
 @media (min-width: 768px) {
     #overwatch .game-title {
-        font-size: 1.05em;
-        padding: 16.5px;
+        font-size: 17px;
+        padding: 16px;
+        height: 26px;
     }
 }
 
 @media (min-width: 1024px) {
     #overwatch .game-title {
-        font-size: 1.1em;
+        font-size: 18px;
         padding: 20px;
     }
 }
 
 @media (min-width: 1440px) {
     #overwatch .game-title {
-        font-size: 1.05em;
-        padding: 16.5px;
+        font-size: 17px;
+        padding: 16px;
+        height: 26px;
     }
 }
 
 @media (min-width: 1920px) {
     #overwatch .game-title {
-        font-size: 1.1em;
+        font-size: 18px;
         padding: 20px;
     }
 }
@@ -78,8 +83,9 @@
     }
 
     #overwatch .game-title {
-        font-size: 1.3em;
+        font-size: 22px;
         padding: 25px;
+        height: 31px;
     }
 }
 
@@ -89,7 +95,8 @@
     }
 
     #overwatch .game-title {
-        padding: 35.5px;
-        font-size: 2em;
+        font-size: 34px;
+        padding: 35px;
+        height: 49px;
     }
 }
