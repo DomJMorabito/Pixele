@@ -63,7 +63,7 @@ export const confirmNewPassword = async (username, confirmationCode, newPassword
         const data = await response.json();
 
         if (!response.ok) {
-            return createErrorFromResponse(response.status, data, 'verification');
+            throw createErrorFromResponse(response.status, data, 'verification');
         }
 
         return data;

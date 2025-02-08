@@ -49,7 +49,7 @@ export const sendLoginRequest = async (identifier, password) => {
         const data = await response.json();
 
         if (!response.ok) {
-            return createErrorFromResponse(response.status, data, 'login');
+            throw createErrorFromResponse(response.status, data, 'login');
         }
 
         return data;

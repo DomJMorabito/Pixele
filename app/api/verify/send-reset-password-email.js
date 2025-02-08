@@ -36,7 +36,7 @@ export const sendResetPasswordEmail = async (identifier) => {
         const data = await response.json();
 
         if (!response.ok) {
-            return createErrorFromResponse(response.status, data, 'verification');
+            throw createErrorFromResponse(response.status, data, 'verification');
         }
 
         return data;

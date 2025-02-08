@@ -33,7 +33,7 @@ export const fetchConfig = async (gameId) => {
         const data = await response.json();
 
         if (!response.ok) {
-            return createErrorFromResponse(response.status, data, 'game');
+            throw createErrorFromResponse(response.status, data, 'game');
         }
 
         return data;

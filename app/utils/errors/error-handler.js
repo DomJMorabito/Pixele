@@ -13,7 +13,7 @@ import { handleGameError } from '@/app/utils/errors/game/error-handler';
  * @param {string} errorType - Type of error to create ('registration' | 'verification' | etc.)
  * @returns {Error} Appropriate error instance
  */
-export const createErrorFromResponse = (status, data, errorType = 'unknown') => {
+export const createErrorFromResponse = (status, data, errorType) => {
     switch (errorType.toLowerCase()) {
         case 'registration':
             return handleRegistrationError(status, data)

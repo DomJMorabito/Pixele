@@ -48,7 +48,7 @@ export const sendVerificationRequest = async (username, verificationCode) => {
         const data = await response.json();
 
         if (!response.ok) {
-            return createErrorFromResponse(response.status, data, 'verification');
+            throw createErrorFromResponse(response.status, data, 'verification');
         }
 
         return data;

@@ -21,7 +21,7 @@ export const sendLogoutRequest = async () => {
         const data = await response.json();
 
         if (!response.ok) {
-            return createErrorFromResponse(response.status, data, 'logout');
+            throw createErrorFromResponse(response.status, data, 'logout');
         }
 
         return data;

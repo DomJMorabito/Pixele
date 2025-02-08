@@ -56,7 +56,7 @@ export const submitGuess = async (gameId, character, token = null) => {
         const data = await response.json();
 
         if (!response.ok) {
-            return createErrorFromResponse(response.status, data, 'game');
+            throw createErrorFromResponse(response.status, data, 'game');
         }
 
         return data;
