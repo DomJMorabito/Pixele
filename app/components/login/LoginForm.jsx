@@ -24,7 +24,6 @@ import { useAlert } from '@/app/contexts/AlertProvider';
 import { sendLoginRequest } from '@/app/api/login/send-login-request';
 import { showFieldState } from '@/app/utils/ui/show-field-state';
 import { LoginErrorCode } from '@/app/utils/errors/login/LoginError';
-import { parseCookies } from '@/app/utils/auth/parse-cookies';
 
 // CSS Imports:
 
@@ -69,33 +68,10 @@ export default function LoginForm() {
     // Handle form submission:
     const handleFormSubmission = async (event) => {
         event.preventDefault();
-        const cookies = parseCookies();
         setIsLoading(true);
         setIsError(false);
 
         try {
-            if (cookies['pixele_user']) {
-                console.log('User already found.');
-                showAlert('You are already logged in!', 'good');
-                setIsSuccess(true);
-
-                showFieldState('identifier', setFieldState, {
-                    state: 'success',
-                    duration: 2000,
-                    persistent: true,
-                });
-                showFieldState('password', setFieldState, {
-                    state: 'success',
-                    duration: 2000,
-                    persistent: true,
-                });
-
-                setTimeout(() => {
-                    router.push('/');
-                }, 2000);
-                return;
-            }
-
             const emptyFields = Object.entries(formData)
                 .filter(([_, value]) => !value)
                 .map(([fieldId]) => fieldId);
