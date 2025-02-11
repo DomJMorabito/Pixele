@@ -65,10 +65,7 @@ export const sendRegisterRequest = async (username, email, password) => {
 
         throw createErrorFromResponse(500, {
             message: 'An unknown error occurred.',
-            code: 'UNKNOWN_ERROR',
-            details: {
-                originalError: error.message
-            }
+            code: 'UNKNOWN_ERROR'
         }, 'registration');
     }
 }

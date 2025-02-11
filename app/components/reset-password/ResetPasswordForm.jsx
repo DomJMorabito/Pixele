@@ -111,7 +111,7 @@ export default function ResetPasswordForm() {
             });
 
             setTimeout(() => {
-                router.push(`/new-password?email=${encodeURIComponent(response.details.email)}&username=${encodeURIComponent(response.details.username)}`);
+                router.push(`/new-password?email=${encodeURIComponent(response.params?.email)}&username=${encodeURIComponent(response.params.username)}`);
             }, 2000);
         } catch (error) {
             console.error(error);
@@ -119,17 +119,17 @@ export default function ResetPasswordForm() {
             switch (error.code) {
                 case VerificationErrorCode.MISSING_FIELDS:
                     showAlert('Please fill out all fields.', 'bad');
-                    error.details.missingFields.forEach(fieldId => {
+                    error.requirements?.forEach(fieldId => {
                         showFieldState(fieldId, setFieldState);
                     });
                     break
                 case VerificationErrorCode.INVALID_INPUT:
-                    if (error.details?.field === 'identifier') {
+                    if (error.requirements === 'identifier') {
                         showAlert('Invalid input provided.', 'bad');
                         showFieldState('identifier', setFieldState);
                     }
-                    break;
-                case VerificationErrorCode.INVALID_PASSWORD:
+                    break
+                case VerificationErrorCode.INVALID_CREDENTIALS:
                     showAlert('User not found.', 'bad');
                     showFieldState('identifier', setFieldState);
                     break

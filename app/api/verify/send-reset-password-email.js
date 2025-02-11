@@ -15,10 +15,9 @@ export const sendResetPasswordEmail = async (identifier) => {
         throw createErrorFromResponse(400, {
             message: 'Identifier must be valid.',
             code: 'INVALID_INPUT',
-            details: {
-                field: 'identifier',
-                received: typeof identifier
-            }
+            requirements: [
+                typeof identifier !== 'string' && 'identifier',
+            ].filter(Boolean)
         }, 'verification');
     }
     try {
@@ -47,19 +46,13 @@ export const sendResetPasswordEmail = async (identifier) => {
         if (error.message === 'Failed to fetch') {
             throw createErrorFromResponse(500, {
                 message: 'Unable to connect to the server. Please check your internet connection.',
-                code: 'NETWORK_ERROR',
-                details: {
-                    originalError: error.message
-                }
+                code: 'NETWORK_ERROR'
             }, 'verification');
         }
 
         throw createErrorFromResponse(500, {
             message: 'An unknown error occurred',
-            code: 'UNKNOWN_ERROR',
-            details: {
-                originalError: error.message
-            }
+            code: 'UNKNOWN_ERROR'
         }, 'verification')
     }
 }

@@ -108,22 +108,16 @@ export default function LoginForm() {
                 case LoginErrorCode.MISSING_FIELDS:
                     console.error(error);
                     showAlert('Please fill out all fields.', 'bad');
-                    error.details.missingFields.forEach(fieldId => {
+                    error.requirements?.forEach(fieldId => {
                         showFieldState(fieldId, setFieldState);
                     });
                     break
                 case LoginErrorCode.INVALID_INPUT:
                     console.error(error);
                     showAlert('Invalid input provided.', 'bad');
-                    if (error.details?.field) {
-                        const fields = Array.isArray(error.details.field)
-                            ? error.details.field
-                            : [error.details.field];
-
-                        fields.forEach(fieldId => {
-                            showFieldState(fieldId, setFieldState);
-                        });
-                    }
+                    error.requirements?.forEach(fieldId => {
+                        showFieldState(fieldId, setFieldState);
+                    });
                     break
                 case LoginErrorCode.INVALID_CREDENTIALS:
                     console.error(error);
@@ -132,8 +126,8 @@ export default function LoginForm() {
                     showFieldState('password', setFieldState);
                     break
                 case LoginErrorCode.CONFIRM_SIGN_UP:
-                    username = error.details?.username;
-                    maskedEmail = maskEmail(error.details?.email);
+                    username = error.params?.username;
+                    maskedEmail = maskEmail(error.params?.email);
                     showAlert('Please complete verification.', 'bad');
                     showFieldState('identifier', setFieldState);
                     showFieldState('password', setFieldState);

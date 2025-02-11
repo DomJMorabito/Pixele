@@ -13,37 +13,22 @@ import { createErrorFromResponse } from '@/app/utils/errors/error-handler';
  * @throws {Error} - Throws an error if the confirmation fails
  */
 export const confirmNewPassword = async (username, confirmationCode, newPassword) => {
-    if (typeof username !== 'string' || !username.trim()) {
+    if (typeof username !== 'string'
+        || typeof confirmationCode !== 'string'
+        || typeof newPassword !== 'string'
+        || !username.trim()
+        || !confirmationCode.trim()
+        || !newPassword.trim()
+    ) {
         throw createErrorFromResponse(400, {
             message: 'Username must be valid.',
             code: 'INVALID_INPUT',
-            details: {
-                field: 'username',
-                received: typeof username
-            }
-        }, 'verification');
-    }
-    if (typeof confirmationCode !== 'string' || !confirmationCode.trim()) {
-        throw createErrorFromResponse(400, {
-            message: 'Code must be valid.',
-            code: 'INVALID_INPUT',
-            details: {
-                field: 'code',
-                received: typeof confirmationCode
-            }
-        }, 'verification');
-    }
-    if (typeof newPassword !== 'string' || !newPassword.trim()) {
-        throw createErrorFromResponse(400, {
-            message: 'Password must be valid.',
-            code: 'INVALID_INPUT',
-            details: {
-                field: [
-                    'password',
-                    'confirmPassword'
-                ],
-                received: typeof newPassword
-            }
+            requirements: [
+                typeof username !== 'string' && 'username',
+                typeof confirmationCode !== 'string' && 'code',
+                typeof newPassword !== 'string' && 'password',
+                typeof newPassword !== 'string' && 'confirmPassword'
+            ].filter(Boolean)
         }, 'verification');
     }
     try {
@@ -74,19 +59,13 @@ export const confirmNewPassword = async (username, confirmationCode, newPassword
         if (error.message === 'Failed to fetch') {
             throw createErrorFromResponse(500, {
                 message: 'Unable to connect to the server. Please check your internet connection.',
-                code: 'NETWORK_ERROR',
-                details: {
-                    originalError: error.message
-                }
+                code: 'NETWORK_ERROR'
             }, 'verification');
         }
 
         throw createErrorFromResponse(500, {
             message: 'An unknown error occurred',
-            code: 'UNKNOWN_ERROR',
-            details: {
-                originalError: error.message
-            }
+            code: 'UNKNOWN_ERROR'
         }, 'verification')
     }
 }

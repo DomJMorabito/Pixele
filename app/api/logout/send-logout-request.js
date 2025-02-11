@@ -38,10 +38,7 @@ export const sendLogoutRequest = async () => {
 
         throw createErrorFromResponse(500, {
             message: 'An unknown error occurred during logout.',
-            code: 'UNKNOWN_ERROR',
-            details: {
-                originalError: error.message
-            }
+            code: 'UNKNOWN_ERROR'
         }, 'logout');
     }
 };

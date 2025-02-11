@@ -12,24 +12,18 @@ import { LoginError } from '@/app/utils/errors/login/LoginError';
  * @throws {Error} - Throws an error if the response is not OK, with a message from the server or a default error message.
  */
 export const sendLoginRequest = async (identifier, password) => {
-    if (typeof identifier !== 'string' || !identifier.trim()) {
+    if (typeof identifier !== 'string'
+        || typeof password !== 'string'
+        || !identifier.trim()
+        || !password.trim()
+    ) {
         throw createErrorFromResponse(400, {
             message: 'Username/email must be valid.',
             code: 'INVALID_INPUT',
-            details: {
-                field: 'identifier',
-                received: typeof identifier
-            }
-        }, 'login');
-    }
-    if (typeof password !== 'string' || !password.trim()) {
-        throw createErrorFromResponse(400, {
-            message: 'Password must be valid.',
-            code: 'INVALID_INPUT',
-            details: {
-                field: 'password',
-                received: typeof password
-            }
+            requirements: [
+                typeof identifier !== 'string' && 'identifier',
+                typeof password !== 'string' && 'password',
+            ].filter(Boolean)
         }, 'login');
     }
     try {
@@ -66,10 +60,7 @@ export const sendLoginRequest = async (identifier, password) => {
 
         throw createErrorFromResponse(500, {
             message: 'An unknown error occurred.',
-            code: 'UNKNOWN_ERROR',
-            details: {
-                originalError: error.message
-            }
+            code: 'UNKNOWN_ERROR'
         }, 'login');
     }
 }

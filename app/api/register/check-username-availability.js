@@ -15,10 +15,9 @@ export async function checkUsernameAvailability(username) {
         throw createErrorFromResponse(400, {
             message: 'Username must be valid.',
             code: 'INVALID_INPUT',
-            details: {
-                field: 'username',
-                received: typeof username
-            }
+            requirements: [
+                typeof username !== 'string' && 'username'
+            ].filter(Boolean)
         }, 'registration');
     }
     try {
@@ -49,10 +48,7 @@ export async function checkUsernameAvailability(username) {
 
         throw createErrorFromResponse(500, {
             message: 'An unknown error occurred.',
-            code: 'UNKNOWN_ERROR',
-            details: {
-                originalError: error.message
-            }
+            code: 'UNKNOWN_ERROR'
         }, 'registration');
     }
 }
