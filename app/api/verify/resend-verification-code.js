@@ -25,8 +25,7 @@ export const resendVerificationCode = async (username) => {
         const response = await fetch(`https://api.pixele.gg/users/resend-verification-code`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 username

@@ -13,45 +13,29 @@ import { RegistrationError } from '@/app/utils/errors/register/RegistrationError
  * @throws {Error} - Throws an error if the response is not OK, with a message from the server or a default error message.
  */
 export const sendRegisterRequest = async (username, email, password) => {
-    if (typeof username !== 'string' || !username.trim()) {
+    if (typeof username !== 'string'
+        || typeof email !== 'string'
+        || typeof password !== 'string'
+        || !username.trim()
+        || !email.trim()
+        || !password.trim()
+    ) {
         throw createErrorFromResponse(400, {
-            message: 'Username must be valid.',
+            message: 'All fields must be valid.',
             code: 'INVALID_INPUT',
-            details: {
-                field: 'username',
-                received: typeof username
-            }
-        }, 'registration');
-    }
-    if (typeof email !== 'string' || !email.trim()) {
-        throw createErrorFromResponse(400, {
-            message: 'Email must be valid.',
-            code: 'INVALID_INPUT',
-            details: {
-                field: 'email',
-                received: typeof email
-            }
-        }, 'registration');
-    }
-    if (typeof password !== 'string' || !password.trim()) {
-        throw createErrorFromResponse(400, {
-            message: 'Password must be valid.',
-            code: 'INVALID_INPUT',
-            details: {
-                field: [
-                    'password',
-                    'confirmPassword'
-                ],
-                received: typeof password
-            }
+            requirements: [
+                typeof username !== 'string' && 'username',
+                typeof email !== 'string' && 'email',
+                typeof password !== 'string' && 'password',
+                typeof password !== 'string' && 'confirmPassword'
+            ].filter(Boolean)
         }, 'registration');
     }
     try {
         const response = await fetch(`https://api.pixele.gg/users/register`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 username,

@@ -1,20 +1,16 @@
 /**
- * Error codes for different login-related error scenarios
+ * Error codes for different login-related error scenarios.
  */
 export const LoginErrorCode = {
-    MISSING_FIELDS: 'MISSING_FIELDS',                   // Required fields are missing
-    USER_NOT_FOUND: 'USER_NOT_FOUND',                   // No user found with provided identifier
-    INVALID_CREDENTIALS: 'INVALID_CREDENTIALS',         // Email/Username or Password is incorrect
-    ACCOUNT_LOCKED: 'ACCOUNT_LOCKED',                   // Too many failed attempts
-    RATE_LIMIT_EXCEEDED: 'RATE_LIMIT_EXCEEDED',         // Too many attempts
-    AUTH_INCOMPLETE: 'AUTH_INCOMPLETE',                 // User must complete MFA/SMS/Email authentication
-    INVALID_INPUT: 'INVALID_INPUT',                     // typeof assertion failed
-    DATABASE_ERROR: 'DATABASE_ERROR',                   // could not make insertion/update into database
-    AUTH_COMPLETION_FAILED: 'AUTH_COMPLETION_FAILED',   // User failed to authorize their account
-    TOKEN_UNAVAILABLE: 'TOKEN_UNAVAILABLE',             // No token generated from authentication
-    SERVER_ERROR: 'SERVER_ERROR',                       // Internal server error
-    NETWORK_ERROR: 'NETWORK_ERROR',                     // Connection Issues
-    UNKNOWN_ERROR: 'UNKNOWN_ERROR',                     // Fallback for unexpected errors
+    MISSING_FIELDS: 'MISSING_FIELDS',               // Required fields are missing
+    INVALID_INPUT: 'INVALID_INPUT',                 // typeof assertion failed
+    INVALID_CREDENTIALS: 'INVALID_CREDENTIALS',     // Email/Username or Password is incorrect
+    CONFIRM_SIGN_UP: 'CONFIRM_SIGN_UP',             // Account not confirmed
+    DATABASE_ERROR: 'DATABASE_ERROR',               // could not make insertion/update into database
+    RATE_LIMIT_EXCEEDED: 'RATE_LIMIT_EXCEEDED',     // Too many attempts
+    SERVER_ERROR: 'SERVER_ERROR',                   // Internal server error
+    NETWORK_ERROR: 'NETWORK_ERROR',                 // Connection Issues
+    UNKNOWN_ERROR: 'UNKNOWN_ERROR',                 // Fallback for unexpected errors
 }
 
 /**
@@ -29,9 +25,10 @@ export class LoginError extends Error {
      *
      * @param {string} message - User-friendly error message
      * @param {string} code - Error code from LoginErrorCodes
-     * @param {Object} [details] - Additional error details (optional)
+     * @param {Object} [required] - Additional error required (optional)
+     * @param {Object} [params] - Additional error params (optional)
      */
-    constructor(message, code, details = {}) {
+    constructor(message, code, required = {}, params = {}) {
         super(message);
 
         if (Error.captureStackTrace) {
@@ -40,6 +37,7 @@ export class LoginError extends Error {
 
         this.name = 'LoginError';
         this.code = code;
-        this.details = details;
+        this.required = required;
+        this.params = params;
     }
 }

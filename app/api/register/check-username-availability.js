@@ -25,8 +25,7 @@ export async function checkUsernameAvailability(username) {
         const response = await fetch(`https://api.pixele.gg/users/check-username-availability?username=${encodeURIComponent(username.trim())}`, {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'Content-Type': 'application/json'
             }
         });
 

@@ -25,8 +25,7 @@ export const sendResetPasswordEmail = async (identifier) => {
         const response = await fetch('https://api.pixele.gg/users/reset-password/send-email', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 identifier,

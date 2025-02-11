@@ -23,6 +23,7 @@ import { useAlert } from '@/app/contexts/AlertProvider';
 
 import { sendLoginRequest } from '@/app/api/login/send-login-request';
 import { showFieldState } from '@/app/utils/ui/show-field-state';
+import { maskEmail } from '@/app/utils/ui/mask-email';
 import { LoginErrorCode } from '@/app/utils/errors/login/LoginError';
 
 // CSS Imports:
@@ -102,6 +103,7 @@ export default function LoginForm() {
                 window.location.href = '/';
             }, 2000);
         } catch (error) {
+            let username, maskedEmail;
             switch (error.code) {
                 case LoginErrorCode.MISSING_FIELDS:
                     console.error(error);
@@ -123,79 +125,26 @@ export default function LoginForm() {
                         });
                     }
                     break
-                case LoginErrorCode.DATABASE_ERROR:
-                    console.error(error);
-                    showAlert('Could not complete login. Please try again later.', 'bad');
-                    showFieldState('identifier', setFieldState);
-                    showFieldState('password', setFieldState);
-                    break
-                case LoginErrorCode.AUTH_INCOMPLETE:
-                    console.error(error);
-                    if (error.details?.nextStep?.signInStep === 'CONFIRM_SIGN_UP') {
-                        const username = error.details?.username || formData.identifier;
-                        const email = error.details?.email || formData.identifier;
-                        showAlert('Please Complete Verification.', 'bad');
-                        showFieldState('identifier', setFieldState);
-                        showFieldState('password', setFieldState);
-                        setIsError(true);
-                        setTimeout(() => {
-                            router.push(`/verify?email=${encodeURIComponent(email)}&username=${encodeURIComponent(username)}`);
-                        }, 2000);
-                    } else if (error.details?.nextStep?.signInStep === 'RESET_PASSWORD') {
-                        const username = error.details?.username || formData.identifier;
-                        const email = error.details?.email || formData.identifier;
-                        showAlert('Please reset password.', 'bad');
-                        showFieldState('identifier', setFieldState);
-                        showFieldState('password', setFieldState);
-                        setTimeout(() => {
-                            router.push(`/new-password?email=${encodeURIComponent(email)}&username=${encodeURIComponent(username)}`);
-                        }, 2000);
-                    } else if (error.details?.nextStep?.signInStep === 'CONFIRM_SIGN_IN_WITH_TOTP_CODE') {
-                        const username = error.details?.username || formData.identifier;
-                        const email = error.details?.email || formData.identifier;
-                        showAlert('Enter code found on authentication app.', 'bad');
-                        showFieldState('identifier', setFieldState);
-                        showFieldState('password', setFieldState);
-                        setIsError(true);
-                        setTimeout(() => {
-                            router.push(`/verify?email=${encodeURIComponent(email)}&username=${encodeURIComponent(username)}`);
-                        }, 2000);
-                    } else if (error.details?.nextStep?.signInStep === 'CONFIRM_SIGN_IN_WITH_EMAIL_CODE') {
-                        const username = error.details?.username || formData.identifier;
-                        const email = error.details?.email || formData.identifier;
-                        showAlert('Enter code sent to your email.', 'bad');
-                        showFieldState('identifier', setFieldState);
-                        showFieldState('password', setFieldState);
-                        setIsError(true);
-                        setTimeout(() => {
-                            router.push(`/verify?email=${encodeURIComponent(email)}&username=${encodeURIComponent(username)}`);
-                        }, 2000);
-                    } else {
-                        showAlert('An unknown error has occurred. Please try again later.', 'bad');
-                        showFieldState('identifier', setFieldState);
-                        showFieldState('password', setFieldState);
-                    }
-                    break
-                case LoginErrorCode.AUTH_COMPLETION_FAILED:
-                    console.error(error);
-                    showAlert('Login failed. Please try again.', 'bad');
-                    showFieldState('identifier', setFieldState);
-                    showFieldState('password', setFieldState);
-                    break
-                case LoginErrorCode.TOKEN_UNAVAILABLE:
-                    console.error(error)
-                    showAlert('No access token available after authentication.', 'bad');
-                    showFieldState('identifier', setFieldState);
-                    showFieldState('password', setFieldState);
-                    break
-                case LoginErrorCode.USER_NOT_FOUND:
-                    console.error(error);
-                    showAlert('No account associated with this Email/Username:', 'bad');
-                    showFieldState('identifier', setFieldState);
-                    break
                 case LoginErrorCode.INVALID_CREDENTIALS:
                     console.error(error);
                     showAlert('Email/Username or Password is incorrect.', 'bad');
+                    showFieldState('identifier', setFieldState);
+                    showFieldState('password', setFieldState);
+                    break
+                case LoginErrorCode.CONFIRM_SIGN_UP:
+                    username = error.details?.username;
+                    maskedEmail = maskEmail(error.details?.email);
+                    showAlert('Please complete verification.', 'bad');
+                    showFieldState('identifier', setFieldState);
+                    showFieldState('password', setFieldState);
+                    setIsError(true);
+                    setTimeout(() => {
+                        router.push(`/verify?email=${encodeURIComponent(maskedEmail)}&username=${encodeURIComponent(username)}`);
+                    }, 2000);
+                    break
+                case LoginErrorCode.DATABASE_ERROR:
+                    console.error(error);
+                    showAlert('Could not complete login. Please try again later.', 'bad');
                     showFieldState('identifier', setFieldState);
                     showFieldState('password', setFieldState);
                     break

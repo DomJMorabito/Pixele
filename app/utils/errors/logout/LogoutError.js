@@ -2,8 +2,8 @@
  * Error codes for different logout-related error scenarios
  */
 export const LogoutErrorCode = {
-    LOGOUT_FAILED: 'LOGOUT_FAILED',     // General logout failure
     NO_SESSION: 'NO_SESSION',           // User is not currently logged in
+    LOGOUT_FAILED: 'LOGOUT_FAILED',     // General logout failure
     SERVER_ERROR: 'SERVER_ERROR',       // Internal server error
     NETWORK_ERROR: 'NETWORK_ERROR',     // Connection Issues
     UNKNOWN_ERROR: 'UNKNOWN_ERROR',     // Fallback for unexpected errors
@@ -21,9 +21,8 @@ export class LogoutError extends Error {
      *
      * @param {string} message - User-friendly error message
      * @param {string} code - Error code from LogoutErrorCodes
-     * @param {Object} [details] - Additional error details (optional)
      */
-    constructor(message, code, details = {}) {
+    constructor(message, code) {
         super(message);
 
         if (Error.captureStackTrace) {
@@ -32,6 +31,5 @@ export class LogoutError extends Error {
 
         this.name = 'LogoutError';
         this.code = code;
-        this.details = details;
     }
 }

@@ -25,6 +25,7 @@ import { validateEmail } from '@/app/utils/input/email/validate-email';
 import { validateUsernameLength } from '@/app/utils/input/username/validate-username-length';
 import { validateUsernameSpecialCharacters } from "@/app/utils/input/username/validate-username-special-characters";
 import { sendResetPasswordEmail } from "@/app/api/verify/send-reset-password-email";
+import { maskEmail } from "@/app/utils/ui/mask-email";
 import { VerificationErrorCode } from '@/app/utils/errors/verification/VerificationError';
 
 // CSS Imports:
@@ -54,6 +55,7 @@ export default function ResetPasswordForm() {
     // UI states:
     const [isLoading, setIsLoading] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [isError, setIsError] = useState(false);
 
     // Handle input changes:
     const handleInputChange = (event) => {
@@ -112,43 +114,44 @@ export default function ResetPasswordForm() {
                 router.push(`/new-password?email=${encodeURIComponent(response.details.email)}&username=${encodeURIComponent(response.details.username)}`);
             }, 2000);
         } catch (error) {
+            console.error(error);
+            let username, maskedEmail;
             switch (error.code) {
                 case VerificationErrorCode.MISSING_FIELDS:
-                    console.error(error);
                     showAlert('Please fill out all fields.', 'bad');
                     error.details.missingFields.forEach(fieldId => {
                         showFieldState(fieldId, setFieldState);
                     });
                     break
                 case VerificationErrorCode.INVALID_INPUT:
-                    console.error(error);
                     if (error.details?.field === 'identifier') {
                         showAlert('Invalid input provided.', 'bad');
                         showFieldState('identifier', setFieldState);
                     }
                     break;
-                case VerificationErrorCode.USER_NOT_FOUND:
-                    console.error(error);
+                case VerificationErrorCode.INVALID_PASSWORD:
                     showAlert('User not found.', 'bad');
                     showFieldState('identifier', setFieldState);
                     break
-                case VerificationErrorCode.EMAIL_SEND_FAILED:
-                    console.error(error);
-                    showAlert('Failed to send email. Please try again later.', 'bad');
+                case VerificationErrorCode.CONFIRM_SIGN_UP:
+                    username = error.params?.username;
+                    maskedEmail = maskEmail(error.params?.email);
+                    showAlert('Please complete verification.', 'bad');
                     showFieldState('identifier', setFieldState);
+                    setIsError(true);
+                    setTimeout(() => {
+                        router.push(`/verify?email=${encodeURIComponent(maskedEmail)}&username=${encodeURIComponent(username)}`);
+                    }, 2000);
                     break
                 case VerificationErrorCode.RATE_LIMIT_EXCEEDED:
-                    console.error(error);
                     showAlert(`Too many attempts. Please try again later.`, 'bad');
                     showFieldState('identifier', setFieldState);
                     break
                 case VerificationErrorCode.SERVER_ERROR:
-                    console.error(error);
                     showAlert('Internal server error. Please try again later.', 'bad');
                     showFieldState('identifier', setFieldState);
                     break
                 default:
-                    console.error(error);
                     showAlert('An unknown error has occurred. Please try again later.', 'bad');
                     showFieldState('identifier', setFieldState);
             }
@@ -181,6 +184,7 @@ export default function ResetPasswordForm() {
                 type="submit"
                 loading={isLoading}
                 success={isSuccess}
+                error={isError}
                 successText="Email sent!"
                 disabled={!isFormValid}
             >

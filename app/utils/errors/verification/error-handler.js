@@ -14,73 +14,66 @@ export const handleVerificationError = (status, data) => {
             return new VerificationError(
                 'Username and verification code are required.',
                 VerificationErrorCode.MISSING_FIELDS,
-                data.details
-            )
-        case 'INVALID_CODE':
-            return new VerificationError(
-                'Invalid verification code. Please try again.',
-                VerificationErrorCode.INVALID_CODE,
-                data.details
-            )
-        case 'USER_NOT_FOUND':
-            return new VerificationError(
-                'User not found.',
-                VerificationErrorCode.USER_NOT_FOUND,
-                data.details
-            )
-        case 'EMAIL_SEND_FAILED':
-            return new VerificationError(
-                'Failed to send Email. Please try again soon.',
-                VerificationErrorCode.EMAIL_SEND_FAILED,
-                data.details
-            )
-        case 'EXPIRED_CODE':
-            return new VerificationError(
-                'Verification code expired. Please request a new one.',
-                VerificationErrorCode.EXPIRED_CODE,
-                data.details
-            )
-        case 'ALREADY_VERIFIED':
-            return new VerificationError(
-                'This account is already verified.',
-                VerificationErrorCode.ALREADY_VERIFIED,
-                data.details
+                data.requirements
             )
         case 'INVALID_INPUT':
             return new VerificationError(
                 'Input must be valid.',
                 VerificationErrorCode.INVALID_INPUT,
-                data.details
+                data.requirements
             )
-        case 'RATE_LIMIT_EXCEEDED':
+
+        case 'INVALID_CREDENTIALS':
             return new VerificationError(
-                'Too many verification attempts. Please try again later.',
-                VerificationErrorCode.RATE_LIMIT_EXCEEDED,
-                data.details
+                'Invalid credentials.',
+                VerificationErrorCode.INVALID_CREDENTIALS
             )
         case 'DATABASE_ERROR':
             return new VerificationError(
                 'Unable to complete verification. Please try again later.',
-                VerificationErrorCode.DATABASE_ERROR,
-                data.details
+                VerificationErrorCode.DATABASE_ERROR
+            )
+        case 'INVALID_CODE':
+            return new VerificationError(
+                'Invalid verification code. Please try again.',
+                VerificationErrorCode.INVALID_CODE
+            )
+        case 'ALREADY_VERIFIED':
+            return new VerificationError(
+                'This account is already verified.',
+                VerificationErrorCode.ALREADY_VERIFIED
+            )
+        case 'EXPIRED_CODE':
+            return new VerificationError(
+                'Verification code expired. Please request a new one.',
+                VerificationErrorCode.EXPIRED_CODE
+            )
+        case 'RATE_LIMIT_EXCEEDED':
+            return new VerificationError(
+                'Too many verification attempts. Please try again later.',
+                VerificationErrorCode.RATE_LIMIT_EXCEEDED
             )
         case 'SERVER_ERROR':
             return new VerificationError(
                 'Unable to complete verification. Please try again later.',
-                VerificationErrorCode.SERVER_ERROR,
-                data.details
+                VerificationErrorCode.SERVER_ERROR
             )
+        // FOR PASSWORD RESET
         case 'INVALID_PASSWORD':
             return new VerificationError(
                 'Password requirements not met.',
-                VerificationErrorCode.INVALID_PASSWORD,
-                data.details
+                VerificationErrorCode.INVALID_PASSWORD
+            )
+        case 'CONFIRM_SIGN_UP':
+            return new VerificationError(
+                'Account verification incomplete',
+                VerificationErrorCode.CONFIRM_SIGN_UP,
+                data.params
             )
         default:
             return new VerificationError(
                 data.message || 'An unknown error occurred.',
-                VerificationErrorCode.UNKNOWN_ERROR,
-                data.details
+                VerificationErrorCode.UNKNOWN_ERROR
             )
     }
 }

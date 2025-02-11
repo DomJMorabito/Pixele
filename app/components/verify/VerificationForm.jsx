@@ -27,6 +27,7 @@ import { validatePasswordLength } from "@/app/utils/input/password/validate-pass
 import { validatePasswordNumbers } from "@/app/utils/input/password/validate-password-numbers";
 import { validatePasswordSpecialCharacters } from "@/app/utils/input/password/validate-password-special-characters";
 import { validatePassword } from "@/app/utils/input/password/validate-password";
+import { maskEmail } from '@/app/utils/ui/mask-email';
 import { showFieldState } from "@/app/utils/ui/show-field-state";
 
 // CSS Imports:
@@ -71,6 +72,7 @@ export default function VerificationForm({
     const [timer, setTimer] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [isError, setIsError] = useState(false);
     const [isResendLoading, setIsResendLoading] = useState(false);
 
     // Form validation:
@@ -143,8 +145,8 @@ export default function VerificationForm({
                     console.error('Please slow down.', error);
                     showAlert(`Too many attempts. Please try again later.`, 'bad');
                     break
-                case VerificationErrorCode.USER_NOT_FOUND:
-                    console.error('User not found.', error);
+                case VerificationErrorCode.INVALID_CREDENTIALS:
+                    console.error('Invalid credentials.', error);
                     showAlert('User not found.', 'bad');
                     break
                 case VerificationErrorCode.ALREADY_VERIFIED:
@@ -167,6 +169,7 @@ export default function VerificationForm({
     const handleFormSubmission = async (event) => {
         event.preventDefault();
         setIsLoading(true);
+        setIsError(false);
         const verificationCode = formData.code.join('');
 
         try {
@@ -242,9 +245,44 @@ export default function VerificationForm({
                 router.push('/login');
             }, 2000);
         } catch (error) {
+            console.error(error);
+            let username, maskedEmail;
             switch (error.code) {
+                case VerificationErrorCode.MISSING_FIELDS:
+                    showAlert('Please fill out all fields.', 'bad');
+                    error.requirements?.filter(fieldId => fieldId !== 'username' && fieldId !== 'identifier')
+                        .forEach(fieldId => {
+                            showFieldState(fieldId, setFieldState);
+                        });
+                    break
+                case VerificationErrorCode.INVALID_INPUT:
+                    showAlert('Invalid input provided.', 'bad');
+                    error.requirements?.filter(fieldId => fieldId !== 'username' && fieldId !== 'identifier')
+                        .forEach(fieldId => {
+                            showFieldState(fieldId, setFieldState);
+                        });
+                    break
+                case VerificationErrorCode.INVALID_CREDENTIALS:
+                    showAlert('User not found.', 'bad');
+                    showFieldState('code', setFieldState);
+                    if (isPasswordReset) {
+                        showFieldState('password', setFieldState);
+                        showFieldState('confirmPassword', setFieldState);
+                    }
+                    break
+                case VerificationErrorCode.DATABASE_ERROR:
+                    showAlert('Verification failed. Please try again later.', 'bad');
+                    showFieldState('code', setFieldState);
+                    if (isPasswordReset) {
+                        showFieldState('password', setFieldState);
+                        showFieldState('confirmPassword', setFieldState);
+                    }
+                    break
+                case VerificationErrorCode.INVALID_CODE:
+                    showAlert('Verification Code is Incorrect.', 'bad');
+                    showFieldState('code', setFieldState);
+                    break
                 case VerificationErrorCode.ALREADY_VERIFIED:
-                    console.log(error);
                     showAlert('Account already verified!', 'good');
                     showFieldState('code', setFieldState, {
                         state: 'success',
@@ -256,50 +294,12 @@ export default function VerificationForm({
                         router.push('/login')
                     }, 2000);
                     break
-                case VerificationErrorCode.MISSING_FIELDS:
-                    console.error(error);
-                    showAlert('Please fill out all fields.', 'bad');
-                    error.details.missingFields
-                        .filter(fieldId => fieldId !== 'username')
-                        .forEach(fieldId => {
-                            showFieldState(fieldId, setFieldState);
-                        });
-                    break
-                case VerificationErrorCode.INVALID_CODE:
-                    console.error(error);
-                    showAlert('Verification Code is Incorrect.', 'bad');
-                    showFieldState('code', setFieldState);
-                    break
-                case VerificationErrorCode.INVALID_INPUT:
-                    console.error(error);
-                    if (error.details?.field) {
-                        const fields = Array.isArray(error.details.field)
-                            ? error.details.field
-                            : [error.details.field];
-                        fields.filter(fieldId => fieldId !== 'username' && fieldId !== 'identifier')
-                            .forEach(fieldId => {
-                                showFieldState(fieldId, setFieldState);
-                            });
-                    }
-                    showAlert('Invalid input provided.', 'bad');
-                    break
-                case VerificationErrorCode.USER_NOT_FOUND:
-                    console.error(error);
-                    showAlert('User not found.', 'bad');
-                    showFieldState('code', setFieldState);
-                    if (isPasswordReset) {
-                        showFieldState('password', setFieldState);
-                        showFieldState('confirmPassword', setFieldState);
-                    }
-                    break
                 case VerificationErrorCode.EXPIRED_CODE:
                     setTimer(0);
-                    console.error(error);
                     showAlert('Verification code has expired. Please request a new one.', 'bad');
                     showFieldState('code', setFieldState);
                     break
                 case VerificationErrorCode.RATE_LIMIT_EXCEEDED:
-                    console.error(error);
                     showAlert('Too many attempts. Please try again later.', 'bad');
                     showFieldState('code', setFieldState);
                     if (isPasswordReset) {
@@ -307,17 +307,7 @@ export default function VerificationForm({
                         showFieldState('confirmPassword', setFieldState);
                     }
                     break
-                case VerificationErrorCode.DATABASE_ERROR:
-                    console.error(error);
-                    showAlert('Verification failed. Please try again later.', 'bad');
-                    showFieldState('code', setFieldState);
-                    if (isPasswordReset) {
-                        showFieldState('password', setFieldState);
-                        showFieldState('confirmPassword', setFieldState);
-                    }
-                    break
                 case VerificationErrorCode.SERVER_ERROR:
-                    console.error(error);
                     showAlert('Internal server error. Please try again later.', 'bad');
                     showFieldState('code', setFieldState);
                     if (isPasswordReset) {
@@ -325,8 +315,21 @@ export default function VerificationForm({
                         showFieldState('confirmPassword', setFieldState);
                     }
                     break
+                case VerificationErrorCode.INVALID_PASSWORD:
+
+                case VerificationErrorCode.CONFIRM_SIGN_UP:
+                    username = error.params?.username;
+                    maskedEmail = maskEmail(error.params?.email);
+                    showAlert('Please complete verification.', 'bad');
+                    ['code', 'password', 'confirmPassword'].forEach(fieldId => {
+                        showFieldState(fieldId, setFieldState);
+                    });
+                    setIsError(true);
+                    setTimeout(() => {
+                        router.push(`/verify?email=${encodeURIComponent(maskedEmail)}&username=${encodeURIComponent(username)}`);
+                    }, 2000);
+                    break
                 default:
-                    console.error(error);
                     showAlert('An unknown error has occurred. Please try again later.', 'bad');
                     showFieldState('code', setFieldState);
                     if (isPasswordReset) {
@@ -408,6 +411,7 @@ export default function VerificationForm({
                 type="submit"
                 loading={isLoading}
                 success={isSuccess}
+                error={isError}
                 successText={isPasswordReset ? 'Confirmed!' : 'Verified!'}
                 disabled={!isFormValid}
             >

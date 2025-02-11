@@ -8,29 +8,25 @@ import { LogoutError, LogoutErrorCode } from "@/app/utils/errors/logout/LogoutEr
  */
 export const handleLogoutError = (status, data) => {
     switch (data.code) {
-        case 'LOGOUT_FAILED':
-            return new LogoutError(
-                'Unable to log out. Please try again later.',
-                LogoutErrorCode.LOGOUT_FAILED,
-                data.details
-            )
         case 'NO_SESSION':
             return new LogoutError(
                 'Unable to find current session.',
-                LogoutErrorCode.NO_SESSION,
-                data.details
+                LogoutErrorCode.NO_SESSION
+            )
+        case 'LOGOUT_FAILED':
+            return new LogoutError(
+                'Unable to log out. Please try again later.',
+                LogoutErrorCode.LOGOUT_FAILED
             )
         case 'SERVER_ERROR':
             return new LogoutError(
                 'Unable to log out. Please try again later.',
-                LogoutErrorCode.SERVER_ERROR,
-                data.details
+                LogoutErrorCode.SERVER_ERROR
             )
         default:
             return new LogoutError(
                 data.message || 'An unknown error occurred.',
-                LogoutErrorCode.UNKNOWN_ERROR,
-                data.details
+                LogoutErrorCode.UNKNOWN_ERROR
             )
     }
 }

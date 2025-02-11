@@ -263,91 +263,64 @@ export default function RegistrationForm() {
                 router.push(`/verify?email=${encodeURIComponent(maskedEmail)}&username=${encodeURIComponent(formData.username)}`);
             }, 2000);
         } catch (error) {
+            console.error(error);
             switch (error.code) {
                 case RegistrationErrorCode.MISSING_FIELDS:
-                    console.error(error);
                     showAlert('Please fill out all fields.', 'bad');
-                    error.details.missingFields.forEach(fieldId => {
+                    error.requirements?.forEach(fieldId => {
                         showFieldState(fieldId, setFieldState);
                     });
                     break
-                case RegistrationErrorCode.DUPLICATE_CREDENTIALS:
-                    console.error(error);
-                    showAlert('Both Email and Username are already in use.', 'bad');
-                    showFieldState('email', setFieldState);
-                    showFieldState('username', setFieldState);
-                    break
-                case RegistrationErrorCode.EMAIL_EXISTS:
-                    console.error(error);
-                    showAlert('Email already in use', 'bad');
-                    showFieldState('email', setFieldState);
-                    break
-                case RegistrationErrorCode.USERNAME_EXISTS:
-                    console.error(error);
-                    showAlert('Username already taken', 'bad');
-                    showFieldState('username', setFieldState);
+                case RegistrationErrorCode.INVALID_INPUT:
+                    showAlert('Invalid input provided.', 'bad');
+                    error.requirements?.forEach(fieldId => {
+                        showFieldState(fieldId, setFieldState);
+                    });
                     break
                 case RegistrationErrorCode.INVALID_EMAIL:
-                    console.error(error);
                     showAlert('Please enter a valid email.', 'bad');
                     showFieldState('email', setFieldState);
                     break
                 case RegistrationErrorCode.INVALID_USERNAME:
-                    if (error.details?.requirements?.minLength) {
-                        console.error(error);
-                        showAlert('Username must be 5-18 characters.', 'bad');
-                    } else if (error.details?.requirements?.allowedCharacters) {
-                        console.error(error);
-                        showAlert('Username cannot contain any special characters.', 'bad');
-                    }
+                    showAlert('Please enter a valid username.', 'bad');
                     showFieldState('username', setFieldState);
                     break
-                case RegistrationErrorCode.INVALID_INPUT:
-                    console.error(error);
-                    if (error.details?.field) {
-                        const fields = Array.isArray(error.details.field)
-                            ? error.details.field
-                            : [error.details.field];
-                        fields.forEach(fieldId => {
-                            showFieldState(fieldId, setFieldState);
-                        })
-                    }
-                    showAlert('Invalid input provided.', 'bad');
+                case RegistrationErrorCode.INVALID_PASSWORD:
+                    showAlert('Password does not meet the requirements.', 'bad');
+                    showFieldState('password', setFieldState);
+                    showFieldState('confirmPassword', setFieldState);
+                    break
+                case RegistrationErrorCode.INAPPROPRIATE_CONTENT:
+                    showAlert('Seriously?', 'bad');
+                    showFieldState('username', setFieldState);
+                    break
+                case RegistrationErrorCode.EMAIL_EXISTS:
+                    showAlert('Email already in use', 'bad');
+                    showFieldState('email', setFieldState);
+                    break
+                case RegistrationErrorCode.USERNAME_EXISTS:
+                    showAlert('Username already taken', 'bad');
+                    showFieldState('username', setFieldState);
                     break
                 case RegistrationErrorCode.DATABASE_ERROR:
-                    console.error(error);
                     showAlert('Could not complete registration. Please try again later.', 'bad');
                     ['email', 'username', 'password', 'confirmPassword'].forEach(fieldId => {
                         showFieldState(fieldId, setFieldState);
                     });
                     break
-                case RegistrationErrorCode.INAPPROPRIATE_CONTENT:
-                    console.error(error);
-                    showAlert('Seriously?', 'bad');
-                    showFieldState('username', setFieldState);
-                    break
-                case RegistrationErrorCode.INVALID_PASSWORD:
-                    console.error(error);
-                    showAlert('Password does not meet the requirements.', 'bad');
-                    showFieldState('password', setFieldState);
-                    showFieldState('confirmPassword', setFieldState);
-                    break
                 case RegistrationErrorCode.RATE_LIMIT_EXCEEDED:
-                    console.error(error);
                     showAlert('Too many attempts. Please try again later.', 'bad');
                     ['email', 'username', 'password', 'confirmPassword'].forEach(fieldId => {
                         showFieldState(fieldId, setFieldState);
                     });
                     break
                 case RegistrationErrorCode.SERVER_ERROR:
-                    console.error(error);
                     showAlert('Internal server error. Please try again later.', 'bad');
                     ['email', 'username', 'password', 'confirmPassword'].forEach(fieldId => {
                         showFieldState(fieldId, setFieldState);
                     });
                     break
                 default:
-                    console.error(error);
                     showAlert('An unknown error has occurred, please try again later.', 'bad');
                     ['email', 'username', 'password', 'confirmPassword'].forEach(fieldId => {
                         showFieldState(fieldId, setFieldState);

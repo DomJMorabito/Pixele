@@ -16,13 +16,13 @@ import Button from "@/app/components/misc/button/Button";
 // Context Imports:
 
 import { useAlert } from '@/app/contexts/AlertProvider';
+import { useAuth } from '@/app/contexts/AuthProvider';
 
 //Utils Imports:
 
 import { debounce } from '@/app/utils/ui/debounce';
 import { sendLogoutRequest } from "@/app/api/logout/send-logout-request";
 import { LogoutErrorCode } from "@/app/utils/errors/logout/LogoutError";
-import { useAuth } from '@/app/contexts/AuthProvider';
 
 // CSS Imports:
 

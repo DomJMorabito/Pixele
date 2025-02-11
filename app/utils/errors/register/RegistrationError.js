@@ -3,15 +3,14 @@
  */
 export const RegistrationErrorCode = {
     MISSING_FIELDS: 'MISSING_FIELDS',               // Required fields are missing
-    DUPLICATE_CREDENTIALS: 'DUPLICATE_CREDENTIALS', // Both email and username taken
-    EMAIL_EXISTS: 'EMAIL_EXISTS',                   // Email already taken
-    USERNAME_EXISTS: 'USERNAME_EXISTS',             // Username already taken
+    INVALID_INPUT: 'INVALID_INPUT',                 // typeof assertion failed
     INVALID_EMAIL: 'INVALID_EMAIL',                 // Email format is invalid
     INVALID_USERNAME: 'INVALID_USERNAME',           // Username format/length invalid
-    INVALID_INPUT: 'INVALID_INPUT',                 // typeof assertion failed
-    DATABASE_ERROR: 'DATABASE_ERROR',               // could not make insertion/update into db
-    INAPPROPRIATE_CONTENT: 'INAPPROPRIATE_CONTENT', // Profanity/inappropriate content
     INVALID_PASSWORD: 'INVALID_PASSWORD',           // Password requirements not met
+    INAPPROPRIATE_CONTENT: 'INAPPROPRIATE_CONTENT', // Profanity/inappropriate content
+    EMAIL_EXISTS: 'EMAIL_EXISTS',                   // Email already taken
+    USERNAME_EXISTS: 'USERNAME_EXISTS',             // Username already taken
+    DATABASE_ERROR: 'DATABASE_ERROR',               // could not make insertion/update into db
     RATE_LIMIT_EXCEEDED: 'RATE_LIMIT_EXCEEDED',     // Too many attempts
     SERVER_ERROR: 'SERVER_ERROR',                   // Internal server error
     NETWORK_ERROR: 'NETWORK_ERROR',                 // Connection Issues
@@ -30,9 +29,9 @@ export class RegistrationError extends Error {
      *
      * @param {string} message - User-friendly error message
      * @param {string} code - Error code from RegistrationErrorCodes
-     * @param {Object} [details] - Additional error details (optional)
+     * @param {Object} [requirements] - Additional error requirements (optional)
      */
-    constructor(message, code, details = {}) {
+    constructor(message, code, requirements = {}) {
         super(message);
 
         if (Error.captureStackTrace) {
@@ -41,6 +40,6 @@ export class RegistrationError extends Error {
 
         this.name = 'RegistrationError';
         this.code = code;
-        this.details = details;
+        this.requirements = requirements;
     }
 }
