@@ -68,6 +68,7 @@ export const handleVerificationError = (status, data) => {
             return new VerificationError(
                 'Account verification incomplete',
                 VerificationErrorCode.CONFIRM_SIGN_UP,
+                {},
                 data.params
             )
         default:

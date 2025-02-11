@@ -31,6 +31,7 @@ export const handleLoginError = (status, data) => {
             return new LoginError(
                 'Verification incomplete.',
                 LoginErrorCode.CONFIRM_SIGN_UP,
+                {},
                 data.params
             )
         case 'DATABASE_ERROR':
