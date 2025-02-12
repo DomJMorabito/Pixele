@@ -111,7 +111,7 @@ export default function ResetPasswordForm() {
             });
 
             setTimeout(() => {
-                router.push(`/new-password?email=${encodeURIComponent(response.params?.email)}&username=${encodeURIComponent(response.params.username)}`);
+                router.push(`/new-password?email=${encodeURIComponent(maskEmail(response.params?.email))}&username=${encodeURIComponent(response.params.username)}`);
             }, 2000);
         } catch (error) {
             console.error(error);

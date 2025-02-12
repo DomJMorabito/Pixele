@@ -141,13 +141,13 @@ nav #leaderboard:hover {
     text-decoration: none;
 }
 
-/*#leaderboard { !* Will be hidden until Leaderboard page is done. *!*/
-/*    visibility: hidden;*/
-/*}*/
+#leaderboard { /* Will be hidden until leaderboard page is done. */
+    visibility: hidden;
+}
 
-/*#settings-section { !* Will be hidden until settings page is done. *!*/
-/*    visibility: hidden;*/
-/*}*/
+#settings-section { /* Will be hidden until settings page is done. */
+    visibility: hidden;
+}
 
 /* Nav Bar Animations */
 
