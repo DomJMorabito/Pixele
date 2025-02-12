@@ -1,5 +1,9 @@
 'use client';
 
+// Next.js Imports:
+
+import { usePathname } from "next/navigation";
+
 // React Imports:
 
 import { createContext, useContext, useState, useEffect } from 'react';
@@ -14,21 +18,32 @@ export function AuthProvider({ children }) {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [userInfo, setUserInfo] = useState({ username: '', email: '' });
     const [isLoading, setIsLoading] = useState(true);
+    const pathname = usePathname();
+
+    const shouldSkipAuthCheck = () => {
+        const publicPaths = ['/register', '/verify', '/reset-password', '/new-password'];
+        return publicPaths.some(path => pathname.startsWith(path));
+    }
 
     const checkAuthStatus = async () => {
+        if (shouldSkipAuthCheck()) {
+            setIsLoading(false);
+            return;
+        }
+
         try {
             const response = await fetch('https://api.pixele.gg/users/check-auth', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                credentials: 'include'
+                credentials: 'include',
+                signal: new AbortController().signal
             });
 
             const data = await response.json();
 
             if (!response.ok) {
-                console.error('Auth check error:', data);
                 switch (data.code) {
                     case AuthErrorCode.NO_SESSION:
                     case AuthErrorCode.SESSION_EXPIRED:
@@ -47,10 +62,11 @@ export function AuthProvider({ children }) {
             setIsAuthenticated(true);
             setUserInfo(data.userInfo);
         } catch (error) {
-            console.error('Auth check error:', error);
-            if (error.message === 'Failed to fetch.') {
+            if (error.message === 'Failed to fetch.' && error.message !== 'AbortError') {
                 setIsAuthenticated(false);
                 setUserInfo({ username: '', email: '' });
+            } else {
+                console.error('Auth check error:', error);
             }
         }
     }
