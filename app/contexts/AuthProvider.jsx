@@ -7,7 +7,6 @@ import { createContext, useContext, useState, useEffect } from 'react';
 // Utils Imports:
 
 import { AuthErrorCode } from "@/app/utils/errors/auth/AuthError";
-import { createErrorFromResponse } from "@/app/utils/errors/error-handler";
 
 const AuthContext = createContext();
 
@@ -36,30 +35,23 @@ export function AuthProvider({ children }) {
                     case AuthErrorCode.INVALID_SESSION:
                         setIsAuthenticated(false);
                         setUserInfo( { username: '', email: '' } )
-                        break
+                        return
                     case AuthErrorCode.RATE_LIMIT_EXCEEDED:
                         return
+                    default:
+                        console.error('Auth check error:', data);
+                        return
                 }
-                return;
             }
 
             setIsAuthenticated(true);
             setUserInfo(data.userInfo);
         } catch (error) {
             console.error('Auth check error:', error);
-            setIsAuthenticated(false);
-            setUserInfo({ username: '', email: '' });
             if (error.message === 'Failed to fetch.') {
-                throw createErrorFromResponse(500, {
-                    message: 'Unable to connect to the server. Please check your internet connection.',
-                    code: 'NETWORK_ERROR'
-                }, 'auth');
+                setIsAuthenticated(false);
+                setUserInfo({ username: '', email: '' });
             }
-
-            throw createErrorFromResponse(500, {
-                message: 'An unknown error occurred.',
-                code: 'UNKNOWN_ERROR'
-            }, 'auth');
         }
     }
 

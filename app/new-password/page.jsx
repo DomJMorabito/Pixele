@@ -19,6 +19,10 @@ import { sendResetPasswordEmail } from "@/app/api/verify/send-reset-password-ema
 
 export default function NewPasswordPage({ searchParams }) {
     const { setBackground } = useBackground();
+
+    const decodedEmail = searchParams.email ? decodeURIComponent(searchParams.email) : '';
+    const decodedUsername = searchParams.username ? decodeURIComponent(searchParams.username) : '';
+
     useEffect(() => {
         document.title = 'New Password | Pixele';
         setBackground(backgrounds.login);
@@ -31,8 +35,8 @@ export default function NewPasswordPage({ searchParams }) {
         <>
             <main>
                 <VerificationForm
-                    email={ searchParams.email }
-                    username={ searchParams.username }
+                    email={ decodedEmail }
+                    username={ decodedUsername }
                     isPasswordReset={ true }
                     onSubmit={confirmNewPassword}
                     onResend={sendResetPasswordEmail}

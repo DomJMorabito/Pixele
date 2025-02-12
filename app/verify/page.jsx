@@ -19,6 +19,10 @@ import { resendVerificationCode } from "@/app/api/verify/resend-verification-cod
 
 export default function VerifyPage({ searchParams }) {
     const { setBackground } = useBackground();
+
+    const decodedEmail = searchParams.email ? decodeURIComponent(searchParams.email) : '';
+    const decodedUsername = searchParams.username ? decodeURIComponent(searchParams.username) : '';
+
     useEffect(() => {
         document.title = 'Verify | Pixele';
         setBackground(backgrounds.register);
@@ -31,8 +35,8 @@ export default function VerifyPage({ searchParams }) {
         <>
             <main>
                 <VerificationForm
-                    email = { searchParams.email }
-                    username = { searchParams.username }
+                    email = { decodedEmail }
+                    username = { decodedUsername }
                     onSubmit={ sendVerificationRequest }
                     onResend={ resendVerificationCode }
                 />
