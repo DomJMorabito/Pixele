@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 // React Imports:
 
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 
 // Utils Imports:
 
@@ -14,23 +14,19 @@ import { AuthErrorCode } from "@/app/utils/errors/auth/AuthError";
 
 const AuthContext = createContext();
 
+const PUBLIC_PATHS = ['/register', '/verify', '/reset-password', '/new-password', '/login'];
+
 export function AuthProvider({ children }) {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [userInfo, setUserInfo] = useState({ username: '', email: '' });
     const [isLoading, setIsLoading] = useState(true);
     const pathname = usePathname();
 
-    const shouldSkipAuthCheck = () => {
-        const publicPaths = ['/register', '/verify', '/reset-password', '/new-password'];
-        return publicPaths.some(path => pathname.startsWith(path));
-    }
+    const isPublicPath = useCallback((path) => {
+        return PUBLIC_PATHS.some(publicPath => path.startsWith(publicPath));
+    }, []);
 
-    const checkAuthStatus = async () => {
-        if (shouldSkipAuthCheck()) {
-            setIsLoading(false);
-            return;
-        }
-
+    const checkAuthStatus = useCallback(async () => {
         try {
             const response = await fetch('https://api.pixele.gg/users/check-auth', {
                 method: 'GET',
@@ -49,58 +45,73 @@ export function AuthProvider({ children }) {
                     case AuthErrorCode.SESSION_EXPIRED:
                     case AuthErrorCode.INVALID_SESSION:
                         setIsAuthenticated(false);
-                        setUserInfo( { username: '', email: '' } )
-                        return
+                        setUserInfo({ username: '', email: '' });
+                        return;
                     case AuthErrorCode.RATE_LIMIT_EXCEEDED:
-                        return
+                        return;
                     default:
                         console.error('Auth check error:', data);
-                        return
+                        return;
                 }
             }
 
             setIsAuthenticated(true);
             setUserInfo(data.userInfo);
         } catch (error) {
-            if (error.message === 'Failed to fetch.' && error.message !== 'AbortError') {
+            if (error.message === 'Failed to fetch' && error.name !== 'AbortError') {
                 setIsAuthenticated(false);
                 setUserInfo({ username: '', email: '' });
             } else {
                 console.error('Auth check error:', error);
             }
         }
-    }
-
-    useEffect(() => {
-        const initAuth = async () => {
-            await checkAuthStatus();
-            setIsLoading(false);
-        };
-
-        initAuth();
     }, []);
 
     useEffect(() => {
-        const handleRouteChange = () => {
-            checkAuthStatus();
-        }
-
-        window.addEventListener('popstate', handleRouteChange);
-
         const originalPushState = window.history.pushState;
-        window.history.pushState = function () {
-            originalPushState.apply(this, arguments);
-            handleRouteChange();
+        let authCheckInterval;
+        let isInitializing = true;
+
+        const handleRouteChange = () => {
+            if (!isPublicPath(window.location.pathname) && !isInitializing) {
+                checkAuthStatus();
+            }
         };
 
-        const interval = setInterval(checkAuthStatus, 15 * 60 * 1000);
+        const setupListeners = () => {
+            window.addEventListener('popstate', handleRouteChange);
+            window.history.pushState = function() {
+                originalPushState.apply(this, arguments);
+                handleRouteChange();
+            };
+            authCheckInterval = setInterval(checkAuthStatus, 15 * 60 * 1000);
+        };
 
-        return () => {
+        const cleanupListeners = () => {
             window.removeEventListener('popstate', handleRouteChange);
             window.history.pushState = originalPushState;
-            clearInterval(interval);
+            if (authCheckInterval) {
+                clearInterval(authCheckInterval);
+            }
         };
-    }, [])
+
+        const initialize = async () => {
+            if (!isPublicPath(pathname)) {
+                await checkAuthStatus();
+                isInitializing = false;
+                setupListeners();
+            } else {
+                isInitializing = false;
+            }
+            setIsLoading(false);
+        };
+
+        initialize();
+
+        return () => {
+            cleanupListeners();
+        }
+    }, [pathname, isPublicPath, checkAuthStatus]);
 
     const refreshAuth = async () => {
         await checkAuthStatus();
