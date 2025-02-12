@@ -33,8 +33,7 @@ export function AuthProvider({ children }) {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                credentials: 'include',
-                signal: new AbortController().signal
+                credentials: 'include'
             });
 
             const data = await response.json();

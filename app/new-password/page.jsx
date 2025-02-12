@@ -1,5 +1,9 @@
 'use client';
 
+// Next.js Imports:
+
+import { useSearchParams } from "next/navigation";
+
 // React Imports:
 
 import { useEffect } from 'react';
@@ -17,11 +21,12 @@ import { useBackground, backgrounds } from '@/app/contexts/BackgroundProvider';
 import { confirmNewPassword } from '@/app/api/verify/confirm-new-password';
 import { sendResetPasswordEmail } from "@/app/api/verify/send-reset-password-email";
 
-export default function NewPasswordPage({ searchParams }) {
+export default function NewPasswordPage() {
     const { setBackground } = useBackground();
+    const searchParams = useSearchParams();
 
-    const decodedEmail = searchParams.email ? decodeURIComponent(searchParams.email) : '';
-    const decodedUsername = searchParams.username ? decodeURIComponent(searchParams.username) : '';
+    const decodedEmail = decodeURIComponent(searchParams.get('email') || '');
+    const decodedUsername = decodeURIComponent(searchParams.get('username') || '');
 
     useEffect(() => {
         document.title = 'New Password | Pixele';

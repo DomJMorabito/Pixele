@@ -1,5 +1,9 @@
 'use client';
 
+// Next.js Imports:
+
+import { useSearchParams } from "next/navigation";
+
 // React Imports:
 
 import { useEffect } from 'react';
@@ -17,11 +21,12 @@ import { useBackground, backgrounds } from '@/app/contexts/BackgroundProvider';
 import { sendVerificationRequest } from "@/app/api/verify/send-verification-request";
 import { resendVerificationCode } from "@/app/api/verify/resend-verification-code";
 
-export default function VerifyPage({ searchParams }) {
+export default function VerifyPage() {
     const { setBackground } = useBackground();
+    const searchParams = useSearchParams();
 
-    const decodedEmail = searchParams.email ? decodeURIComponent(searchParams.email) : '';
-    const decodedUsername = searchParams.username ? decodeURIComponent(searchParams.username) : '';
+    const decodedEmail = decodeURIComponent(searchParams.get('email') || '');
+    const decodedUsername = decodeURIComponent(searchParams.get('username') || '');
 
     useEffect(() => {
         document.title = 'Verify | Pixele';
