@@ -136,6 +136,11 @@ export default function LoginForm() {
                         router.push(`/verify?email=${encodeURIComponent(maskedEmail)}&username=${encodeURIComponent(username)}`);
                     }, 2000);
                     break
+                case LoginErrorCode.ACCOUNT_LOCKED:
+                    showAlert(`Account temporary locked. You may try again in ${error.required?.remainingTime}m`)
+                    showFieldState('identifier', setFieldState);
+                    showFieldState('password', setFieldState);
+                    break
                 case LoginErrorCode.DATABASE_ERROR:
                     console.error(error);
                     showAlert('Could not complete login. Please try again later.', 'bad');

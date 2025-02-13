@@ -34,6 +34,12 @@ export const handleLoginError = (status, data) => {
                 {},
                 data.params
             )
+        case 'ACCOUNT_LOCKED':
+            return new LoginError(
+                'Account temporarily locked.',
+                LoginErrorCode.ACCOUNT_LOCKED,
+                data.required
+            )
         case 'DATABASE_ERROR':
             return new LoginError(
                 'Unable to complete login. Please try again later.',

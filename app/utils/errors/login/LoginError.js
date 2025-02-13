@@ -6,6 +6,7 @@ export const LoginErrorCode = {
     INVALID_INPUT: 'INVALID_INPUT',                 // typeof assertion failed
     INVALID_CREDENTIALS: 'INVALID_CREDENTIALS',     // Email/Username or Password is incorrect
     CONFIRM_SIGN_UP: 'CONFIRM_SIGN_UP',             // Account not confirmed
+    ACCOUNT_LOCKED: 'ACCOUNT_LOCKED',               // Account temporarily locked.
     DATABASE_ERROR: 'DATABASE_ERROR',               // could not make insertion/update into database
     RATE_LIMIT_EXCEEDED: 'RATE_LIMIT_EXCEEDED',     // Too many attempts
     SERVER_ERROR: 'SERVER_ERROR',                   // Internal server error
