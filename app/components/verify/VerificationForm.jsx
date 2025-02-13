@@ -270,14 +270,6 @@ export default function VerificationForm({
                         showFieldState('confirmPassword', setFieldState);
                     }
                     break
-                case VerificationErrorCode.DATABASE_ERROR:
-                    showAlert('Verification failed. Please try again later.', 'bad');
-                    showFieldState('code', setFieldState);
-                    if (isPasswordReset) {
-                        showFieldState('password', setFieldState);
-                        showFieldState('confirmPassword', setFieldState);
-                    }
-                    break
                 case VerificationErrorCode.INVALID_CODE:
                     showAlert('Verification Code is Incorrect.', 'bad');
                     showFieldState('code', setFieldState);

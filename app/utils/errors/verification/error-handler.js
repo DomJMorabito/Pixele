@@ -28,11 +28,6 @@ export const handleVerificationError = (status, data) => {
                 'Invalid credentials.',
                 VerificationErrorCode.INVALID_CREDENTIALS
             )
-        case 'DATABASE_ERROR':
-            return new VerificationError(
-                'Unable to complete verification. Please try again later.',
-                VerificationErrorCode.DATABASE_ERROR
-            )
         case 'INVALID_CODE':
             return new VerificationError(
                 'Invalid verification code. Please try again.',

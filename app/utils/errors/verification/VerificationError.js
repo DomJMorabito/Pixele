@@ -5,7 +5,6 @@ export const VerificationErrorCode = {
     MISSING_FIELDS: 'MISSING_FIELDS',           // Username or code missing
     INVALID_INPUT: 'INVALID_INPUT',             // typeof assertion failed
     INVALID_CREDENTIALS: 'INVALID_CREDENTIALS', // User could not be found
-    DATABASE_ERROR: 'DATABASE_ERROR',           // Error updating instance of user in RDS
     INVALID_CODE: 'INVALID_CODE',               // Verification code validation failed
     ALREADY_VERIFIED: 'ALREADY_VERIFIED',       // User is already verified
     EXPIRED_CODE: 'EXPIRED_CODE',               // Code has expired
