@@ -1,11 +1,11 @@
 // Utils Imports:
 
-import { handleRegistrationError } from '@/app/utils/errors/register/error-handler';
-import { handleVerificationError } from '@/app/utils/errors/verification/error-handler';
-import { handleLoginError } from '@/app/utils/errors/login/error-handler';
-import { handleAuthError } from "@/app/utils/errors/auth/error-handler";
-import { handleLogoutError } from '@/app/utils/errors/logout/error-handler';
-import { handleGameError } from '@/app/utils/errors/game/error-handler';
+import { handleRegistrationError } from '@/app/error/register/error-handler';
+import { handleVerificationError } from '@/app/error/verification/error-handler';
+import { handleLoginError } from '@/app/error/login/error-handler';
+import { handleAuthError } from "@/app/error/auth/error-handler";
+import { handleLogoutError } from '@/app/error/logout/error-handler';
+import { handleGameError } from '@/app/error/game/error-handler';
 
 /**
  * Creates an appropriate error instance based on the API response

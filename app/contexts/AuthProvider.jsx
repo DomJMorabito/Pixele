@@ -10,7 +10,7 @@ import { createContext, useContext, useState, useEffect, useCallback, useRef } f
 
 // Utils Imports:
 
-import { AuthErrorCode } from "@/app/utils/errors/auth/AuthError";
+import { AuthErrorCode } from "@/app/error/auth/AuthError";
 import { debounce } from '@/app/utils/ui/debounce';
 
 const AuthContext = createContext();

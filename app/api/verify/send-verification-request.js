@@ -1,7 +1,7 @@
 // Utils Imports:
 
-import { createErrorFromResponse } from '@/app/utils/errors/error-handler';
-import { VerificationError } from '@/app/utils/errors/verification/VerificationError';
+import { createErrorFromResponse } from '@/app/error/error-handler';
+import { VerificationError } from '@/app/error/verification/VerificationError';
 
 /**
  * Confirms the sign-up verification code for the user with AWS Cognito.

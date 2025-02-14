@@ -24,7 +24,7 @@ import { useAlert } from '@/app/contexts/AlertProvider';
 import { sendLoginRequest } from '@/app/api/login/send-login-request';
 import { showFieldState } from '@/app/utils/ui/show-field-state';
 import { maskEmail } from '@/app/utils/ui/mask-email';
-import { LoginErrorCode } from '@/app/utils/errors/login/LoginError';
+import { LoginErrorCode } from '@/app/error/login/LoginError';
 
 // CSS Imports:
 
@@ -137,7 +137,7 @@ export default function LoginForm() {
                     }, 2000);
                     break
                 case LoginErrorCode.ACCOUNT_LOCKED:
-                    showAlert(`Account temporary locked. You may try again in ${error.required?.remainingTime}m`)
+                    showAlert(`Account temporary locked. Try again in ${error.required?.remainingTime}m`)
                     showFieldState('identifier', setFieldState);
                     showFieldState('password', setFieldState);
                     break

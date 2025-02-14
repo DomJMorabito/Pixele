@@ -29,7 +29,7 @@ function GameCardGrid() {
             id: 'overwatch',
             logoSrc: 'https://assets.pixele.gg/game-card/overwatch/logo.png',
             altText: 'Overwatch',
-            gameLink: '/games/overwatch',
+            gameLink: '/overwatch',
             extraContent: (
                 <div className='game-title'>Overwatch</div>
             ),
@@ -38,7 +38,7 @@ function GameCardGrid() {
             id: 'ssb',
             logoSrc: 'https://assets.pixele.gg/game-card/ssb/logo.png',
             altText: 'Super Smash Bros. Logo',
-            gameLink: '/games/ssb',
+            gameLink: '/ssb',
             extraContent: (
                 <div className='game-title'>Super Smash Bros.</div>
             ),
@@ -47,7 +47,7 @@ function GameCardGrid() {
             id: 'pokemon',
             logoSrc: 'https://assets.pixele.gg/game-card/pokemon/logo.png',
             altText: 'Pokémon Logo',
-            gameLink: '/games/pokemon',
+            gameLink: '/pokemon',
             extraContent: (
                 <div id='pokemon-container'>
                     <div id='identifier'>#0643</div>
@@ -63,7 +63,7 @@ function GameCardGrid() {
             id: 'valorant',
             logoSrc: 'https://assets.pixele.gg/game-card/valorant/logo.png',
             altText: 'Valorant Logo',
-            gameLink: '/games/valorant',
+            gameLink: '/valorant',
             extraContent: (
                 <div className='game-title'><div className = 'text-wrapper'>Valorant</div></div>
             ),
@@ -72,7 +72,7 @@ function GameCardGrid() {
             id: 'r6',
             logoSrc: 'https://assets.pixele.gg/game-card/r6/logo.png',
             altText: 'Rainbow Six Siege Logo',
-            gameLink: '/games/r6',
+            gameLink: '/r6',
             extraContent: (
                 <div className='game-title'>Rainbow Six Siege</div>
             ),
@@ -81,7 +81,7 @@ function GameCardGrid() {
             id: 'minecraft',
             logoSrc: 'https://assets.pixele.gg/game-card/minecraft/logo.png',
             altText: 'Minecraft Logo',
-            gameLink: '/games/minecraft',
+            gameLink: '/minecraft',
             extraContent: (
                 <div className='game-title'>Minecraft</div>
             ),
@@ -90,7 +90,7 @@ function GameCardGrid() {
             id: 'clashroyale',
             logoSrc: 'https://assets.pixele.gg/game-card/clashroyale/logo.png',
             altText: 'Clash Royale Logo',
-            gameLink: '/games/clashroyale',
+            gameLink: '/clashroyale',
             extraContent: (
                 <div className='game-title'>Clash Royale</div>
             ),

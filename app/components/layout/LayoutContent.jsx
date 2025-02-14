@@ -17,7 +17,21 @@ import { BackgroundProvider } from '@/app/contexts/BackgroundProvider';
 
 export default function LayoutContent({ children }) {
     useEffect(() => {
-        window.scrollTo(0, 0);
+        if (typeof window !== 'undefined') {
+            window.history.scrollRestoration = 'manual';
+            requestAnimationFrame(() => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+            });
+        }
+
+        return () => {
+            if (typeof window !== 'undefined') {
+                window.history.scrollRestoration = 'auto';
+            }
+        };
     }, []);
 
     return (

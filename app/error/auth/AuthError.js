@@ -9,11 +9,11 @@ export const AuthErrorCode = {
     RATE_LIMIT_EXCEEDED: 'RATE_LIMIT_EXCEEDED',     // Too many requests
     SERVER_ERROR: 'SERVER_ERROR',                   // Internal server error
     NETWORK_ERROR: 'NETWORK_ERROR',                 // Connection Issues
-    UNKNOWN_ERROR: 'UNKNOWN_ERROR'                  // Fallback for unexpected errors
+    UNKNOWN_ERROR: 'UNKNOWN_ERROR'                  // Fallback for unexpected error
 }
 
 /**
- * Custom error class for handling auth-related errors
+ * Custom error class for handling auth-related error
  * Extends the built-in Error class to add structured error handling
  *
  * @extends Error

@@ -1,6 +1,6 @@
 // Utils Imports:
 
-import { LoginError, LoginErrorCode } from '@/app/utils/errors/login/LoginError';
+import { LoginError, LoginErrorCode } from '@/app/error/login/LoginError';
 
 /**
  * Creates a LoginError from an API response

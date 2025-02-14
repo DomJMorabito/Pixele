@@ -1,5 +1,5 @@
-import { LogoutError } from '@/app/utils/errors/logout/LogoutError';
-import { createErrorFromResponse } from '@/app/utils/errors/error-handler';
+import { LogoutError } from '@/app/error/logout/LogoutError';
+import { createErrorFromResponse } from '@/app/error/error-handler';
 
 /**
  * Sends a logout request to the server

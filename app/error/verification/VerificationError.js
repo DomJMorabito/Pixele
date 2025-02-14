@@ -11,14 +11,14 @@ export const VerificationErrorCode = {
     RATE_LIMIT_EXCEEDED: 'RATE_LIMIT_EXCEEDED', // Too many attempts
     SERVER_ERROR: 'SERVER_ERROR',               // Internal server error
     NETWORK_ERROR: 'NETWORK_ERROR',             // Connection Issues
-    UNKNOWN_ERROR: 'UNKNOWN_ERROR',             // Fallback for unexpected errors
+    UNKNOWN_ERROR: 'UNKNOWN_ERROR',             // Fallback for unexpected error
     // FOR PASSWORD RESET
     INVALID_PASSWORD: 'INVALID_PASSWORD',       // Password requirements not met
     CONFIRM_SIGN_UP: 'CONFIRM_SIGN_UP'          // Unconfirmed account
 };
 
 /**
- * Custom error class for handling verification-related errors
+ * Custom error class for handling verification-related error
  * Extends the built-in Error class to add structured error handling
  *
  * @extends Error

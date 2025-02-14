@@ -1,4 +1,4 @@
-import { LogoutError, LogoutErrorCode } from "@/app/utils/errors/logout/LogoutError";
+import { LogoutError, LogoutErrorCode } from "@/app/error/logout/LogoutError";
 
 /**
  * Creates a LogoutError from an API response

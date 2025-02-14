@@ -1,7 +1,7 @@
 // Utils Imports:
 
-import { createErrorFromResponse } from '@/app/utils/errors/error-handler';
-import { RegistrationError } from '@/app/utils/errors/register/RegistrationError';
+import { createErrorFromResponse } from '@/app/error/error-handler';
+import { RegistrationError } from '@/app/error/register/RegistrationError';
 
 /**
  * Sends a registration request to the server with the provided username, email, and password.

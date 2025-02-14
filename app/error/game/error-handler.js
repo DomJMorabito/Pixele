@@ -1,4 +1,4 @@
-import { GameError, GameErrorCode } from '@/app/utils/errors/game/GameError';
+import { GameError, GameErrorCode } from '@/app/error/game/GameError';
 
 /**
  * Creates a GameError from an API response

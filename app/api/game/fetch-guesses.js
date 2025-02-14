@@ -1,7 +1,7 @@
 // Utils Imports:
 
-import { createErrorFromResponse, } from "@/app/utils/errors/error-handler";
-import { GameError } from '@/app/utils/errors/game/GameError';
+import { createErrorFromResponse, } from "@/app/error/error-handler";
+import { GameError } from '@/app/error/game/GameError';
 
 /**
  * Fetches the user's guesses for a specific game from the server.

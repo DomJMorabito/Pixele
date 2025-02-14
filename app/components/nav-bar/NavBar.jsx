@@ -22,7 +22,7 @@ import { useAuth } from '@/app/contexts/AuthProvider';
 
 import { debounce } from '@/app/utils/ui/debounce';
 import { sendLogoutRequest } from "@/app/api/logout/send-logout-request";
-import { LogoutErrorCode } from "@/app/utils/errors/logout/LogoutError";
+import { LogoutErrorCode } from "@/app/error/logout/LogoutError";
 
 // CSS Imports:
 

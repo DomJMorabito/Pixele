@@ -1,6 +1,6 @@
 // Utils Imports:
 
-import { AuthError, AuthErrorCode } from '@/app/utils/errors/auth/AuthError';
+import { AuthError, AuthErrorCode } from '@/app/error/auth/AuthError';
 
 /**
  * Creates a AuthError from an API response

@@ -1,7 +1,7 @@
 // Utils Imports:
 
-import { createErrorFromResponse } from '@/app/utils/errors/error-handler';
-import { LoginError } from '@/app/utils/errors/login/LoginError';
+import { createErrorFromResponse } from '@/app/error/error-handler';
+import { LoginError } from '@/app/error/login/LoginError';
 
 /**
  * Sends a login request using AWS Amplify's auth service

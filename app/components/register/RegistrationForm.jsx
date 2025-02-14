@@ -31,7 +31,7 @@ import { validateUsernameLength } from '@/app/utils/input/username/validate-user
 import { validateUsernameSpecialCharacters } from '@/app/utils/input/username/validate-username-special-characters';
 import { sendRegisterRequest } from '@/app/api/register/send-register-request';
 import { showFieldState } from '@/app/utils/ui/show-field-state';
-import { RegistrationErrorCode } from '@/app/utils/errors/register/RegistrationError';
+import { RegistrationErrorCode } from '@/app/error/register/RegistrationError';
 import { checkUsernameAvailability } from '@/app/api/register/check-username-availability';
 import { validateUsername } from '@/app/utils/input/username/validate-username';
 import { validatePassword } from "@/app/utils/input/password/validate-password";

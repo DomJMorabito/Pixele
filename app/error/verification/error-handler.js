@@ -1,6 +1,6 @@
 // Utils Imports:
 
-import { VerificationError, VerificationErrorCode } from '@/app/utils/errors/verification/VerificationError';
+import { VerificationError, VerificationErrorCode } from '@/app/error/verification/VerificationError';
 
 /**
  * Creates a VerificationError from an API response

@@ -1,7 +1,7 @@
 // Utils Imports:
 
-import { VerificationError } from '@/app/utils/errors/verification/VerificationError';
-import { createErrorFromResponse } from '@/app/utils/errors/error-handler';
+import { VerificationError } from '@/app/error/verification/VerificationError';
+import { createErrorFromResponse } from '@/app/error/error-handler';
 
 /**
  * Confirms the new password using the reset code

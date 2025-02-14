@@ -26,7 +26,7 @@ import { validateUsernameLength } from '@/app/utils/input/username/validate-user
 import { validateUsernameSpecialCharacters } from "@/app/utils/input/username/validate-username-special-characters";
 import { sendResetPasswordEmail } from "@/app/api/verify/send-reset-password-email";
 import { maskEmail } from "@/app/utils/ui/mask-email";
-import { VerificationErrorCode } from '@/app/utils/errors/verification/VerificationError';
+import { VerificationErrorCode } from '@/app/error/verification/VerificationError';
 
 // CSS Imports:
 
