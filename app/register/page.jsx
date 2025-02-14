@@ -15,7 +15,7 @@ import { useBackground, backgrounds } from '@/app/contexts/BackgroundProvider';
 export default function RegisterPage() {
     const { setBackground } = useBackground();
     useEffect(() => {
-        document.title = 'Register | Pixele';
+        document.title = 'Pixele - Create Account';
         setBackground(backgrounds.register);
         return () => {
             setBackground(backgrounds.homescreen);

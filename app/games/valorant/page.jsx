@@ -15,7 +15,7 @@ import { useBackground, backgrounds } from '@/app/contexts/BackgroundProvider';
 export default function ValorantPage() {
     const { setBackground } = useBackground();
     useEffect(() => {
-        document.title = 'Valorant | Pixele';
+        document.title = 'Pixele - Valorant';
         setBackground(backgrounds.valorant.game);
         return () => {
             setBackground(backgrounds.homescreen);

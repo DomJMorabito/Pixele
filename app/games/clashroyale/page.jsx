@@ -15,7 +15,7 @@ import { useBackground, backgrounds } from '@/app/contexts/BackgroundProvider';
 export default function ClashRoyalePage() {
     const { setBackground } = useBackground();
     useEffect(() => {
-        document.title = 'Clash Royale | Pixele';
+        document.title = 'Pixele - Clash Royale';
         setBackground(backgrounds.clashroyale.game);
         return () => {
             setBackground(backgrounds.homescreen);

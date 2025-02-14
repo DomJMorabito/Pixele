@@ -45,19 +45,19 @@
 
 @media (min-width: 320px) {
     #guess-grid {
-        width: 300px;
+        width: 288px;
     }
 }
 
 @media (min-width: 375px) {
     #guess-grid {
-        width: 336px;
+        width: 324px;
     }
 }
 
 @media (min-width: 425px) {
     #guess-grid {
-        width: 378px;
+        width: 366px;
     }
 }
 
@@ -87,7 +87,7 @@
 
 @media (min-width: 2560px) {
     #guess-grid {
-        width: 846px;
+        width: 768px;
     }
 }
 

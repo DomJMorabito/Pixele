@@ -86,11 +86,13 @@ function NavBar() {
     }
 
     const settingsRouter = () => {
-        router.push('/settings');
+        // router.push('/settings');
+        showAlert('Coming soon!', 'good');
     }
 
     const leaderboardRouter = () => {
-        router.push('/leaderboard');
+        // router.push('/leaderboard');
+        showAlert('Coming soon!', 'good');
     }
 
     const clearHide = () => {

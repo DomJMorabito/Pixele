@@ -15,7 +15,7 @@ import { useBackground, backgrounds } from '@/app/contexts/BackgroundProvider';
 export default function LoginPage() {
     const { setBackground } = useBackground();
     useEffect(() => {
-        document.title = 'Login | Pixele';
+        document.title = 'Pixele - Login';
         setBackground(backgrounds.login);
         return () => {
             setBackground(backgrounds.homescreen);

@@ -29,7 +29,7 @@ export default function VerifyPage() {
     const decodedUsername = decodeURIComponent(searchParams.get('username') || '');
 
     useEffect(() => {
-        document.title = 'Verify | Pixele';
+        document.title = 'Pixele - Verify Account';
         setBackground(backgrounds.register);
         return () => {
             setBackground(backgrounds.homescreen);

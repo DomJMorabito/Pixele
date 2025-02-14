@@ -7,7 +7,13 @@
 
 @media (min-width: 320px) {
     #guess-button {
-        margin: 3px;
+        margin: 2px;
+    }
+}
+
+@media (min-width: 768px) {
+    #guess-button {
+        margin: 3px
     }
 }
 

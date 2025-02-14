@@ -15,7 +15,7 @@ import { useBackground, backgrounds } from '@/app/contexts/BackgroundProvider';
 export default function MinecraftPage() {
     const { setBackground } = useBackground();
     useEffect(() => {
-        document.title = 'Minecraft | Pixele';
+        document.title = 'Pixele - Minecraft';
         setBackground(backgrounds.minecraft.game);
         return () => {
             setBackground(backgrounds.homescreen);

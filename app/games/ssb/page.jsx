@@ -15,7 +15,7 @@ import { useBackground, backgrounds } from '@/app/contexts/BackgroundProvider';
 export default function SSBPage() {
     const { setBackground } = useBackground();
     useEffect(() => {
-        document.title = 'SSBU | Pixele';
+        document.title = 'Pixele - Super Smash Bros. Ultimate';
         setBackground(backgrounds.ssb.game);
         return () => {
             setBackground(backgrounds.homescreen);

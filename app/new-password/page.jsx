@@ -29,7 +29,7 @@ export default function NewPasswordPage() {
     const decodedUsername = decodeURIComponent(searchParams.get('username') || '');
 
     useEffect(() => {
-        document.title = 'New Password | Pixele';
+        document.title = 'Pixele - Choose New Password';
         setBackground(backgrounds.login);
         return () => {
             setBackground(backgrounds.homescreen);

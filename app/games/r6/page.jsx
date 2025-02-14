@@ -15,7 +15,7 @@ import { useBackground, backgrounds } from '@/app/contexts/BackgroundProvider';
 export default function R6Page() {
     const { setBackground } = useBackground();
     useEffect(() => {
-        document.title = 'R6 | Pixele';
+        document.title = 'Pixele - Rainbow Six Siege';
         setBackground(backgrounds.r6.game);
         return () => {
             setBackground(backgrounds.homescreen);

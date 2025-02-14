@@ -15,7 +15,7 @@ import { useBackground, backgrounds } from '@/app/contexts/BackgroundProvider';
 export default function PokemonPage() {
     const { setBackground } = useBackground();
     useEffect(() => {
-        document.title = 'Pokémon | Pixele';
+        document.title = 'Pixele - Pokémon';
         setBackground(backgrounds.pokemon.game);
         return () => {
             setBackground(backgrounds.homescreen);

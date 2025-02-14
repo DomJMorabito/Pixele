@@ -23,12 +23,7 @@ import { fetchGuesses } from '@/app/api/game/fetch-guesses';
 
 import '@/app/components/guess-grid/GuessGrid.css';
 
-const GuessGrid = ({
-                       gameId,
-                       attributes,
-                       maxGuesses,
-                       inputPlaceholder
-                   }) => {
+const GuessGrid = ({ gameId, attributes, maxGuesses, inputPlaceholder }) => {
     const [guesses, setGuesses] = useState([]);
     const [loading, setLoading] = useState(false);
     const { isAuthenticated, userInfo } = useAuth();

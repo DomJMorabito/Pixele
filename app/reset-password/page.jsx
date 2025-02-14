@@ -15,7 +15,7 @@ import { useBackground, backgrounds } from '@/app/contexts/BackgroundProvider';
 export default function ResetPasswordPage() {
     const { setBackground } = useBackground();
     useEffect(() => {
-        document.title = 'Reset Password | Pixele';
+        document.title = 'Pixele - Reset Password';
         setBackground(backgrounds.login);
         return () => {
             setBackground(backgrounds.homescreen);

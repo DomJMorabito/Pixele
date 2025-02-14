@@ -12,12 +12,19 @@ export default function Layout({ children }) {
         <head>
             <meta charSet="UTF-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-            <link
-                rel="icon"
-                type="image/png"
-                sizes="32x32"
-                href="https://assets.pixele.gg/general/pixele-logo.png"
-            />
+
+            <link rel="icon" type="image/png" sizes="16x16" href="https://assets.pixele.gg/favicon/pixele-logo-16.png"/>
+            <link rel="icon" type="image/png" sizes="32x32" href="https://assets.pixele.gg/favicon/pixele-logo-32.png"/>
+            <link rel="icon" type="image/png" sizes="48x48" href="https://assets.pixele.gg/favicon/pixele-logo-48.png"/>
+            <link rel="icon" type="image/png" sizes="64x64" href="https://assets.pixele.gg/favicon/pixele-logo-64.png"/>
+
+            <link rel="apple-touch-icon" sizes="120x120" href="https://assets.pixele.gg/favicon/pixele-logo-120.png"/>
+            <link rel="apple-touch-icon" sizes="152x152" href="https://assets.pixele.gg/favicon/pixele-logo-152.png"/>
+            <link rel="apple-touch-icon" sizes="167x167" href="https://assets.pixele.gg/favicon/pixele-logo-167.png"/>
+            <link rel="apple-touch-icon" sizes="180x180" href="https://assets.pixele.gg/favicon/pixele-logo-180.png"/>
+
+            <link rel="icon" type="image/png" sizes="192x192" href="https://assets.pixele.gg/favicon/pixele-logo-192.png"/>
+
             <link
                 rel="preconnect"
                 href="https://fonts.googleapis.com"

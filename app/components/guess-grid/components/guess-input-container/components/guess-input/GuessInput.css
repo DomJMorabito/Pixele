@@ -7,6 +7,12 @@
 
 @media (min-width: 320px) {
     #guess-input {
+        margin: 2px;
+    }
+}
+
+@media (min-width: 768px) {
+    #guess-input {
         margin: 3px;
     }
 }

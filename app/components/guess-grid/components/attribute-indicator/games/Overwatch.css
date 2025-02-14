@@ -9,8 +9,8 @@
 @media (min-width: 320px) {
     .overwatch-attribute-indicator {
         border-radius: 2px;
-        font-size: 0.7em;
-        padding: 5px;
+        font-size: 8px;
+        padding: 3px;
         border: 1px solid var(--white);
     }
 
@@ -19,48 +19,70 @@
     }
 }
 
+@media (min-width: 375px) {
+    .overwatch-attribute-indicator {
+        font-size: 8px;
+    }
+}
+
 @media (min-width: 425px) {
     .overwatch-attribute-indicator {
-        font-size: 0.8em;
+        font-size: 10px;
+        height: 20px;
     }
 }
 
 @media (min-width: 768px) {
     .overwatch-attribute-indicator {
-        font-size: 0.85em;
         border: 2px solid var(--white);
+        font-size: 13px;
+        padding: 4px;
+        height: 24px;
     }
 }
 
 @media (min-width: 1024px) {
     .overwatch-attribute-indicator {
-        font-size: 1em;
+        font-size: 15px;
+        padding: 5px;
+        height: 28px;
     }
 }
 
 @media (min-width: 1440px) {
     .overwatch-attribute-indicator {
-        font-size: 0.85em;
+        font-size: 13px;
+        padding: 3px;
+        height: 24px;
     }
 }
 
 @media (min-width: 1920px) {
     .overwatch-attribute-indicator {
-        font-size: 1em;
+        font-size: 15px;
+        padding: 5px;
+        height: 28px;
     }
 }
 
 @media (min-width: 2560px) {
     .overwatch-attribute-indicator {
-        font-size: 1.25em;
-        padding: 7px;
+        font-size: 16px;
         border: 3px solid var(--white);
+        height: 40px;
+        border-radius: 5px;
+    }
+
+    .overwatch-attribute-indicator-icon-wrapper {
+        margin-right: 5px;
     }
 }
 
 @media (min-width: 3840px) {
     .overwatch-attribute-indicator {
-        font-size: 1.75em;
+        font-size: 23px;
         border: 4px solid var(--white);
+        height: 48px;
+        padding: 7px;
     }
 }

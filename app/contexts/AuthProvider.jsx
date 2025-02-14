@@ -6,11 +6,12 @@ import { usePathname } from "next/navigation";
 
 // React Imports:
 
-import { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
 
 // Utils Imports:
 
 import { AuthErrorCode } from "@/app/utils/errors/auth/AuthError";
+import { debounce } from '@/app/utils/ui/debounce';
 
 const AuthContext = createContext();
 
@@ -20,6 +21,7 @@ export function AuthProvider({ children }) {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [userInfo, setUserInfo] = useState({ username: '', email: '' });
     const [isLoading, setIsLoading] = useState(true);
+    const isCheckingAuth = useRef(false);
     const pathname = usePathname();
 
     const isPublicPath = useCallback((path) => {
@@ -27,6 +29,8 @@ export function AuthProvider({ children }) {
     }, []);
 
     const checkAuthStatus = useCallback(async () => {
+        if (isCheckingAuth.current) return;
+        isCheckingAuth.current = true;
         try {
             const response = await fetch('https://api.pixele.gg/users/check-auth', {
                 method: 'GET',
@@ -63,6 +67,8 @@ export function AuthProvider({ children }) {
             } else {
                 console.error('Auth check error:', error);
             }
+        } finally {
+            isCheckingAuth.current = false;
         }
     }, []);
 
@@ -71,27 +77,28 @@ export function AuthProvider({ children }) {
         let authCheckInterval;
         let isInitializing = true;
 
-        const handleRouteChange = () => {
+        const debouncedHandleRouteChange = debounce(() => {
             if (!isPublicPath(window.location.pathname) && !isInitializing) {
                 checkAuthStatus();
             }
-        };
+        }, 100);
 
         const setupListeners = () => {
-            window.addEventListener('popstate', handleRouteChange);
+            window.addEventListener('popstate', debouncedHandleRouteChange);
             window.history.pushState = function() {
                 originalPushState.apply(this, arguments);
-                handleRouteChange();
+                debouncedHandleRouteChange();
             };
             authCheckInterval = setInterval(checkAuthStatus, 15 * 60 * 1000);
         };
 
         const cleanupListeners = () => {
-            window.removeEventListener('popstate', handleRouteChange);
+            window.removeEventListener('popstate', debouncedHandleRouteChange);
             window.history.pushState = originalPushState;
             if (authCheckInterval) {
                 clearInterval(authCheckInterval);
             }
+            debouncedHandleRouteChange.cancel();
         };
 
         const initialize = async () => {

@@ -15,7 +15,7 @@ import { useBackground, backgrounds } from '@/app/contexts/BackgroundProvider';
 export default function OverwatchPage() {
     const { setBackground } = useBackground();
     useEffect(() => {
-        document.title = 'Overwatch 2 | Pixele';
+        document.title = 'Pixele - Overwatch 2';
         setBackground(backgrounds.overwatch.game);
         return () => {
             setBackground(backgrounds.homescreen);

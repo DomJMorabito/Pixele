@@ -14,3 +14,51 @@
     justify-content: center;
     align-items: center;
 }
+
+@media (max-width: 320px) {
+    #guess-input-container, #input-button-group {
+        height: 29px;
+    }
+}
+
+@media (min-width: 425px) {
+    #guess-input-container, #input-button-group {
+        height: 32px;
+    }
+}
+
+@media (min-width: 768px) {
+    #guess-input-container, #input-button-group {
+        height: 40px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #guess-input-container, #input-button-group {
+        height: 44px;
+    }
+}
+
+@media (min-width: 1440px) {
+    #guess-input-container, #input-button-group {
+        height: 40px;
+    }
+}
+
+@media (min-width: 1920px) {
+    #guess-input-container, #input-button-group {
+        height: 44px;
+    }
+}
+
+@media (min-width: 2560px) {
+    #guess-input-container, #input-button-group {
+        height: 57px;
+    }
+}
+
+@media (min-width: 3840px) {
+    #guess-input-container, #input-button-group {
+        height: 85px;
+    }
+}

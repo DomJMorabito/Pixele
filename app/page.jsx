@@ -11,7 +11,7 @@ import Footer from '@/app/components/footer/Footer';
 
 export default function HomeScreen() {
     useEffect(() => {
-        document.title = 'Home | Pixele';
+        document.title = 'Pixele';
     }, []);
     return (
         <>
