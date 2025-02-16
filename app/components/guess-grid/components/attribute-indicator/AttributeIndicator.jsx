@@ -54,6 +54,7 @@ const AttributeIndicator = ({ attributeId, imgSrc, text, guesses, gameId }) => {
                         src={imgSrc}
                         alt=""
                         fill
+                        sizes="(min-width: 3840px) 48px, (min-width: 2560px) 32px, (min-width: 1920px) 28px, (min-width: 1440px) 24px, (min-width: 1024px) 28px, (min-width: 768px) 24px, (min-width: 425px) 20px, (min-width: 375px) 16px, 14px"
                         className={`attribute-indicator-icon ${gameId}-attribute-indicator-icon`}
                     />
                 </div>

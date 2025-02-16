@@ -15,50 +15,65 @@
     align-items: center;
 }
 
-@media (max-width: 320px) {
+@media (min-width: 320px) {
     #guess-input-container, #input-button-group {
         height: 29px;
+        width: 196px;
+    }
+}
+
+@media (min-width: 375px) {
+    #guess-input-container, #input-button-group {
+        height: 29px;
+        width: 217px;
     }
 }
 
 @media (min-width: 425px) {
     #guess-input-container, #input-button-group {
         height: 32px;
+        width: 252px;
     }
 }
 
 @media (min-width: 768px) {
     #guess-input-container, #input-button-group {
         height: 40px;
+        width: 303px;
     }
 }
 
 @media (min-width: 1024px) {
     #guess-input-container, #input-button-group {
         height: 44px;
+        width: 339px;
     }
 }
 
 @media (min-width: 1440px) {
     #guess-input-container, #input-button-group {
         height: 40px;
+        width: 303px;
     }
 }
 
 @media (min-width: 1920px) {
     #guess-input-container, #input-button-group {
         height: 44px;
+        width: 339px;
     }
 }
 
 @media (min-width: 2560px) {
     #guess-input-container, #input-button-group {
         height: 57px;
+        width: 407px;
     }
 }
 
 @media (min-width: 3840px) {
     #guess-input-container, #input-button-group {
         height: 85px;
+        width: 680px;
     }
 }

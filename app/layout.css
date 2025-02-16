@@ -220,7 +220,6 @@ html {
 
 body {
     margin: 0;
-    background-color: var(--black);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -230,6 +229,7 @@ body {
     transition: background-image 0.5s ease-in-out;
     will-change: background-image, opacity;
 }
+
 ::-webkit-scrollbar {
     display: none; /* Hides scrollbar on Chrome, Safari, Edge, & all other webkit browsers (Opera, Brave, etc.) */
 }

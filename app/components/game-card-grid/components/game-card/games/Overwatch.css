@@ -18,6 +18,7 @@
 @media (min-width: 320px) {
     #overwatch {
         border: 2px solid var(--overwatch-game-card-border);
+        border-radius: 2px;
     }
 
     #overwatch .game-title {

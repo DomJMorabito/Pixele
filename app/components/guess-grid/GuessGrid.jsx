@@ -14,10 +14,12 @@ import Picture from '@/app/components/guess-grid/components/picture/Picture';
 import Circle from '@/app/components/guess-grid/components/circle/Circle';
 import AttributeIndicatorContainer from '@/app/components/guess-grid/components/attribute-indicator-container/AttributeIndicatorContainer';
 import GuessInputContainer from '@/app/components/guess-grid/components/guess-input-container/GuessInputContainer';
+import AutocompleteDropdown from "@/app/components/guess-grid/components/autocomplete-dropdown/AutocompleteDropdown";
 
 // Utils Imports:
 
 import { fetchGuesses } from '@/app/api/game/fetch-guesses';
+import { loadCharacterList } from "@/app/utils/game/load-character-list";
 
 // CSS Imports:
 
@@ -26,8 +28,25 @@ import '@/app/components/guess-grid/GuessGrid.css';
 const GuessGrid = ({ gameId, attributes, maxGuesses, inputPlaceholder }) => {
     const [guesses, setGuesses] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [input, setInput] = useState('');
+    const [characterList, setCharacterList] = useState([]);
     const { isAuthenticated, userInfo } = useAuth();
     const { showAlert } = useAlert();
+
+    // Load character list:
+    useEffect(() => {
+        const loadCharacters = async () => {
+            const characterList = await loadCharacterList(gameId);
+            setCharacterList(characterList);
+            setLoading(false);
+        };
+        loadCharacters();
+    }, [gameId]);
+
+    // Handle selection of a character in list:
+    const handleSelect = (characterName) => {
+        setInput(characterName)
+    }
 
     // Fetch user's guesses:
     useEffect(() => {
@@ -101,6 +120,14 @@ const GuessGrid = ({ gameId, attributes, maxGuesses, inputPlaceholder }) => {
                     placeholder={inputPlaceholder}
                     disabled={loading || guesses.length >= maxGuesses}
                     className={`${gameId}-guess-input-container`}
+                    gameId={gameId}
+                    input={input}
+                    setInput={setInput}
+                />
+                <AutocompleteDropdown
+                    inputValue={input}
+                    characters={characterList}
+                    onSelect={handleSelect}
                     gameId={gameId}
                 />
             </div>

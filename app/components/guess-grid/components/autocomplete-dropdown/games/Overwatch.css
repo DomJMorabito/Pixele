@@ -1,0 +1,196 @@
+/* Overwatch Autocomplete Dropdown */
+
+.overwatch-character-name, .overwatch-special-location-text {
+    font-family: var(--big-noodle-too-oblique), sans-serif;
+    color: var(--overwatch-game-card-title);
+}
+
+.overwatch-autocomplete-dropdown-item {
+    background-color: var(--overwatch-game-card-title-background);
+}
+
+.overwatch-character-image {
+    background-color: var(--overwatch-game-card-background);
+}
+
+.overwatch-sub-details {
+    font-family: var(--poppins), sans-serif;
+    color: var(--overwatch-game-card-title);
+}
+
+.overwatch-special-location-text {
+    padding-right: 5px;
+}
+
+@media (min-width: 320px) {
+    .overwatch-autocomplete-dropdown {
+        border: 1px solid var(--overwatch-game-card-border);
+        border-radius: 2px;
+    }
+
+    .overwatch-autocomplete-dropdown-item:not(:last-of-type) {
+        border-bottom: 1px solid var(--overwatch-game-card-border);
+    }
+
+    .overwatch-character-image {
+        border-right: 1px solid var(--overwatch-game-card-border);
+    }
+
+    .overwatch-character-name {
+        font-size: 11px;
+    }
+
+    .overwatch-special-location-text {
+        font-size: 9px;
+        padding: 0;
+    }
+    .overwatch-sub-details {
+        font-size: 6px;
+    }
+
+}
+
+@media (min-width: 375px) {
+    .overwatch-character-name {
+        font-size: 13px;
+    }
+
+    .overwatch-special-location-text {
+        font-size: 10px;
+    }
+
+    .overwatch-sub-details {
+        font-size: 7px;
+    }
+}
+
+@media (min-width: 425px) {
+    .overwatch-character-name {
+        font-size: 14px;
+    }
+
+    .overwatch-special-location-text {
+        font-size: 12px;
+    }
+
+    .overwatch-sub-details {
+        font-size: 8px;
+    }
+}
+
+@media (min-width: 768px) {
+    .overwatch-autocomplete-dropdown {
+        border: 2px solid var(--overwatch-game-card-border);
+    }
+
+    .overwatch-autocomplete-dropdown-item:not(:last-of-type) {
+        border-bottom: 2px solid var(--overwatch-game-card-border);
+    }
+
+    .overwatch-character-image {
+        border-right: 2px solid var(--overwatch-game-card-border);
+    }
+
+    .overwatch-character-name {
+        font-size: 16px;
+    }
+
+    .overwatch-special-location-text {
+        font-size: 14px;
+    }
+
+    .overwatch-sub-details {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .overwatch-character-name {
+        font-size: 18px;
+    }
+
+    .overwatch-special-location-text {
+        font-size: 16px;
+    }
+
+    .overwatch-sub-details {
+        font-size: 11px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .overwatch-character-name {
+        font-size: 16px;
+    }
+
+    .overwatch-special-location-text {
+        font-size: 14px;
+    }
+
+    .overwatch-sub-details {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .overwatch-character-name {
+        font-size: 18px;
+    }
+
+    .overwatch-special-location-text {
+        font-size: 16px;
+    }
+
+    .overwatch-sub-details {
+        font-size: 11px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .overwatch-autocomplete-dropdown {
+        border: 3px solid var(--overwatch-game-card-border);
+        border-radius: 5px;
+    }
+
+    .overwatch-autocomplete-dropdown-item:not(:last-of-type) {
+        border-bottom: 3px solid var(--overwatch-game-card-border);
+    }
+
+    .overwatch-character-image {
+        border-right: 3px solid var(--overwatch-game-card-border);
+    }
+
+    .overwatch-character-name {
+        font-size: 22px;
+    }
+
+    .overwatch-special-location-text {
+        font-size: 18px;
+    }
+
+    .overwatch-sub-details {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 3840px) {
+    .overwatch-autocomplete-dropdown {
+        border: 4px solid var(--overwatch-game-card-border);
+    }
+
+    .overwatch-autocomplete-dropdown-item:not(:last-of-type) {
+        border-bottom: 4px solid var(--overwatch-game-card-border);
+    }
+
+    .overwatch-character-image {
+        border-right: 4px solid var(--overwatch-game-card-border);
+    }
+
+    .overwatch-character-name {
+        font-size: 30px;
+    }
+
+    .overwatch-special-location-text {
+        font-size: 24px;
+    }
+}

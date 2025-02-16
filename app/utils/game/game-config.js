@@ -3,92 +3,173 @@
 import { padPokedexNumber } from '@/app/utils/game/pad-pokedex-number';
 import { normalizeCharacterName } from '@/app/utils/game/normalize-character-name';
 
+const S3_BASE_URL = 'https://assets.pixele.gg';
+
+
 const gameConfig = {
     overwatch: {
         formatDetails: (character) => ({
-            mainLine: character.name,
-            details:
-                `Role: ${character.role}, 
-                Country: ${character.country}, 
-                Gender: ${character.gender}, 
-                Age: ${character.age}, 
-                Release Year: ${character.releaseYear}`
+            name: character.name,
+            details: [
+                `Gender: ${character.gender}`,
+                `Age: ${character.age}`,
+                `Release Year: ${character.releaseYear}`,
+            ].join('\n')
         }),
-        getImageSrc: (characterName) => `https://assets.pixele.gg/character/overwatch/crop/${characterName.toLowerCase()}.png`
+        getImageSrc: (characterName) => `${S3_BASE_URL}/character/overwatch/crop/${characterName.toLowerCase()}.png`,
+        specialInfo: {
+            items: [
+                {
+                    type: 'icon',
+                    field: 'role',
+                    imgPath: (value, gameId) => `${S3_BASE_URL}/indicator/${gameId}/role/${value}-Indicator.png`
+                },
+                {
+                    type: 'icon',
+                    field: 'country',
+                    imgPath: (value) => `${S3_BASE_URL}/indicator/flags/${value}.png`
+                }
+            ]
+        }
     },
     ssb: {
         formatDetails: (character) => ({
-            mainLine: character.name,
+            name: character.name,
             details:
-                `Series: ${character.series}, 
-                Species: ${character.species}, 
+                `Species: ${character.species}, 
                 Weight: ${character.weight}kg, 
                 Gender: ${character.gender}, 
-                Release Game: ${character.releaseGame}`
+                Release Game: ${character.releaseGame},`
         }),
-        getImageSrc: (characterName) => `https://assets.pixele.gg/character/ssb/crop/${characterName.toLowerCase()}.png`
+        getImageSrc: (characterName) => `${S3_BASE_URL}/character/ssb/crop/${characterName.toLowerCase()}.png`,
+        specialInfo: {
+            items: [
+                {
+                    type: 'icon',
+                    field: 'series',
+                    imgPath: (value, gameId) => `${S3_BASE_URL}/indicator/${gameId}/series/${value} Indicator.png`
+                }
+            ]
+        }
     },
     pokemon: {
         formatDetails: (character) => ({
-            mainLine: character.name,
+            name: character.name,
             details:
                 `Generation: ${character.generation}, 
-                Type 1: ${character.type1}, 
-                Type 2: ${character.type2}, 
                 Height: ${character.height}m, 
                 Weight: ${character.weight}kg`
         }),
         getImageSrc: (_, character) => {
-            return `https://assets.pixele.gg/character/pokemon/full/${padPokedexNumber(character.pokedexNumber)}.png`;
+            return `${S3_BASE_URL}/character/pokemon/full/${padPokedexNumber(character.pokedexNumber)}.png`;
+        },
+        specialInfo: {
+            items: [
+                {
+                    type: 'text',
+                    field: 'pokedexNumber',
+                    className: 'pokedex-number'
+                },
+                {
+                    type: 'text',
+                    field: 'type1',
+                    className: (value) => `pokemon-type-${value}`
+                },
+                {
+                    type: 'text',
+                    field: 'type2',
+                    className: (value) => `pokemon-type-${value}`,
+                    optional: true
+                }
+            ]
         }
     },
     valorant: {
         formatDetails: (character) => ({
-            mainLine: character.name,
+            name: character.name,
             details:
-                `Role: ${character.role}, 
-                Origin: ${character.origin}, 
-                Race: ${character.race}, 
+                `Race: ${character.race}, 
                 Gender: ${character.gender}, 
                 Release Year: ${character.releaseYear}`
         }),
-        getImageSrc: (characterName) => `https://assets.pixele.gg/character/valorant/crop/${characterName.toLowerCase()}.png`
+        getImageSrc: (characterName) => `${S3_BASE_URL}/character/valorant/crop/${characterName.toLowerCase()}.png`,
+        specialInfo: {
+            items: [
+                {
+                    type: 'icon',
+                    field: 'role',
+                    imgPath: (value, gameId) => `${S3_BASE_URL}/indicator/${gameId}/role/${value}.png`
+                },
+                {
+                    type: 'icon',
+                    field: 'origin',
+                    imgPath: (value) => `${S3_BASE_URL}/indicator/flags/${value}.png`
+                }
+            ]
+        }
     },
     r6: {
         formatDetails: (character) => ({
-            mainLine: character.name,
+            name: character.name,
             details:
-                `Side: ${character.side}, 
-                Speed: ${character.speed}, 
+                `Speed: ${character.speed}, 
                 Health: ${character.health}, 
                 Gender: ${character.gender}, 
                 Release Year: ${character.releaseYear}`
+
         }),
-        getImageSrc: (characterName) => `https://assets.pixele.gg/character/r6/crop/${characterName.toLowerCase()}.png`
+        getImageSrc: (characterName) => `${S3_BASE_URL}/character/r6/crop/${characterName.toLowerCase()}.png`,
+        specialInfo: {
+            items: [
+                {
+                    type: 'icon',
+                    field: 'side',
+                    imgPath: (value, gameId) => `${S3_BASE_URL}/indicator/${gameId}/side/${value}-Indicator.png`
+                }
+            ]
+        }
     },
     minecraft: {
         formatDetails: (character) => ({
-            mainLine: character.name,
+            name: character.name,
             details:
-                `Realm: ${character.realm}, 
-                Behavior: ${character.behavior}, 
+                `Behavior: ${character.behavior}, 
                 Health: ${character.health}hp, 
                 Height: ${character.health} Blocks, 
                 Release Update: ${character.releaseUpdate}`
+
         }),
-        getImageSrc: (characterName) => `https://assets.pixele.gg/character/minecraft/full/${characterName.toLowerCase()}.png`
+        getImageSrc: (characterName) => `${S3_BASE_URL}/character/minecraft/full/${characterName.toLowerCase()}.png`,
+        specialInfo: {
+            items: [
+                {
+                    type: 'icon',
+                    field: 'realm',
+                    imgPath: (value, gameId) => `${S3_BASE_URL}/indicator/${gameId}/block/${value}.png`
+                }
+            ]
+        }
     },
     clashroyale: {
         formatDetails: (character) => ({
-            mainLine: character.name,
+            name: character.name,
             details:
-                `Elixir: ${character.elixir}, 
-                Rarity: ${character.rarity}, 
+                `Rarity: ${character.rarity}, 
                 Type: ${character.type}, 
                 Arena: ${character.arena}, 
                 Evolution: ${character.evolution}`
+
         }),
-        getImageSrc: (characterName) => `https://assets.pixele.gg/character/clashroyale/crop/${characterName.toLowerCase()}.png`
+        getImageSrc: (characterName) => `${S3_BASE_URL}/character/clashroyale/crop/${characterName.toLowerCase()}.png`,
+        specialInfo: {
+            items: [
+                {
+                    type: 'icon',
+                    field: 'elixir',
+                    imgPath: (value, gameId) => `${S3_BASE_URL}/indicator/${gameId}/elixir/${value}.png`
+                }
+            ]
+        }
     }
 }
 
@@ -101,4 +182,8 @@ export const getCharacterImageSrc = (character, gameId) => {
         return gameConfig[gameId].getImageSrc(character.name, character)
     }
     return gameConfig[gameId].getImageSrc(normalizeCharacterName(character.name));
+}
+
+export const getSpecialInfo = (gameId) => {
+    return gameConfig[gameId].specialInfo;
 }

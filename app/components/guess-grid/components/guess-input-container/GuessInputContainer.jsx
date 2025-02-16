@@ -1,17 +1,11 @@
-// React Imports:
-
-import { useState, useEffect } from 'react';
-
 // Component Imports:
 
 import GuessInput from '@/app/components/guess-grid/components/guess-input-container/components/guess-input/GuessInput';
 import GuessButton from '@/app/components/guess-grid/components/guess-input-container/components/guess-button/GuessButton';
-import AutocompleteDropdown from "@/app/components/guess-grid/components/autocomplete-dropdown/AutocompleteDropdown";
 
 // Utils Imports:
 
 import { submitGuess } from '@/app/api/game/submit-guess';
-import { loadCharacterList } from '@/app/utils/game/load-character-list';
 
 // CSS Imports:
 
@@ -23,30 +17,16 @@ const GuessInputContainer = ({
     placeholder,
     disabled,
     className,
-    gameId
+    gameId,
+    input,
+    setInput,
 }) => {
-    const [input, setInput] = useState('');
-    const [characterList, setCharacterList] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
     const remainingGuesses = maxGuesses - guessCount;
-
-    useEffect(() => {
-        const loadCharacters = async () => {
-            const characterList = await loadCharacterList(gameId);
-            setCharacterList(characterList);
-            setIsLoading(false);
-        };
-        loadCharacters();
-    }, [gameId]);
 
     const handleGuess = async(event) => {
         event.preventDefault();
         await submitGuess(gameId, input);
         setInput('');
-    }
-
-    const handleSelect = (characterName) => {
-        setInput(characterName)
     }
 
     return (
@@ -68,12 +48,6 @@ const GuessInputContainer = ({
                     gameId={gameId}
                 />
             </div>
-            <AutocompleteDropdown
-                inputValue={input}
-                characters={characterList}
-                onSelect={handleSelect}
-                gameId={gameId}
-            />
         </div>
     );
 }
