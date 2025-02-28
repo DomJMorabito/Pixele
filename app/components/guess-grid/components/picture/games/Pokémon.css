@@ -1,29 +1,33 @@
 /* Pokémon Picture */
 
 .pokemon-picture {
-    background-color: #F2F2F2;
+    background-color: var(--pokemon-picture-background);
 }
 
 @media (min-width: 320px) {
     .pokemon-picture {
-        border: 1px solid #95C951;
+        border: 1px solid var(--pokemon-picture-border);
+        border-radius: 5px;
     }
 }
 
 @media (min-width: 768px) {
     .pokemon-picture {
-        border: 2px solid #95C951;
+        border: 2px solid var(--pokemon-picture-border);
+        border-radius: 6px;
     }
 }
 
 @media (min-width: 2560px) {
     .pokemon-picture {
-        border: 3px solid #95C951;
+        border: 3px solid var(--pokemon-picture-border);
+        border-radius: 7px;
     }
 }
 
 @media (min-width: 3840px) {
     .pokemon-picture {
-        border: 4px solid #95C951;
+        border: 4px solid var(--pokemon-picture-border);
+        border-radius: 10px;
     }
 }

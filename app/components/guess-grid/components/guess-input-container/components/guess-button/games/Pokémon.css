@@ -1,0 +1,80 @@
+/* Pokémon Guess Button */
+
+.pokemon-guess-button {
+    font-family: var(--flexo-demi), sans-serif;
+    color: var(--white);
+    background-color: var(--pokemon-guess-button);
+    border: none;
+    transition: background-color 0.15s ease-in-out;
+    will-change: background-color;
+}
+
+.pokemon-guess-button:hover {
+    background-color: var(--pokemon-guess-button-hover);
+}
+
+@media (min-width: 320px) {
+    .pokemon-guess-button {
+        border-radius: 5px;
+        font-size: 9px;
+        width: 74px;
+    }
+}
+
+@media (min-width: 375px) {
+    .pokemon-guess-button {
+        font-size: 10px;
+        width: 80px;
+    }
+}
+
+@media (min-width: 425px) {
+    .pokemon-guess-button {
+        font-size: 11px;
+        width: 87px;
+    }
+}
+
+@media (min-width: 768px) {
+    .pokemon-guess-button {
+        font-size: 12px;
+        width: 94px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .pokemon-guess-button {
+        font-size: 14px;
+        width: 108px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .pokemon-guess-button {
+        font-size: 12px;
+        width: 94px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .pokemon-guess-button {
+        font-size: 14px;
+        width: 108px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .pokemon-guess-button {
+        border-radius: 7px;
+        font-size: 16px;
+        width: 122px;
+    }
+}
+
+@media (min-width: 3840px) {
+    .pokemon-guess-button {
+        font-size: 26px;
+        border-radius: 10px;
+        width: 189px;
+    }
+}

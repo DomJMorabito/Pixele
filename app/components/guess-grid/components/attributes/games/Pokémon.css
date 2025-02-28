@@ -1,0 +1,105 @@
+/* Pokémon Attributes */
+
+.pokemon-attributes {
+    font-family: var(--flexo-demi), sans-serif;
+    color: var(--pokemon-attribute-text);
+}
+
+@media (min-width: 320px) {
+    .pokemon-attributes {
+        font-size: 9px;
+        height: 11px;
+    }
+
+    .pokemon-attributes .attribute {
+        height: 11px;
+    }
+}
+
+@media (min-width: 375px) {
+    .pokemon-attributes {
+        font-size: 12px;
+        height: 14px;
+    }
+
+    .pokemon-attributes .attribute {
+        height: 14px;
+    }
+}
+
+@media (min-width: 425px) {
+    .pokemon-attributes {
+        font-size: 13px;
+        height: 16px;
+    }
+
+    .pokemon-attributes .attribute {
+        height: 16px;
+    }
+}
+
+@media (min-width: 768px) {
+    .pokemon-attributes {
+        font-size: 17px;
+        height: 20px;
+    }
+
+    .pokemon-attributes .attribute {
+        height: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .pokemon-attributes {
+        font-size: 20px;
+        height: 24px;
+    }
+
+    .pokemon-attributes .attribute {
+        height: 24px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .pokemon-attributes {
+        font-size: 17px;
+        height: 20px;
+    }
+
+    .pokemon-attributes .attribute {
+        height: 20px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .pokemon-attributes {
+        font-size: 20px;
+        height: 24px;
+    }
+
+    .pokemon-attributes .attribute {
+        height: 24px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .pokemon-attributes {
+        font-size: 23px;
+        height: 28px;
+    }
+
+    .pokemon-attributes .attribute {
+        height: 28px;
+    }
+}
+
+@media (min-width: 3840px) {
+    .pokemon-attributes {
+        font-size: 34px;
+        height: 41px;
+    }
+
+    .pokemon-attributes .attribute {
+        height: 41px;
+    }
+}

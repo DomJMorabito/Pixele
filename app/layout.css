@@ -2,8 +2,8 @@
 
 @font-face {
     font-family: 'Poppins';
-    src: url('https://assets.pixele.gg/fonts/overwatch/Poppins-SemiBold.woff2') format('woff2'),
-        url('https://assets.pixele.gg/fonts/overwatch/Poppins-SemiBold.woff') format('woff');
+    src: url('https://assets.pixele.gg/font/overwatch/Poppins-SemiBold.woff2') format('woff2'),
+        url('https://assets.pixele.gg/font/overwatch/Poppins-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -11,8 +11,8 @@
 
 @font-face {
     font-family: 'Big Noodle Too Oblique';
-    src: url('https://assets.pixele.gg/fonts/overwatch/Big Noodle Too Oblique.woff2') format('woff2'),
-        url('https://assets.pixele.gg/fonts/overwatch/Big Noodle Too Oblique.woff') format('woff');
+    src: url('https://assets.pixele.gg/font/overwatch/Big Noodle Too Oblique.woff2') format('woff2'),
+        url('https://assets.pixele.gg/font/overwatch/Big Noodle Too Oblique.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -20,17 +20,26 @@
 
 @font-face {
     font-family: 'Roboto Condensed';
-    src: url('https://assets.pixele.gg/fonts/ssb/Roboto Condensed.woff2') format('woff2'),
-        url('https://assets.pixele.gg/fonts/ssb/Roboto Condensed.woff') format('woff');
+    src: url('https://assets.pixele.gg/font/ssb/Roboto Condensed.woff2') format('woff2'),
+        url('https://assets.pixele.gg/font/ssb/Roboto Condensed.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
+    font-family: 'Roboto Regular';
+    src: url('https://assets.pixele.gg/font/ssb/Roboto Regular.woff2') format('woff2'),
+    url('https://assets.pixele.gg/font/ssb/Roboto Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
     font-family: 'Flexo-Demi';
-    src: url('https://assets.pixele.gg/fonts/pokemon/Flexo-Demi.woff2') format('woff2'),
-        url('https://assets.pixele.gg/fonts/pokemon/Flexo-Demi.woff') format('woff');
+    src: url('https://assets.pixele.gg/font/pokemon/Flexo-Demi.woff2') format('woff2'),
+        url('https://assets.pixele.gg/font/pokemon/Flexo-Demi.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -38,8 +47,8 @@
 
 @font-face {
     font-family: 'Tungsten Bold';
-    src: url('https://assets.pixele.gg/fonts/valorant/Tungsten-Bold.woff2') format('woff2'),
-        url('https://assets.pixele.gg/fonts/valorant/Tungsten-Bold.woff') format('woff');
+    src: url('https://assets.pixele.gg/font/valorant/Tungsten-Bold.woff2') format('woff2'),
+        url('https://assets.pixele.gg/font/valorant/Tungsten-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -47,8 +56,8 @@
 
 @font-face {
     font-family: 'Scout Condensed Italic';
-    src: url('https://assets.pixele.gg/fonts/r6/Scout Condensed Italic.woff2') format('woff2'),
-        url('https://assets.pixele.gg/fonts/r6/Scout Condensed Italic.woff') format('woff');
+    src: url('https://assets.pixele.gg/font/r6/Scout Condensed Italic.woff2') format('woff2'),
+        url('https://assets.pixele.gg/font/r6/Scout Condensed Italic.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -56,8 +65,8 @@
 
 @font-face {
     font-family: 'Minecraft Seven';
-    src: url('https://assets.pixele.gg/fonts/minecraft/MinecraftSeven.woff2') format('woff2'),
-        url('https://assets.pixele.gg/fonts/minecraft/MinecraftSeven.woff') format('woff');
+    src: url('https://assets.pixele.gg/font/minecraft/MinecraftSeven.woff2') format('woff2'),
+        url('https://assets.pixele.gg/font/minecraft/MinecraftSeven.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -65,8 +74,8 @@
 
 @font-face {
     font-family: 'Minecraft Ten';
-    src: url('https://assets.pixele.gg/fonts/minecraft/MinecraftTen.woff2') format('woff2'),
-        url('https://assets.pixele.gg/fonts/minecraft/MinecraftTen.woff') format('woff');
+    src: url('https://assets.pixele.gg/font/minecraft/MinecraftTen.woff2') format('woff2'),
+        url('https://assets.pixele.gg/font/minecraft/MinecraftTen.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -74,8 +83,8 @@
 
 @font-face {
     font-family: 'Clash Regular';
-    src: url('https://assets.pixele.gg/fonts/clashroyale/Clash_Regular.woff2') format('woff2'),
-        url('https://assets.pixele.gg/fonts/clashroyale/Clash_Regular.woff') format('woff');
+    src: url('https://assets.pixele.gg/font/clashroyale/Clash_Regular.woff2') format('woff2'),
+        url('https://assets.pixele.gg/font/clashroyale/Clash_Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -83,8 +92,8 @@
 
 @font-face {
     font-family: 'Dosis Bold';
-    src: url('https://assets.pixele.gg/fonts/homescreen/Dosis Bold.woff2') format('woff2'),
-        url('https://assets.pixele.gg/fonts/homescreen/Dosis Bold.woff') format('woff');
+    src: url('https://assets.pixele.gg/font/homescreen/Dosis Bold.woff2') format('woff2'),
+        url('https://assets.pixele.gg/font/homescreen/Dosis Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -92,8 +101,8 @@
 
 @font-face {
     font-family: 'Nunito ExtraBold';
-    src: url('https://assets.pixele.gg/fonts/homescreen/Nunito ExtraBold.woff2') format('woff2'),
-        url('https://assets.pixele.gg/fonts/homescreen/Nunito ExtraBold.woff') format('woff');
+    src: url('https://assets.pixele.gg/font/homescreen/Nunito ExtraBold.woff2') format('woff2'),
+        url('https://assets.pixele.gg/font/homescreen/Nunito ExtraBold.woff') format('woff');
     font-weight: 800;
     font-style: normal;
     font-display: swap;
@@ -104,6 +113,7 @@
     --poppins: 'Poppins', var(--fallback);
     --big-noodle-too-oblique: 'Big Noodle Too Oblique', var(--fallback);
     --roboto-condensed: 'Roboto Condensed', var(--fallback);
+    --roboto-regular: 'Roboto Regular', var(--fallback);
     --flexo-demi: 'Flexo-Demi', var(--fallback);
     --tungsten-bold: 'Tungsten Bold', var(--fallback);
     --scout-condensed-italic: 'Scout Condensed Italic', var(--fallback);
@@ -139,15 +149,9 @@
     --overwatch-game-card-border: #EFF3FA;
 
     --ssb-game-card-background-red: #FF4444;
-    --ssb-game-card-background-repeating-linear-gradient: #7B7B7B7F;
-    --ssb-game-card-title-repeating-linear-gradient-grey: #373737;
+    --ssb-repeating-linear-gradient-grey: #7B7B7B7F;
 
     --pokemon-game-card-background: #F2F2F2;
-    --pokemon-game-card-title: #313131;
-    --pokemon-game-card-identifier: #919191;
-    --pokemon-fire: #FD7D25;
-    --pokemon-dragon-top: #54A4CF;
-    --pokemon-dragon-bottom: #F06D57;
 
     --valorant-game-card-background: #101827;
     --valorant-game-card-title-background: #2A2A2A;
@@ -183,26 +187,87 @@
     /* Modal */
     --modal-close-button-hover: #6794D5;
 
-    /* Attribute Indicator */
-    --overwatch-attribute-indicator: #2E3031;
-    --overwatch-attribute-indicator-background: #EEF4FA;
-
-    /* Picture */
+    /* Overwatch Picture */
     --overwatch-picture-background: #CCDCF5;
     --overwatch-picture-border: #003D79;
 
-    /* Circle */
+    /* Overwatch Circle */
     --overwatch-circle-background: #D9D9D9;
     --overwatch-circle-border: #FA9C1E;
 
-    /* Guess Input */
+    /* Overwatch Attribute Indicator */
+    --overwatch-attribute-indicator: #2E3031;
+    --overwatch-attribute-indicator-background: #EEF4FA;
+
+    /* Overwatch Guess Input */
     --overwatch-guess-input-border-hover: #ACAEB2;
     --overwatch-guess-input-border-focus: #ED6516;
 
-    /* Guess Button */
+    /* Overwatch Guess Button */
     --overwatch-guess-button-background: #F06414;
     --overwatch-guess-button-background-hover: #F1742B;
     --overwatch-guess-button-border: #CCCCCC;
+
+    /* SSB Circle */
+    --ssb-circle-background: #D9D9D9;
+
+    /* SSB Attribute Indicator */
+    --ssb-attribute-indicator-border: #333333;
+
+    /* SSB Guess Button */
+    --ssb-guess-button-background: #DADADA;
+    --ssb-guess-button-background-before: #EB1625;
+    --ssb-guess-button-color: #999999;
+    --ssb-guess-button-bottom-red: #800000;
+
+    /* Pokémon Picture */
+    --pokemon-picture-border: #313131;
+    --pokemon-picture-background: #F2F2F2;
+
+    /* Pokémon Circle */
+    --pokemon-circle-border: #616161;
+    --pokemon-circle-background: #F2F2F2;
+
+    /* Pokémon Types */
+    --pokemon-type-normal: #A4ACAF;
+    --pokemon-type-fire: #FD7D25;           /* White Text */
+    --pokemon-type-water: #4693C4;          /* White Text */
+    --pokemon-type-grass: #9BCC50;
+    --pokemon-type-electric: #EDD434;
+    --pokemon-type-ice: #51C3E7;
+    --pokemon-type-fighting: #D56722;       /* White Text */
+    --pokemon-type-poison: #B97FCA;         /* White Text */
+    --pokemon-type-ground-top: #F7DE3F;
+    --pokemon-type-ground-bottom: #AB9741;
+    --pokemon-type-flying-top: #3EC7EF;
+    --pokemon-type-flying-bottom: #BDB9B8;
+    --pokemon-type-psychic: #F366B9;        /* White Text */
+    --pokemon-type-bug: #739F40;            /* White Text */
+    --pokemon-type-rock: #A48C22;           /* White Text */
+    --pokemon-type-ghost: #7B62A3;          /* White Text */
+    --pokemon-type-dark: #707070;           /* White Text */
+    --pokemon-type-dragon-top: #54A4CF;     /* White Text */
+    --pokemon-type-dragon-bottom: #F06D57;  /* White Text */
+    --pokemon-type-steel: #9EB8B8;
+    --pokemon-type-fairy: #FDB9EA;
+    --pokemon-type-text-light: #F8FBFD;
+    --pokemon-type-text-dark:  #212121;
+
+    /* Pokémon Attributes */
+    --pokemon-attribute-text: #313131;
+
+    /* Pokémon Guess Input */
+    --pokemon-guess-input-border: #616161;
+    --pokemon-guess-input-text: #313131;
+
+    /* Pokémon Guess Button */
+    --pokemon-guess-button: #30A7D7;
+    --pokemon-guess-button-hover: #1B82B1;
+
+    /* Pokémon Autocomplete Dropdown */
+    --pokemon-character-background: #F2F2F2;
+    --pokemon-character-name: #313131;
+    --pokemon-identifier: #919191;
 }
 
 html {

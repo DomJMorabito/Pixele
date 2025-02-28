@@ -27,7 +27,7 @@ export default function SSBPage() {
             <main>
                 <GuessGrid
                     gameId="ssb"
-                    attributes={['Fighter', 'Series', 'Species', 'Weight', 'Gender', 'Release Game']}
+                    attributes={['Fighter', 'Series', 'Species', 'Weight', 'Gender', 'Game']}
                     maxGuesses={6}
                     inputPlaceholder="Choose your Fighter..."
                 />

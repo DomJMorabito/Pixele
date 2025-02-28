@@ -9,13 +9,21 @@
     background-color: var(--overwatch-game-card-title-background);
 }
 
-.overwatch-character-image {
-    background-color: var(--overwatch-game-card-background);
+.overwatch-autocomplete-dropdown-item:hover {
+    background-color: var(--white);
 }
 
 .overwatch-sub-details {
     font-family: var(--poppins), sans-serif;
     color: var(--overwatch-game-card-title);
+}
+
+.overwatch-autocomplete-dropdown-item:hover .overwatch-character-name, .overwatch-special-location-text, .overwatch-sub-details {
+    color: var(--black);
+}
+
+.overwatch-character-image {
+    background-color: var(--overwatch-game-card-background);
 }
 
 .overwatch-special-location-text {
@@ -47,7 +55,6 @@
     .overwatch-sub-details {
         font-size: 6px;
     }
-
 }
 
 @media (min-width: 375px) {

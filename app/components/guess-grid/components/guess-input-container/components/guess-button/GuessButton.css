@@ -8,23 +8,57 @@
 @media (min-width: 320px) {
     #guess-button {
         margin: 2px;
+        height: 24px;
+    }
+}
+
+@media (min-width: 375px) {
+    #guess-button {
+        height: 25px;
+    }
+}
+
+@media (min-width: 425px) {
+    #guess-button {
+        height: 28px;
     }
 }
 
 @media (min-width: 768px) {
     #guess-button {
-        margin: 3px
+        margin: 3px;
+        height: 35px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #guess-button {
+        height: 38px;
+    }
+}
+
+@media (min-width: 1440px) {
+    #guess-button {
+        height: 35px;
+    }
+}
+
+@media (min-width: 1920px) {
+    #guess-button {
+        height: 38px;
     }
 }
 
 @media (min-width: 2560px) {
     #guess-button {
         margin: 5px;
+        height: 47px;
     }
 }
 
 @media (min-width: 3840px) {
     #guess-button {
         margin: 7px;
+        height: 71px;
     }
 }

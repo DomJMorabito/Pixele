@@ -151,16 +151,16 @@ const AttributeIndicatorContainer = ({ guesses, gameId, className }) => {
                 imgSrc: 'https://assets.pixele.gg/indicator/ssb/series/R.O.B. Indicator.png',
             },
             {
-                id: 'Sonic The Hedgehog',
-                imgSrc: 'https://assets.pixele.gg/indicator/ssb/series/Sonic The Hedgehog Indicator.png',
+                id: 'Sonic the Hedgehog',
+                imgSrc: 'https://assets.pixele.gg/indicator/ssb/series/Sonic the Hedgehog Indicator.png',
             },
             {
                 id: 'Splatoon',
                 imgSrc: 'https://assets.pixele.gg/indicator/ssb/series/Splatoon Indicator.png',
             },
             {
-                id: 'SSB',
-                imgSrc: 'https://assets.pixele.gg/indicator/ssb/series/SSB Indicator.png',
+                id: 'Super Smash Bros.',
+                imgSrc: 'https://assets.pixele.gg/indicator/ssb/series/Super Smash Bros. Indicator.png',
             },
             {
                 id: 'Star Fox',
@@ -267,10 +267,6 @@ const AttributeIndicatorContainer = ({ guesses, gameId, className }) => {
             {
                 id: 'Fairy',
                 text: 'Fairy'
-            },
-            {
-                id: 'Null',
-                text: 'Single-Type'
             }
         ],
         valorant: [
@@ -351,7 +347,7 @@ const AttributeIndicatorContainer = ({ guesses, gameId, className }) => {
 
     return (
         <div id='attribute-indicator-container' className={className}>
-            <div id='attribute-indicators'>
+            <div id='attribute-indicators' className={`${gameId}-attribute-indicators`}>
                 {attributes.map((attribute) => (
                     <AttributeIndicator
                         key={attribute.id}

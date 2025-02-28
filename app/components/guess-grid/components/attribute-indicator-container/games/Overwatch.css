@@ -1,53 +1,64 @@
+/* Overwatch Attribute Indicator Container */
+
 @media (min-width: 320px) {
     .overwatch-attribute-indicator-container {
         height: 26px;
+        width: 175px;
     }
 }
 
 @media (min-width: 375px) {
     .overwatch-attribute-indicator-container {
         height: 28px;
+        width: 181px;
     }
 }
 
 @media (min-width: 425px) {
     .overwatch-attribute-indicator-container {
         height: 32px;
+        width: 215px;
     }
 }
 
 @media (min-width: 768px) {
     .overwatch-attribute-indicator-container {
         height: 42px;
+        width: 266px;
     }
 }
 
 @media (min-width: 1024px) {
     .overwatch-attribute-indicator-container {
         height: 48px;
+        width: 312px;
     }
 }
 
 @media (min-width: 1440px) {
     .overwatch-attribute-indicator-container {
         height: 42px;
+        width: 266px;
     }
 }
 
 @media (min-width: 1920px) {
     .overwatch-attribute-indicator-container {
         height: 48px;
+        width: 312px;
     }
 }
 
 @media (min-width: 2560px) {
     .overwatch-attribute-indicator-container {
         height: 66px;
+        width: 365px;
     }
 }
 
 @media (min-width: 3840px) {
     .overwatch-attribute-indicator-container {
         height: 84px;
+        width: 520px;
     }
 }

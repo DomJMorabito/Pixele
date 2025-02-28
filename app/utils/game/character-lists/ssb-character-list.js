@@ -353,7 +353,7 @@ export const characters = [
     },
     {
         name: 'Mii Brawler',
-        series: 'SSB',
+        series: 'Super Smash Bros.',
         releaseGame: 'SSB 4',
         weight: 94,
         gender: 'Selectable',
@@ -361,7 +361,7 @@ export const characters = [
     },
     {
         name: 'Mii Gunner',
-        series: 'SSB',
+        series: 'Super Smash Bros.',
         releaseGame: 'SSB 4',
         weight: 104,
         gender: 'Selectable',
@@ -369,7 +369,7 @@ export const characters = [
     },
     {
         name: 'Mii Swordsman',
-        series: 'SSB',
+        series: 'Super Smash Bros.',
         releaseGame: 'SSB 4',
         weight: 104,
         gender: 'Selectable',

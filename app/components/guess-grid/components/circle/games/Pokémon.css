@@ -1,29 +1,29 @@
 /* Pokémon Circle */
 
 .pokemon-circle {
-    background-color: #F2F2F2;
+    background-color: var(--pokemon-circle-background);
 }
 
 @media (min-width: 320px) {
     .pokemon-circle {
-        border: 1px solid #B6DB86;
+        border: 1px solid var(--pokemon-circle-border);
     }
 }
 
 @media (min-width: 768px) {
     .pokemon-circle {
-        border: 2px solid #B6DB86;
+        border: 2px solid var(--pokemon-circle-border);
     }
 }
 
 @media (min-width: 2560px) {
     .pokemon-circle {
-        border: 3px solid #B6DB86;
+        border: 3px solid var(--pokemon-circle-border);
     }
 }
 
 @media (min-width: 3840px) {
     .pokemon-circle {
-        border: 4px solid #B6DB86;
+        border: 4px solid var(--pokemon-circle-border);
     }
 }

@@ -2,12 +2,18 @@
 
 #autocomplete-dropdown {
     box-sizing: border-box;
+    animation: autocompleteDropdownExpand 0.15s ease-out forwards;
 }
 
 #autocomplete-scroll-container {
     overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior-y: none;
+    scrollbar-width: none;
+}
+
+#autocomplete-scroll-container::-webkit-scrollbar {
+    display: none;
 }
 
 .autocomplete-dropdown-item {
@@ -76,13 +82,28 @@
     white-space: pre-line;
 }
 
+/* AutocompleteDropdown Animations */
+
+@keyframes autocompleteDropdownExpand {
+    from {
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+}
+
 @media (min-width: 320px) {
     #autocomplete-dropdown {
         width: 147px;
     }
 
     #autocomplete-scroll-container {
-        max-height: 137px;
+        max-height: 229px;
     }
 
     .autocomplete-dropdown-item {
@@ -126,7 +147,7 @@
     }
 
     #autocomplete-scroll-container {
-        max-height: 152px;
+        max-height: 254px;
     }
 
     .autocomplete-dropdown-item {
@@ -165,7 +186,7 @@
     }
 
     #autocomplete-scroll-container {
-        max-height: 182px;
+        max-height: 304px;
     }
 
     .autocomplete-dropdown-item {
@@ -204,7 +225,7 @@
     }
 
     #autocomplete-scroll-container {
-        max-height: 229px;
+        max-height: 383px;
     }
 
     .autocomplete-dropdown-item {
@@ -243,7 +264,7 @@
     }
 
     #autocomplete-scroll-container {
-        max-height: 259px;
+        max-height: 433px;
     }
 
     .autocomplete-dropdown-item {
@@ -287,7 +308,11 @@
     }
 
     #autocomplete-scroll-container {
-        max-height: 229px;
+        max-height: 383px;
+    }
+
+    #autocomplete-scroll-container::-webkit-scrollbar {
+        width: 6px;
     }
 
     .autocomplete-dropdown-item {
@@ -331,7 +356,7 @@
     }
 
     #autocomplete-scroll-container {
-        max-height: 259px;
+        max-height: 433px;
     }
 
     .autocomplete-dropdown-item {
@@ -375,7 +400,7 @@
     }
 
     #autocomplete-scroll-container {
-        max-height: 308px;
+        max-height: 512px;
     }
 
     .autocomplete-dropdown-item {
@@ -414,7 +439,7 @@
     }
 
     #autocomplete-scroll-container {
-        max-height: 508px;
+        max-height: 641px;
     }
 
     .autocomplete-dropdown-item {

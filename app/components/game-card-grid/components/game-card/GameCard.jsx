@@ -36,7 +36,7 @@ function GameCard({ id, logoSrc, altText, gameLink, children, onHover, onLeave, 
                 <Image
                     src = { logoSrc }
                     alt = { altText }
-                    className = 'game-logo'
+                    className ={`game-logo`}
                     width = { 500 }
                     height = { 500 }
                 />

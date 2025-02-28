@@ -1,0 +1,68 @@
+/* Pokémon Attribute Indicator Container */
+
+.pokemon-attribute-indicators {
+    flex-wrap: wrap;
+}
+
+@media (min-width: 320px) {
+    .pokemon-attribute-indicator-container, .pokemon-attribute-indicators {
+        width: 249px;
+        height: 60px;
+    }
+}
+
+@media (min-width: 375px) {
+    .pokemon-attribute-indicator-container, .pokemon-attribute-indicators {
+        width: 305px;
+        height: 69px;
+    }
+}
+
+@media (min-width: 425px) {
+    .pokemon-attribute-indicator-container, .pokemon-attribute-indicators {
+        height: 75px;
+        width: 319px;
+    }
+}
+
+@media (min-width: 768px) {
+    .pokemon-attribute-indicator-container, .pokemon-attribute-indicators {
+        width: 491px;
+        height: 60px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .pokemon-attribute-indicator-container, .pokemon-attribute-indicators {
+        width: 601px;
+        height: 64px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .pokemon-attribute-indicator-container, .pokemon-attribute-indicators {
+        width: 545px;
+        height: 60px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .pokemon-attribute-indicator-container, .pokemon-attribute-indicators {
+        width: 601px;
+        height: 64px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .pokemon-attribute-indicator-container, .pokemon-attribute-indicators {
+        width: 729px;
+        height: 86px;
+    }
+}
+
+@media (min-width: 3840px) {
+    .pokemon-attribute-indicator-container, .pokemon-attribute-indicators {
+        width: 1053px;
+        height: 126px;
+    }
+}

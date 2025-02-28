@@ -35,11 +35,12 @@ const gameConfig = {
     ssb: {
         formatDetails: (character) => ({
             name: character.name,
-            details:
-                `Species: ${character.species}, 
-                Weight: ${character.weight}kg, 
-                Gender: ${character.gender}, 
-                Release Game: ${character.releaseGame},`
+            details: [
+                `Species: ${character.species}`,
+                `Weight: ${character.weight}kg`,
+                `Gender: ${character.gender}`,
+                `Release Game: ${character.releaseGame}`
+            ].join('\n')
         }),
         getImageSrc: (characterName) => `${S3_BASE_URL}/character/ssb/crop/${characterName.toLowerCase()}.png`,
         specialInfo: {

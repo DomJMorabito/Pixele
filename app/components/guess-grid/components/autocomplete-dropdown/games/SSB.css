@@ -1,0 +1,203 @@
+/* SSB Autocomplete Dropdown */
+
+.ssb-autocomplete-dropdown-item {
+    background-color: var(--black);
+    position: relative;
+    overflow: hidden;
+}
+
+.ssb-autocomplete-dropdown-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: left 0.1s ease;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+            -45deg,
+            var(--ssb-repeating-linear-gradient-grey) 0px,
+            var(--ssb-repeating-linear-gradient-grey) 0px,
+            transparent 2px,
+            transparent 4px
+    );
+}
+
+.ssb-autocomplete-dropdown-item:hover::before {
+    left: 0;
+}
+
+.ssb-character-top-section {
+    z-index: 2;
+    position: relative;
+}
+
+.ssb-character-name {
+    font-family: var(--roboto-condensed), sans-serif;
+    color: var(--white);
+}
+
+.ssb-sub-details {
+    font-family: var(--roboto-regular), sans-serif;
+    color: var(--white);
+}
+
+@media (min-width: 320px) {
+    .ssb-autocomplete-dropdown {
+        border: 1px solid var(--ssb-attribute-indicator-border);
+    }
+
+    .ssb-autocomplete-dropdown-item:not(:last-of-type) {
+        border-bottom: 1px solid var(--ssb-attribute-indicator-border);
+    }
+
+    .ssb-character-image {
+        margin-right: 1px;
+    }
+
+    .ssb-character-name {
+        font-size: 9px;
+    }
+
+    .ssb-sub-details {
+        font-size: 6px;
+    }
+}
+
+@media (min-width: 375px) {
+    .ssb-character-name {
+        font-size: 10px;
+    }
+
+    .ssb-sub-details {
+        font-size: 7px;
+    }
+}
+
+@media (min-width: 425px) {
+    .ssb-character-name {
+        font-size: 11px;
+    }
+
+    .ssb-sub-details {
+        font-size: 8px;
+    }
+}
+
+@media (min-width: 768px) {
+    .ssb-autocomplete-dropdown {
+        border: 2px solid var(--ssb-attribute-indicator-border);
+    }
+
+    .ssb-autocomplete-dropdown-item:not(:last-of-type) {
+        border-bottom: 2px solid var(--ssb-attribute-indicator-border);
+    }
+
+    .ssb-character-image {
+        margin-right: 2px;
+    }
+
+    .ssb-character-name {
+        font-size: 12px;
+    }
+
+    .ssb-sub-details {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .ssb-character-name {
+        font-size: 14px;
+    }
+
+    .ssb-sub-details {
+        font-size: 11px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .ssb-character-name {
+        font-size: 12px;
+    }
+
+    .ssb-sub-details {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .ssb-character-name {
+        font-size: 14px;
+    }
+
+    .ssb-sub-details {
+        font-size: 11px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .ssb-autocomplete-dropdown {
+        border: 3px solid var(--ssb-attribute-indicator-border);
+    }
+
+    .ssb-autocomplete-dropdown-item:not(:last-of-type) {
+        border-bottom: 3px solid var(--ssb-attribute-indicator-border);
+    }
+
+    .ssb-character-image {
+        margin-right: 3px;
+    }
+
+    .ssb-autocomplete-dropdown-item::before {
+        background-image: repeating-linear-gradient(
+                -45deg,
+                var(--ssb-repeating-linear-gradient-grey) 0px,
+                var(--ssb-repeating-linear-gradient-grey) 0px,
+                transparent 3px,
+                transparent 6px
+        );
+    }
+
+    .ssb-character-name {
+        font-size: 18px
+    }
+
+    .ssb-sub-details {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 3840px) {
+    .ssb-autocomplete-dropdown {
+        border: 4px solid var(--ssb-attribute-indicator-border);
+    }
+
+    .ssb-autocomplete-dropdown-item:not(:last-of-type) {
+        border-bottom: 4px solid var(--ssb-attribute-indicator-border);
+    }
+
+    .ssb-character-image {
+        margin-right: 4px;
+    }
+
+    .ssb-autocomplete-dropdown-item::before {
+        background-image: repeating-linear-gradient(
+                -45deg,
+                var(--ssb-repeating-linear-gradient-grey) 0px,
+                var(--ssb-repeating-linear-gradient-grey) 0px,
+                transparent 4px,
+                transparent 8px
+        );
+    }
+
+    .ssb-character-name {
+        font-size: 24px;
+    }
+
+    .ssb-sub-details {
+        font-size: 15px;
+    }
+}

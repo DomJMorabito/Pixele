@@ -1,0 +1,105 @@
+/* SSB Attributes */
+
+.ssb-attributes {
+    font-family: var(--roboto-condensed), sans-serif;
+    color: var(--black);
+}
+
+@media (min-width: 320px) {
+    .ssb-attributes {
+        font-size: 11px;
+        height: 13px;
+    }
+
+    .ssb-attributes .attribute {
+        height: 13px;
+    }
+}
+
+@media (min-width: 375px) {
+    .ssb-attributes {
+        font-size: 12px;
+        height: 14px;
+    }
+
+    .ssb-attributes .attribute {
+        height: 14px;
+    }
+}
+
+@media (min-width: 425px) {
+    .ssb-attributes {
+        font-size: 13px;
+        height: 15px;
+    }
+
+    .ssb-attributes .attribute {
+        height: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    .ssb-attributes {
+        font-size: 18px;
+        height: 21px;
+    }
+
+    .ssb-attributes .attribute {
+        height: 21px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .ssb-attributes {
+        font-size: 20px;
+        height: 24px;
+    }
+
+    .ssb-attributes .attribute {
+        height: 24px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .ssb-attributes {
+        font-size: 18px;
+        height: 21px;
+    }
+
+    .ssb-attributes .attribute {
+        height: 21px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .ssb-attributes {
+        font-size: 20px;
+        height: 24px;
+    }
+
+    .ssb-attributes .attribute {
+        height: 24px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .ssb-attributes {
+        font-size: 24px;
+        height: 28px;
+    }
+
+    .ssb-attributes .attribute {
+        height: 28px;
+    }
+}
+
+@media (min-width: 3840px) {
+    .ssb-attributes {
+        font-size: 36px;
+        height: 42px;
+    }
+
+    .ssb-attributes .attribute {
+        height: 42px;
+    }
+}

@@ -5,11 +5,11 @@
 }
 
 #pokemon {
-    background-color: var(--pokemon-game-card-background);
+    background-color: var(--pokemon-character-background);
 }
 
 #pokemon .game-title {
-    color: var(--pokemon-game-card-title);
+    color: var(--pokemon-character-name);
 }
 
 #types {
@@ -28,19 +28,19 @@
 
 #identifier {
     align-self: flex-start;
-    color: var(--pokemon-game-card-identifier);
+    color: var(--pokemon-identifier);
 }
 
 #dragon, #fire {
-    color: var(--white);
+    color: var(--pokemon-type-text-light);
 }
 
 #dragon {
-    background: linear-gradient(to bottom, var(--pokemon-dragon-top) 50%, var(--pokemon-dragon-bottom) 50%);
+    background: linear-gradient(to bottom, var(--pokemon-type-dragon-top) 50%, var(--pokemon-type-dragon-bottom) 50%);
 }
 
 #fire {
-    background-color: var(--pokemon-fire);
+    background-color: var(--pokemon-type-fire);
 }
 
 @media (min-width: 320px) {

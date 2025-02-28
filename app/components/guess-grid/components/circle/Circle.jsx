@@ -18,7 +18,7 @@ const Circle = ({ rowIndex, circleIndex, result, className, gameId }) => {
 
     useEffect(() => {
         if (gameId) {
-            import((`@/app/components/guess-grid/components/circle/games/${formatGameId(gameId)}.css`));
+            import(`@/app/components/guess-grid/components/circle/games/${formatGameId(gameId)}.css`);
         }
     }, [gameId]);
 

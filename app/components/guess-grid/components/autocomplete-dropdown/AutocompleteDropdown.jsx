@@ -79,22 +79,22 @@ const AutocompleteDropdown = ({ inputValue, characters, onSelect, gameId }) => {
         if (gameId === 'pokemon') {
             return (
                 <div className={`character-header-info ${gameId}-layout`}>
-                    <div className={`${gameId}-special-info-item pokedex-number`}>
-                        {character.pokedexNumber}
+                    <div className={`${gameId}-special-info-item identifier`}>
+                        {`#${character.pokedexNumber.toString().padStart(4, '0')}`}
                     </div>
                     <div className={`${gameId}-character-name character-name`}>
                         {character.name}
                     </div>
-                    <div className="pokemon-types">
-                        <div className={`pokemon-type-${character.type1} pokemon-type`}>
+                    <div className="types">
+                        <div className={`type-${character.type1} type`}>
                             {character.type1}
                         </div>
+                        {character.type2 && (
+                            <div className={`type-${character.type2} type`}>
+                                {character.type2}
+                            </div>
+                        )}
                     </div>
-                    {character.type2 && (
-                        <div className={`pokemon-type-${character.type2} pokemon-type`}>
-                            {character.type2}
-                        </div>
-                    )}
                 </div>
             );
         }
@@ -107,6 +107,7 @@ const AutocompleteDropdown = ({ inputValue, characters, onSelect, gameId }) => {
             ['country', 'origin'].includes(item.field)
         );
         const { name, details } = formatCharacterDetails(character, gameId);
+        const displayName = gameId === 'ssb' ? name.toUpperCase() : name;
 
         return (
             <div className={`character-header-info ${gameId}-layout`}>
@@ -127,7 +128,7 @@ const AutocompleteDropdown = ({ inputValue, characters, onSelect, gameId }) => {
                             gameId={gameId}
                         />
                         <p className={`${gameId}-character-name character-name`}>
-                            {name}
+                            {displayName}
                         </p>
                     </div>
                 </div>
@@ -154,7 +155,7 @@ const AutocompleteDropdown = ({ inputValue, characters, onSelect, gameId }) => {
                             className={`${gameId}-autocomplete-dropdown-item autocomplete-dropdown-item`}
                             onClick={() => onSelect(character.name)}
                         >
-                            <div className="character-top-section">
+                            <div className={`${gameId}-character-top-section character-top-section`}>
                                 <div className={`character-image ${gameId}-character-image`}>
                                     <Image
                                         src={imageSrc}
